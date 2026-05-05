@@ -24,9 +24,12 @@
 
 ### 👨‍🚀 About Me
 
-- 🌍 Based in **Vietnam**
-- 🎓 3rd-year IT student at **FPT University** *(30% Scholarship)*
-- 💻 Specializing in **Backend Development** & System Architecture
+Hi there! I'm **Võ Ngọc Thanh** (aka **ThanhMiLa**). I'm a 21-year-old backend enthusiast based in Vietnam.
+
+- 🎓 **Education:** 3rd-year IT student at **FPT University** (GPA: **3.5/4.0** | Honored with a *30% Scholarship*).
+- ⚙️ **Focus:** Dedicated to **Backend Development** and designing scalable **System Architectures**.
+- ☕ **Core Stack:** Passionate about building robust, high-performance APIs using **Java & Spring Boot**.
+- 🌱 **Mindset:** Constantly learning and striving to turn complex logic into clean, maintainable code.
 
 ---
 
@@ -132,8 +135,3 @@
 </div>
 
 ---
-
-<!-- ==================== PROFILE VIEWS ==================== -->
-<div align="center">
-  <img src="https://komarev.com/ghpvc/?username=ThanhMiLa&style=for-the-badge&color=00FF99&label=PROFILE+VIEWS" alt="Profile Views" />
-</div>
