@@ -14,10 +14,6 @@
     <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=700&size=35&pause=1000&color=00FF99&center=true&vCenter=true&width=900&height=70&lines=%F0%9F%91%8B+Hi%2C+I'm+Thanh+MiLa;%E2%9A%A1+Backend+Developer;%F0%9F%94%A5+Java+%2B+Spring+Boot+Specialist;%F0%9F%8E%93+FPT+University+Student" alt="Typing SVG" />
   </a>
 
-  <br>
-
-  <!-- Snake animation -->
-  <img src="https://raw.githubusercontent.com/platane/snk/output/github-contribution-grid-snake-dark.svg" width="100%">
 
   <!-- Bottom decorative line -->
   <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
@@ -62,14 +58,11 @@
 
 ---
 
-### 📈 Contributions Pipeline
+### 📊 GitHub Overview
 
-| Year | Contributions | Status |
-|:----:|:------------:|:------:|
-| 🔥 **2026** | *In Progress...* | 🟢 Active |
-| 🏆 **2025** | **1,250** | ✅ Done |
-| 🌟 **2024** | **840** | ✅ Done |
-| 🚀 **2023** | **320** | ✅ Done |
+<p align="center">
+  <img src="https://github-readme-stats.vercel.app/api?username=ThanhMiLa&show_icons=true&include_all_commits=true&count_private=true&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=00FF99&icon_color=00FF99&text_color=C9D1D9" width="100%" alt="GitHub Stats" />
+</p>
 
 </td>
 
@@ -122,17 +115,11 @@
 <!-- ==================== GITHUB STATS ROW ==================== -->
 <div align="center">
 
-### 📊 GitHub Stats
+### 🔥 Streak & Languages
 
-<img src="https://github-readme-stats.vercel.app/api?username=ThanhMiLa&show_icons=true&include_all_commits=true&theme=radical&hide_border=true&bg_color=0D1117&title_color=00FF99&icon_color=00FF99&text_color=FFFFFF" height="180" alt="GitHub Stats" />
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=ThanhMiLa&layout=compact&theme=radical&hide_border=true&bg_color=0D1117&title_color=00FF99&text_color=FFFFFF" height="180" alt="Top Languages" />
+<img src="https://streak-stats.demolab.com?user=ThanhMiLa&theme=tokyonight&hide_border=true&background=0D1117&ring=00FF99&fire=00FF99&currStreakLabel=00FF99&sideLabels=00FF99&dates=C9D1D9" height="200" alt="GitHub Streak" />
+<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=ThanhMiLa&layout=compact&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=00FF99&text_color=C9D1D9" height="200" alt="Top Languages" />
 
-</div>
-
-<br>
-
-<div align="center">
-  <img src="https://github-readme-streak-stats.herokuapp.com?user=ThanhMiLa&theme=radical&hide_border=true&background=0D1117&ring=00FF99&fire=00FF99&currStreakLabel=00FF99" alt="GitHub Streak" />
 </div>
 
 ---
