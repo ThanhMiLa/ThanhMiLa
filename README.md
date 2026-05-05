@@ -97,7 +97,7 @@
     <td valign="top" width="50%">
       <h3>🧠 LeetCode Activity</h3>
       <!-- LeetCode Card (No Recent Activities, Just Stats) -->
-      <img src="https://leetcard.jacoblin.cool/ThanhMiLa?theme=dark&font=Fira%20Code" alt="LeetCode Stats" />
+      <img src="https://leetcard.jacoblin.cool/Thanh_MiLa?theme=dark&font=Fira%20Code" alt="LeetCode Stats" />
     </td>
   </tr>
 </table>
