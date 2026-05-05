@@ -43,6 +43,7 @@
   <a href="https://www.instagram.com/_thanh_mila_/" target="_blank">
     <img src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white" alt="Instagram" />
   </a>
+  <br>
   <a href="mailto:vntvlogs@gmail.com">
     <img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Gmail" />
   </a>
@@ -55,10 +56,16 @@
 
 ### 📊 Contributions
 
-| Year | Contributions |
-|:----:|:-------------:|
-| 🔥 **2026** | `69 contributions` |
-| 🏆 **2025** | `69 contributions` |
+<table width="100%">
+  <tr>
+    <td align="center" width="40%">🔥 <b>2026</b></td>
+    <td align="center" width="60%"><code>69 contributions</code></td>
+  </tr>
+  <tr>
+    <td align="center">🏆 <b>2025</b></td>
+    <td align="center"><code>69 contributions</code></td>
+  </tr>
+</table>
 
 </td>
 
@@ -106,16 +113,7 @@
 </tr>
 </table>
 
----
 
-<!-- ==================== GITHUB STREAK ==================== -->
-<div align="center">
-
-### 🔥 Current Streak
-
-<img src="https://streak-stats.demolab.com?user=ThanhMiLa&theme=tokyonight&hide_border=true&background=0D1117&ring=00FF99&fire=00FF99&currStreakLabel=00FF99&sideLabels=00FF99&dates=C9D1D9" alt="GitHub Streak" />
-
-</div>
 
 ---
 
