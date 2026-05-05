@@ -1,6 +1,3 @@
-<!-- Header Wave -->
-<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:0D1117,50:00FF99,100:00D4AA&height=36&section=header&animation=fadeIn" />
-
 <!-- Typing Animation with Decorative Frame -->
 <div align="center">
 
@@ -139,6 +136,3 @@
 <div align="center">
   <img src="https://komarev.com/ghpvc/?username=ThanhMiLa&style=for-the-badge&color=00FF99&label=PROFILE+VIEWS" alt="Profile Views" />
 </div>
-
-<!-- Footer Wave -->
-<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:0D1117,50:00FF99,100:00D4AA&height=120&section=footer" />
