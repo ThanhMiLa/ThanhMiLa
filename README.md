@@ -6,8 +6,8 @@
 
   <!-- Glowing border wrapper -->
   <a href="https://git.io/typing-svg">
-    <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=700&size=35&duration=1800&pause=500&color=00FF99&center=true&vCenter=true&repeat=true&width=900&height=49&lines=%F0%9F%91%8B+Hi%2C+I'm+ThanhMiLa;Backend+Developer+%26+System+Architect+%F0%9F%8F%97%EF%B8%8F;Turning+Complex+Logic+into+Clean+Code+%E2%9C%A8" alt="Typing SVG" />
-  </a>
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=700&size=35&duration=1800&pause=500&color=00FF99&center=true&vCenter=true&repeat=true&width=900&height=49&lines=%F0%9F%91%8B+Hi%2C+I'm+ThanhMiLa;Backend+Developer+%26+System+Architect+%F0%9F%8F%97%EF%B8%8F;ThanhMiLa+%7C+Coding+is+my+drug%2C+Backend+is+my+brain." alt="Typing SVG" />
+</a>
 
   <!-- Bottom decorative line -->
   <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
@@ -29,7 +29,7 @@ Hi there! I'm **Võ Ngọc Thanh** (aka **ThanhMiLa**). I'm a 21-year-old backen
 - 🎓 **Education:** 3rd-year IT student at **FPT University** (GPA: **3.5/4.0** | Honored with a *30% Scholarship*).
 - ⚙️ **Focus:** Dedicated to **Backend Development** and designing scalable **System Architectures**.
 - ☕ **Core Stack:** Passionate about building robust, high-performance APIs using **Java & Spring Boot**.
-- 🌱 **Mindset:** Constantly learning and striving to turn complex logic into clean, maintainable code.
+- 🌱 **Mindset:** Live by the code, die by the code. Programming is my drug. Code is my addiction. I live in the syntax, I breathe in the logic.
 
 ---
 
