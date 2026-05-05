@@ -1,8 +1,23 @@
 <!-- Typing Animation with Decorative Frame -->
 <div align="center">
 
-  <!-- Top decorative line -->
-  <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
+  <!-- ==================== MAIN WRAPPER FRAME ==================== -->
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+
+<!-- Top Border -->
+<tr>
+  <td colspan="3" align="center">
+    <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
+  </td>
+</tr>
+
+<!-- Content Area with Side Borders -->
+<tr>
+  <!-- Left Border -->
+  <td width="2%" background="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" style="background-repeat: repeat-y; background-size: cover;"></td>
+
+  <!-- Main Content -->
+  <td width="96%" valign="top">
 
   <br><br>
 
@@ -10,12 +25,6 @@
   <a href="https://git.io/typing-svg">
     <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=700&size=35&duration=3000&pause=500&color=00FF99&center=true&vCenter=true&repeat=true&width=900&height=49&lines=%F0%9F%91%8B+Hi%2C+I'm+ThanhMiLa;Backend+Developer+%E2%80%A2+Java+Spring+Boot" alt="Typing SVG" />
   </a>
-
-
-  <!-- Bottom decorative line -->
-  <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
-
-</div>
 
 <br>
 
@@ -131,6 +140,22 @@
 ---
 
 <!-- ==================== PROFILE VIEWS ==================== -->
-<div align="center">
-  <img src="https://komarev.com/ghpvc/?username=ThanhMiLa&style=for-the-badge&color=00FF99&label=PROFILE+VIEWS" alt="Profile Views" />
+    <div align="center">
+      <img src="https://komarev.com/ghpvc/?username=ThanhMiLa&style=for-the-badge&color=00FF99&label=PROFILE+VIEWS" alt="Profile Views" />
+    </div>
+    <br>
+  </td>
+
+  <!-- Right Border -->
+  <td width="2%" background="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" style="background-repeat: repeat-y; background-size: cover;"></td>
+</tr>
+
+<!-- Bottom Border -->
+<tr>
+  <td colspan="3" align="center">
+    <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
+  </td>
+</tr>
+
+</table>
 </div>
