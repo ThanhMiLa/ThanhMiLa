@@ -4,17 +4,13 @@
   <!-- Top decorative line -->
   <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
 
-  <br><br>
-
   <!-- Glowing border wrapper -->
   <a href="https://git.io/typing-svg">
     <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=700&size=35&duration=3000&pause=500&color=00FF99&center=true&vCenter=true&repeat=true&width=900&height=49&lines=%F0%9F%91%8B+Hi%2C+I'm+ThanhMiLa;Backend+Developer+%E2%80%A2+Java+Spring+Boot" alt="Typing SVG" />
   </a>
 
-
   <!-- Bottom decorative line -->
   <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
-
 </div>
 
 <br>
