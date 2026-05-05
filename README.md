@@ -4,9 +4,6 @@
     <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=35&pause=1000&color=00FF99&center=true&vCenter=true&width=800&lines=ThanhMiLa;Software+Engineering;Backend+Developer;Java+%2B+Spring+Boot+Specialist" alt="Typing SVG" />
   </a>
 </div>
-
-<h3 align="center">Building robust backend systems & solving complex problems ☕</h3>
-
 <br>
 
 ### 👨‍🚀 About Me
@@ -14,10 +11,6 @@
 - 🌍 Based in **Vietnam**.
 - 🎓 3rd-year IT student at **FPT University** (Honored with a 30% full scholarship).
 - 💻 Specializing in Backend Development, system architecture, and database management.
-- 🏆 Passionate about competitive programming and proud to have competed at the **ICPC Vietnam National**.
-- 🚀 Currently architecting and building side projects like **NomNomAtlas** and **JobPortal**.
-- 🎵 When I'm not writing Java code or exploring `import antigravity` in Python, you can find me producing rap tracks (VNT), studying Japanese, analyzing crypto markets, or hitting deadlift PRs!
-
 ---
 
 ### 🛠 Tech Stack & Tools
@@ -72,5 +65,5 @@
 
 <div align="center">
   <!-- Professional LeetCode Card -->
-  <img src="https://leetcard.jacoblin.cool/ThanhMiLa?theme=dark&font=Fira%20Code&ext=activity" alt="LeetCode Stats" />
+  <img src="https://leetcard.jacoblin.cool/Thanh_MiLa?theme=dark&font=Fira%20Code&ext=activity" alt="LeetCode Stats" />
 </div>
