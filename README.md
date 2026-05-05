@@ -65,7 +65,7 @@ Hi there! I'm **Võ Ngọc Thanh** (aka **ThanhMiLa**). I'm a 21-year-old backen
   </tr>
   <tr>
     <td align="center">🔥 <b>2026</b></td>
-    <td align="center"><code>69&nbsp;contributions</code></td>
+    <td align="center"><code>100&nbsp;contributions</code></td>
     <td align="center">🟢 Active</td>
   </tr>
   <tr>
