@@ -130,7 +130,7 @@ Hi there! I'm **Võ Ngọc Thanh** (aka **ThanhMiLa**). I'm a 21-year-old backen
 
 ### 🧠 LeetCode Stats
 
-<img src="https://leetcode-stats.vercel.app/api?username=Thanh_MiLa&theme=tokyonight" alt="LeetCode Stats" />
+<img src="https://leetcode-stats.vercel.app/api?username=Thanh_MiLa&theme=Dark" alt="LeetCode Stats" />
 
 </div>
 
