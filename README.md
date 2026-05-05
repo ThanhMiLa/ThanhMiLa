@@ -1,5 +1,5 @@
 <!-- Header Wave -->
-<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:0D1117,50:00FF99,100:00D4AA&height=120&section=header&animation=fadeIn" />
+<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:0D1117,50:00FF99,100:00D4AA&height=36&section=header&animation=fadeIn" />
 
 <!-- Typing Animation with Decorative Frame -->
 <div align="center">
@@ -11,7 +11,7 @@
 
   <!-- Glowing border wrapper -->
   <a href="https://git.io/typing-svg">
-    <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=700&size=35&duration=3000&pause=500&color=00FF99&center=true&vCenter=true&repeat=true&width=900&height=70&lines=%F0%9F%91%8B+Hi%2C+I'm+ThanhMiLa;Backend+Developer+%E2%80%A2+Java+Spring+Boot" alt="Typing SVG" />
+    <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=700&size=35&duration=3000&pause=500&color=00FF99&center=true&vCenter=true&repeat=true&width=900&height=49&lines=%F0%9F%91%8B+Hi%2C+I'm+ThanhMiLa;Backend+Developer+%E2%80%A2+Java+Spring+Boot" alt="Typing SVG" />
   </a>
 
 
