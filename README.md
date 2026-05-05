@@ -29,7 +29,7 @@ Hi there! I'm **Võ Ngọc Thanh** (aka **ThanhMiLa**). I'm a 21-year-old backen
 - 🎓 **Education:** 3rd-year IT student at **FPT University** (GPA: **3.5/4.0** | Honored with a *30% Scholarship*).
 - ⚙️ **Focus:** Dedicated to **Backend Development** and designing scalable **System Architectures**.
 - ☕ **Core Stack:** Passionate about building robust, high-performance APIs using **Java & Spring Boot**.
-- 🌱 **Mindset:** Live by the code, die by the code. Programming is my drug. Code is my addiction. I live in the syntax, I breathe in the logic.
+- 🧠 **Mindset:** "Transforming the most complex problems into the simplest logic."
 
 ---
 
