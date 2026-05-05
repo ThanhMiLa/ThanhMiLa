@@ -11,7 +11,7 @@
 
   <!-- Glowing border wrapper -->
   <a href="https://git.io/typing-svg">
-    <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=700&size=35&pause=1000&color=00FF99&center=true&vCenter=true&width=900&height=70&lines=%F0%9F%91%8B+Hi%2C+I'm+Thanh+MiLa;%E2%9A%A1+Backend+Developer;%F0%9F%94%A5+Java+%2B+Spring+Boot+Specialist;%F0%9F%8E%93+FPT+University+Student" alt="Typing SVG" />
+    <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=700&size=35&duration=3000&pause=500&color=00FF99&center=true&vCenter=true&repeat=true&width=900&height=70&lines=%F0%9F%91%8B+Hi%2C+I'm+ThanhMiLa;Backend+Developer+%E2%80%A2+Java+Spring+Boot" alt="Typing SVG" />
   </a>
 
 
@@ -58,11 +58,12 @@
 
 ---
 
-### 📊 GitHub Overview
+### 📊 Contributions
 
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=ThanhMiLa&show_icons=true&include_all_commits=true&count_private=true&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=00FF99&icon_color=00FF99&text_color=C9D1D9" width="100%" alt="GitHub Stats" />
-</p>
+| Year | Contributions |
+|:----:|:-------------:|
+| 🔥 **2026** | `69 contributions` |
+| 🏆 **2025** | `69 contributions` |
 
 </td>
 
@@ -112,13 +113,12 @@
 
 ---
 
-<!-- ==================== GITHUB STATS ROW ==================== -->
+<!-- ==================== GITHUB STREAK ==================== -->
 <div align="center">
 
-### 🔥 Streak & Languages
+### 🔥 Current Streak
 
-<img src="https://streak-stats.demolab.com?user=ThanhMiLa&theme=tokyonight&hide_border=true&background=0D1117&ring=00FF99&fire=00FF99&currStreakLabel=00FF99&sideLabels=00FF99&dates=C9D1D9" height="200" alt="GitHub Streak" />
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=ThanhMiLa&layout=compact&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=00FF99&text_color=C9D1D9" height="200" alt="Top Languages" />
+<img src="https://streak-stats.demolab.com?user=ThanhMiLa&theme=tokyonight&hide_border=true&background=0D1117&ring=00FF99&fire=00FF99&currStreakLabel=00FF99&sideLabels=00FF99&dates=C9D1D9" alt="GitHub Streak" />
 
 </div>
 
