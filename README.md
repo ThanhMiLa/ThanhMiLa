@@ -75,6 +75,13 @@ Hi there! I'm **Võ Ngọc Thanh** (aka **ThanhMiLa**). I'm a 21-year-old backen
   </tr>
 </table>
 
+### 📊 LeetCode
+<td width="50%" align="center" valign="top">
+      <h3 align="center">🧠 LeetCode Stats</h3>
+      <a href="https://leetcode.com/Thanh_MiLa">
+        <img src="https://leetcard.jacoblin.cool/Thanh_MiLa?theme=dark&font=Fira%20Code&border=0&radius=10" width="100%" alt="LeetCode Stats" />
+      </a>
+    </td>
 </td>
 
 <!-- ========== RIGHT COLUMN ========== -->
@@ -116,6 +123,15 @@ Hi there! I'm **Võ Ngọc Thanh** (aka **ThanhMiLa**). I'm a 21-year-old backen
   <img src="https://img.shields.io/badge/VS_Code-0078D4?style=for-the-badge&logo=visual%20studio%20code&logoColor=white" />
   <img src="https://img.shields.io/badge/Eclipse-2C2255?style=for-the-badge&logo=eclipse&logoColor=white" />
 </p>
+
+### 📊 Hackerrank
+<td width="50%" align="center" valign="top">
+      <h3 align="center">🧠 HackerRank Stats</h3>
+      <br>
+      <a href="https://www.hackerrank.com/vntvlogs">
+        <img src="https://hackerrank-stats.vercel.app/api?username=vntvlogs" width="85%" alt="HackerRank Stats" />
+      </a>
+    </td>
 
 </td>
 </tr>
