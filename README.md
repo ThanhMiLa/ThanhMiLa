@@ -128,13 +128,13 @@ Hi there! I'm **Võ Ngọc Thanh** (aka **ThanhMiLa**). I'm a 21-year-old backen
 <!-- ==================== CODING PLATFORMS STATS ==================== -->
 <table width="100%">
   <tr>
-    <td valign="top" align="center" width="50%">
+    <td width="50%" align="center" valign="top">
       <h3 align="center">🧠 LeetCode Stats</h3>
       <a href="https://leetcode.com/Thanh_MiLa">
         <img src="https://leetcard.jacoblin.cool/Thanh_MiLa?theme=dark&font=Fira%20Code&border=0&radius=10" width="100%" alt="LeetCode Stats" />
       </a>
     </td>
-    <td valign="top" align="center" width="50%">
+    <td width="50%" align="center" valign="top">
       <h3 align="center">🧠 HackerRank Stats</h3>
       <br>
       <a href="https://www.hackerrank.com/vntvlogs">
