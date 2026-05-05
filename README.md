@@ -56,14 +56,21 @@
 
 ### 📊 Contributions
 
-<table width="100%">
+<table width="100%" align="center">
   <tr>
-    <td align="center" width="40%">🔥 <b>2026</b></td>
-    <td align="center" width="60%"><code>69 contributions</code></td>
+    <th align="center">Year</th>
+    <th align="center">Contributions</th>
+    <th align="center">Status</th>
+  </tr>
+  <tr>
+    <td align="center">🔥 <b>2026</b></td>
+    <td align="center"><code>69&nbsp;contributions</code></td>
+    <td align="center">🟢 Active</td>
   </tr>
   <tr>
     <td align="center">🏆 <b>2025</b></td>
-    <td align="center"><code>69 contributions</code></td>
+    <td align="center"><code>69&nbsp;contributions</code></td>
+    <td align="center">✅ Done</td>
   </tr>
 </table>
 
