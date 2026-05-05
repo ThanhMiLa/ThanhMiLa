@@ -36,32 +36,23 @@
 
 ### 📬 Connect With Me
 
-<table width="100%" border="0" cellspacing="0" cellpadding="0">
-  <tr>
-    <td align="right" width="50%">
-      <a href="https://www.facebook.com/thanhh.mila" target="_blank">
-        <img src="https://img.shields.io/badge/Facebook%C2%A0-1877F2?style=for-the-badge&logo=facebook&logoColor=white" alt="Facebook" />
-      </a>
-    </td>
-    <td align="left" width="50%">
-      <a href="https://www.instagram.com/_thanh_mila_/" target="_blank">
-        <img src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white" alt="Instagram" />
-      </a>
-    </td>
-  </tr>
-  <tr>
-    <td align="right" width="50%">
-      <a href="mailto:vntvlogs@gmail.com">
-        <img src="https://img.shields.io/badge/%C2%A0%C2%A0Gmail%C2%A0%C2%A0-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Gmail" />
-      </a>
-    </td>
-    <td align="left" width="50%">
-      <a href="https://discord.com/invite/y45SYfwb" target="_blank">
-        <img src="https://img.shields.io/badge/%C2%A0Discord%C2%A0-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Discord" />
-      </a>
-    </td>
-  </tr>
-</table>
+<p align="center">
+  <a href="https://www.facebook.com/thanhh.mila" target="_blank">
+    <img src="https://img.shields.io/badge/%C2%A0%C2%A0FACEBOOK%C2%A0%C2%A0-1877F2?style=for-the-badge&logo=facebook&logoColor=white" alt="Facebook" />
+  </a>
+  &nbsp;
+  <a href="https://www.instagram.com/_thanh_mila_/" target="_blank">
+    <img src="https://img.shields.io/badge/INSTAGRAM-E4405F?style=for-the-badge&logo=instagram&logoColor=white" alt="Instagram" />
+  </a>
+  <br><br>
+  <a href="mailto:vntvlogs@gmail.com">
+    <img src="https://img.shields.io/badge/%C2%A0%C2%A0%C2%A0%C2%A0GMAIL%C2%A0%C2%A0%C2%A0%C2%A0-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Gmail" />
+  </a>
+  &nbsp;
+  <a href="https://discord.com/invite/y45SYfwb" target="_blank">
+    <img src="https://img.shields.io/badge/%C2%A0%C2%A0%C2%A0DISCORD%C2%A0%C2%A0%C2%A0-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Discord" />
+  </a>
+</p>
 
 ---
 
