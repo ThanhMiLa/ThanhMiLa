@@ -154,8 +154,6 @@ Hi there! I'm **Võ Ngọc Thanh** (aka **ThanhMiLa**). I'm a 21-year-old backen
   </tr>
 </table>
 
-<br>
-
 ### 🧠 HackerRank Stats
 <p align="center">
   <a href="https://www.hackerrank.com/vntvlogs">
