@@ -1,15 +1,15 @@
 <!-- Typing Animation with Decorative Frame -->
 <div align="center">
-  <!-- Top decorative line -->
-  <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
+  <!-- Top decorative green LED line -->
+  <img src="./assets/green-neon-line.svg" width="100%">
 
   <!-- Glowing border wrapper -->
   <a href="https://git.io/typing-svg">
     <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=700&size=35&duration=1800&pause=500&color=00FF99&center=true&vCenter=true&repeat=true&width=900&height=49&lines=%F0%9F%91%8B+Hi%2C+I'm+ThanhMiLa;Backend+Developer+%26+System+Architect+%F0%9F%8F%97%EF%B8%8F;Coding+is+my+drug%2C+Backend+is+my+brain." alt="Typing SVG" />
   </a>
 
-  <!-- Bottom decorative line -->
-  <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
+  <!-- Bottom decorative green LED line -->
+  <img src="./assets/green-neon-line.svg" width="100%">
 </div>
 
 <br>
@@ -29,7 +29,7 @@ Hi there! I'm **Võ Ngọc Thanh** (aka **ThanhMiLa**). I'm a 21-year-old backen
 - ☕ **Core Stack:** Passionate about building robust, high-performance APIs using **Java & Spring Boot**.
 - 🧠 **Mindset:** "Transforming the most complex problems into the simplest logic."
 
----
+<img src="./assets/green-neon-line.svg" width="100%">
 
 ### 📬 Connect With Me
 <p align="center">
@@ -50,7 +50,7 @@ Hi there! I'm **Võ Ngọc Thanh** (aka **ThanhMiLa**). I'm a 21-year-old backen
   </a>
 </p>
 
----
+<img src="./assets/green-neon-line.svg" width="100%">
 
 ### 🧠 LeetCode Stats
 <p align="center">
@@ -59,7 +59,7 @@ Hi there! I'm **Võ Ngọc Thanh** (aka **ThanhMiLa**). I'm a 21-year-old backen
   </a>
 </p>
 
----
+<img src="./assets/green-neon-line.svg" width="100%">
 
 ### 🧠 HackerRank Stats
 <p align="center">
@@ -165,7 +165,7 @@ Hi there! I'm **Võ Ngọc Thanh** (aka **ThanhMiLa**). I'm a 21-year-old backen
 
 </p>
 
-<hr>
+<img src="./assets/green-neon-line.svg" width="100%">
 
 ### 📊 Contributions
 <table width="100%" align="center">
@@ -189,3 +189,8 @@ Hi there! I'm **Võ Ngọc Thanh** (aka **ThanhMiLa**). I'm a 21-year-old backen
 </td>
 </tr>
 </table>
+
+<br>
+<div align="center">
+  <img src="./assets/green-neon-line.svg" width="100%">
+</div>
