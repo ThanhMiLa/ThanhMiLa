@@ -59,6 +59,15 @@ Hi there! I'm **Võ Ngọc Thanh** (aka **ThanhMiLa**). I'm a 21-year-old backen
   </a>
 </p>
 
+---
+
+### 🧠 HackerRank Stats
+<p align="center">
+  <a href="https://www.hackerrank.com/vntvlogs">
+    <img src="https://hackerrank-stats.vercel.app/api?username=vntvlogs" width="100%" alt="HackerRank Stats" />
+  </a>
+</p>
+
 </td>
 
 <!-- ========== RIGHT COLUMN (Tech Stack, Contributions, HackerRank) ========== -->
@@ -136,7 +145,9 @@ Hi there! I'm **Võ Ngọc Thanh** (aka **ThanhMiLa**). I'm a 21-year-old backen
 
   <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" />
 
-  <img src="https://img.shields.io/badge/Git%2FGitHub-181717?style=for-the-badge&logo=github&logoColor=white" />
+  <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white" />
+
+  <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" />
 
 </p>
 
@@ -174,13 +185,6 @@ Hi there! I'm **Võ Ngọc Thanh** (aka **ThanhMiLa**). I'm a 21-year-old backen
     <td align="center">✅ Done</td>
   </tr>
 </table>
-
-### 🧠 HackerRank Stats
-<p align="center">
-  <a href="https://www.hackerrank.com/vntvlogs">
-    <img src="https://hackerrank-stats.vercel.app/api?username=vntvlogs" width="50%" alt="HackerRank Stats" />
-  </a>
-</p>
 
 </td>
 </tr>
