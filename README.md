@@ -48,6 +48,10 @@ Hi there! I'm **Võ Ngọc Thanh** (aka **ThanhMiLa**). I'm a 21-year-old backen
   <a href="https://discord.com/invite/y45SYfwb" target="_blank">
     <img src="https://img.shields.io/badge/%C2%A0%C2%A0%C2%A0DISCORD%C2%A0%C2%A0%C2%A0-5865F2?style=for-the-badge&logo=discord&logoColor=white" />
   </a>
+  &nbsp;
+  <a href="https://www.linkedin.com/in/v%C3%B5-ng%E1%BB%8Dc-thanh-761067324/" target="_blank">
+    <img src="https://img.shields.io/badge/%C2%A0%C2%A0LINKEDIN%C2%A0%C2%A0-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" />
+  </a>
 </p>
 
 <img src="./assets/green-neon-line.svg" width="100%">
