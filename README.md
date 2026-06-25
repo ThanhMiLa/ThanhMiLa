@@ -1,32 +1,10 @@
 <div align="center">
 
 <!-- ════════════════════════════════════════════════════════════ -->
-<!--        BANNER WITH ANIMATED SNAKE BORDER                   -->
-<!--        🐍 Two snakes run in opposite directions            -->
+<!--     BANNER WITH ANIMATED SNAKE BORDER (snake-border.svg)   -->
 <!-- ════════════════════════════════════════════════════════════ -->
-<table cellspacing="0" cellpadding="0" border="0" width="100%">
-  <tr>
-    <td colspan="3" align="center">
-      <img src="./assets/snake-top.svg" width="100%" height="12" alt="">
-    </td>
-  </tr>
-  <tr>
-    <td width="12" valign="middle">
-      <img src="./assets/snake-left.svg" width="12" height="320" alt="">
-    </td>
-    <td align="center" valign="middle">
-      <img src="./assets/banner.png" width="100%" alt="ThanhMiLa Backend Banner">
-    </td>
-    <td width="12" valign="middle">
-      <img src="./assets/snake-right.svg" width="12" height="320" alt="">
-    </td>
-  </tr>
-  <tr>
-    <td colspan="3" align="center">
-      <img src="./assets/snake-bottom.svg" width="100%" height="12" alt="">
-    </td>
-  </tr>
-</table>
+<img src="./assets/banner.png" width="100%" alt="ThanhMiLa Backend Banner">
+<img src="./assets/snake-border.svg" width="100%" alt="🐍 animated snake border">
 
 <br/>
 
