@@ -196,6 +196,24 @@ Hi there! I'm **Võ Ngọc Thanh** (aka **ThanhMiLa**). I'm a 21-year-old backen
 </tr>
 </table>
 
+<img src="./assets/green-neon-line.svg" width="100%">
+
+### 📊 GitHub Statistics
+
+<p align="center">
+  <img
+    src="https://github-readme-stats.vercel.app/api?username=ThanhMiLa&show_icons=true&theme=tokyonight&hide_border=true"
+    width="100%"
+  />
+</p>
+
+<p align="center">
+  <img
+    src="https://github-readme-stats.vercel.app/api/top-langs/?username=ThanhMiLa&layout=compact&theme=tokyonight&hide_border=true"
+    width="100%"
+  />
+</p>
+
 <br>
 <div align="center">
   <img src="./assets/green-neon-line.svg" width="100%">
