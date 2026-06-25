@@ -51,15 +51,6 @@
 
 ---
 
-## 🧩 Coding Profiles
-
-- 🧠 LeetCode:  
-  https://leetcode.com/Thanh_MiLa  
-
-- 🧩 HackerRank:  
-  https://www.hackerrank.com/vntvlogs  
-
----
 
 </td>
 
@@ -107,13 +98,26 @@
 
 ---
 
-## 🚀 System Focus
+## 🧠 LeetCode Stats
 
-- REST API Design
-- JWT Authentication & Security
-- Database Optimization
-- Redis Caching Strategy
-- Scalable Backend Architecture
+<p align="center">
+  <img 
+    src="https://leetcard.jacoblin.cool/Thanh_MiLa?theme=dark&font=Fira%20Code&ext=heatmap"
+    width="100%"
+  />
+</p>
+
+---
+
+### 📊 Problem Breakdown
+
+<p align="center">
+
+<img src="https://img.shields.io/badge/Easy-🟢_Solved_XX-00C853?style=for-the-badge" />
+<img src="https://img.shields.io/badge/Medium-🟡_Solved_XX-FFB300?style=for-the-badge" />
+<img src="https://img.shields.io/badge/Hard-🔴_Solved_XX-E53935?style=for-the-badge" />
+
+</p>
 
 ---
 
