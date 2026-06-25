@@ -9,23 +9,6 @@
 
 </div>
 
-<!-- ════════════════════════════════════════════════════════════ -->
-<!--   CONTENT SECTION WITH ANIMATED SNAKE BORDER FRAME          -->
-<!-- ════════════════════════════════════════════════════════════ -->
-
-<!-- TOP BORDER -->
-<img src="./assets/content-border-top.svg" width="100%" alt="Snake Border Top"/>
-
-<table width="100%" cellspacing="0" cellpadding="0">
-<tr>
-
-<!-- LEFT BORDER -->
-<td width="16" valign="top">
-<img src="./assets/content-border-left.svg" width="16" alt="Snake Border Left"/>
-</td>
-
-<!-- ================= MAIN CONTENT ================= -->
-<td valign="top">
 <table width="100%">
 <tr>
 
@@ -123,16 +106,5 @@
 </td>
 </tr>
 </table>
-</td>
 
-<!-- RIGHT BORDER -->
-<td width="16" valign="top">
-<img src="./assets/content-border-right.svg" width="16" alt="Snake Border Right"/>
-</td>
-
-</tr>
-</table>
-
-<!-- BOTTOM BORDER -->
-<img src="./assets/content-border-bottom.svg" width="100%" alt="Snake Border Bottom"/>
-
+---
