@@ -19,14 +19,13 @@
 <!-- ================= LEFT COLUMN ================= -->
 <td width="50%" valign="top">
 
-## 🧠 About Me
+## 📌 Quick Overview
 
-- 🎓 3rd-year IT student (FPT University Da Nang)
-- 🏆 GPA: 3.75 / 4.0 | Scholarship: 30%
-- ⚙️ Focus: Backend Engineering
-- ☕ Java / Spring Boot ecosystem
-- 🧩 Interested in System Design & Scalability
-- 🚀 Goal: Build production-grade backend systems
+- 🎓 **Identity:** 3rd-year IT Student | FPT University Da Nang
+- 🎖️ **Milestones:** 3.75/4.0 GPA • 30% Merit Scholarship
+- 💻 **Tech Stack Focus:** Java / Spring Boot Ecosystem
+- 🧠 **Areas of Interest:** System Design, High Availability & Scalability
+- 🚀 **Mission:** Building clean, maintainable, and production-grade backend architectures
 
 ---
 
