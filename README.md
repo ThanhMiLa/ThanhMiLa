@@ -38,12 +38,14 @@
 
 ---
 
-## 🍩 Language Distribution
+<img src="./assets/green-neon-line.svg" width="100%">
+
+### 📈 Most Used Languages
 
 <p align="center">
-  <img 
-    src="https://github-readme-stats.vercel.app/api/top-langs/?username=ThanhMiLa&layout=donut&theme=tokyonight&hide_border=true"
-    height="260"
+  <img
+    src="https://github-readme-stats.vercel.app/api/top-langs/?username=ThanhMiLa&layout=compact&theme=tokyonight&hide_border=true"
+    width="100%"
   />
 </p>
 
