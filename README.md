@@ -3,9 +3,9 @@
 <img src="./assets/green-neon-line.svg" width="100%">
 
 # ⚙️ ThanhMiLa
-### Senior Backend Engineer (Aspiring) | System Design | Distributed Systems
+### Backend Engineer | System Design | Java Spring Boot Developer
 
-<img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=700&size=28&duration=1800&pause=500&color=00FF99&center=true&vCenter=true&width=900&lines=Java+%7C+Spring+Boot+%7C+Microservices;System+Design+%7C+Scalable+Architecture;Clean+Code+%7C+High+Performance+Backend" />
+<img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=700&size=28&duration=1800&pause=500&color=00FF99&center=true&vCenter=true&width=900&lines=Java+%7C+Spring+Boot+%7C+Backend+Engineering;System+Design+%7C+Scalable+Architecture;Clean+Code+%7C+High+Performance+Systems" />
 
 <img src="./assets/green-neon-line.svg" width="100%">
 
@@ -13,117 +13,76 @@
 
 ---
 
-## 🧠 Engineering Profile
+## 🧠 About Me
 
-- 🏢 Backend-focused Software Engineer (Java ecosystem)
-- 🧩 System Design enthusiast (scalability, latency, reliability)
-- ⚙️ Building distributed backend systems with Spring Boot
-- 🗄 Strong focus on database design & performance optimization
-- ☁️ Learning DevOps practices (Docker, CI/CD, deployment pipelines)
-
----
-
-## 🏗️ Core Engineering Skills
-
-### 🧱 Backend Architecture
-- RESTful API design (Clean Architecture, Layered Architecture)
-- Microservices fundamentals
-- Authentication & Authorization (JWT, Security filters)
-- Caching strategies (Redis)
-- API performance optimization
-
-### 🗄 Databases
-- Relational schema design (MySQL / PostgreSQL)
-- Query optimization & indexing strategies
-- Transaction handling & consistency models
-
-### ⚙️ System Concepts
-- Scalability patterns
-- Load balancing (conceptual)
-- Stateless service design
-- Concurrency basics in backend systems
+- 🎓 3rd-year IT student at FPT University Da Nang  
+- 🏆 GPA: 3.5 / 4.0 | Scholarship: 30%  
+- ⚙️ Focus: Backend Engineering & System Design  
+- ☕ Passion: Java, Spring Boot, scalable backend systems  
+- 🧩 Interest: Microservices, caching, performance optimization  
 
 ---
 
-## 📊 GitHub Analytics
+## 📊 GitHub Stats
 
 <p align="center">
 
 <img src="https://github-readme-stats.vercel.app/api?username=ThanhMiLa&show_icons=true&theme=tokyonight&hide_border=true" height="180"/>
 
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=ThanhMiLa&layout=donut&theme=tokyonight&hide_border=true" height="180"/>
-
 </p>
 
 ---
 
-## 📈 Engineering Activity
-
-<p align="center">
-<img src="https://github-readme-activity-graph.vercel.app/graph?username=ThanhMiLa&theme=tokyo-night&hide_border=true" />
-</p>
-
----
-
-## 🛠 Tech Stack (Production-Oriented)
+## 🛠 Tech Stack
 
 ### 💻 Languages
-- Java (Primary backend language)
-- Python (automation / scripting)
-- JavaScript (frontend + tooling)
-- C/C++ (DSA foundation)
+<p>
+  <img src="https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white" />
+  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" />
+  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" />
+  <img src="https://img.shields.io/badge/C%2B%2B-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white" />
+  <img src="https://img.shields.io/badge/C-00599C?style=for-the-badge&logo=c&logoColor=white" />
+</p>
 
 ### ⚙️ Backend
-- Spring Boot
-- Spring Security
-- REST APIs
-- JWT Authentication
+<p>
+  <img src="https://img.shields.io/badge/Spring_Boot-6DB33F?style=for-the-badge&logo=spring-boot&logoColor=white" />
+  <img src="https://img.shields.io/badge/REST_API-000000?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Microservices-FF6F00?style=for-the-badge" />
+</p>
 
-### 🗄 Data Layer
-- MySQL
-- PostgreSQL
-- Redis (Caching layer)
+### 🗄 Database
+<p>
+  <img src="https://img.shields.io/badge/MySQL-005C84?style=for-the-badge&logo=mysql&logoColor=white" />
+  <img src="https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white" />
+  <img src="https://img.shields.io/badge/Redis-DC382D?style=for-the-badge&logo=redis&logoColor=white" />
+</p>
 
 ### ☁️ DevOps & Tools
-- Docker (containerization)
-- Git / GitHub
-- Linux basics
-- IntelliJ IDEA / VS Code
-
----
-
-## 🚀 System Design Focus Areas
-
-- API Gateway patterns (conceptual)
-- Monolithic vs Microservices trade-offs
-- Caching layers (Redis strategy)
-- Database scaling strategies
-- Backend performance tuning
-
----
-
-## 📌 Featured Development Areas
-
-- Backend REST API systems
-- Authentication systems (JWT-based)
-- E-commerce backend (Shopee-like system concept)
-- Task management / workflow systems
-- Database-heavy backend applications
-
----
-
-## 🧠 Coding Profiles
-
-- 🧩 LeetCode: https://leetcode.com/Thanh_MiLa  
-- 🧠 HackerRank: https://www.hackerrank.com/vntvlogs  
-
----
-
-## 📊 Language Distribution
-
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=ThanhMiLa&layout=donut&theme=tokyonight&hide_border=true" height="300"/>
+<p>
+  <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" />
+  <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white" />
+  <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" />
+  <img src="https://img.shields.io/badge/IntelliJ_IDEA-000000?style=for-the-badge&logo=intellij-idea&logoColor=white" />
+  <img src="https://img.shields.io/badge/VS_Code-0078D4?style=for-the-badge&logo=visual%20studio%20code&logoColor=white" />
 </p>
+
+---
+
+## 🚀 System Focus
+
+- API Design (RESTful services)
+- Authentication & Security (JWT)
+- Database Optimization
+- Caching Strategy (Redis)
+- Scalable Backend Architecture
+
+---
+
+## 🧩 Coding Profiles
+
+- 🧠 LeetCode: https://leetcode.com/Thanh_MiLa  
+- 🧩 HackerRank: https://www.hackerrank.com/vntvlogs  
 
 ---
 
@@ -131,6 +90,6 @@
 
 <img src="./assets/green-neon-line.svg" width="100%">
 
-### ⚡ “Engineering scalable systems, not just writing code.”
+### ⚡ “Build systems that scale, not just code that runs.”
 
 </div>
