@@ -1,0 +1,89 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 16 600"
+  width="16"
+  height="600"
+  preserveAspectRatio="xMidYMid meet"
+>
+  <defs>
+    <filter id="ngr" x="-200%" y="-30%" width="500%" height="160%">
+      <feGaussianBlur stdDeviation="3" result="b1"/>
+      <feGaussianBlur stdDeviation="7" result="b2"/>
+      <feMerge>
+        <feMergeNode in="b2"/>
+        <feMergeNode in="b1"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="npr" x="-200%" y="-30%" width="500%" height="160%">
+      <feGaussianBlur stdDeviation="3" result="b1"/>
+      <feGaussianBlur stdDeviation="7" result="b2"/>
+      <feMerge>
+        <feMergeNode in="b2"/>
+        <feMergeNode in="b1"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Dark background bar -->
+  <rect width="16" height="600" fill="#0d1117"/>
+
+  <!-- Snake 1 — Cyan → Purple, bottom to top (opposite side) -->
+  <line x1="8" y1="600" x2="8" y2="0"
+    stroke="#00DDFF" stroke-width="8" stroke-opacity="0.2"
+    stroke-dasharray="220 380" stroke-dashoffset="0"
+    filter="url(#ngr)">
+    <animate attributeName="stroke-dashoffset"
+      from="0" to="-600"
+      dur="4.5s" repeatCount="indefinite" calcMode="linear"/>
+  </line>
+  <line x1="8" y1="600" x2="8" y2="0"
+    stroke="#00DDFF" stroke-width="3.5" stroke-opacity="0.9"
+    stroke-linecap="round"
+    stroke-dasharray="220 380" stroke-dashoffset="0"
+    filter="url(#ngr)">
+    <animate attributeName="stroke-dashoffset"
+      from="0" to="-600"
+      dur="4.5s" repeatCount="indefinite" calcMode="linear"/>
+    <animate attributeName="stroke"
+      values="#00DDFF;#7B2FFF;#00FF88;#00DDFF"
+      dur="4.5s" repeatCount="indefinite"/>
+  </line>
+  <line x1="8" y1="600" x2="8" y2="0"
+    stroke="white" stroke-width="3"
+    stroke-dasharray="12 588" stroke-dashoffset="0" opacity="0.95">
+    <animate attributeName="stroke-dashoffset"
+      from="0" to="-600"
+      dur="4.5s" repeatCount="indefinite" calcMode="linear"/>
+  </line>
+
+  <!-- Snake 2 — Orange → Gold, top to bottom -->
+  <line x1="8" y1="0" x2="8" y2="600"
+    stroke="#FF8C00" stroke-width="8" stroke-opacity="0.2"
+    stroke-dasharray="160 440" stroke-dashoffset="-300"
+    filter="url(#npr)">
+    <animate attributeName="stroke-dashoffset"
+      from="-300" to="300"
+      dur="5.5s" repeatCount="indefinite" calcMode="linear"/>
+  </line>
+  <line x1="8" y1="0" x2="8" y2="600"
+    stroke="#FF8C00" stroke-width="3"
+    stroke-linecap="round"
+    stroke-dasharray="160 440" stroke-dashoffset="-300"
+    filter="url(#npr)">
+    <animate attributeName="stroke-dashoffset"
+      from="-300" to="300"
+      dur="5.5s" repeatCount="indefinite" calcMode="linear"/>
+    <animate attributeName="stroke"
+      values="#FF8C00;#FFD700;#FF2D8B;#FF8C00"
+      dur="5.5s" repeatCount="indefinite"/>
+  </line>
+  <line x1="8" y1="0" x2="8" y2="600"
+    stroke="#FFD700" stroke-width="2.5"
+    stroke-dasharray="10 590" stroke-dashoffset="-300" opacity="0.95">
+    <animate attributeName="stroke-dashoffset"
+      from="-300" to="300"
+      dur="5.5s" repeatCount="indefinite" calcMode="linear"/>
+  </line>
+</svg>
