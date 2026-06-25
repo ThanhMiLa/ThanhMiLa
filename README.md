@@ -72,7 +72,6 @@
 <p>
   <img src="https://img.shields.io/badge/Spring_Boot-6DB33F?style=for-the-badge&logo=spring-boot&logoColor=white" />
   <img src="https://img.shields.io/badge/REST_API-000000?style=for-the-badge" />
-  <img src="https://img.shields.io/badge/Microservices-FF6F00?style=for-the-badge" />
 </p>
 
 ---
@@ -81,6 +80,7 @@
 <p>
   <img src="https://img.shields.io/badge/MySQL-005C84?style=for-the-badge&logo=mysql&logoColor=white" />
   <img src="https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white" />
+  <img src="https://img.shields.io/badge/Microsoft%20SQL%20Server-CC292B?style=for-the-badge&logo=microsoft-sql-server&logoColor=white" />
   <img src="https://img.shields.io/badge/Redis-DC382D?style=for-the-badge&logo=redis&logoColor=white" />
 </p>
 
@@ -89,10 +89,11 @@
 ### ☁️ DevOps & Tools
 <p>
   <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" />
+  <img src="https://img.shields.io/badge/VPS-232F3E?style=for-the-badge&logo=linux&logoColor=white" />
+  <img src="https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white" />
+  <img src="https://img.shields.io/badge/Render-46E3B7?style=for-the-badge&logo=render&logoColor=white" />
   <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white" />
   <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" />
-  <img src="https://img.shields.io/badge/IntelliJ_IDEA-000000?style=for-the-badge&logo=intellij-idea&logoColor=white" />
-  <img src="https://img.shields.io/badge/VS_Code-0078D4?style=for-the-badge&logo=visual%20studio%20code&logoColor=white" />
 </p>
 
 ---
@@ -113,11 +114,3 @@
 </table>
 
 ---
-
-<div align="center">
-
-<img src="./assets/green-neon-line.svg" width="100%">
-
-### ⚡ “Build systems that scale, not just code that runs.”
-
-</div>
