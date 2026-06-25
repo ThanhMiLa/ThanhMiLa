@@ -1,16 +1,39 @@
 <div align="center">
 
-<!-- Banner chính xịn sò vừa thiết kế -->
-<img src="./assets/banner.png" width="100%" alt="ThanhMiLa Backend Banner">
+<!-- ════════════════════════════════════════════════════════════ -->
+<!--        BANNER WITH ANIMATED SNAKE BORDER                   -->
+<!--        🐍 Two snakes run in opposite directions            -->
+<!-- ════════════════════════════════════════════════════════════ -->
+<table cellspacing="0" cellpadding="0" border="0" width="100%">
+  <tr>
+    <td colspan="3" align="center">
+      <img src="./assets/snake-top.svg" width="100%" height="12" alt="">
+    </td>
+  </tr>
+  <tr>
+    <td width="12" valign="middle">
+      <img src="./assets/snake-left.svg" width="12" height="320" alt="">
+    </td>
+    <td align="center" valign="middle">
+      <img src="./assets/banner.png" width="100%" alt="ThanhMiLa Backend Banner">
+    </td>
+    <td width="12" valign="middle">
+      <img src="./assets/snake-right.svg" width="12" height="320" alt="">
+    </td>
+  </tr>
+  <tr>
+    <td colspan="3" align="center">
+      <img src="./assets/snake-bottom.svg" width="100%" height="12" alt="">
+    </td>
+  </tr>
+</table>
 
 <br/>
 
-<!-- Hiệu ứng chữ chạy động bổ trợ phía dưới banner -->
-<p align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=22&duration=2500&pause=500&color=00FF99&center=true&vCenter=true&width=900&height=40&lines=Backend+Engineer+%7C+Java+%7C+Spring+Boot;System+Design+%7C+Scalable+Architecture;Clean+Code+%7C+High+Performance+Systems" />
-</p>
-
 </div>
+
+<table width="100%">
+<tr>
 
 <!-- ================= LEFT COLUMN ================= -->
 <td width="50%" valign="top">
@@ -33,7 +56,6 @@
 
 ---
 
-<img src="./assets/green-neon-line.svg" width="100%">
 
 ### 📈 Most Used Languages
 

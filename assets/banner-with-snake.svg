@@ -1,0 +1,142 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  viewBox="0 0 900 360"
+  width="900"
+  height="360"
+  preserveAspectRatio="xMidYMid meet"
+>
+  <defs>
+    <!-- Neon green glow -->
+    <filter id="ng" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="5" result="b1"/>
+      <feGaussianBlur stdDeviation="10" result="b2"/>
+      <feMerge>
+        <feMergeNode in="b2"/>
+        <feMergeNode in="b1"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <!-- Neon pink glow -->
+    <filter id="np" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="5" result="b1"/>
+      <feGaussianBlur stdDeviation="10" result="b2"/>
+      <feMerge>
+        <feMergeNode in="b2"/>
+        <feMergeNode in="b1"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <!-- Clip path for banner image -->
+    <clipPath id="bannerClip">
+      <rect x="8" y="8" width="884" height="344" rx="10"/>
+    </clipPath>
+  </defs>
+
+  <!-- Dark outer background -->
+  <rect width="900" height="360" fill="#0d1117" rx="14"/>
+
+  <!-- Banner image inset -->
+  <image
+    href="./banner.png"
+    x="8" y="8"
+    width="884" height="344"
+    clip-path="url(#bannerClip)"
+    preserveAspectRatio="xMidYMid slice"
+  />
+
+  <!-- Dark edge overlay to make snake pop -->
+  <rect x="8" y="8" width="884" height="344" rx="10" fill="none"
+        stroke="#0d1117" stroke-width="10"/>
+
+  <!-- ════════════════════════════════════════
+       SNAKE 1 — Green → Cyan, clockwise
+       Perimeter ≈ 2*(884+344) = 2456 px (rounded rect ~2430)
+       Snake length = 320px
+       ════════════════════════════════════════ -->
+  <!-- Glow shadow -->
+  <rect x="8" y="8" width="884" height="344" rx="10" ry="10"
+    fill="none" stroke="#00FF88" stroke-width="8" stroke-opacity="0.2"
+    stroke-dasharray="320 2110" stroke-dashoffset="0"
+    filter="url(#ng)">
+    <animate attributeName="stroke-dashoffset"
+      from="0" to="-2430"
+      dur="4.5s" repeatCount="indefinite" calcMode="linear"/>
+  </rect>
+  <!-- Bright body -->
+  <rect x="8" y="8" width="884" height="344" rx="10" ry="10"
+    fill="none" stroke="#00FF88" stroke-width="3.5" stroke-opacity="0.9"
+    stroke-linecap="round"
+    stroke-dasharray="320 2110" stroke-dashoffset="0"
+    filter="url(#ng)">
+    <animate attributeName="stroke-dashoffset"
+      from="0" to="-2430"
+      dur="4.5s" repeatCount="indefinite" calcMode="linear"/>
+    <animate attributeName="stroke" 
+      values="#00FF88;#00FFDD;#00AAFF;#00FF88"
+      dur="4.5s" repeatCount="indefinite"/>
+  </rect>
+  <!-- White head dot -->
+  <rect x="8" y="8" width="884" height="344" rx="10" ry="10"
+    fill="none" stroke="white" stroke-width="3"
+    stroke-dasharray="16 2414" stroke-dashoffset="0" opacity="0.95">
+    <animate attributeName="stroke-dashoffset"
+      from="0" to="-2430"
+      dur="4.5s" repeatCount="indefinite" calcMode="linear"/>
+  </rect>
+
+  <!-- ════════════════════════════════════════
+       SNAKE 2 — Pink → Orange, counter-clockwise
+       Offset by half perimeter to be on opposite side
+       ════════════════════════════════════════ -->
+  <!-- Glow shadow -->
+  <rect x="8" y="8" width="884" height="344" rx="10" ry="10"
+    fill="none" stroke="#FF2D8B" stroke-width="8" stroke-opacity="0.2"
+    stroke-dasharray="240 2190" stroke-dashoffset="-1215"
+    filter="url(#np)">
+    <animate attributeName="stroke-dashoffset"
+      from="-1215" to="1215"
+      dur="5.5s" repeatCount="indefinite" calcMode="linear"/>
+  </rect>
+  <!-- Bright body -->
+  <rect x="8" y="8" width="884" height="344" rx="10" ry="10"
+    fill="none" stroke="#FF2D8B" stroke-width="3"
+    stroke-linecap="round"
+    stroke-dasharray="240 2190" stroke-dashoffset="-1215"
+    filter="url(#np)">
+    <animate attributeName="stroke-dashoffset"
+      from="-1215" to="1215"
+      dur="5.5s" repeatCount="indefinite" calcMode="linear"/>
+    <animate attributeName="stroke"
+      values="#FF2D8B;#FF8C00;#FFD700;#FF2D8B"
+      dur="5.5s" repeatCount="indefinite"/>
+  </rect>
+  <!-- Gold head dot -->
+  <rect x="8" y="8" width="884" height="344" rx="10" ry="10"
+    fill="none" stroke="#FFD700" stroke-width="2.5"
+    stroke-dasharray="14 2416" stroke-dashoffset="-1215" opacity="0.95">
+    <animate attributeName="stroke-dashoffset"
+      from="-1215" to="1215"
+      dur="5.5s" repeatCount="indefinite" calcMode="linear"/>
+  </rect>
+
+  <!-- ════════════════════════════════════════
+       CORNER SPARKLES
+       ════════════════════════════════════════ -->
+  <circle cx="18" cy="18" r="3.5" fill="#00FF88" opacity="0.9">
+    <animate attributeName="opacity" values="0.2;1;0.2" dur="2s" repeatCount="indefinite"/>
+    <animate attributeName="r" values="2;5;2" dur="2s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="882" cy="18" r="3.5" fill="#00DDFF" opacity="0.9">
+    <animate attributeName="opacity" values="1;0.2;1" dur="2.3s" repeatCount="indefinite"/>
+    <animate attributeName="r" values="2;5;2" dur="2.3s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="18" cy="342" r="3.5" fill="#FF2D8B" opacity="0.9">
+    <animate attributeName="opacity" values="0.4;1;0.4" dur="1.7s" repeatCount="indefinite"/>
+    <animate attributeName="r" values="2;5;2" dur="1.7s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="882" cy="342" r="3.5" fill="#FF8C00" opacity="0.9">
+    <animate attributeName="opacity" values="1;0.3;1" dur="2.8s" repeatCount="indefinite"/>
+    <animate attributeName="r" values="2;5;2" dur="2.8s" repeatCount="indefinite"/>
+  </circle>
+</svg>

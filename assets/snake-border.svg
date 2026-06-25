@@ -1,0 +1,199 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 860 340"
+  width="860"
+  height="340"
+  preserveAspectRatio="xMidYMid meet"
+>
+  <defs>
+    <!-- Glow filter for neon effect -->
+    <filter id="glow-green" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="4" result="blur1"/>
+      <feGaussianBlur stdDeviation="8" result="blur2"/>
+      <feMerge>
+        <feMergeNode in="blur2"/>
+        <feMergeNode in="blur1"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="glow-cyan" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="4" result="blur1"/>
+      <feGaussianBlur stdDeviation="8" result="blur2"/>
+      <feMerge>
+        <feMergeNode in="blur2"/>
+        <feMergeNode in="blur1"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Gradient for snake body color -->
+    <linearGradient id="snakeGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00FF88"/>
+      <stop offset="50%" style="stop-color:#00DDFF"/>
+      <stop offset="100%" style="stop-color:#7B2FFF"/>
+    </linearGradient>
+    <linearGradient id="snakeGrad2" x1="100%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" style="stop-color:#FF2D8B"/>
+      <stop offset="50%" style="stop-color:#FF8C00"/>
+      <stop offset="100%" style="stop-color:#FFFF00"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Dark background -->
+  <rect width="860" height="340" fill="#0d1117" rx="14"/>
+
+  <!-- Subtle inner dark frame -->
+  <rect x="5" y="5" width="850" height="330" fill="#0d1117" rx="10"/>
+
+  <!-- === SNAKE 1 (Green → Cyan → Purple) === -->
+  <!-- Border perimeter = 2*(850+330) = 2360. Snake length ~300px -->
+  <!-- Shadow/glow layer -->
+  <rect
+    x="5" y="5" width="850" height="330"
+    rx="10" ry="10"
+    fill="none"
+    stroke="#00FF88"
+    stroke-width="6"
+    stroke-opacity="0.25"
+    stroke-dasharray="280 2080"
+    stroke-dashoffset="0"
+    filter="url(#glow-green)"
+  >
+    <animate
+      attributeName="stroke-dashoffset"
+      from="0"
+      to="-2360"
+      dur="5s"
+      repeatCount="indefinite"
+      calcMode="linear"
+    />
+  </rect>
+  <!-- Main snake body -->
+  <rect
+    x="5" y="5" width="850" height="330"
+    rx="10" ry="10"
+    fill="none"
+    stroke="url(#snakeGrad1)"
+    stroke-width="3.5"
+    stroke-linecap="round"
+    stroke-dasharray="280 2080"
+    stroke-dashoffset="0"
+    filter="url(#glow-green)"
+  >
+    <animate
+      attributeName="stroke-dashoffset"
+      from="0"
+      to="-2360"
+      dur="5s"
+      repeatCount="indefinite"
+      calcMode="linear"
+    />
+  </rect>
+  <!-- Snake head highlight (bright dot) -->
+  <rect
+    x="5" y="5" width="850" height="330"
+    rx="10" ry="10"
+    fill="none"
+    stroke="white"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-dasharray="14 2346"
+    stroke-dashoffset="0"
+    opacity="0.9"
+  >
+    <animate
+      attributeName="stroke-dashoffset"
+      from="0"
+      to="-2360"
+      dur="5s"
+      repeatCount="indefinite"
+      calcMode="linear"
+    />
+  </rect>
+
+  <!-- === SNAKE 2 (Pink → Orange → Yellow) — runs opposite direction, offset start === -->
+  <!-- Shadow/glow layer -->
+  <rect
+    x="5" y="5" width="850" height="330"
+    rx="10" ry="10"
+    fill="none"
+    stroke="#FF2D8B"
+    stroke-width="6"
+    stroke-opacity="0.2"
+    stroke-dasharray="200 2160"
+    stroke-dashoffset="-1180"
+    filter="url(#glow-cyan)"
+  >
+    <animate
+      attributeName="stroke-dashoffset"
+      from="-1180"
+      to="1180"
+      dur="6s"
+      repeatCount="indefinite"
+      calcMode="linear"
+    />
+  </rect>
+  <!-- Main snake body -->
+  <rect
+    x="5" y="5" width="850" height="330"
+    rx="10" ry="10"
+    fill="none"
+    stroke="url(#snakeGrad2)"
+    stroke-width="3"
+    stroke-linecap="round"
+    stroke-dasharray="200 2160"
+    stroke-dashoffset="-1180"
+    filter="url(#glow-cyan)"
+  >
+    <animate
+      attributeName="stroke-dashoffset"
+      from="-1180"
+      to="1180"
+      dur="6s"
+      repeatCount="indefinite"
+      calcMode="linear"
+    />
+  </rect>
+  <!-- Snake head highlight -->
+  <rect
+    x="5" y="5" width="850" height="330"
+    rx="10" ry="10"
+    fill="none"
+    stroke="#FFD700"
+    stroke-width="2.5"
+    stroke-linecap="round"
+    stroke-dasharray="12 2348"
+    stroke-dashoffset="-1180"
+    opacity="0.95"
+  >
+    <animate
+      attributeName="stroke-dashoffset"
+      from="-1180"
+      to="1180"
+      dur="6s"
+      repeatCount="indefinite"
+      calcMode="linear"
+    />
+  </rect>
+
+  <!-- Corner sparkles - top-left -->
+  <circle cx="15" cy="15" r="3" fill="#00FF88" opacity="0.8">
+    <animate attributeName="opacity" values="0.3;1;0.3" dur="2s" repeatCount="indefinite"/>
+    <animate attributeName="r" values="2;4;2" dur="2s" repeatCount="indefinite"/>
+  </circle>
+  <!-- Corner sparkles - top-right -->
+  <circle cx="845" cy="15" r="3" fill="#00DDFF" opacity="0.8">
+    <animate attributeName="opacity" values="1;0.3;1" dur="2.5s" repeatCount="indefinite"/>
+    <animate attributeName="r" values="2;4;2" dur="2.5s" repeatCount="indefinite"/>
+  </circle>
+  <!-- Corner sparkles - bottom-left -->
+  <circle cx="15" cy="325" r="3" fill="#FF2D8B" opacity="0.8">
+    <animate attributeName="opacity" values="0.5;1;0.5" dur="1.8s" repeatCount="indefinite"/>
+    <animate attributeName="r" values="2;4;2" dur="1.8s" repeatCount="indefinite"/>
+  </circle>
+  <!-- Corner sparkles - bottom-right -->
+  <circle cx="845" cy="325" r="3" fill="#FF8C00" opacity="0.8">
+    <animate attributeName="opacity" values="1;0.4;1" dur="2.2s" repeatCount="indefinite"/>
+    <animate attributeName="r" values="2;4;2" dur="2.2s" repeatCount="indefinite"/>
+  </circle>
+</svg>
