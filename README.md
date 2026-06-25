@@ -1,10 +1,9 @@
 <div align="center">
 
 <!-- ════════════════════════════════════════════════════════════ -->
-<!--     BANNER WITH ANIMATED SNAKE BORDER (snake-border.svg)   -->
+<!--   BANNER + ANIMATED SNAKE BORDER — all-in-one SVG          -->
 <!-- ════════════════════════════════════════════════════════════ -->
-<img src="./assets/banner.png" width="100%" alt="ThanhMiLa Backend Banner">
-<img src="./assets/snake-border.svg" width="100%" alt="🐍 animated snake border">
+<img src="./assets/snake-border.svg" width="100%" alt="ThanhMiLa Backend Banner with Snake Animation">
 
 <br/>
 
