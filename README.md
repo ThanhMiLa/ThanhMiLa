@@ -22,7 +22,7 @@
 ## 🧠 About Me
 
 - 🎓 3rd-year IT student (FPT University Da Nang)
-- 🏆 GPA: 3.5 / 4.0 | Scholarship: 30%
+- 🏆 GPA: 3.75 / 4.0 | Scholarship: 30%
 - ⚙️ Focus: Backend Engineering
 - ☕ Java / Spring Boot ecosystem
 - 🧩 Interested in System Design & Scalability
@@ -102,8 +102,8 @@
 
 <p align="center">
   <img 
-    src="https://leetcard.jacoblin.cool/Thanh_MiLa?theme=dark&font=Fira%20Code&ext=heatmap"
-    width="100%"
+  src="https://leetcard.jacoblin.cool/Thanh_MiLa?theme=dark&font=Fira%20Code"
+  width="100%"
   />
 </p>
 
