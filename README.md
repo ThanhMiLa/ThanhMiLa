@@ -29,10 +29,10 @@
 
 ---
 
-## 📊 GitHub Stats
+## 🔥 GitHub Streak Stats
 
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=ThanhMiLa&show_icons=true&theme=tokyonight&hide_border=true&count_private=true" />
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=ThanhMiLa&theme=tokyonight&hide_border=true" alt="ThanhMiLa" />
 </p>
 
 ---
@@ -49,7 +49,6 @@
 </p>
 
 ---
-
 
 </td>
 
@@ -114,5 +113,3 @@
 </table>
 
 ---
-
-<p><img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=thanhmila&" alt="thanhmila" /></p>
