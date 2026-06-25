@@ -1,22 +1,32 @@
-<!-- TOP border snake: horizontal, snake chạy từ trái sang phải -->
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 12" width="900" height="12" preserveAspectRatio="none">
   <defs>
-    <filter id="gt"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <filter id="gt" x="-5%" y="-100%" width="110%" height="300%">
+      <feGaussianBlur stdDeviation="2.5" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
   </defs>
   <rect width="900" height="12" fill="#0d1117"/>
-  <!-- Track line (dim) -->
-  <line x1="0" y1="6" x2="900" y2="6" stroke="#1a2a1a" stroke-width="1"/>
-  <!-- Snake glow -->
-  <rect x="-300" y="0" width="900" height="12" fill="none" stroke="#00FF88" stroke-width="10" stroke-opacity="0.15" stroke-dasharray="160 740" stroke-dashoffset="0" filter="url(#gt)">
+  <!-- Track line dim -->
+  <line x1="0" y1="6" x2="900" y2="6" stroke="#1c2c1c" stroke-width="1"/>
+  <!-- Snake glow (wider, transparent) — chạy trái sang phải -->
+  <line x1="0" y1="6" x2="900" y2="6"
+    stroke="#00FF88" stroke-width="10" stroke-opacity="0.18"
+    stroke-dasharray="160 740" stroke-dashoffset="-900"
+    filter="url(#gt)">
     <animate attributeName="stroke-dashoffset" from="-900" to="900" dur="3.5s" repeatCount="indefinite" calcMode="linear"/>
-  </rect>
+  </line>
   <!-- Snake body -->
-  <rect x="-300" y="0" width="900" height="12" fill="none" stroke="#00FF88" stroke-width="4" stroke-dasharray="160 740" stroke-dashoffset="0" filter="url(#gt)">
+  <line x1="0" y1="6" x2="900" y2="6"
+    stroke="#00FF88" stroke-width="3.5" stroke-linecap="round"
+    stroke-dasharray="160 740" stroke-dashoffset="-900"
+    filter="url(#gt)">
     <animate attributeName="stroke-dashoffset" from="-900" to="900" dur="3.5s" repeatCount="indefinite" calcMode="linear"/>
-    <animate attributeName="stroke" values="#00FF88;#00CCFF;#00FF88" dur="3.5s" repeatCount="indefinite"/>
-  </rect>
-  <!-- Snake head bright -->
-  <rect x="-300" y="0" width="900" height="12" fill="none" stroke="white" stroke-width="2" stroke-dasharray="10 890" stroke-dashoffset="0">
+    <animate attributeName="stroke" values="#00FF88;#00EEFF;#00FF88" dur="3.5s" repeatCount="indefinite"/>
+  </line>
+  <!-- Snake head bright dot -->
+  <line x1="0" y1="6" x2="900" y2="6"
+    stroke="white" stroke-width="2.5" stroke-linecap="round"
+    stroke-dasharray="10 890" stroke-dashoffset="-900" opacity="0.9">
     <animate attributeName="stroke-dashoffset" from="-900" to="900" dur="3.5s" repeatCount="indefinite" calcMode="linear"/>
-  </rect>
+  </line>
 </svg>
