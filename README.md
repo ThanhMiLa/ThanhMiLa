@@ -115,8 +115,4 @@
 
 ---
 
-<p><img align="left" src="https://github-readme-stats.vercel.app/api/top-langs?username=thanhmila&show_icons=true&locale=en&layout=compact" alt="thanhmila" /></p>
-
-<p>&nbsp;<img align="center" src="https://github-readme-stats.vercel.app/api?username=thanhmila&show_icons=true&locale=en" alt="thanhmila" /></p>
-
 <p><img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=thanhmila&" alt="thanhmila" /></p>
