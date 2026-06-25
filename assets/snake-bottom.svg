@@ -11,14 +11,14 @@
   <!-- Snake glow — chạy phải sang trái -->
   <line x1="0" y1="6" x2="900" y2="6"
     stroke="#FF2D8B" stroke-width="10" stroke-opacity="0.18"
-    stroke-dasharray="180 720" stroke-dashoffset="900"
+    stroke-dasharray="500 400" stroke-dashoffset="900"
     filter="url(#gb)">
     <animate attributeName="stroke-dashoffset" from="900" to="-900" dur="4s" repeatCount="indefinite" calcMode="linear"/>
   </line>
   <!-- Snake body -->
   <line x1="0" y1="6" x2="900" y2="6"
     stroke="#FF2D8B" stroke-width="3.5" stroke-linecap="round"
-    stroke-dasharray="180 720" stroke-dashoffset="900"
+    stroke-dasharray="500 400" stroke-dashoffset="900"
     filter="url(#gb)">
     <animate attributeName="stroke-dashoffset" from="900" to="-900" dur="4s" repeatCount="indefinite" calcMode="linear"/>
     <animate attributeName="stroke" values="#FF2D8B;#FF8C00;#FFD700;#FF2D8B" dur="4s" repeatCount="indefinite"/>
@@ -26,7 +26,7 @@
   <!-- Snake head bright dot -->
   <line x1="0" y1="6" x2="900" y2="6"
     stroke="#FFD700" stroke-width="2.5" stroke-linecap="round"
-    stroke-dasharray="10 890" stroke-dashoffset="900" opacity="0.9">
+    stroke-dasharray="16 884" stroke-dashoffset="900" opacity="0.9">
     <animate attributeName="stroke-dashoffset" from="900" to="-900" dur="4s" repeatCount="indefinite" calcMode="linear"/>
   </line>
 </svg>
