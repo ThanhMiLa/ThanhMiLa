@@ -3,9 +3,9 @@
 <img src="./assets/green-neon-line.svg" width="100%">
 
 # ⚙️ ThanhMiLa
-### Backend Engineer | System Design | Java Spring Boot Developer
+### Backend Engineer | Java | Spring Boot | System Design
 
-<img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=700&size=28&duration=1800&pause=500&color=00FF99&center=true&vCenter=true&width=900&lines=Java+%7C+Spring+Boot+%7C+Backend+Engineering;System+Design+%7C+Scalable+Architecture;Clean+Code+%7C+High+Performance+Systems" />
+<img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=700&size=28&duration=1800&pause=500&color=00FF99&center=true&vCenter=true&width=900&lines=Backend+Engineering+%7C+Java+%7C+Spring+Boot;System+Design+%7C+Scalable+Architecture;Clean+Code+%7C+High+Performance+Systems" />
 
 <img src="./assets/green-neon-line.svg" width="100%">
 
@@ -13,25 +13,45 @@
 
 ---
 
+<table>
+<tr>
+
+<!-- ================= LEFT COLUMN ================= -->
+<td width="50%" valign="top">
+
 ## 🧠 About Me
 
-- 🎓 3rd-year IT student at FPT University Da Nang  
-- 🏆 GPA: 3.5 / 4.0 | Scholarship: 30%  
-- ⚙️ Focus: Backend Engineering & System Design  
-- ☕ Passion: Java, Spring Boot, scalable backend systems  
-- 🧩 Interest: Microservices, caching, performance optimization  
+- 🎓 3rd-year IT student (FPT University Da Nang)
+- 🏆 GPA: 3.5 / 4.0 | Scholarship: 30%
+- ⚙️ Focus: Backend Engineering
+- ☕ Java / Spring Boot ecosystem
+- 🧩 Interested in System Design & Scalability
+- 🚀 Goal: Build production-grade backend systems
 
 ---
 
 ## 📊 GitHub Stats
 
 <p align="center">
-
-<img src="https://github-readme-stats.vercel.app/api?username=ThanhMiLa&show_icons=true&theme=tokyonight&hide_border=true" height="180"/>
-
+  <img src="https://github-readme-stats.vercel.app/api?username=ThanhMiLa&show_icons=true&theme=tokyonight&hide_border=true" />
 </p>
 
 ---
+
+## 🧩 Coding Profiles
+
+- 🧠 LeetCode:  
+  https://leetcode.com/Thanh_MiLa  
+
+- 🧩 HackerRank:  
+  https://www.hackerrank.com/vntvlogs  
+
+---
+
+</td>
+
+<!-- ================= RIGHT COLUMN ================= -->
+<td width="50%" valign="top">
 
 ## 🛠 Tech Stack
 
@@ -41,8 +61,9 @@
   <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" />
   <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" />
   <img src="https://img.shields.io/badge/C%2B%2B-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white" />
-  <img src="https://img.shields.io/badge/C-00599C?style=for-the-badge&logo=c&logoColor=white" />
 </p>
+
+---
 
 ### ⚙️ Backend
 <p>
@@ -51,12 +72,16 @@
   <img src="https://img.shields.io/badge/Microservices-FF6F00?style=for-the-badge" />
 </p>
 
+---
+
 ### 🗄 Database
 <p>
   <img src="https://img.shields.io/badge/MySQL-005C84?style=for-the-badge&logo=mysql&logoColor=white" />
   <img src="https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white" />
   <img src="https://img.shields.io/badge/Redis-DC382D?style=for-the-badge&logo=redis&logoColor=white" />
 </p>
+
+---
 
 ### ☁️ DevOps & Tools
 <p>
@@ -71,18 +96,17 @@
 
 ## 🚀 System Focus
 
-- API Design (RESTful services)
-- Authentication & Security (JWT)
+- REST API Design
+- JWT Authentication & Security
 - Database Optimization
-- Caching Strategy (Redis)
+- Redis Caching Strategy
 - Scalable Backend Architecture
 
 ---
 
-## 🧩 Coding Profiles
-
-- 🧠 LeetCode: https://leetcode.com/Thanh_MiLa  
-- 🧩 HackerRank: https://www.hackerrank.com/vntvlogs  
+</td>
+</tr>
+</table>
 
 ---
 
