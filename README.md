@@ -1,12 +1,23 @@
 <div align="center">
 
+<!-- Thanh Neon Line Phía Trên -->
 <img src="./assets/green-neon-line.svg" width="100%">
 
-# ⚙️ ThanhMiLa
-### Backend Engineer | Java | Spring Boot | System Design
+<br/>
 
-<img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=700&size=28&duration=1800&pause=500&color=00FF99&center=true&vCenter=true&width=900&lines=Backend+Engineering+%7C+Java+%7C+Spring+Boot;System+Design+%7C+Scalable+Architecture;Clean+Code+%7C+High+Performance+Systems" />
+<!-- Logo Biểu Tượng Robot & Chữ Neon Chuyển Động -->
+<p align="center">
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=700&size=36&duration=2000&pause=1000&color=00FF99&center=true&vCenter=true&width=900&height=60&lines=%E2%9A%99%EF%B8%8F+ThanhMiLa+%F0%9F%A4%96" alt="ThanhMiLa Banner" />
+</p>
 
+<!-- Hiệu Ứng Chạy Chữ Định Hướng Kỹ Thuật (Subtitles Chuyển Động) -->
+<p align="center">
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=22&duration=2500&pause=500&color=FFFFFF&center=true&vCenter=true&width=900&height=40&lines=Backend+Engineer+%7C+Java+%7C+Spring+Boot;System+Design+%7C+Scalable+Architecture;Clean+Code+%7C+High+Performance+Systems" />
+</p>
+
+<br/>
+
+<!-- Thanh Neon Line Phía Dưới -->
 <img src="./assets/green-neon-line.svg" width="100%">
 
 </div>
