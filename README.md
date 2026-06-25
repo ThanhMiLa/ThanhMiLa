@@ -109,18 +109,6 @@
 
 ---
 
-### 📊 Problem Breakdown
-
-<p align="center">
-
-<img src="https://img.shields.io/badge/Easy-🟢_Solved_XX-00C853?style=for-the-badge" />
-<img src="https://img.shields.io/badge/Medium-🟡_Solved_XX-FFB300?style=for-the-badge" />
-<img src="https://img.shields.io/badge/Hard-🔴_Solved_XX-E53935?style=for-the-badge" />
-
-</p>
-
----
-
 </td>
 </tr>
 </table>
