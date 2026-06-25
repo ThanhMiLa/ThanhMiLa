@@ -38,6 +38,17 @@
 
 ---
 
+## 🍩 Language Distribution
+
+<p align="center">
+  <img 
+    src="https://github-readme-stats.vercel.app/api/top-langs/?username=ThanhMiLa&layout=donut&theme=tokyonight&hide_border=true"
+    height="260"
+  />
+</p>
+
+---
+
 ## 🧩 Coding Profiles
 
 - 🧠 LeetCode:  
