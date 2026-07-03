@@ -18,7 +18,7 @@
 ## 📌 Quick Overview
 
 - 🎓 **Identity:** 3rd-year IT Student | FPT University Da Nang
-- 🎖️ **Milestones:** 3.75/4.0 GPA • 30% Merit Scholarship
+- 🎖️ **Milestones:** 3.70/4.0 GPA • 30% Merit Scholarship
 - 💻 **Tech Stack Focus:** Java / Spring Boot Ecosystem
 - 🧠 **Areas of Interest:** System Design, High Availability & Scalability
 - 🚀 **Mission:** Building clean, maintainable, and production-grade backend architectures
