@@ -69,7 +69,6 @@
   <img src="https://img.shields.io/badge/Swift-F05138?style=for-the-badge&logo=swift&logoColor=white" />
 </p>
 
----
 
 ### ⚙️ Backend
 <p>
@@ -79,7 +78,6 @@
   <img src="https://img.shields.io/badge/REST_API-000000?style=for-the-badge" />
 </p>
 
----
 
 ### 🗄 Database
 <p>
@@ -89,7 +87,6 @@
   <img src="https://img.shields.io/badge/Redis-DC382D?style=for-the-badge&logo=redis&logoColor=white" />
 </p>
 
----
 
 ### ☁️ DevOps & Tools
 <p>
