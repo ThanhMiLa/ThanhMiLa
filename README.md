@@ -1,9 +1,9 @@
 <div align="center">
 
 <!-- ════════════════════════════════════════════════════════════ -->
-<!--   BANNER + ANIMATED SNAKE BORDER — all-in-one SVG          -->
+<!--   DYNAMIC ANIMATED BANNER (Cyber Neon & Floating Tech)       -->
 <!-- ════════════════════════════════════════════════════════════ -->
-<img src="./assets/snake-border.svg" width="100%" alt="ThanhMiLa Backend Banner with Snake Animation">
+<img src="./assets/banner-animated.svg" width="100%" alt="ThanhMiLa Animated Cyber Backend Banner">
 
 <br/>
 
@@ -76,7 +76,6 @@
   <img src="https://img.shields.io/badge/Spring_Cloud-6DB33F?style=for-the-badge&logo=spring&logoColor=white" />
   <img src="https://img.shields.io/badge/Spring_AI-6DB33F?style=for-the-badge&logo=spring&logoColor=white" />
   <img src="https://img.shields.io/badge/RabbitMQ-FF6600?style=for-the-badge&logo=rabbitmq&logoColor=white" />
-  <img src="https://img.shields.io/badge/REST_API-000000?style=for-the-badge" />
 </p>
 
 
