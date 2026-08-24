@@ -28,7 +28,7 @@
 ## 🔥 GitHub Streak Stats
 
 <p align="center">
-  <img src="https://streak-stats.demolab.com/?user=ThanhMiLa&theme=tokyonight&hide_border=true" alt="ThanhMiLa" />
+  <img src="./assets/streak-stats.svg" alt="ThanhMiLa GitHub Streak Stats" />
 </p>
 
 ---
