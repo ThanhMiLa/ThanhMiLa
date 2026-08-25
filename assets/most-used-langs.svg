@@ -1,0 +1,366 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 200" width="100%" height="100%" style="isolation: isolate">
+  <defs>
+    <!-- Cross-platform System Font Stacks with Webfont Enhancement -->
+    <style><![CDATA[
+      @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@500;700&family=Outfit:wght@600;700;800;900&display=swap');
+
+      * {
+        font-family: 'Outfit', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      }
+      .mono-text {
+        font-family: 'Fira Code', ui-monospace, 'SF Mono', SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      }
+
+      /* Glowing / Shimmer Animations */
+      @keyframes borderGaze {
+        0%, 100% { stroke: #00F2FE; }
+        33% { stroke: #70A5FD; }
+        66% { stroke: #BB9AF7; }
+      }
+      @keyframes shimmerBar {
+        0% { transform: translateX(-100px); opacity: 0; }
+        30% { opacity: 0.8; }
+        70% { opacity: 0.8; }
+        100% { transform: translateX(500px); opacity: 0; }
+      }
+      @keyframes pulseGlow {
+        0%, 100% { filter: drop-shadow(0 0 3px #00F2FE) drop-shadow(0 0 8px #70A5FD); }
+        50% { filter: drop-shadow(0 0 6px #00FF88) drop-shadow(0 0 12px #00F2FE); }
+      }
+      @keyframes nodeBreathe {
+        0%, 100% { transform: scale(1); opacity: 0.9; }
+        50% { transform: scale(1.2); opacity: 1; }
+      }
+
+      .laser-border {
+        animation: borderGaze 9s ease-in-out infinite;
+      }
+      .shimmer-effect {
+        animation: shimmerBar 4s ease-in-out infinite;
+      }
+      .title-glow {
+        animation: pulseGlow 4s ease-in-out infinite;
+      }
+      .node-pulse {
+        animation: nodeBreathe 3s ease-in-out infinite;
+      }
+    ]]></style>
+
+    <!-- Deep Space Background Gradient -->
+    <linearGradient id="spaceBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#080911"/>
+      <stop offset="50%" stop-color="#10121d"/>
+      <stop offset="100%" stop-color="#07080e"/>
+    </linearGradient>
+
+    <!-- Hologram Glass Surface Gradient -->
+    <linearGradient id="cardSurface" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="rgba(20, 24, 38, 0.85)"/>
+      <stop offset="100%" stop-color="rgba(10, 12, 20, 0.95)"/>
+    </linearGradient>
+
+    <!-- Laser Border Gradient -->
+    <linearGradient id="laserGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00F2FE" stop-opacity="0.8"/>
+      <stop offset="30%" stop-color="#70A5FD" stop-opacity="0.5"/>
+      <stop offset="70%" stop-color="#BB9AF7" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="#00FF88" stop-opacity="0.8"/>
+    </linearGradient>
+
+    <!-- Title Gradient -->
+    <linearGradient id="titleGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="50%" stop-color="#70A5FD"/>
+      <stop offset="100%" stop-color="#00F2FE"/>
+    </linearGradient>
+
+    <!-- 3D Progress Bar Segment Gradients -->
+    <linearGradient id="tsGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#4FACFE"/>
+      <stop offset="50%" stop-color="#00F2FE"/>
+      <stop offset="100%" stop-color="#1E5EA8"/>
+    </linearGradient>
+
+    <linearGradient id="javaGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFC048"/>
+      <stop offset="50%" stop-color="#FF9E64"/>
+      <stop offset="100%" stop-color="#ED8B00"/>
+    </linearGradient>
+
+    <linearGradient id="jsGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFF375"/>
+      <stop offset="50%" stop-color="#FFE600"/>
+      <stop offset="100%" stop-color="#D4B000"/>
+    </linearGradient>
+
+    <linearGradient id="sqlGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#55E6D5"/>
+      <stop offset="50%" stop-color="#38BDAE"/>
+      <stop offset="100%" stop-color="#246888"/>
+    </linearGradient>
+
+    <linearGradient id="cssGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#D6B8FF"/>
+      <stop offset="50%" stop-color="#BB9AF7"/>
+      <stop offset="100%" stop-color="#7000FF"/>
+    </linearGradient>
+
+    <linearGradient id="pyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#8BB9FE"/>
+      <stop offset="50%" stop-color="#70A5FD"/>
+      <stop offset="100%" stop-color="#2B5B84"/>
+    </linearGradient>
+
+    <!-- 3D Node Radial Gradients -->
+    <radialGradient id="tsNode" cx="35%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#E0FFFF"/>
+      <stop offset="40%" stop-color="#00F2FE"/>
+      <stop offset="100%" stop-color="#0066CC"/>
+    </radialGradient>
+
+    <radialGradient id="javaNode" cx="35%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#FFF0D0"/>
+      <stop offset="40%" stop-color="#FF9E64"/>
+      <stop offset="100%" stop-color="#C05000"/>
+    </radialGradient>
+
+    <radialGradient id="jsNode" cx="35%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#FFFFE0"/>
+      <stop offset="40%" stop-color="#FFE600"/>
+      <stop offset="100%" stop-color="#B8860B"/>
+    </radialGradient>
+
+    <radialGradient id="sqlNode" cx="35%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#E0FFFF"/>
+      <stop offset="40%" stop-color="#38BDAE"/>
+      <stop offset="100%" stop-color="#1B4F72"/>
+    </radialGradient>
+
+    <radialGradient id="cssNode" cx="35%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#F5EEFF"/>
+      <stop offset="40%" stop-color="#BB9AF7"/>
+      <stop offset="100%" stop-color="#4B0082"/>
+    </radialGradient>
+
+    <radialGradient id="pyNode" cx="35%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#E6F2FF"/>
+      <stop offset="40%" stop-color="#70A5FD"/>
+      <stop offset="100%" stop-color="#1A3A5A"/>
+    </radialGradient>
+
+    <!-- Shimmer Beam Gradient -->
+    <linearGradient id="shimmerBeam" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#FFFFFF" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- Ambient Core Glow -->
+    <radialGradient id="barGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#00F2FE" stop-opacity="0.22"/>
+      <stop offset="60%" stop-color="#70A5FD" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#10121d" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Filters -->
+    <filter id="neonGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3.5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="softGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <clipPath id="cardClip">
+      <rect x="2" y="2" width="496" height="196" rx="14"/>
+    </clipPath>
+
+    <!-- Clip for Progress Bar rounding -->
+    <clipPath id="barClip">
+      <rect x="30" y="52" width="440" height="14" rx="7"/>
+    </clipPath>
+  </defs>
+
+  <!-- Base Card Container -->
+  <g clip-path="url(#cardClip)">
+    <!-- Deep Space Background -->
+    <rect x="0" y="0" width="500" height="200" fill="url(#spaceBg)"/>
+
+    <!-- Subtle Cyber Grid Lines -->
+    <g opacity="0.07" stroke="#7AA2F7" stroke-width="1">
+      <line x1="0" y1="40" x2="500" y2="40"/>
+      <line x1="0" y1="80" x2="500" y2="80"/>
+      <line x1="0" y1="120" x2="500" y2="120"/>
+      <line x1="0" y1="160" x2="500" y2="160"/>
+      <line x1="50" y1="0" x2="50" y2="200"/>
+      <line x1="125" y1="0" x2="125" y2="200"/>
+      <line x1="250" y1="0" x2="250" y2="200"/>
+      <line x1="375" y1="0" x2="375" y2="200"/>
+      <line x1="450" y1="0" x2="450" y2="200"/>
+    </g>
+
+    <!-- Ambient Core Glow under progress bar -->
+    <ellipse cx="250" cy="59" rx="210" ry="28" fill="url(#barGlow)"/>
+
+    <!-- Glassmorphism Surface -->
+    <rect x="4" y="4" width="492" height="192" rx="12" fill="url(#cardSurface)" stroke="none"/>
+
+    <!-- ======================================================== -->
+    <!-- HEADER: TITLE & TECH BADGE                               -->
+    <!-- ======================================================== -->
+    <g transform="translate(30, 16)">
+      <!-- Mini Glowing Cyber Indicator -->
+      <circle cx="4" cy="11" r="4" fill="#00F2FE" filter="url(#neonGlow)"/>
+      <circle cx="4" cy="11" r="1.8" fill="#FFFFFF"/>
+
+      <!-- Title Text -->
+      <text x="16" y="16" fill="url(#titleGrad)" font-size="15px" font-weight="800" letter-spacing="0.6" filter="url(#softGlow)">
+        Most Used Languages
+      </text>
+
+      <!-- Right HUD Tag -->
+      <g transform="translate(440, 3)">
+        <rect x="-96" y="0" width="96" height="18" rx="9" fill="rgba(0, 242, 254, 0.08)" stroke="rgba(0, 242, 254, 0.35)" stroke-width="0.9"/>
+        <circle cx="-86" cy="9" r="2.2" fill="#00FF88" filter="url(#neonGlow)"/>
+        <text x="-44" y="13" text-anchor="middle" fill="#73DAC6" font-size="8.5px" font-weight="700" letter-spacing="0.8" class="mono-text">
+          METRICS HUD
+        </text>
+      </g>
+    </g>
+
+    <!-- ======================================================== -->
+    <!-- 3D PROGRESS BAR (CYBER ISOMETRIC ENERGY BAR)             -->
+    <!-- ======================================================== -->
+    <!-- Bar Outer Glow Frame -->
+    <rect x="28" y="50" width="444" height="18" rx="9" fill="none" stroke="rgba(122, 162, 247, 0.22)" stroke-width="1"/>
+
+    <!-- Segmented 3D Cylinders in ClipPath -->
+    <g clip-path="url(#barClip)">
+      <!-- Track Background -->
+      <rect x="30" y="52" width="440" height="14" fill="#151828"/>
+
+      <!-- TypeScript: 65.69% = 289.0px (30 to 319.0) -->
+      <rect x="30" y="52" width="289" height="14" fill="url(#tsGrad)"/>
+      <!-- Segment Divider -->
+      <line x1="319" y1="52" x2="319" y2="66" stroke="#080911" stroke-width="1.5"/>
+
+      <!-- Java: 20.71% = 91.1px (319.0 to 410.1) -->
+      <rect x="319" y="52" width="91.1" height="14" fill="url(#javaGrad)"/>
+      <!-- Segment Divider -->
+      <line x1="410.1" y1="52" x2="410.1" y2="66" stroke="#080911" stroke-width="1.5"/>
+
+      <!-- JavaScript: 10.13% = 44.6px (410.1 to 454.7) -->
+      <rect x="410.1" y="52" width="44.6" height="14" fill="url(#jsGrad)"/>
+      <!-- Segment Divider -->
+      <line x1="454.7" y1="52" x2="454.7" y2="66" stroke="#080911" stroke-width="1.5"/>
+
+      <!-- PLpgSQL: 1.87% = 8.2px (454.7 to 462.9) -->
+      <rect x="454.7" y="52" width="8.2" height="14" fill="url(#sqlGrad)"/>
+      <!-- Segment Divider -->
+      <line x1="462.9" y1="52" x2="462.9" y2="66" stroke="#080911" stroke-width="1.5"/>
+
+      <!-- CSS: 1.10% = 4.8px (462.9 to 467.7) -->
+      <rect x="462.9" y="52" width="4.8" height="14" fill="url(#cssGrad)"/>
+
+      <!-- Python: 0.51% = 2.3px (467.7 to 470.0) -->
+      <rect x="467.7" y="52" width="2.3" height="14" fill="url(#pyGrad)"/>
+
+      <!-- 3D Cylindrical Top Specular Highlight -->
+      <rect x="30" y="53" width="440" height="3.5" fill="#FFFFFF" opacity="0.32" rx="1.5"/>
+
+      <!-- Animated Scanning Shimmer Beam -->
+      <rect x="0" y="52" width="80" height="14" fill="url(#shimmerBeam)" class="shimmer-effect"/>
+    </g>
+
+    <!-- ======================================================== -->
+    <!-- LANGUAGE STATS GRID (2 COLUMNS x 3 ROWS)                 -->
+    <!-- ======================================================== -->
+
+    <!-- ─── COLUMN 1 (x = 30) ─── -->
+
+    <!-- TypeScript (65.69%) -->
+    <g transform="translate(30, 88)">
+      <!-- 3D Glowing Node -->
+      <circle cx="8" cy="8" r="5.5" fill="url(#tsNode)" filter="url(#softGlow)" class="node-pulse"/>
+      <circle cx="6" cy="6" r="1.8" fill="#FFFFFF" opacity="0.85"/>
+      <!-- Language Name -->
+      <text x="20" y="12" fill="#FFFFFF" font-size="12px" font-weight="700">TypeScript</text>
+      <!-- Percentage Badge (Widened & shifted for ample spacing) -->
+      <rect x="135" y="0" width="68" height="18" rx="9" fill="rgba(0, 242, 254, 0.1)" stroke="rgba(0, 242, 254, 0.35)" stroke-width="0.8"/>
+      <text x="169" y="13" text-anchor="middle" fill="#00F2FE" font-size="10px" font-weight="700" class="mono-text">65.69%</text>
+    </g>
+
+    <!-- Java (20.71%) -->
+    <g transform="translate(30, 120)">
+      <!-- 3D Glowing Node -->
+      <circle cx="8" cy="8" r="5.5" fill="url(#javaNode)" filter="url(#softGlow)"/>
+      <circle cx="6" cy="6" r="1.8" fill="#FFFFFF" opacity="0.85"/>
+      <!-- Language Name -->
+      <text x="20" y="12" fill="#FFFFFF" font-size="12px" font-weight="700">Java</text>
+      <!-- Percentage Badge -->
+      <rect x="135" y="0" width="68" height="18" rx="9" fill="rgba(255, 158, 100, 0.1)" stroke="rgba(255, 158, 100, 0.35)" stroke-width="0.8"/>
+      <text x="169" y="13" text-anchor="middle" fill="#FF9E64" font-size="10px" font-weight="700" class="mono-text">20.71%</text>
+    </g>
+
+    <!-- JavaScript (10.13%) -->
+    <g transform="translate(30, 152)">
+      <!-- 3D Glowing Node -->
+      <circle cx="8" cy="8" r="5.5" fill="url(#jsNode)" filter="url(#softGlow)"/>
+      <circle cx="6" cy="6" r="1.8" fill="#FFFFFF" opacity="0.85"/>
+      <!-- Language Name -->
+      <text x="20" y="12" fill="#FFFFFF" font-size="12px" font-weight="700">JavaScript</text>
+      <!-- Percentage Badge -->
+      <rect x="135" y="0" width="68" height="18" rx="9" fill="rgba(255, 230, 0, 0.1)" stroke="rgba(255, 230, 0, 0.35)" stroke-width="0.8"/>
+      <text x="169" y="13" text-anchor="middle" fill="#FFE600" font-size="10px" font-weight="700" class="mono-text">10.13%</text>
+    </g>
+
+    <!-- ─── COLUMN 2 (x = 265) ─── -->
+
+    <!-- PLpgSQL (1.87%) -->
+    <g transform="translate(265, 88)">
+      <!-- 3D Glowing Node -->
+      <circle cx="8" cy="8" r="5.5" fill="url(#sqlNode)" filter="url(#softGlow)"/>
+      <circle cx="6" cy="6" r="1.8" fill="#FFFFFF" opacity="0.85"/>
+      <!-- Language Name -->
+      <text x="20" y="12" fill="#FFFFFF" font-size="12px" font-weight="700">PLpgSQL</text>
+      <!-- Percentage Badge -->
+      <rect x="135" y="0" width="66" height="18" rx="9" fill="rgba(56, 189, 174, 0.1)" stroke="rgba(56, 189, 174, 0.35)" stroke-width="0.8"/>
+      <text x="168" y="13" text-anchor="middle" fill="#38BDAE" font-size="10px" font-weight="700" class="mono-text">1.87%</text>
+    </g>
+
+    <!-- CSS (1.10%) -->
+    <g transform="translate(265, 120)">
+      <!-- 3D Glowing Node -->
+      <circle cx="8" cy="8" r="5.5" fill="url(#cssNode)" filter="url(#softGlow)"/>
+      <circle cx="6" cy="6" r="1.8" fill="#FFFFFF" opacity="0.85"/>
+      <!-- Language Name -->
+      <text x="20" y="12" fill="#FFFFFF" font-size="12px" font-weight="700">CSS</text>
+      <!-- Percentage Badge -->
+      <rect x="135" y="0" width="66" height="18" rx="9" fill="rgba(187, 154, 247, 0.1)" stroke="rgba(187, 154, 247, 0.35)" stroke-width="0.8"/>
+      <text x="168" y="13" text-anchor="middle" fill="#BB9AF7" font-size="10px" font-weight="700" class="mono-text">1.10%</text>
+    </g>
+
+    <!-- Python (0.51%) -->
+    <g transform="translate(265, 152)">
+      <!-- 3D Glowing Node -->
+      <circle cx="8" cy="8" r="5.5" fill="url(#pyNode)" filter="url(#softGlow)"/>
+      <circle cx="6" cy="6" r="1.8" fill="#FFFFFF" opacity="0.85"/>
+      <!-- Language Name -->
+      <text x="20" y="12" fill="#FFFFFF" font-size="12px" font-weight="700">Python</text>
+      <!-- Percentage Badge -->
+      <rect x="135" y="0" width="66" height="18" rx="9" fill="rgba(112, 165, 253, 0.1)" stroke="rgba(112, 165, 253, 0.35)" stroke-width="0.8"/>
+      <text x="168" y="13" text-anchor="middle" fill="#70A5FD" font-size="10px" font-weight="700" class="mono-text">0.51%</text>
+    </g>
+
+    <!-- Cyber Outer Laser Glowing Border -->
+    <rect x="2" y="2" width="496" height="196" rx="14" fill="none" stroke="url(#laserGrad)" stroke-width="1.8" class="laser-border" filter="url(#neonGlow)"/>
+  </g>
+</svg>

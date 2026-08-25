@@ -1,0 +1,255 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 200" width="100%" height="100%" style="isolation: isolate">
+  <defs>
+    <!-- Cross-platform System Font Stacks with Webfont Enhancement -->
+    <style><![CDATA[
+      @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@500;700&family=Outfit:wght@600;700;800;900&display=swap');
+
+      * {
+        font-family: 'Outfit', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      }
+      .mono-text {
+        font-family: 'Fira Code', ui-monospace, 'SF Mono', SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      }
+
+      /* Glow & Animation Effects */
+      @keyframes borderGaze {
+        0%, 100% { stroke: #00F2FE; }
+        33% { stroke: #70A5FD; }
+        66% { stroke: #BB9AF7; }
+      }
+      @keyframes pulseMeter {
+        0%, 100% { transform: scale(1); opacity: 0.9; }
+        50% { transform: scale(1.03); opacity: 1; filter: drop-shadow(0 0 10px #FFA116); }
+      }
+      @keyframes shimmerBar {
+        0% { transform: translateX(-60px); opacity: 0; }
+        50% { opacity: 0.7; }
+        100% { transform: translateX(320px); opacity: 0; }
+      }
+
+      .laser-border {
+        animation: borderGaze 9s ease-in-out infinite;
+      }
+      .shimmer-effect {
+        animation: shimmerBar 4s ease-in-out infinite;
+      }
+    ]]></style>
+
+    <!-- Deep Space Background Gradient -->
+    <linearGradient id="spaceBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#080911"/>
+      <stop offset="50%" stop-color="#10121d"/>
+      <stop offset="100%" stop-color="#07080e"/>
+    </linearGradient>
+
+    <!-- Hologram Glass Surface Gradient -->
+    <linearGradient id="cardSurface" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="rgba(20, 24, 38, 0.85)"/>
+      <stop offset="100%" stop-color="rgba(10, 12, 20, 0.95)"/>
+    </linearGradient>
+
+    <!-- Laser Border Gradient -->
+    <linearGradient id="laserGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00F2FE" stop-opacity="0.85"/>
+      <stop offset="30%" stop-color="#70A5FD" stop-opacity="0.55"/>
+      <stop offset="70%" stop-color="#BB9AF7" stop-opacity="0.75"/>
+      <stop offset="100%" stop-color="#00FF88" stop-opacity="0.85"/>
+    </linearGradient>
+
+    <!-- Title Gradient -->
+    <linearGradient id="titleGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="60%" stop-color="#F0F6FC"/>
+      <stop offset="100%" stop-color="#70A5FD"/>
+    </linearGradient>
+
+    <!-- Progress Bar Gradients -->
+    <linearGradient id="easyGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00FF88"/>
+      <stop offset="100%" stop-color="#38BDAE"/>
+    </linearGradient>
+
+    <linearGradient id="medGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FFD166"/>
+      <stop offset="100%" stop-color="#FF9E64"/>
+    </linearGradient>
+
+    <linearGradient id="hardGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FF5D8F"/>
+      <stop offset="100%" stop-color="#DC382D"/>
+    </linearGradient>
+
+    <!-- LeetCode Logo Gradient -->
+    <linearGradient id="lcGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFA116"/>
+      <stop offset="100%" stop-color="#FF6B00"/>
+    </linearGradient>
+
+    <!-- Ambient Core Glow -->
+    <radialGradient id="meterGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFA116" stop-opacity="0.25"/>
+      <stop offset="60%" stop-color="#FF6B00" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#10121d" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Filters -->
+    <filter id="neonGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3.5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="softGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <clipPath id="cardClip">
+      <rect x="2" y="2" width="496" height="196" rx="14"/>
+    </clipPath>
+  </defs>
+
+  <!-- Base Card Container -->
+  <g clip-path="url(#cardClip)">
+    <!-- Deep Space Background -->
+    <rect x="0" y="0" width="500" height="200" fill="url(#spaceBg)"/>
+
+    <!-- Subtle Cyber Grid Lines -->
+    <g opacity="0.07" stroke="#7AA2F7" stroke-width="1">
+      <line x1="0" y1="40" x2="500" y2="40"/>
+      <line x1="0" y1="80" x2="500" y2="80"/>
+      <line x1="0" y1="120" x2="500" y2="120"/>
+      <line x1="0" y1="160" x2="500" y2="160"/>
+      <line x1="50" y1="0" x2="50" y2="200"/>
+      <line x1="140" y1="0" x2="140" y2="200"/>
+      <line x1="250" y1="0" x2="250" y2="200"/>
+      <line x1="375" y1="0" x2="375" y2="200"/>
+      <line x1="450" y1="0" x2="450" y2="200"/>
+    </g>
+
+    <!-- Glassmorphism Surface -->
+    <rect x="4" y="4" width="492" height="192" rx="12" fill="url(#cardSurface)" stroke="none"/>
+
+    <!-- Ambient Core Glow behind circular gauge -->
+    <circle cx="85" cy="116" r="60" fill="url(#meterGlow)"/>
+
+    <!-- ======================================================== -->
+    <!-- HEADER: LEETCODE LOGO & USERNAME & RANK                  -->
+    <!-- ======================================================== -->
+    <g transform="translate(30, 20)">
+      <!-- LeetCode Cyber Icon -->
+      <g transform="translate(0, 0)">
+        <path d="M 14 3 L 5 12 L 14 21" fill="none" stroke="url(#lcGrad)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" filter="url(#neonGlow)"/>
+        <line x1="6" y1="12" x2="22" y2="12" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round"/>
+        <circle cx="22" cy="12" r="2" fill="#FFA116" filter="url(#neonGlow)"/>
+      </g>
+
+      <!-- Username -->
+      <text x="32" y="16.5" fill="url(#titleGrad)" font-size="16.5px" font-weight="900" letter-spacing="0.6" filter="url(#softGlow)">
+        Thanh_MiLa
+      </text>
+
+      <!-- Global Rank Badge -->
+      <g transform="translate(440, 2)">
+        <rect x="-106" y="0" width="106" height="20" rx="10" fill="rgba(122, 162, 247, 0.08)" stroke="rgba(122, 162, 247, 0.3)" stroke-width="0.9"/>
+        <text x="-53" y="14" text-anchor="middle" fill="#A9B1D6" font-size="10px" font-weight="700" letter-spacing="0.5" class="mono-text">
+          #2300066
+        </text>
+      </g>
+    </g>
+
+    <!-- ======================================================== -->
+    <!-- LEFT: CIRCULAR TOTAL SOLVED GAUGE (Center: 85, 120)      -->
+    <!-- ======================================================== -->
+    <g transform="translate(85, 120)">
+      <!-- Outer Track Ring -->
+      <circle cx="0" cy="0" r="42" fill="none" stroke="#161928" stroke-width="6"/>
+      <circle cx="0" cy="0" r="42" fill="none" stroke="rgba(122, 162, 247, 0.15)" stroke-width="6" stroke-dasharray="3 5"/>
+
+      <!-- Active Progress Arc (63 solved) -->
+      <circle cx="0" cy="0" r="42" fill="none" stroke="url(#lcGrad)" stroke-width="6" stroke-linecap="round" stroke-dasharray="45 220" stroke-dashoffset="10" filter="url(#neonGlow)"/>
+
+      <!-- Indicator Dot on Arc -->
+      <circle cx="2" cy="-42" r="3.5" fill="#FFFFFF" filter="url(#neonGlow)"/>
+
+      <!-- Total Solved Number -->
+      <text x="0" y="7" text-anchor="middle" fill="#FFFFFF" font-size="28px" font-weight="900" letter-spacing="0.5" filter="url(#neonGlow)">
+        63
+      </text>
+
+      <!-- Solved Label Pill -->
+      <g transform="translate(0, 24)">
+        <rect x="-24" y="-7" width="48" height="14" rx="7" fill="rgba(255, 161, 22, 0.12)" stroke="rgba(255, 161, 22, 0.35)" stroke-width="0.8"/>
+        <text x="0" y="3.5" text-anchor="middle" fill="#FFA116" font-size="8px" font-weight="800" letter-spacing="0.8">
+          SOLVED
+        </text>
+      </g>
+    </g>
+
+    <!-- Laser Divider Beam -->
+    <line x1="145" y1="62" x2="145" y2="178" stroke="rgba(122, 162, 247, 0.18)" stroke-width="1" stroke-dasharray="4 4"/>
+
+    <!-- ======================================================== -->
+    <!-- RIGHT: DIFFICULTY BREAKDOWN BARS                         -->
+    <!-- ======================================================== -->
+
+    <!-- ─── EASY (59 / 961) ─── -->
+    <g transform="translate(162, 60)">
+      <!-- Glowing Dot -->
+      <circle cx="4" cy="11" r="3" fill="#00FF88" filter="url(#softGlow)"/>
+      <!-- Label -->
+      <text x="14" y="15" fill="#FFFFFF" font-size="12.5px" font-weight="700">Easy</text>
+      <!-- Count Ratio -->
+      <text x="306" y="15" text-anchor="end" fill="#C0CAF5" font-size="11px" font-weight="600" class="mono-text">
+        <tspan fill="#00FF88" font-weight="700">59</tspan> / 961
+      </text>
+      <!-- Progress Bar Track -->
+      <rect x="14" y="22" width="292" height="6" rx="3" fill="#151828"/>
+      <!-- Progress Bar Fill (59 / 961 ≈ 6.1% -> 26px display) -->
+      <rect x="14" y="22" width="26" height="6" rx="3" fill="url(#easyGrad)" filter="url(#softGlow)"/>
+      <circle cx="40" cy="25" r="2" fill="#FFFFFF"/>
+    </g>
+
+    <!-- ─── MEDIUM (3 / 2105) ─── -->
+    <g transform="translate(162, 102)">
+      <!-- Glowing Dot -->
+      <circle cx="4" cy="11" r="3" fill="#FFB800" filter="url(#softGlow)"/>
+      <!-- Label -->
+      <text x="14" y="15" fill="#FFFFFF" font-size="12.5px" font-weight="700">Medium</text>
+      <!-- Count Ratio -->
+      <text x="306" y="15" text-anchor="end" fill="#C0CAF5" font-size="11px" font-weight="600" class="mono-text">
+        <tspan fill="#FFB800" font-weight="700">3</tspan> / 2105
+      </text>
+      <!-- Progress Bar Track -->
+      <rect x="14" y="22" width="292" height="6" rx="3" fill="#151828"/>
+      <!-- Progress Bar Fill (3 / 2105 -> 14px min display) -->
+      <rect x="14" y="22" width="14" height="6" rx="3" fill="url(#medGrad)" filter="url(#softGlow)"/>
+      <circle cx="28" cy="25" r="1.8" fill="#FFFFFF"/>
+    </g>
+
+    <!-- ─── HARD (1 / 967) ─── -->
+    <g transform="translate(162, 144)">
+      <!-- Glowing Dot -->
+      <circle cx="4" cy="11" r="3" fill="#F7768E" filter="url(#softGlow)"/>
+      <!-- Label -->
+      <text x="14" y="15" fill="#FFFFFF" font-size="12.5px" font-weight="700">Hard</text>
+      <!-- Count Ratio -->
+      <text x="306" y="15" text-anchor="end" fill="#C0CAF5" font-size="11px" font-weight="600" class="mono-text">
+        <tspan fill="#F7768E" font-weight="700">1</tspan> / 967
+      </text>
+      <!-- Progress Bar Track -->
+      <rect x="14" y="22" width="292" height="6" rx="3" fill="#151828"/>
+      <!-- Progress Bar Fill (1 / 967 -> 10px min display) -->
+      <rect x="14" y="22" width="10" height="6" rx="3" fill="url(#hardGrad)" filter="url(#softGlow)"/>
+      <circle cx="24" cy="25" r="1.8" fill="#FFFFFF"/>
+    </g>
+
+    <!-- Cyber Outer Laser Glowing Border -->
+    <rect x="2" y="2" width="496" height="196" rx="14" fill="none" stroke="url(#laserGrad)" stroke-width="1.8" class="laser-border" filter="url(#neonGlow)"/>
+  </g>
+</svg>

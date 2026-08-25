@@ -9,8 +9,8 @@
 
     <!-- Core Glow Gradient -->
     <radialGradient id="coreGlow" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#70a5fd" stop-opacity="0.9"/>
-      <stop offset="25%" stop-color="#38bdae" stop-opacity="0.6"/>
+      <stop offset="0%" stop-color="#70a5fd" stop-opacity="0.95"/>
+      <stop offset="25%" stop-color="#38bdae" stop-opacity="0.65"/>
       <stop offset="60%" stop-color="#bb9af7" stop-opacity="0.25"/>
       <stop offset="100%" stop-color="#10121d" stop-opacity="0"/>
     </radialGradient>
@@ -22,9 +22,17 @@
       <stop offset="100%" stop-color="#bb9af7"/>
     </linearGradient>
 
+    <!-- Neon Laser Gradient Border -->
+    <linearGradient id="laserGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00F2FE" stop-opacity="0.85"/>
+      <stop offset="30%" stop-color="#70A5FD" stop-opacity="0.55"/>
+      <stop offset="70%" stop-color="#BB9AF7" stop-opacity="0.75"/>
+      <stop offset="100%" stop-color="#00FF88" stop-opacity="0.85"/>
+    </linearGradient>
+
     <!-- Filters -->
     <filter id="neonGlow" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="5" result="blur" />
+      <feGaussianBlur stdDeviation="4" result="blur" />
       <feMerge>
         <feMergeNode in="blur" />
         <feMergeNode in="SourceGraphic" />
@@ -38,1023 +46,1106 @@
         <feMergeNode in="SourceGraphic" />
       </feMerge>
     </filter>
+
+    <clipPath id="cardClip">
+      <rect x="2" y="2" width="846" height="496" rx="14"/>
+    </clipPath>
   </defs>
 
   <style>
     <![CDATA[
-    @keyframes orbit_node_0 {
-  0.0% { transform: translate(0.0px, 181.3px) scale(1.07); opacity: 0.73; filter: brightness(0.91); }
-  2.5% { transform: translate(0.0px, 181.3px) scale(1.07); opacity: 0.73; filter: brightness(0.91); }
-  5.0% { transform: translate(0.0px, 181.3px) scale(1.07); opacity: 0.73; filter: brightness(0.91); }
-  7.5% { transform: translate(0.0px, 181.3px) scale(1.07); opacity: 0.73; filter: brightness(0.91); }
-  10.0% { transform: translate(0.0px, 181.3px) scale(1.07); opacity: 0.73; filter: brightness(0.91); }
-  12.5% { transform: translate(0.0px, 181.3px) scale(1.07); opacity: 0.73; filter: brightness(0.91); }
-  15.0% { transform: translate(0.0px, 181.3px) scale(1.07); opacity: 0.73; filter: brightness(0.91); }
-  17.5% { transform: translate(0.0px, 181.3px) scale(1.07); opacity: 0.73; filter: brightness(0.91); }
-  20.0% { transform: translate(0.0px, 181.3px) scale(1.07); opacity: 0.73; filter: brightness(0.91); }
-  22.5% { transform: translate(0.0px, 181.3px) scale(1.07); opacity: 0.73; filter: brightness(0.91); }
-  25.0% { transform: translate(0.0px, 181.3px) scale(1.07); opacity: 0.73; filter: brightness(0.91); }
-  27.5% { transform: translate(0.0px, 181.3px) scale(1.07); opacity: 0.73; filter: brightness(0.91); }
-  30.0% { transform: translate(0.0px, 181.3px) scale(1.07); opacity: 0.73; filter: brightness(0.91); }
-  32.5% { transform: translate(0.0px, 181.3px) scale(1.07); opacity: 0.73; filter: brightness(0.91); }
-  35.0% { transform: translate(0.0px, 181.3px) scale(1.07); opacity: 0.73; filter: brightness(0.91); }
-  37.5% { transform: translate(0.0px, 181.3px) scale(1.07); opacity: 0.73; filter: brightness(0.91); }
-  40.0% { transform: translate(0.0px, 181.3px) scale(1.07); opacity: 0.73; filter: brightness(0.91); }
-  42.5% { transform: translate(0.0px, 181.3px) scale(1.07); opacity: 0.73; filter: brightness(0.91); }
-  45.0% { transform: translate(0.0px, 181.3px) scale(1.07); opacity: 0.73; filter: brightness(0.91); }
-  47.5% { transform: translate(0.0px, 181.3px) scale(1.07); opacity: 0.73; filter: brightness(0.91); }
-  50.0% { transform: translate(0.0px, 181.3px) scale(1.07); opacity: 0.73; filter: brightness(0.91); }
-  52.5% { transform: translate(0.0px, 181.3px) scale(1.07); opacity: 0.73; filter: brightness(0.91); }
-  55.0% { transform: translate(0.0px, 181.3px) scale(1.07); opacity: 0.73; filter: brightness(0.91); }
-  57.5% { transform: translate(0.0px, 181.3px) scale(1.07); opacity: 0.73; filter: brightness(0.91); }
-  60.0% { transform: translate(0.0px, 181.3px) scale(1.07); opacity: 0.73; filter: brightness(0.91); }
-  62.5% { transform: translate(0.0px, 181.3px) scale(1.07); opacity: 0.73; filter: brightness(0.91); }
-  65.0% { transform: translate(0.0px, 181.3px) scale(1.07); opacity: 0.73; filter: brightness(0.91); }
-  67.5% { transform: translate(0.0px, 181.3px) scale(1.07); opacity: 0.73; filter: brightness(0.91); }
-  70.0% { transform: translate(0.0px, 181.3px) scale(1.07); opacity: 0.73; filter: brightness(0.91); }
-  72.5% { transform: translate(0.0px, 181.3px) scale(1.07); opacity: 0.73; filter: brightness(0.91); }
-  75.0% { transform: translate(0.0px, 181.3px) scale(1.07); opacity: 0.73; filter: brightness(0.91); }
-  77.5% { transform: translate(0.0px, 181.3px) scale(1.07); opacity: 0.73; filter: brightness(0.91); }
-  80.0% { transform: translate(0.0px, 181.3px) scale(1.07); opacity: 0.73; filter: brightness(0.91); }
-  82.5% { transform: translate(0.0px, 181.3px) scale(1.07); opacity: 0.73; filter: brightness(0.91); }
-  85.0% { transform: translate(0.0px, 181.3px) scale(1.07); opacity: 0.73; filter: brightness(0.91); }
-  87.5% { transform: translate(0.0px, 181.3px) scale(1.07); opacity: 0.73; filter: brightness(0.91); }
-  90.0% { transform: translate(0.0px, 181.3px) scale(1.07); opacity: 0.73; filter: brightness(0.91); }
-  92.5% { transform: translate(0.0px, 181.3px) scale(1.07); opacity: 0.73; filter: brightness(0.91); }
-  95.0% { transform: translate(0.0px, 181.3px) scale(1.07); opacity: 0.73; filter: brightness(0.91); }
-  97.5% { transform: translate(0.0px, 181.3px) scale(1.07); opacity: 0.73; filter: brightness(0.91); }
-  100.0% { transform: translate(0.0px, 181.3px) scale(1.07); opacity: 0.73; filter: brightness(0.91); }
+@keyframes orbit_node_0 {
+  0.0% { transform: translate(77.8px, 214.9px) scale(0.96); opacity: 0.82; filter: brightness(0.97); }
+  2.5% { transform: translate(75.6px, 214.7px) scale(0.94); opacity: 0.81; filter: brightness(0.96); }
+  5.0% { transform: translate(71.7px, 214.6px) scale(0.93); opacity: 0.80; filter: brightness(0.95); }
+  7.5% { transform: translate(66.2px, 214.5px) scale(0.91); opacity: 0.79; filter: brightness(0.95); }
+  10.0% { transform: translate(59.3px, 214.4px) scale(0.90); opacity: 0.78; filter: brightness(0.94); }
+  12.5% { transform: translate(51.2px, 214.3px) scale(0.89); opacity: 0.77; filter: brightness(0.93); }
+  15.0% { transform: translate(42.2px, 214.2px) scale(0.88); opacity: 0.76; filter: brightness(0.93); }
+  17.5% { transform: translate(32.3px, 214.1px) scale(0.87); opacity: 0.75; filter: brightness(0.92); }
+  20.0% { transform: translate(21.9px, 214.1px) scale(0.87); opacity: 0.75; filter: brightness(0.92); }
+  22.5% { transform: translate(11.0px, 214.1px) scale(0.87); opacity: 0.75; filter: brightness(0.92); }
+  25.0% { transform: translate(0.0px, 214.1px) scale(0.87); opacity: 0.75; filter: brightness(0.92); }
+  27.5% { transform: translate(-11.0px, 214.1px) scale(0.87); opacity: 0.75; filter: brightness(0.92); }
+  30.0% { transform: translate(-21.9px, 214.1px) scale(0.87); opacity: 0.75; filter: brightness(0.92); }
+  32.5% { transform: translate(-32.3px, 214.1px) scale(0.87); opacity: 0.75; filter: brightness(0.92); }
+  35.0% { transform: translate(-42.2px, 214.2px) scale(0.88); opacity: 0.76; filter: brightness(0.93); }
+  37.5% { transform: translate(-51.2px, 214.3px) scale(0.89); opacity: 0.77; filter: brightness(0.93); }
+  40.0% { transform: translate(-59.3px, 214.4px) scale(0.90); opacity: 0.78; filter: brightness(0.94); }
+  42.5% { transform: translate(-66.2px, 214.5px) scale(0.91); opacity: 0.79; filter: brightness(0.95); }
+  45.0% { transform: translate(-71.7px, 214.6px) scale(0.93); opacity: 0.80; filter: brightness(0.95); }
+  47.5% { transform: translate(-75.6px, 214.7px) scale(0.94); opacity: 0.81; filter: brightness(0.96); }
+  50.0% { transform: translate(-77.8px, 214.9px) scale(0.96); opacity: 0.82; filter: brightness(0.97); }
+  52.5% { transform: translate(-78.1px, 215.0px) scale(0.97); opacity: 0.83; filter: brightness(0.98); }
+  55.0% { transform: translate(-76.4px, 215.1px) scale(0.99); opacity: 0.85; filter: brightness(0.99); }
+  57.5% { transform: translate(-72.7px, 215.3px) scale(1.00); opacity: 0.86; filter: brightness(1.00); }
+  60.0% { transform: translate(-67.0px, 215.4px) scale(1.02); opacity: 0.87; filter: brightness(1.00); }
+  62.5% { transform: translate(-59.4px, 215.5px) scale(1.03); opacity: 0.88; filter: brightness(1.01); }
+  65.0% { transform: translate(-49.9px, 215.7px) scale(1.04); opacity: 0.88; filter: brightness(1.02); }
+  67.5% { transform: translate(-38.9px, 215.7px) scale(1.05); opacity: 0.89; filter: brightness(1.02); }
+  70.0% { transform: translate(-26.7px, 215.8px) scale(1.06); opacity: 0.89; filter: brightness(1.02); }
+  72.5% { transform: translate(-13.6px, 215.8px) scale(1.06); opacity: 0.90; filter: brightness(1.03); }
+  75.0% { transform: translate(-0.0px, 215.9px) scale(1.07); opacity: 0.90; filter: brightness(1.03); }
+  77.5% { transform: translate(13.6px, 215.8px) scale(1.06); opacity: 0.90; filter: brightness(1.03); }
+  80.0% { transform: translate(26.7px, 215.8px) scale(1.06); opacity: 0.89; filter: brightness(1.02); }
+  82.5% { transform: translate(38.9px, 215.7px) scale(1.05); opacity: 0.89; filter: brightness(1.02); }
+  85.0% { transform: translate(49.9px, 215.7px) scale(1.04); opacity: 0.88; filter: brightness(1.02); }
+  87.5% { transform: translate(59.4px, 215.5px) scale(1.03); opacity: 0.88; filter: brightness(1.01); }
+  90.0% { transform: translate(67.0px, 215.4px) scale(1.02); opacity: 0.87; filter: brightness(1.00); }
+  92.5% { transform: translate(72.7px, 215.3px) scale(1.00); opacity: 0.86; filter: brightness(1.00); }
+  95.0% { transform: translate(76.4px, 215.1px) scale(0.99); opacity: 0.85; filter: brightness(0.99); }
+  97.5% { transform: translate(78.1px, 215.0px) scale(0.97); opacity: 0.83; filter: brightness(0.98); }
+  100.0% { transform: translate(77.8px, 214.9px) scale(0.96); opacity: 0.82; filter: brightness(0.97); }
 }
 @keyframes orbit_node_1 {
-  0.0% { transform: translate(-74.3px, 151.5px) scale(1.15); opacity: 0.84; filter: brightness(0.99); }
-  2.5% { transform: translate(-63.6px, 150.6px) scale(1.17); opacity: 0.86; filter: brightness(1.00); }
-  5.0% { transform: translate(-50.8px, 149.8px) scale(1.18); opacity: 0.87; filter: brightness(1.01); }
-  7.5% { transform: translate(-36.4px, 149.2px) scale(1.19); opacity: 0.88; filter: brightness(1.02); }
-  10.0% { transform: translate(-20.8px, 148.7px) scale(1.20); opacity: 0.89; filter: brightness(1.02); }
-  12.5% { transform: translate(-4.6px, 148.5px) scale(1.20); opacity: 0.89; filter: brightness(1.03); }
-  15.0% { transform: translate(11.8px, 148.6px) scale(1.20); opacity: 0.89; filter: brightness(1.03); }
-  17.5% { transform: translate(27.8px, 148.9px) scale(1.19); opacity: 0.89; filter: brightness(1.02); }
-  20.0% { transform: translate(42.9px, 149.4px) scale(1.19); opacity: 0.88; filter: brightness(1.02); }
-  22.5% { transform: translate(56.7px, 150.1px) scale(1.18); opacity: 0.87; filter: brightness(1.01); }
-  25.0% { transform: translate(68.6px, 151.0px) scale(1.16); opacity: 0.85; filter: brightness(0.99); }
-  27.5% { transform: translate(78.4px, 152.0px) scale(1.15); opacity: 0.83; filter: brightness(0.98); }
-  30.0% { transform: translate(85.8px, 152.9px) scale(1.13); opacity: 0.81; filter: brightness(0.97); }
-  32.5% { transform: translate(90.8px, 153.9px) scale(1.11); opacity: 0.78; filter: brightness(0.95); }
-  35.0% { transform: translate(93.3px, 154.8px) scale(1.09); opacity: 0.76; filter: brightness(0.93); }
-  37.5% { transform: translate(93.2px, 155.6px) scale(1.07); opacity: 0.73; filter: brightness(0.91); }
-  40.0% { transform: translate(90.9px, 156.2px) scale(1.05); opacity: 0.70; filter: brightness(0.89); }
-  42.5% { transform: translate(86.4px, 156.6px) scale(1.03); opacity: 0.67; filter: brightness(0.87); }
-  45.0% { transform: translate(80.0px, 156.9px) scale(1.01); opacity: 0.65; filter: brightness(0.86); }
-  47.5% { transform: translate(72.0px, 157.1px) scale(0.99); opacity: 0.63; filter: brightness(0.84); }
-  50.0% { transform: translate(62.5px, 157.2px) scale(0.97); opacity: 0.60; filter: brightness(0.82); }
-  52.5% { transform: translate(52.0px, 157.1px) scale(0.96); opacity: 0.58; filter: brightness(0.81); }
-  55.0% { transform: translate(40.6px, 157.0px) scale(0.95); opacity: 0.57; filter: brightness(0.80); }
-  57.5% { transform: translate(28.6px, 157.0px) scale(0.94); opacity: 0.56; filter: brightness(0.79); }
-  60.0% { transform: translate(16.2px, 156.9px) scale(0.93); opacity: 0.55; filter: brightness(0.79); }
-  62.5% { transform: translate(3.5px, 156.8px) scale(0.93); opacity: 0.55; filter: brightness(0.79); }
-  65.0% { transform: translate(-9.2px, 156.9px) scale(0.93); opacity: 0.55; filter: brightness(0.79); }
-  67.5% { transform: translate(-21.7px, 156.9px) scale(0.93); opacity: 0.55; filter: brightness(0.79); }
-  70.0% { transform: translate(-34.0px, 157.0px) scale(0.94); opacity: 0.56; filter: brightness(0.80); }
-  72.5% { transform: translate(-45.8px, 157.1px) scale(0.95); opacity: 0.58; filter: brightness(0.81); }
-  75.0% { transform: translate(-56.8px, 157.1px) scale(0.96); opacity: 0.59; filter: brightness(0.82); }
-  77.5% { transform: translate(-66.9px, 157.1px) scale(0.98); opacity: 0.61; filter: brightness(0.83); }
-  80.0% { transform: translate(-75.7px, 157.1px) scale(1.00); opacity: 0.64; filter: brightness(0.85); }
-  82.5% { transform: translate(-83.0px, 156.8px) scale(1.02); opacity: 0.66; filter: brightness(0.86); }
-  85.0% { transform: translate(-88.6px, 156.5px) scale(1.04); opacity: 0.69; filter: brightness(0.88); }
-  87.5% { transform: translate(-92.2px, 155.9px) scale(1.06); opacity: 0.71; filter: brightness(0.90); }
-  90.0% { transform: translate(-93.5px, 155.2px) scale(1.08); opacity: 0.74; filter: brightness(0.92); }
-  92.5% { transform: translate(-92.5px, 154.4px) scale(1.10); opacity: 0.77; filter: brightness(0.94); }
-  95.0% { transform: translate(-88.9px, 153.5px) scale(1.12); opacity: 0.79; filter: brightness(0.96); }
-  97.5% { transform: translate(-82.8px, 152.5px) scale(1.14); opacity: 0.82; filter: brightness(0.97); }
-  100.0% { transform: translate(-74.3px, 151.5px) scale(1.15); opacity: 0.84; filter: brightness(0.99); }
+  0.0% { transform: translate(-108.1px, 185.2px) scale(1.07); opacity: 0.90; filter: brightness(1.03); }
+  2.5% { transform: translate(-93.3px, 184.8px) scale(1.09); opacity: 0.91; filter: brightness(1.04); }
+  5.0% { transform: translate(-75.1px, 184.4px) scale(1.11); opacity: 0.93; filter: brightness(1.05); }
+  7.5% { transform: translate(-54.2px, 184.1px) scale(1.13); opacity: 0.93; filter: brightness(1.05); }
+  10.0% { transform: translate(-31.1px, 183.9px) scale(1.14); opacity: 0.94; filter: brightness(1.06); }
+  12.5% { transform: translate(-6.9px, 183.8px) scale(1.14); opacity: 0.94; filter: brightness(1.06); }
+  15.0% { transform: translate(17.7px, 183.8px) scale(1.14); opacity: 0.94; filter: brightness(1.06); }
+  17.5% { transform: translate(41.5px, 184.0px) scale(1.14); opacity: 0.94; filter: brightness(1.05); }
+  20.0% { transform: translate(63.7px, 184.2px) scale(1.12); opacity: 0.93; filter: brightness(1.05); }
+  22.5% { transform: translate(83.5px, 184.6px) scale(1.11); opacity: 0.92; filter: brightness(1.04); }
+  25.0% { transform: translate(100.3px, 185.0px) scale(1.08); opacity: 0.91; filter: brightness(1.03); }
+  27.5% { transform: translate(113.6px, 185.4px) scale(1.06); opacity: 0.89; filter: brightness(1.02); }
+  30.0% { transform: translate(123.2px, 186.0px) scale(1.03); opacity: 0.88; filter: brightness(1.01); }
+  32.5% { transform: translate(129.1px, 186.5px) scale(1.01); opacity: 0.86; filter: brightness(1.00); }
+  35.0% { transform: translate(131.5px, 187.0px) scale(0.98); opacity: 0.84; filter: brightness(0.98); }
+  37.5% { transform: translate(130.4px, 187.6px) scale(0.95); opacity: 0.82; filter: brightness(0.97); }
+  40.0% { transform: translate(126.2px, 188.1px) scale(0.93); opacity: 0.80; filter: brightness(0.95); }
+  42.5% { transform: translate(119.3px, 188.5px) scale(0.90); opacity: 0.78; filter: brightness(0.94); }
+  45.0% { transform: translate(110.0px, 188.9px) scale(0.88); opacity: 0.76; filter: brightness(0.93); }
+  47.5% { transform: translate(98.6px, 189.3px) scale(0.86); opacity: 0.74; filter: brightness(0.91); }
+  50.0% { transform: translate(85.5px, 189.6px) scale(0.85); opacity: 0.73; filter: brightness(0.90); }
+  52.5% { transform: translate(71.0px, 189.9px) scale(0.83); opacity: 0.72; filter: brightness(0.89); }
+  55.0% { transform: translate(55.4px, 190.1px) scale(0.82); opacity: 0.70; filter: brightness(0.88); }
+  57.5% { transform: translate(39.0px, 190.3px) scale(0.81); opacity: 0.70; filter: brightness(0.88); }
+  60.0% { transform: translate(22.1px, 190.4px) scale(0.81); opacity: 0.69; filter: brightness(0.87); }
+  62.5% { transform: translate(4.8px, 190.4px) scale(0.81); opacity: 0.69; filter: brightness(0.87); }
+  65.0% { transform: translate(-12.5px, 190.4px) scale(0.81); opacity: 0.69; filter: brightness(0.87); }
+  67.5% { transform: translate(-29.7px, 190.4px) scale(0.81); opacity: 0.69; filter: brightness(0.88); }
+  70.0% { transform: translate(-46.4px, 190.2px) scale(0.82); opacity: 0.70; filter: brightness(0.88); }
+  72.5% { transform: translate(-62.5px, 190.0px) scale(0.83); opacity: 0.71; filter: brightness(0.89); }
+  75.0% { transform: translate(-77.6px, 189.8px) scale(0.84); opacity: 0.72; filter: brightness(0.90); }
+  77.5% { transform: translate(-91.5px, 189.5px) scale(0.85); opacity: 0.74; filter: brightness(0.91); }
+  80.0% { transform: translate(-103.9px, 189.2px) scale(0.87); opacity: 0.75; filter: brightness(0.92); }
+  82.5% { transform: translate(-114.4px, 188.8px) scale(0.89); opacity: 0.77; filter: brightness(0.93); }
+  85.0% { transform: translate(-122.7px, 188.3px) scale(0.91); opacity: 0.79; filter: brightness(0.95); }
+  87.5% { transform: translate(-128.4px, 187.8px) scale(0.94); opacity: 0.81; filter: brightness(0.96); }
+  90.0% { transform: translate(-131.3px, 187.3px) scale(0.96); opacity: 0.83; filter: brightness(0.98); }
+  92.5% { transform: translate(-130.9px, 186.8px) scale(0.99); opacity: 0.85; filter: brightness(0.99); }
+  95.0% { transform: translate(-127.0px, 186.3px) scale(1.02); opacity: 0.87; filter: brightness(1.00); }
+  97.5% { transform: translate(-119.4px, 185.7px) scale(1.05); opacity: 0.89; filter: brightness(1.02); }
+  100.0% { transform: translate(-108.1px, 185.2px) scale(1.07); opacity: 0.90; filter: brightness(1.03); }
 }
 @keyframes orbit_node_2 {
-  0.0% { transform: translate(9.0px, 134.4px) scale(0.87); opacity: 0.47; filter: brightness(0.73); }
-  2.5% { transform: translate(-7.2px, 134.4px) scale(0.87); opacity: 0.47; filter: brightness(0.73); }
-  5.0% { transform: translate(-23.3px, 134.5px) scale(0.87); opacity: 0.48; filter: brightness(0.74); }
-  7.5% { transform: translate(-39.3px, 134.5px) scale(0.88); opacity: 0.49; filter: brightness(0.75); }
-  10.0% { transform: translate(-54.8px, 134.6px) scale(0.90); opacity: 0.51; filter: brightness(0.76); }
-  12.5% { transform: translate(-69.7px, 134.5px) scale(0.91); opacity: 0.53; filter: brightness(0.77); }
-  15.0% { transform: translate(-83.7px, 134.4px) scale(0.93); opacity: 0.55; filter: brightness(0.79); }
-  17.5% { transform: translate(-96.4px, 134.0px) scale(0.96); opacity: 0.58; filter: brightness(0.81); }
-  20.0% { transform: translate(-107.4px, 133.4px) scale(0.98); opacity: 0.62; filter: brightness(0.83); }
-  22.5% { transform: translate(-116.4px, 132.6px) scale(1.01); opacity: 0.65; filter: brightness(0.86); }
-  25.0% { transform: translate(-122.9px, 131.4px) scale(1.04); opacity: 0.69; filter: brightness(0.88); }
-  27.5% { transform: translate(-126.5px, 129.9px) scale(1.07); opacity: 0.72; filter: brightness(0.91); }
-  30.0% { transform: translate(-126.9px, 128.1px) scale(1.09); opacity: 0.76; filter: brightness(0.93); }
-  32.5% { transform: translate(-123.8px, 126.2px) scale(1.12); opacity: 0.80; filter: brightness(0.96); }
-  35.0% { transform: translate(-117.1px, 124.2px) scale(1.15); opacity: 0.83; filter: brightness(0.98); }
-  37.5% { transform: translate(-106.8px, 122.1px) scale(1.17); opacity: 0.86; filter: brightness(1.00); }
-  40.0% { transform: translate(-93.1px, 120.1px) scale(1.19); opacity: 0.89; filter: brightness(1.02); }
-  42.5% { transform: translate(-76.3px, 118.4px) scale(1.21); opacity: 0.91; filter: brightness(1.04); }
-  45.0% { transform: translate(-56.9px, 117.0px) scale(1.22); opacity: 0.93; filter: brightness(1.05); }
-  47.5% { transform: translate(-35.5px, 116.0px) scale(1.23); opacity: 0.94; filter: brightness(1.06); }
-  50.0% { transform: translate(-12.9px, 115.4px) scale(1.24); opacity: 0.94; filter: brightness(1.06); }
-  52.5% { transform: translate(10.2px, 115.4px) scale(1.24); opacity: 0.94; filter: brightness(1.06); }
-  55.0% { transform: translate(33.0px, 115.9px) scale(1.23); opacity: 0.94; filter: brightness(1.06); }
-  57.5% { transform: translate(54.5px, 116.8px) scale(1.22); opacity: 0.93; filter: brightness(1.05); }
-  60.0% { transform: translate(74.2px, 118.2px) scale(1.21); opacity: 0.91; filter: brightness(1.04); }
-  62.5% { transform: translate(91.4px, 119.9px) scale(1.19); opacity: 0.89; filter: brightness(1.02); }
-  65.0% { transform: translate(105.4px, 121.9px) scale(1.17); opacity: 0.86; filter: brightness(1.01); }
-  67.5% { transform: translate(116.1px, 123.9px) scale(1.15); opacity: 0.83; filter: brightness(0.98); }
-  70.0% { transform: translate(123.3px, 126.0px) scale(1.13); opacity: 0.80; filter: brightness(0.96); }
-  72.5% { transform: translate(126.8px, 127.9px) scale(1.10); opacity: 0.77; filter: brightness(0.94); }
-  75.0% { transform: translate(126.8px, 129.7px) scale(1.07); opacity: 0.73; filter: brightness(0.91); }
-  77.5% { transform: translate(123.5px, 131.2px) scale(1.04); opacity: 0.69; filter: brightness(0.89); }
-  80.0% { transform: translate(117.3px, 132.4px) scale(1.01); opacity: 0.66; filter: brightness(0.86); }
-  82.5% { transform: translate(108.6px, 133.4px) scale(0.98); opacity: 0.62; filter: brightness(0.84); }
-  85.0% { transform: translate(97.7px, 134.0px) scale(0.96); opacity: 0.59; filter: brightness(0.81); }
-  87.5% { transform: translate(85.2px, 134.4px) scale(0.93); opacity: 0.56; filter: brightness(0.79); }
-  90.0% { transform: translate(71.4px, 134.5px) scale(0.91); opacity: 0.53; filter: brightness(0.77); }
-  92.5% { transform: translate(56.6px, 134.6px) scale(0.90); opacity: 0.51; filter: brightness(0.76); }
-  95.0% { transform: translate(41.1px, 134.5px) scale(0.88); opacity: 0.49; filter: brightness(0.75); }
-  97.5% { transform: translate(25.2px, 134.5px) scale(0.87); opacity: 0.48; filter: brightness(0.74); }
-  100.0% { transform: translate(9.0px, 134.4px) scale(0.87); opacity: 0.47; filter: brightness(0.73); }
+  0.0% { transform: translate(11.6px, 169.0px) scale(0.77); opacity: 0.65; filter: brightness(0.84); }
+  2.5% { transform: translate(-9.2px, 169.0px) scale(0.77); opacity: 0.65; filter: brightness(0.84); }
+  5.0% { transform: translate(-29.8px, 168.9px) scale(0.77); opacity: 0.65; filter: brightness(0.85); }
+  7.5% { transform: translate(-50.1px, 168.6px) scale(0.78); opacity: 0.66; filter: brightness(0.85); }
+  10.0% { transform: translate(-69.8px, 168.1px) scale(0.79); opacity: 0.67; filter: brightness(0.86); }
+  12.5% { transform: translate(-88.6px, 167.4px) scale(0.80); opacity: 0.69; filter: brightness(0.87); }
+  15.0% { transform: translate(-106.1px, 166.6px) scale(0.82); opacity: 0.70; filter: brightness(0.88); }
+  17.5% { transform: translate(-122.2px, 165.7px) scale(0.84); opacity: 0.72; filter: brightness(0.90); }
+  20.0% { transform: translate(-136.3px, 164.6px) scale(0.86); opacity: 0.75; filter: brightness(0.91); }
+  22.5% { transform: translate(-148.0px, 163.3px) scale(0.89); opacity: 0.77; filter: brightness(0.93); }
+  25.0% { transform: translate(-156.9px, 161.9px) scale(0.92); opacity: 0.79; filter: brightness(0.95); }
+  27.5% { transform: translate(-162.5px, 160.4px) scale(0.95); opacity: 0.82; filter: brightness(0.97); }
+  30.0% { transform: translate(-164.3px, 158.8px) scale(0.98); opacity: 0.84; filter: brightness(0.99); }
+  32.5% { transform: translate(-161.8px, 157.1px) scale(1.02); opacity: 0.87; filter: brightness(1.00); }
+  35.0% { transform: translate(-154.6px, 155.5px) scale(1.05); opacity: 0.89; filter: brightness(1.02); }
+  37.5% { transform: translate(-142.6px, 153.8px) scale(1.09); opacity: 0.91; filter: brightness(1.03); }
+  40.0% { transform: translate(-125.6px, 152.3px) scale(1.12); opacity: 0.93; filter: brightness(1.05); }
+  42.5% { transform: translate(-104.0px, 151.0px) scale(1.14); opacity: 0.94; filter: brightness(1.06); }
+  45.0% { transform: translate(-78.2px, 149.9px) scale(1.17); opacity: 0.95; filter: brightness(1.07); }
+  47.5% { transform: translate(-49.1px, 149.2px) scale(1.18); opacity: 0.96; filter: brightness(1.07); }
+  50.0% { transform: translate(-17.8px, 148.8px) scale(1.19); opacity: 0.97; filter: brightness(1.08); }
+  52.5% { transform: translate(14.2px, 148.8px) scale(1.19); opacity: 0.97; filter: brightness(1.08); }
+  55.0% { transform: translate(45.6px, 149.1px) scale(1.18); opacity: 0.96; filter: brightness(1.07); }
+  57.5% { transform: translate(75.0px, 149.8px) scale(1.17); opacity: 0.96; filter: brightness(1.07); }
+  60.0% { transform: translate(101.2px, 150.9px) scale(1.15); opacity: 0.94; filter: brightness(1.06); }
+  62.5% { transform: translate(123.4px, 152.2px) scale(1.12); opacity: 0.93; filter: brightness(1.05); }
+  65.0% { transform: translate(140.9px, 153.7px) scale(1.09); opacity: 0.91; filter: brightness(1.04); }
+  67.5% { transform: translate(153.5px, 155.3px) scale(1.06); opacity: 0.89; filter: brightness(1.02); }
+  70.0% { transform: translate(161.2px, 156.9px) scale(1.02); opacity: 0.87; filter: brightness(1.01); }
+  72.5% { transform: translate(164.2px, 158.6px) scale(0.99); opacity: 0.85; filter: brightness(0.99); }
+  75.0% { transform: translate(162.9px, 160.2px) scale(0.95); opacity: 0.82; filter: brightness(0.97); }
+  77.5% { transform: translate(157.7px, 161.7px) scale(0.92); opacity: 0.80; filter: brightness(0.95); }
+  80.0% { transform: translate(149.2px, 163.1px) scale(0.89); opacity: 0.77; filter: brightness(0.93); }
+  82.5% { transform: translate(137.7px, 164.4px) scale(0.87); opacity: 0.75; filter: brightness(0.92); }
+  85.0% { transform: translate(123.9px, 165.6px) scale(0.84); opacity: 0.73; filter: brightness(0.90); }
+  87.5% { transform: translate(108.1px, 166.5px) scale(0.82); opacity: 0.71; filter: brightness(0.89); }
+  90.0% { transform: translate(90.6px, 167.4px) scale(0.81); opacity: 0.69; filter: brightness(0.87); }
+  92.5% { transform: translate(72.0px, 168.0px) scale(0.79); opacity: 0.67; filter: brightness(0.86); }
+  95.0% { transform: translate(52.4px, 168.5px) scale(0.78); opacity: 0.66; filter: brightness(0.85); }
+  97.5% { transform: translate(32.2px, 168.8px) scale(0.78); opacity: 0.65; filter: brightness(0.85); }
+  100.0% { transform: translate(11.6px, 169.0px) scale(0.77); opacity: 0.65; filter: brightness(0.84); }
 }
 @keyframes orbit_node_3 {
-  0.0% { transform: translate(103.6px, 88.4px) scale(1.22); opacity: 0.92; filter: brightness(1.04); }
-  2.5% { transform: translate(121.1px, 91.3px) scale(1.19); opacity: 0.89; filter: brightness(1.02); }
-  5.0% { transform: translate(134.6px, 94.4px) scale(1.17); opacity: 0.85; filter: brightness(1.00); }
-  7.5% { transform: translate(143.7px, 97.6px) scale(1.14); opacity: 0.82; filter: brightness(0.97); }
-  10.0% { transform: translate(148.4px, 100.7px) scale(1.11); opacity: 0.78; filter: brightness(0.94); }
-  12.5% { transform: translate(148.8px, 103.7px) scale(1.07); opacity: 0.73; filter: brightness(0.91); }
-  15.0% { transform: translate(145.3px, 106.3px) scale(1.04); opacity: 0.69; filter: brightness(0.88); }
-  17.5% { transform: translate(138.2px, 108.5px) scale(1.00); opacity: 0.65; filter: brightness(0.85); }
-  20.0% { transform: translate(128.2px, 110.2px) scale(0.97); opacity: 0.60; filter: brightness(0.82); }
-  22.5% { transform: translate(115.7px, 111.6px) scale(0.94); opacity: 0.56; filter: brightness(0.80); }
-  25.0% { transform: translate(101.3px, 112.5px) scale(0.91); opacity: 0.53; filter: brightness(0.77); }
-  27.5% { transform: translate(85.4px, 113.1px) scale(0.89); opacity: 0.49; filter: brightness(0.75); }
-  30.0% { transform: translate(68.6px, 113.5px) scale(0.86); opacity: 0.47; filter: brightness(0.73); }
-  32.5% { transform: translate(51.1px, 113.7px) scale(0.85); opacity: 0.44; filter: brightness(0.71); }
-  35.0% { transform: translate(33.3px, 113.7px) scale(0.84); opacity: 0.43; filter: brightness(0.70); }
-  37.5% { transform: translate(15.2px, 113.8px) scale(0.83); opacity: 0.42; filter: brightness(0.70); }
-  40.0% { transform: translate(-3.0px, 113.8px) scale(0.83); opacity: 0.42; filter: brightness(0.70); }
-  42.5% { transform: translate(-21.1px, 113.7px) scale(0.83); opacity: 0.42; filter: brightness(0.70); }
-  45.0% { transform: translate(-39.2px, 113.7px) scale(0.84); opacity: 0.43; filter: brightness(0.71); }
-  47.5% { transform: translate(-56.9px, 113.6px) scale(0.85); opacity: 0.45; filter: brightness(0.72); }
-  50.0% { transform: translate(-74.2px, 113.4px) scale(0.87); opacity: 0.48; filter: brightness(0.74); }
-  52.5% { transform: translate(-90.8px, 113.0px) scale(0.89); opacity: 0.50; filter: brightness(0.76); }
-  55.0% { transform: translate(-106.2px, 112.3px) scale(0.92); opacity: 0.54; filter: brightness(0.78); }
-  57.5% { transform: translate(-120.0px, 111.2px) scale(0.95); opacity: 0.58; filter: brightness(0.81); }
-  60.0% { transform: translate(-131.8px, 109.7px) scale(0.98); opacity: 0.62; filter: brightness(0.83); }
-  62.5% { transform: translate(-140.9px, 107.8px) scale(1.02); opacity: 0.66; filter: brightness(0.86); }
-  65.0% { transform: translate(-146.8px, 105.4px) scale(1.05); opacity: 0.70; filter: brightness(0.89); }
-  67.5% { transform: translate(-149.1px, 102.7px) scale(1.08); opacity: 0.75; filter: brightness(0.92); }
-  70.0% { transform: translate(-147.3px, 99.7px) scale(1.12); opacity: 0.79; filter: brightness(0.95); }
-  72.5% { transform: translate(-141.2px, 96.5px) scale(1.15); opacity: 0.83; filter: brightness(0.98); }
-  75.0% { transform: translate(-130.6px, 93.3px) scale(1.18); opacity: 0.87; filter: brightness(1.01); }
-  77.5% { transform: translate(-115.8px, 90.3px) scale(1.20); opacity: 0.90; filter: brightness(1.03); }
-  80.0% { transform: translate(-97.0px, 87.5px) scale(1.22); opacity: 0.93; filter: brightness(1.05); }
-  82.5% { transform: translate(-74.8px, 85.2px) scale(1.24); opacity: 0.95; filter: brightness(1.06); }
-  85.0% { transform: translate(-49.9px, 83.5px) scale(1.25); opacity: 0.96; filter: brightness(1.07); }
-  87.5% { transform: translate(-23.1px, 82.5px) scale(1.26); opacity: 0.97; filter: brightness(1.08); }
-  90.0% { transform: translate(4.5px, 82.2px) scale(1.26); opacity: 0.97; filter: brightness(1.08); }
-  92.5% { transform: translate(32.0px, 82.7px) scale(1.26); opacity: 0.97; filter: brightness(1.08); }
-  95.0% { transform: translate(58.3px, 84.0px) scale(1.25); opacity: 0.96; filter: brightness(1.07); }
-  97.5% { transform: translate(82.4px, 85.9px) scale(1.23); opacity: 0.94; filter: brightness(1.06); }
-  100.0% { transform: translate(103.6px, 88.4px) scale(1.22); opacity: 0.92; filter: brightness(1.04); }
+  0.0% { transform: translate(137.1px, 117.9px) scale(1.15); opacity: 0.95; filter: brightness(1.06); }
+  2.5% { transform: translate(158.3px, 120.6px) scale(1.11); opacity: 0.93; filter: brightness(1.05); }
+  5.0% { transform: translate(173.7px, 123.6px) scale(1.08); opacity: 0.90; filter: brightness(1.03); }
+  7.5% { transform: translate(183.3px, 126.6px) scale(1.04); opacity: 0.88; filter: brightness(1.01); }
+  10.0% { transform: translate(187.3px, 129.7px) scale(1.00); opacity: 0.85; filter: brightness(0.99); }
+  12.5% { transform: translate(186.2px, 132.6px) scale(0.96); opacity: 0.82; filter: brightness(0.97); }
+  15.0% { transform: translate(180.6px, 135.4px) scale(0.92); opacity: 0.80; filter: brightness(0.95); }
+  17.5% { transform: translate(171.2px, 138.0px) scale(0.89); opacity: 0.77; filter: brightness(0.93); }
+  20.0% { transform: translate(158.6px, 140.3px) scale(0.86); opacity: 0.74; filter: brightness(0.91); }
+  22.5% { transform: translate(143.2px, 142.4px) scale(0.83); opacity: 0.71; filter: brightness(0.89); }
+  25.0% { transform: translate(125.7px, 144.1px) scale(0.81); opacity: 0.69; filter: brightness(0.87); }
+  27.5% { transform: translate(106.5px, 145.6px) scale(0.79); opacity: 0.67; filter: brightness(0.86); }
+  30.0% { transform: translate(85.9px, 146.8px) scale(0.77); opacity: 0.65; filter: brightness(0.84); }
+  32.5% { transform: translate(64.3px, 147.8px) scale(0.76); opacity: 0.64; filter: brightness(0.83); }
+  35.0% { transform: translate(41.9px, 148.4px) scale(0.75); opacity: 0.63; filter: brightness(0.83); }
+  37.5% { transform: translate(19.2px, 148.8px) scale(0.75); opacity: 0.62; filter: brightness(0.82); }
+  40.0% { transform: translate(-3.8px, 148.9px) scale(0.75); opacity: 0.62; filter: brightness(0.82); }
+  42.5% { transform: translate(-26.7px, 148.7px) scale(0.75); opacity: 0.62; filter: brightness(0.82); }
+  45.0% { transform: translate(-49.3px, 148.2px) scale(0.75); opacity: 0.63; filter: brightness(0.83); }
+  47.5% { transform: translate(-71.4px, 147.5px) scale(0.76); opacity: 0.64; filter: brightness(0.84); }
+  50.0% { transform: translate(-92.8px, 146.5px) scale(0.78); opacity: 0.66; filter: brightness(0.85); }
+  52.5% { transform: translate(-113.0px, 145.2px) scale(0.79); opacity: 0.67; filter: brightness(0.86); }
+  55.0% { transform: translate(-131.7px, 143.6px) scale(0.82); opacity: 0.70; filter: brightness(0.88); }
+  57.5% { transform: translate(-148.5px, 141.7px) scale(0.84); opacity: 0.72; filter: brightness(0.90); }
+  60.0% { transform: translate(-163.1px, 139.6px) scale(0.87); opacity: 0.75; filter: brightness(0.92); }
+  62.5% { transform: translate(-174.7px, 137.1px) scale(0.90); opacity: 0.78; filter: brightness(0.94); }
+  65.0% { transform: translate(-182.9px, 134.5px) scale(0.93); opacity: 0.81; filter: brightness(0.96); }
+  67.5% { transform: translate(-187.1px, 131.7px) scale(0.97); opacity: 0.83; filter: brightness(0.98); }
+  70.0% { transform: translate(-186.5px, 128.7px) scale(1.01); opacity: 0.86; filter: brightness(1.00); }
+  72.5% { transform: translate(-180.8px, 125.6px) scale(1.05); opacity: 0.89; filter: brightness(1.02); }
+  75.0% { transform: translate(-169.3px, 122.6px) scale(1.09); opacity: 0.91; filter: brightness(1.04); }
+  77.5% { transform: translate(-152.0px, 119.7px) scale(1.13); opacity: 0.93; filter: brightness(1.05); }
+  80.0% { transform: translate(-128.8px, 117.1px) scale(1.16); opacity: 0.95; filter: brightness(1.06); }
+  82.5% { transform: translate(-100.4px, 114.9px) scale(1.19); opacity: 0.97; filter: brightness(1.07); }
+  85.0% { transform: translate(-67.4px, 113.3px) scale(1.21); opacity: 0.98; filter: brightness(1.08); }
+  87.5% { transform: translate(-31.4px, 112.3px) scale(1.22); opacity: 0.98; filter: brightness(1.09); }
+  90.0% { transform: translate(6.2px, 112.1px) scale(1.22); opacity: 0.98; filter: brightness(1.09); }
+  92.5% { transform: translate(43.4px, 112.6px) scale(1.22); opacity: 0.98; filter: brightness(1.09); }
+  95.0% { transform: translate(78.6px, 113.8px) scale(1.20); opacity: 0.97; filter: brightness(1.08); }
+  97.5% { transform: translate(110.2px, 115.6px) scale(1.18); opacity: 0.96; filter: brightness(1.07); }
+  100.0% { transform: translate(137.1px, 117.9px) scale(1.15); opacity: 0.95; filter: brightness(1.06); }
 }
 @keyframes orbit_node_4 {
-  0.0% { transform: translate(-151.2px, 85.2px) scale(0.99); opacity: 0.63; filter: brightness(0.84); }
-  2.5% { transform: translate(-159.3px, 82.0px) scale(1.03); opacity: 0.68; filter: brightness(0.88); }
-  5.0% { transform: translate(-163.6px, 78.3px) scale(1.07); opacity: 0.73; filter: brightness(0.91); }
-  7.5% { transform: translate(-163.4px, 74.2px) scale(1.10); opacity: 0.77; filter: brightness(0.94); }
-  10.0% { transform: translate(-158.5px, 69.9px) scale(1.14); opacity: 0.82; filter: brightness(0.97); }
-  12.5% { transform: translate(-148.6px, 65.5px) scale(1.17); opacity: 0.86; filter: brightness(1.00); }
-  15.0% { transform: translate(-133.8px, 61.3px) scale(1.20); opacity: 0.90; filter: brightness(1.03); }
-  17.5% { transform: translate(-114.3px, 57.5px) scale(1.23); opacity: 0.93; filter: brightness(1.05); }
-  20.0% { transform: translate(-90.6px, 54.2px) scale(1.25); opacity: 0.95; filter: brightness(1.07); }
-  22.5% { transform: translate(-63.6px, 51.7px) scale(1.26); opacity: 0.97; filter: brightness(1.08); }
-  25.0% { transform: translate(-34.3px, 50.1px) scale(1.27); opacity: 0.99; filter: brightness(1.09); }
-  27.5% { transform: translate(-3.5px, 49.5px) scale(1.27); opacity: 0.99; filter: brightness(1.09); }
-  30.0% { transform: translate(27.3px, 49.9px) scale(1.27); opacity: 0.99; filter: brightness(1.09); }
-  32.5% { transform: translate(57.1px, 51.3px) scale(1.26); opacity: 0.98; filter: brightness(1.08); }
-  35.0% { transform: translate(84.7px, 53.6px) scale(1.25); opacity: 0.96; filter: brightness(1.07); }
-  37.5% { transform: translate(109.2px, 56.7px) scale(1.23); opacity: 0.94; filter: brightness(1.06); }
-  40.0% { transform: translate(129.7px, 60.4px) scale(1.21); opacity: 0.90; filter: brightness(1.03); }
-  42.5% { transform: translate(145.6px, 64.5px) scale(1.18); opacity: 0.87; filter: brightness(1.01); }
-  45.0% { transform: translate(156.7px, 68.9px) scale(1.15); opacity: 0.83; filter: brightness(0.98); }
-  47.5% { transform: translate(162.7px, 73.2px) scale(1.11); opacity: 0.78; filter: brightness(0.95); }
-  50.0% { transform: translate(164.0px, 77.4px) scale(1.08); opacity: 0.74; filter: brightness(0.92); }
-  52.5% { transform: translate(160.7px, 81.2px) scale(1.04); opacity: 0.69; filter: brightness(0.88); }
-  55.0% { transform: translate(153.4px, 84.5px) scale(1.00); opacity: 0.64; filter: brightness(0.85); }
-  57.5% { transform: translate(142.7px, 87.3px) scale(0.96); opacity: 0.59; filter: brightness(0.82); }
-  60.0% { transform: translate(129.2px, 89.6px) scale(0.93); opacity: 0.55; filter: brightness(0.79); }
-  62.5% { transform: translate(113.7px, 91.3px) scale(0.90); opacity: 0.51; filter: brightness(0.76); }
-  65.0% { transform: translate(96.6px, 92.5px) scale(0.87); opacity: 0.47; filter: brightness(0.73); }
-  67.5% { transform: translate(78.5px, 93.4px) scale(0.84); opacity: 0.44; filter: brightness(0.71); }
-  70.0% { transform: translate(59.8px, 93.9px) scale(0.82); opacity: 0.41; filter: brightness(0.69); }
-  72.5% { transform: translate(40.7px, 94.2px) scale(0.81); opacity: 0.39; filter: brightness(0.68); }
-  75.0% { transform: translate(21.5px, 94.4px) scale(0.80); opacity: 0.38; filter: brightness(0.67); }
-  77.5% { transform: translate(2.2px, 94.4px) scale(0.79); opacity: 0.38; filter: brightness(0.67); }
-  80.0% { transform: translate(-17.1px, 94.4px) scale(0.80); opacity: 0.38; filter: brightness(0.67); }
-  82.5% { transform: translate(-36.3px, 94.2px) scale(0.80); opacity: 0.39; filter: brightness(0.68); }
-  85.0% { transform: translate(-55.4px, 94.0px) scale(0.82); opacity: 0.41; filter: brightness(0.69); }
-  87.5% { transform: translate(-74.3px, 93.5px) scale(0.84); opacity: 0.43; filter: brightness(0.71); }
-  90.0% { transform: translate(-92.5px, 92.7px) scale(0.86); opacity: 0.46; filter: brightness(0.73); }
-  92.5% { transform: translate(-109.9px, 91.6px) scale(0.89); opacity: 0.50; filter: brightness(0.75); }
-  95.0% { transform: translate(-125.8px, 90.0px) scale(0.92); opacity: 0.54; filter: brightness(0.78); }
-  97.5% { transform: translate(-139.8px, 87.9px) scale(0.96); opacity: 0.58; filter: brightness(0.81); }
-  100.0% { transform: translate(-151.2px, 85.2px) scale(0.99); opacity: 0.63; filter: brightness(0.84); }
+  0.0% { transform: translate(-185.5px, 113.6px) scale(0.88); opacity: 0.76; filter: brightness(0.92); }
+  2.5% { transform: translate(-196.1px, 109.8px) scale(0.91); opacity: 0.79; filter: brightness(0.95); }
+  5.0% { transform: translate(-202.5px, 105.7px) scale(0.95); opacity: 0.82; filter: brightness(0.97); }
+  7.5% { transform: translate(-204.1px, 101.3px) scale(0.99); opacity: 0.85; filter: brightness(0.99); }
+  10.0% { transform: translate(-200.2px, 96.7px) scale(1.04); opacity: 0.88; filter: brightness(1.01); }
+  12.5% { transform: translate(-190.1px, 92.1px) scale(1.08); opacity: 0.91; filter: brightness(1.03); }
+  15.0% { transform: translate(-173.5px, 87.7px) scale(1.12); opacity: 0.93; filter: brightness(1.05); }
+  17.5% { transform: translate(-150.2px, 83.5px) scale(1.16); opacity: 0.95; filter: brightness(1.07); }
+  20.0% { transform: translate(-120.6px, 80.0px) scale(1.20); opacity: 0.97; filter: brightness(1.08); }
+  22.5% { transform: translate(-85.5px, 77.2px) scale(1.22); opacity: 0.98; filter: brightness(1.09); }
+  25.0% { transform: translate(-46.3px, 75.4px) scale(1.24); opacity: 0.99; filter: brightness(1.09); }
+  27.5% { transform: translate(-4.8px, 74.7px) scale(1.25); opacity: 0.99; filter: brightness(1.09); }
+  30.0% { transform: translate(36.9px, 75.2px) scale(1.24); opacity: 0.99; filter: brightness(1.09); }
+  32.5% { transform: translate(76.9px, 76.7px) scale(1.23); opacity: 0.98; filter: brightness(1.09); }
+  35.0% { transform: translate(113.0px, 79.3px) scale(1.20); opacity: 0.97; filter: brightness(1.08); }
+  37.5% { transform: translate(144.0px, 82.7px) scale(1.17); opacity: 0.96; filter: brightness(1.07); }
+  40.0% { transform: translate(168.8px, 86.7px) scale(1.13); opacity: 0.94; filter: brightness(1.05); }
+  42.5% { transform: translate(186.9px, 91.1px) scale(1.09); opacity: 0.91; filter: brightness(1.04); }
+  45.0% { transform: translate(198.5px, 95.7px) scale(1.05); opacity: 0.89; filter: brightness(1.02); }
+  47.5% { transform: translate(203.7px, 100.2px) scale(1.00); opacity: 0.86; filter: brightness(1.00); }
+  50.0% { transform: translate(203.3px, 104.7px) scale(0.96); opacity: 0.83; filter: brightness(0.97); }
+  52.5% { transform: translate(197.9px, 108.9px) scale(0.92); opacity: 0.80; filter: brightness(0.95); }
+  55.0% { transform: translate(188.2px, 112.8px) scale(0.89); opacity: 0.77; filter: brightness(0.93); }
+  57.5% { transform: translate(175.0px, 116.3px) scale(0.85); opacity: 0.73; filter: brightness(0.91); }
+  60.0% { transform: translate(158.8px, 119.4px) scale(0.82); opacity: 0.71; filter: brightness(0.89); }
+  62.5% { transform: translate(140.3px, 122.1px) scale(0.80); opacity: 0.68; filter: brightness(0.87); }
+  65.0% { transform: translate(119.9px, 124.3px) scale(0.78); opacity: 0.65; filter: brightness(0.85); }
+  67.5% { transform: translate(98.0px, 126.2px) scale(0.76); opacity: 0.63; filter: brightness(0.83); }
+  70.0% { transform: translate(75.1px, 127.6px) scale(0.75); opacity: 0.62; filter: brightness(0.82); }
+  72.5% { transform: translate(51.4px, 128.7px) scale(0.74); opacity: 0.60; filter: brightness(0.81); }
+  75.0% { transform: translate(27.3px, 129.3px) scale(0.73); opacity: 0.60; filter: brightness(0.81); }
+  77.5% { transform: translate(2.8px, 129.5px) scale(0.73); opacity: 0.59; filter: brightness(0.80); }
+  80.0% { transform: translate(-21.7px, 129.4px) scale(0.73); opacity: 0.60; filter: brightness(0.80); }
+  82.5% { transform: translate(-45.9px, 128.8px) scale(0.73); opacity: 0.60; filter: brightness(0.81); }
+  85.0% { transform: translate(-69.8px, 127.9px) scale(0.74); opacity: 0.61; filter: brightness(0.82); }
+  87.5% { transform: translate(-92.9px, 126.5px) scale(0.76); opacity: 0.63; filter: brightness(0.83); }
+  90.0% { transform: translate(-115.0px, 124.8px) scale(0.77); opacity: 0.65; filter: brightness(0.84); }
+  92.5% { transform: translate(-135.8px, 122.6px) scale(0.79); opacity: 0.67; filter: brightness(0.86); }
+  95.0% { transform: translate(-154.8px, 120.0px) scale(0.82); opacity: 0.70; filter: brightness(0.88); }
+  97.5% { transform: translate(-171.5px, 117.0px) scale(0.85); opacity: 0.73; filter: brightness(0.90); }
+  100.0% { transform: translate(-185.5px, 113.6px) scale(0.88); opacity: 0.76; filter: brightness(0.92); }
 }
 @keyframes orbit_node_5 {
-  0.0% { transform: translate(123.5px, 70.3px) scale(0.89); opacity: 0.50; filter: brightness(0.75); }
-  2.5% { transform: translate(105.7px, 72.3px) scale(0.85); opacity: 0.45; filter: brightness(0.72); }
-  5.0% { transform: translate(86.8px, 73.8px) scale(0.83); opacity: 0.42; filter: brightness(0.70); }
-  7.5% { transform: translate(67.4px, 74.8px) scale(0.80); opacity: 0.39; filter: brightness(0.68); }
-  10.0% { transform: translate(47.6px, 75.5px) scale(0.79); opacity: 0.37; filter: brightness(0.66); }
-  12.5% { transform: translate(27.7px, 75.9px) scale(0.77); opacity: 0.35; filter: brightness(0.65); }
-  15.0% { transform: translate(7.8px, 76.1px) scale(0.77); opacity: 0.34; filter: brightness(0.64); }
-  17.5% { transform: translate(-12.1px, 76.0px) scale(0.77); opacity: 0.34; filter: brightness(0.64); }
-  20.0% { transform: translate(-32.0px, 75.8px) scale(0.78); opacity: 0.35; filter: brightness(0.65); }
-  22.5% { transform: translate(-51.8px, 75.4px) scale(0.79); opacity: 0.37; filter: brightness(0.66); }
-  25.0% { transform: translate(-71.6px, 74.7px) scale(0.81); opacity: 0.39; filter: brightness(0.68); }
-  27.5% { transform: translate(-90.9px, 73.5px) scale(0.83); opacity: 0.43; filter: brightness(0.70); }
-  30.0% { transform: translate(-109.6px, 71.9px) scale(0.86); opacity: 0.46; filter: brightness(0.73); }
-  32.5% { transform: translate(-127.1px, 69.8px) scale(0.89); opacity: 0.50; filter: brightness(0.76); }
-  35.0% { transform: translate(-142.8px, 67.0px) scale(0.93); opacity: 0.55; filter: brightness(0.79); }
-  37.5% { transform: translate(-156.0px, 63.6px) scale(0.97); opacity: 0.60; filter: brightness(0.82); }
-  40.0% { transform: translate(-166.1px, 59.5px) scale(1.01); opacity: 0.65; filter: brightness(0.86); }
-  42.5% { transform: translate(-172.2px, 54.8px) scale(1.05); opacity: 0.70; filter: brightness(0.89); }
-  45.0% { transform: translate(-173.9px, 49.7px) scale(1.09); opacity: 0.75; filter: brightness(0.93); }
-  47.5% { transform: translate(-170.5px, 44.3px) scale(1.13); opacity: 0.80; filter: brightness(0.96); }
-  50.0% { transform: translate(-161.7px, 38.8px) scale(1.16); opacity: 0.85; filter: brightness(0.99); }
-  52.5% { transform: translate(-147.6px, 33.5px) scale(1.19); opacity: 0.89; filter: brightness(1.02); }
-  55.0% { transform: translate(-128.3px, 28.6px) scale(1.22); opacity: 0.92; filter: brightness(1.05); }
-  57.5% { transform: translate(-104.4px, 24.4px) scale(1.24); opacity: 0.95; filter: brightness(1.07); }
-  60.0% { transform: translate(-76.5px, 21.0px) scale(1.26); opacity: 0.98; filter: brightness(1.08); }
-  62.5% { transform: translate(-45.6px, 18.7px) scale(1.27); opacity: 0.99; filter: brightness(1.09); }
-  65.0% { transform: translate(-13.0px, 17.6px) scale(1.28); opacity: 1.00; filter: brightness(1.10); }
-  67.5% { transform: translate(20.1px, 17.7px) scale(1.28); opacity: 1.00; filter: brightness(1.10); }
-  70.0% { transform: translate(52.4px, 19.1px) scale(1.27); opacity: 0.99; filter: brightness(1.09); }
-  72.5% { transform: translate(82.7px, 21.6px) scale(1.26); opacity: 0.97; filter: brightness(1.08); }
-  75.0% { transform: translate(109.8px, 25.2px) scale(1.24); opacity: 0.95; filter: brightness(1.06); }
-  77.5% { transform: translate(132.9px, 29.6px) scale(1.22); opacity: 0.92; filter: brightness(1.04); }
-  80.0% { transform: translate(151.1px, 34.6px) scale(1.19); opacity: 0.88; filter: brightness(1.02); }
-  82.5% { transform: translate(164.0px, 40.0px) scale(1.15); opacity: 0.84; filter: brightness(0.99); }
-  85.0% { transform: translate(171.6px, 45.5px) scale(1.12); opacity: 0.79; filter: brightness(0.96); }
-  87.5% { transform: translate(173.9px, 50.8px) scale(1.08); opacity: 0.74; filter: brightness(0.92); }
-  90.0% { transform: translate(171.3px, 55.9px) scale(1.04); opacity: 0.69; filter: brightness(0.89); }
-  92.5% { transform: translate(164.2px, 60.4px) scale(1.00); opacity: 0.64; filter: brightness(0.85); }
-  95.0% { transform: translate(153.4px, 64.3px) scale(0.96); opacity: 0.59; filter: brightness(0.81); }
-  97.5% { transform: translate(139.6px, 67.6px) scale(0.92); opacity: 0.54; filter: brightness(0.78); }
-  100.0% { transform: translate(123.5px, 70.3px) scale(0.89); opacity: 0.50; filter: brightness(0.75); }
+  0.0% { transform: translate(152.5px, 100.0px) scale(0.79); opacity: 0.67; filter: brightness(0.86); }
+  2.5% { transform: translate(131.4px, 103.2px) scale(0.77); opacity: 0.64; filter: brightness(0.84); }
+  5.0% { transform: translate(108.9px, 105.7px) scale(0.75); opacity: 0.62; filter: brightness(0.82); }
+  7.5% { transform: translate(85.1px, 107.8px) scale(0.73); opacity: 0.60; filter: brightness(0.81); }
+  10.0% { transform: translate(60.6px, 109.3px) scale(0.72); opacity: 0.59; filter: brightness(0.80); }
+  12.5% { transform: translate(35.5px, 110.2px) scale(0.72); opacity: 0.58; filter: brightness(0.79); }
+  15.0% { transform: translate(10.0px, 110.7px) scale(0.71); opacity: 0.57; filter: brightness(0.79); }
+  17.5% { transform: translate(-15.5px, 110.6px) scale(0.71); opacity: 0.57; filter: brightness(0.79); }
+  20.0% { transform: translate(-40.9px, 110.1px) scale(0.72); opacity: 0.58; filter: brightness(0.79); }
+  22.5% { transform: translate(-65.9px, 109.0px) scale(0.73); opacity: 0.59; filter: brightness(0.80); }
+  25.0% { transform: translate(-90.3px, 107.4px) scale(0.74); opacity: 0.61; filter: brightness(0.81); }
+  27.5% { transform: translate(-113.8px, 105.2px) scale(0.75); opacity: 0.63; filter: brightness(0.83); }
+  30.0% { transform: translate(-136.1px, 102.5px) scale(0.77); opacity: 0.65; filter: brightness(0.85); }
+  32.5% { transform: translate(-156.7px, 99.3px) scale(0.80); opacity: 0.68; filter: brightness(0.87); }
+  35.0% { transform: translate(-175.2px, 95.5px) scale(0.83); opacity: 0.71; filter: brightness(0.89); }
+  37.5% { transform: translate(-191.1px, 91.2px) scale(0.86); opacity: 0.74; filter: brightness(0.91); }
+  40.0% { transform: translate(-203.7px, 86.3px) scale(0.89); opacity: 0.77; filter: brightness(0.93); }
+  42.5% { transform: translate(-212.2px, 80.9px) scale(0.93); opacity: 0.81; filter: brightness(0.96); }
+  45.0% { transform: translate(-216.0px, 75.1px) scale(0.98); opacity: 0.84; filter: brightness(0.98); }
+  47.5% { transform: translate(-214.1px, 69.1px) scale(1.02); opacity: 0.87; filter: brightness(1.01); }
+  50.0% { transform: translate(-205.8px, 62.9px) scale(1.07); opacity: 0.90; filter: brightness(1.03); }
+  52.5% { transform: translate(-190.6px, 56.8px) scale(1.11); opacity: 0.93; filter: brightness(1.05); }
+  55.0% { transform: translate(-168.1px, 51.0px) scale(1.16); opacity: 0.95; filter: brightness(1.06); }
+  57.5% { transform: translate(-138.6px, 45.9px) scale(1.20); opacity: 0.97; filter: brightness(1.08); }
+  60.0% { transform: translate(-102.7px, 41.8px) scale(1.23); opacity: 0.98; filter: brightness(1.09); }
+  62.5% { transform: translate(-61.8px, 38.9px) scale(1.25); opacity: 0.99; filter: brightness(1.10); }
+  65.0% { transform: translate(-17.7px, 37.5px) scale(1.26); opacity: 1.00; filter: brightness(1.10); }
+  67.5% { transform: translate(27.3px, 37.7px) scale(1.26); opacity: 1.00; filter: brightness(1.10); }
+  70.0% { transform: translate(70.9px, 39.4px) scale(1.24); opacity: 0.99; filter: brightness(1.09); }
+  72.5% { transform: translate(110.8px, 42.6px) scale(1.22); opacity: 0.98; filter: brightness(1.09); }
+  75.0% { transform: translate(145.5px, 46.9px) scale(1.19); opacity: 0.97; filter: brightness(1.07); }
+  77.5% { transform: translate(173.5px, 52.2px) scale(1.15); opacity: 0.95; filter: brightness(1.06); }
+  80.0% { transform: translate(194.4px, 58.1px) scale(1.10); opacity: 0.92; filter: brightness(1.04); }
+  82.5% { transform: translate(208.1px, 64.2px) scale(1.06); opacity: 0.89; filter: brightness(1.02); }
+  85.0% { transform: translate(215.0px, 70.4px) scale(1.01); opacity: 0.86; filter: brightness(1.00); }
+  87.5% { transform: translate(215.6px, 76.4px) scale(0.97); opacity: 0.83; filter: brightness(0.98); }
+  90.0% { transform: translate(210.8px, 82.1px) scale(0.93); opacity: 0.80; filter: brightness(0.95); }
+  92.5% { transform: translate(201.3px, 87.4px) scale(0.89); opacity: 0.77; filter: brightness(0.93); }
+  95.0% { transform: translate(188.0px, 92.1px) scale(0.85); opacity: 0.73; filter: brightness(0.91); }
+  97.5% { transform: translate(171.5px, 96.4px) scale(0.82); opacity: 0.70; filter: brightness(0.88); }
+  100.0% { transform: translate(152.5px, 100.0px) scale(0.79); opacity: 0.67; filter: brightness(0.86); }
 }
 @keyframes orbit_node_6 {
-  0.0% { transform: translate(-56.6px, -11.5px) scale(1.27); opacity: 0.99; filter: brightness(1.09); }
-  2.5% { transform: translate(-23.1px, -13.2px) scale(1.28); opacity: 1.00; filter: brightness(1.10); }
-  5.0% { transform: translate(11.3px, -13.5px) scale(1.28); opacity: 1.00; filter: brightness(1.10); }
-  7.5% { transform: translate(45.3px, -12.3px) scale(1.27); opacity: 0.99; filter: brightness(1.09); }
-  10.0% { transform: translate(77.5px, -9.6px) scale(1.26); opacity: 0.98; filter: brightness(1.08); }
-  12.5% { transform: translate(106.6px, -5.8px) scale(1.25); opacity: 0.95; filter: brightness(1.07); }
-  15.0% { transform: translate(131.7px, -0.9px) scale(1.22); opacity: 0.92; filter: brightness(1.05); }
-  17.5% { transform: translate(151.9px, 4.9px) scale(1.19); opacity: 0.89; filter: brightness(1.02); }
-  20.0% { transform: translate(166.7px, 11.1px) scale(1.16); opacity: 0.84; filter: brightness(0.99); }
-  22.5% { transform: translate(175.8px, 17.7px) scale(1.12); opacity: 0.80; filter: brightness(0.96); }
-  25.0% { transform: translate(179.4px, 24.2px) scale(1.08); opacity: 0.75; filter: brightness(0.92); }
-  27.5% { transform: translate(177.8px, 30.4px) scale(1.04); opacity: 0.69; filter: brightness(0.89); }
-  30.0% { transform: translate(171.4px, 36.1px) scale(1.00); opacity: 0.64; filter: brightness(0.85); }
-  32.5% { transform: translate(160.9px, 41.3px) scale(0.96); opacity: 0.59; filter: brightness(0.81); }
-  35.0% { transform: translate(147.2px, 45.7px) scale(0.92); opacity: 0.54; filter: brightness(0.78); }
-  37.5% { transform: translate(131.0px, 49.3px) scale(0.88); opacity: 0.49; filter: brightness(0.74); }
-  40.0% { transform: translate(113.0px, 52.3px) scale(0.85); opacity: 0.44; filter: brightness(0.71); }
-  42.5% { transform: translate(93.8px, 54.5px) scale(0.82); opacity: 0.41; filter: brightness(0.69); }
-  45.0% { transform: translate(74.0px, 56.2px) scale(0.79); opacity: 0.37; filter: brightness(0.66); }
-  47.5% { transform: translate(53.9px, 57.3px) scale(0.77); opacity: 0.35; filter: brightness(0.65); }
-  50.0% { transform: translate(33.7px, 58.1px) scale(0.76); opacity: 0.33; filter: brightness(0.63); }
-  52.5% { transform: translate(13.5px, 58.4px) scale(0.75); opacity: 0.32; filter: brightness(0.63); }
-  55.0% { transform: translate(-6.6px, 58.5px) scale(0.75); opacity: 0.32; filter: brightness(0.63); }
-  57.5% { transform: translate(-26.8px, 58.2px) scale(0.75); opacity: 0.33; filter: brightness(0.63); }
-  60.0% { transform: translate(-47.0px, 57.6px) scale(0.77); opacity: 0.34; filter: brightness(0.64); }
-  62.5% { transform: translate(-67.1px, 56.6px) scale(0.78); opacity: 0.36; filter: brightness(0.66); }
-  65.0% { transform: translate(-87.1px, 55.2px) scale(0.81); opacity: 0.39; filter: brightness(0.68); }
-  67.5% { transform: translate(-106.5px, 53.1px) scale(0.84); opacity: 0.43; filter: brightness(0.70); }
-  70.0% { transform: translate(-125.0px, 50.4px) scale(0.87); opacity: 0.47; filter: brightness(0.73); }
-  72.5% { transform: translate(-141.9px, 47.0px) scale(0.91); opacity: 0.52; filter: brightness(0.77); }
-  75.0% { transform: translate(-156.6px, 42.9px) scale(0.95); opacity: 0.57; filter: brightness(0.80); }
-  77.5% { transform: translate(-168.2px, 38.0px) scale(0.99); opacity: 0.62; filter: brightness(0.84); }
-  80.0% { transform: translate(-176.1px, 32.4px) scale(1.03); opacity: 0.68; filter: brightness(0.88); }
-  82.5% { transform: translate(-179.4px, 26.3px) scale(1.07); opacity: 0.73; filter: brightness(0.91); }
-  85.0% { transform: translate(-177.7px, 19.9px) scale(1.11); opacity: 0.78; filter: brightness(0.95); }
-  87.5% { transform: translate(-170.5px, 13.4px) scale(1.15); opacity: 0.83; filter: brightness(0.98); }
-  90.0% { transform: translate(-157.6px, 7.0px) scale(1.18); opacity: 0.87; filter: brightness(1.01); }
-  92.5% { transform: translate(-139.2px, 1.0px) scale(1.21); opacity: 0.91; filter: brightness(1.04); }
-  95.0% { transform: translate(-115.7px, -4.2px) scale(1.24); opacity: 0.94; filter: brightness(1.06); }
-  97.5% { transform: translate(-87.9px, -8.5px) scale(1.26); opacity: 0.97; filter: brightness(1.08); }
-  100.0% { transform: translate(-56.6px, -11.5px) scale(1.27); opacity: 0.99; filter: brightness(1.09); }
+  0.0% { transform: translate(-76.9px, 3.5px) scale(1.25); opacity: 0.99; filter: brightness(1.09); }
+  2.5% { transform: translate(-31.6px, 1.2px) scale(1.26); opacity: 1.00; filter: brightness(1.10); }
+  5.0% { transform: translate(15.5px, 0.8px) scale(1.26); opacity: 1.00; filter: brightness(1.10); }
+  7.5% { transform: translate(61.7px, 2.5px) scale(1.25); opacity: 1.00; filter: brightness(1.10); }
+  10.0% { transform: translate(104.7px, 6.0px) scale(1.23); opacity: 0.99; filter: brightness(1.09); }
+  12.5% { transform: translate(142.4px, 11.2px) scale(1.20); opacity: 0.97; filter: brightness(1.08); }
+  15.0% { transform: translate(173.4px, 17.5px) scale(1.16); opacity: 0.95; filter: brightness(1.06); }
+  17.5% { transform: translate(197.0px, 24.8px) scale(1.11); opacity: 0.93; filter: brightness(1.05); }
+  20.0% { transform: translate(213.0px, 32.4px) scale(1.07); opacity: 0.90; filter: brightness(1.03); }
+  22.5% { transform: translate(221.7px, 40.2px) scale(1.02); opacity: 0.87; filter: brightness(1.00); }
+  25.0% { transform: translate(223.7px, 47.8px) scale(0.97); opacity: 0.84; filter: brightness(0.98); }
+  27.5% { transform: translate(219.8px, 55.0px) scale(0.93); opacity: 0.80; filter: brightness(0.96); }
+  30.0% { transform: translate(211.0px, 61.7px) scale(0.89); opacity: 0.77; filter: brightness(0.93); }
+  32.5% { transform: translate(198.0px, 67.8px) scale(0.85); opacity: 0.73; filter: brightness(0.90); }
+  35.0% { transform: translate(181.6px, 73.2px) scale(0.82); opacity: 0.70; filter: brightness(0.88); }
+  37.5% { transform: translate(162.5px, 77.9px) scale(0.79); opacity: 0.67; filter: brightness(0.86); }
+  40.0% { transform: translate(141.3px, 82.0px) scale(0.76); opacity: 0.64; filter: brightness(0.84); }
+  42.5% { transform: translate(118.4px, 85.3px) scale(0.74); opacity: 0.61; filter: brightness(0.82); }
+  45.0% { transform: translate(94.3px, 88.0px) scale(0.73); opacity: 0.59; filter: brightness(0.80); }
+  47.5% { transform: translate(69.2px, 90.0px) scale(0.71); opacity: 0.58; filter: brightness(0.79); }
+  50.0% { transform: translate(43.6px, 91.4px) scale(0.71); opacity: 0.56; filter: brightness(0.78); }
+  52.5% { transform: translate(17.6px, 92.1px) scale(0.70); opacity: 0.56; filter: brightness(0.78); }
+  55.0% { transform: translate(-8.6px, 92.2px) scale(0.70); opacity: 0.56; filter: brightness(0.78); }
+  57.5% { transform: translate(-34.7px, 91.7px) scale(0.70); opacity: 0.56; filter: brightness(0.78); }
+  60.0% { transform: translate(-60.5px, 90.6px) scale(0.71); opacity: 0.57; filter: brightness(0.79); }
+  62.5% { transform: translate(-85.8px, 88.8px) scale(0.72); opacity: 0.59; filter: brightness(0.80); }
+  65.0% { transform: translate(-110.2px, 86.3px) scale(0.74); opacity: 0.61; filter: brightness(0.81); }
+  67.5% { transform: translate(-133.6px, 83.2px) scale(0.76); opacity: 0.63; filter: brightness(0.83); }
+  70.0% { transform: translate(-155.4px, 79.4px) scale(0.78); opacity: 0.66; filter: brightness(0.85); }
+  72.5% { transform: translate(-175.3px, 74.9px) scale(0.81); opacity: 0.69; filter: brightness(0.87); }
+  75.0% { transform: translate(-192.7px, 69.7px) scale(0.84); opacity: 0.72; filter: brightness(0.90); }
+  77.5% { transform: translate(-207.0px, 63.9px) scale(0.87); opacity: 0.76; filter: brightness(0.92); }
+  80.0% { transform: translate(-217.3px, 57.4px) scale(0.91); opacity: 0.79; filter: brightness(0.95); }
+  82.5% { transform: translate(-223.0px, 50.3px) scale(0.96); opacity: 0.82; filter: brightness(0.97); }
+  85.0% { transform: translate(-223.1px, 42.8px) scale(1.00); opacity: 0.86; filter: brightness(1.00); }
+  87.5% { transform: translate(-216.8px, 35.1px) scale(1.05); opacity: 0.89; filter: brightness(1.02); }
+  90.0% { transform: translate(-203.3px, 27.4px) scale(1.10); opacity: 0.92; filter: brightness(1.04); }
+  92.5% { transform: translate(-182.4px, 20.0px) scale(1.14); opacity: 0.94; filter: brightness(1.06); }
+  95.0% { transform: translate(-153.9px, 13.2px) scale(1.19); opacity: 0.96; filter: brightness(1.07); }
+  97.5% { transform: translate(-118.3px, 7.6px) scale(1.22); opacity: 0.98; filter: brightness(1.09); }
+  100.0% { transform: translate(-76.9px, 3.5px) scale(1.25); opacity: 0.99; filter: brightness(1.09); }
 }
 @keyframes orbit_node_7 {
-  0.0% { transform: translate(-61.5px, 39.3px) scale(0.76); opacity: 0.34; filter: brightness(0.64); }
-  2.5% { transform: translate(-81.6px, 37.5px) scale(0.79); opacity: 0.37; filter: brightness(0.66); }
-  5.0% { transform: translate(-101.4px, 35.0px) scale(0.81); opacity: 0.40; filter: brightness(0.69); }
-  7.5% { transform: translate(-120.4px, 31.8px) scale(0.85); opacity: 0.44; filter: brightness(0.71); }
-  10.0% { transform: translate(-138.0px, 27.8px) scale(0.88); opacity: 0.49; filter: brightness(0.75); }
-  12.5% { transform: translate(-153.7px, 23.0px) scale(0.92); opacity: 0.54; filter: brightness(0.78); }
-  15.0% { transform: translate(-166.5px, 17.4px) scale(0.96); opacity: 0.59; filter: brightness(0.82); }
-  17.5% { transform: translate(-175.8px, 11.0px) scale(1.01); opacity: 0.65; filter: brightness(0.86); }
-  20.0% { transform: translate(-180.7px, 4.0px) scale(1.05); opacity: 0.70; filter: brightness(0.89); }
-  22.5% { transform: translate(-180.6px, -3.3px) scale(1.09); opacity: 0.76; filter: brightness(0.93); }
-  25.0% { transform: translate(-175.1px, -10.8px) scale(1.13); opacity: 0.81; filter: brightness(0.97); }
-  27.5% { transform: translate(-163.8px, -18.2px) scale(1.17); opacity: 0.85; filter: brightness(1.00); }
-  30.0% { transform: translate(-146.8px, -25.1px) scale(1.20); opacity: 0.89; filter: brightness(1.03); }
-  32.5% { transform: translate(-124.4px, -31.2px) scale(1.23); opacity: 0.93; filter: brightness(1.05); }
-  35.0% { transform: translate(-97.4px, -36.4px) scale(1.25); opacity: 0.96; filter: brightness(1.07); }
-  37.5% { transform: translate(-66.5px, -40.2px) scale(1.26); opacity: 0.98; filter: brightness(1.08); }
-  40.0% { transform: translate(-33.1px, -42.5px) scale(1.27); opacity: 0.99; filter: brightness(1.09); }
-  42.5% { transform: translate(1.7px, -43.3px) scale(1.28); opacity: 0.99; filter: brightness(1.10); }
-  45.0% { transform: translate(36.5px, -42.4px) scale(1.27); opacity: 0.99; filter: brightness(1.09); }
-  47.5% { transform: translate(69.7px, -39.9px) scale(1.26); opacity: 0.98; filter: brightness(1.08); }
-  50.0% { transform: translate(100.2px, -35.9px) scale(1.25); opacity: 0.95; filter: brightness(1.07); }
-  52.5% { transform: translate(126.9px, -30.7px) scale(1.22); opacity: 0.93; filter: brightness(1.05); }
-  55.0% { transform: translate(148.7px, -24.4px) scale(1.20); opacity: 0.89; filter: brightness(1.02); }
-  57.5% { transform: translate(165.1px, -17.4px) scale(1.16); opacity: 0.85; filter: brightness(0.99); }
-  60.0% { transform: translate(175.9px, -10.1px) scale(1.13); opacity: 0.80; filter: brightness(0.96); }
-  62.5% { transform: translate(180.9px, -2.6px) scale(1.09); opacity: 0.75; filter: brightness(0.93); }
-  65.0% { transform: translate(180.5px, 4.8px) scale(1.05); opacity: 0.70; filter: brightness(0.89); }
-  67.5% { transform: translate(175.1px, 11.7px) scale(1.00); opacity: 0.64; filter: brightness(0.85); }
-  70.0% { transform: translate(165.4px, 17.9px) scale(0.96); opacity: 0.59; filter: brightness(0.81); }
-  72.5% { transform: translate(152.2px, 23.5px) scale(0.92); opacity: 0.54; filter: brightness(0.78); }
-  75.0% { transform: translate(136.4px, 28.2px) scale(0.88); opacity: 0.49; filter: brightness(0.74); }
-  77.5% { transform: translate(118.5px, 32.2px) scale(0.84); opacity: 0.44; filter: brightness(0.71); }
-  80.0% { transform: translate(99.4px, 35.3px) scale(0.81); opacity: 0.40; filter: brightness(0.68); }
-  82.5% { transform: translate(79.6px, 37.7px) scale(0.78); opacity: 0.36; filter: brightness(0.66); }
-  85.0% { transform: translate(59.5px, 39.4px) scale(0.76); opacity: 0.34; filter: brightness(0.64); }
-  87.5% { transform: translate(39.3px, 40.6px) scale(0.75); opacity: 0.32; filter: brightness(0.62); }
-  90.0% { transform: translate(19.1px, 41.2px) scale(0.74); opacity: 0.30; filter: brightness(0.62); }
-  92.5% { transform: translate(-1.0px, 41.4px) scale(0.73); opacity: 0.30; filter: brightness(0.61); }
-  95.0% { transform: translate(-21.1px, 41.2px) scale(0.74); opacity: 0.30; filter: brightness(0.62); }
-  97.5% { transform: translate(-41.3px, 40.5px) scale(0.75); opacity: 0.32; filter: brightness(0.63); }
-  100.0% { transform: translate(-61.5px, 39.3px) scale(0.76); opacity: 0.34; filter: brightness(0.64); }
+  0.0% { transform: translate(-79.8px, 70.5px) scale(0.71); opacity: 0.57; filter: brightness(0.79); }
+  2.5% { transform: translate(-104.9px, 67.9px) scale(0.72); opacity: 0.59; filter: brightness(0.80); }
+  5.0% { transform: translate(-129.0px, 64.4px) scale(0.74); opacity: 0.61; filter: brightness(0.82); }
+  7.5% { transform: translate(-151.7px, 60.2px) scale(0.76); opacity: 0.64; filter: brightness(0.84); }
+  10.0% { transform: translate(-172.5px, 55.1px) scale(0.79); opacity: 0.67; filter: brightness(0.86); }
+  12.5% { transform: translate(-191.1px, 49.2px) scale(0.82); opacity: 0.70; filter: brightness(0.88); }
+  15.0% { transform: translate(-206.6px, 42.5px) scale(0.86); opacity: 0.74; filter: brightness(0.91); }
+  17.5% { transform: translate(-218.5px, 35.0px) scale(0.89); opacity: 0.77; filter: brightness(0.93); }
+  20.0% { transform: translate(-225.8px, 26.8px) scale(0.94); opacity: 0.81; filter: brightness(0.96); }
+  22.5% { transform: translate(-227.8px, 18.1px) scale(0.98); opacity: 0.84; filter: brightness(0.99); }
+  25.0% { transform: translate(-223.4px, 8.9px) scale(1.03); opacity: 0.88; filter: brightness(1.01); }
+  27.5% { transform: translate(-212.0px, -0.3px) scale(1.08); opacity: 0.91; filter: brightness(1.03); }
+  30.0% { transform: translate(-193.0px, -9.3px) scale(1.13); opacity: 0.93; filter: brightness(1.05); }
+  32.5% { transform: translate(-166.1px, -17.6px) scale(1.17); opacity: 0.96; filter: brightness(1.07); }
+  35.0% { transform: translate(-131.8px, -24.8px) scale(1.21); opacity: 0.97; filter: brightness(1.08); }
+  37.5% { transform: translate(-91.0px, -30.3px) scale(1.24); opacity: 0.99; filter: brightness(1.09); }
+  40.0% { transform: translate(-45.5px, -33.7px) scale(1.25); opacity: 1.00; filter: brightness(1.10); }
+  42.5% { transform: translate(2.4px, -34.8px) scale(1.26); opacity: 1.00; filter: brightness(1.10); }
+  45.0% { transform: translate(50.2px, -33.5px) scale(1.25); opacity: 1.00; filter: brightness(1.10); }
+  47.5% { transform: translate(95.3px, -29.8px) scale(1.23); opacity: 0.99; filter: brightness(1.09); }
+  50.0% { transform: translate(135.5px, -24.1px) scale(1.20); opacity: 0.97; filter: brightness(1.08); }
+  52.5% { transform: translate(169.1px, -16.9px) scale(1.17); opacity: 0.95; filter: brightness(1.07); }
+  55.0% { transform: translate(195.2px, -8.5px) scale(1.12); opacity: 0.93; filter: brightness(1.05); }
+  57.5% { transform: translate(213.5px, 0.6px) scale(1.07); opacity: 0.90; filter: brightness(1.03); }
+  60.0% { transform: translate(224.2px, 9.8px) scale(1.03); opacity: 0.87; filter: brightness(1.01); }
+  62.5% { transform: translate(227.9px, 19.0px) scale(0.98); opacity: 0.84; filter: brightness(0.98); }
+  65.0% { transform: translate(225.3px, 27.7px) scale(0.93); opacity: 0.80; filter: brightness(0.96); }
+  67.5% { transform: translate(217.5px, 35.8px) scale(0.89); opacity: 0.77; filter: brightness(0.93); }
+  70.0% { transform: translate(205.2px, 43.2px) scale(0.85); opacity: 0.73; filter: brightness(0.91); }
+  72.5% { transform: translate(189.3px, 49.8px) scale(0.82); opacity: 0.70; filter: brightness(0.88); }
+  75.0% { transform: translate(170.6px, 55.6px) scale(0.79); opacity: 0.67; filter: brightness(0.86); }
+  77.5% { transform: translate(149.5px, 60.6px) scale(0.76); opacity: 0.64; filter: brightness(0.83); }
+  80.0% { transform: translate(126.6px, 64.8px) scale(0.74); opacity: 0.61; filter: brightness(0.81); }
+  82.5% { transform: translate(102.5px, 68.2px) scale(0.72); opacity: 0.59; filter: brightness(0.80); }
+  85.0% { transform: translate(77.3px, 70.7px) scale(0.71); opacity: 0.57; filter: brightness(0.78); }
+  87.5% { transform: translate(51.5px, 72.6px) scale(0.70); opacity: 0.55; filter: brightness(0.77); }
+  90.0% { transform: translate(25.2px, 73.6px) scale(0.69); opacity: 0.55; filter: brightness(0.77); }
+  92.5% { transform: translate(-1.3px, 74.0px) scale(0.69); opacity: 0.54; filter: brightness(0.77); }
+  95.0% { transform: translate(-27.8px, 73.6px) scale(0.69); opacity: 0.55; filter: brightness(0.77); }
+  97.5% { transform: translate(-54.0px, 72.4px) scale(0.70); opacity: 0.56; filter: brightness(0.78); }
+  100.0% { transform: translate(-79.8px, 70.5px) scale(0.71); opacity: 0.57; filter: brightness(0.79); }
 }
 @keyframes orbit_node_8 {
-  0.0% { transform: translate(178.5px, -29.1px) scale(1.09); opacity: 0.75; filter: brightness(0.93); }
-  2.5% { transform: translate(179.4px, -20.9px) scale(1.05); opacity: 0.70; filter: brightness(0.89); }
-  5.0% { transform: translate(175.4px, -13.0px) scale(1.00); opacity: 0.65; filter: brightness(0.85); }
-  7.5% { transform: translate(166.8px, -5.6px) scale(0.96); opacity: 0.59; filter: brightness(0.82); }
-  10.0% { transform: translate(154.6px, 1.1px) scale(0.92); opacity: 0.54; filter: brightness(0.78); }
-  12.5% { transform: translate(139.5px, 6.9px) scale(0.88); opacity: 0.49; filter: brightness(0.74); }
-  15.0% { transform: translate(122.2px, 11.8px) scale(0.84); opacity: 0.44; filter: brightness(0.71); }
-  17.5% { transform: translate(103.6px, 15.8px) scale(0.81); opacity: 0.40; filter: brightness(0.68); }
-  20.0% { transform: translate(84.2px, 19.0px) scale(0.78); opacity: 0.36; filter: brightness(0.66); }
-  22.5% { transform: translate(64.3px, 21.4px) scale(0.76); opacity: 0.33; filter: brightness(0.64); }
-  25.0% { transform: translate(44.4px, 23.1px) scale(0.74); opacity: 0.31; filter: brightness(0.62); }
-  27.5% { transform: translate(24.4px, 24.1px) scale(0.73); opacity: 0.29; filter: brightness(0.61); }
-  30.0% { transform: translate(4.6px, 24.5px) scale(0.72); opacity: 0.29; filter: brightness(0.60); }
-  32.5% { transform: translate(-15.3px, 24.4px) scale(0.73); opacity: 0.29; filter: brightness(0.61); }
-  35.0% { transform: translate(-35.2px, 23.6px) scale(0.73); opacity: 0.30; filter: brightness(0.61); }
-  37.5% { transform: translate(-55.2px, 22.3px) scale(0.75); opacity: 0.32; filter: brightness(0.63); }
-  40.0% { transform: translate(-75.1px, 20.2px) scale(0.77); opacity: 0.35; filter: brightness(0.65); }
-  42.5% { transform: translate(-94.8px, 17.4px) scale(0.80); opacity: 0.38; filter: brightness(0.67); }
-  45.0% { transform: translate(-113.8px, 13.7px) scale(0.83); opacity: 0.42; filter: brightness(0.70); }
-  47.5% { transform: translate(-131.8px, 9.2px) scale(0.86); opacity: 0.47; filter: brightness(0.73); }
-  50.0% { transform: translate(-148.0px, 3.8px) scale(0.90); opacity: 0.51; filter: brightness(0.76); }
-  52.5% { transform: translate(-161.6px, -2.5px) scale(0.94); opacity: 0.57; filter: brightness(0.80); }
-  55.0% { transform: translate(-171.9px, -9.5px) scale(0.99); opacity: 0.62; filter: brightness(0.84); }
-  57.5% { transform: translate(-178.2px, -17.2px) scale(1.03); opacity: 0.68; filter: brightness(0.87); }
-  60.0% { transform: translate(-179.6px, -25.3px) scale(1.07); opacity: 0.73; filter: brightness(0.91); }
-  62.5% { transform: translate(-175.7px, -33.6px) scale(1.11); opacity: 0.78; filter: brightness(0.95); }
-  65.0% { transform: translate(-166.1px, -41.8px) scale(1.15); opacity: 0.83; filter: brightness(0.98); }
-  67.5% { transform: translate(-150.8px, -49.6px) scale(1.18); opacity: 0.87; filter: brightness(1.01); }
-  70.0% { transform: translate(-130.1px, -56.6px) scale(1.21); opacity: 0.91; filter: brightness(1.04); }
-  72.5% { transform: translate(-104.5px, -62.6px) scale(1.23); opacity: 0.94; filter: brightness(1.06); }
-  75.0% { transform: translate(-74.9px, -67.1px) scale(1.25); opacity: 0.96; filter: brightness(1.07); }
-  77.5% { transform: translate(-42.3px, -70.1px) scale(1.26); opacity: 0.97; filter: brightness(1.08); }
-  80.0% { transform: translate(-8.0px, -71.4px) scale(1.27); opacity: 0.98; filter: brightness(1.09); }
-  82.5% { transform: translate(26.7px, -71.0px) scale(1.26); opacity: 0.98; filter: brightness(1.08); }
-  85.0% { transform: translate(60.2px, -68.7px) scale(1.26); opacity: 0.97; filter: brightness(1.08); }
-  87.5% { transform: translate(91.4px, -64.8px) scale(1.24); opacity: 0.95; filter: brightness(1.06); }
-  90.0% { transform: translate(118.9px, -59.5px) scale(1.22); opacity: 0.92; filter: brightness(1.05); }
-  92.5% { transform: translate(142.0px, -52.9px) scale(1.19); opacity: 0.89; filter: brightness(1.02); }
-  95.0% { transform: translate(159.8px, -45.5px) scale(1.16); opacity: 0.85; filter: brightness(0.99); }
-  97.5% { transform: translate(172.0px, -37.4px) scale(1.13); opacity: 0.80; filter: brightness(0.96); }
-  100.0% { transform: translate(178.5px, -29.1px) scale(1.09); opacity: 0.75; filter: brightness(0.93); }
+  0.0% { transform: translate(228.3px, -10.0px) scale(0.98); opacity: 0.84; filter: brightness(0.99); }
+  2.5% { transform: translate(227.4px, 0.1px) scale(0.94); opacity: 0.81; filter: brightness(0.96); }
+  5.0% { transform: translate(220.9px, 9.6px) scale(0.89); opacity: 0.77; filter: brightness(0.93); }
+  7.5% { transform: translate(209.7px, 18.3px) scale(0.85); opacity: 0.74; filter: brightness(0.91); }
+  10.0% { transform: translate(194.7px, 26.1px) scale(0.82); opacity: 0.70; filter: brightness(0.88); }
+  12.5% { transform: translate(176.5px, 33.0px) scale(0.79); opacity: 0.67; filter: brightness(0.86); }
+  15.0% { transform: translate(156.0px, 39.0px) scale(0.76); opacity: 0.64; filter: brightness(0.83); }
+  17.5% { transform: translate(133.5px, 44.0px) scale(0.74); opacity: 0.61; filter: brightness(0.81); }
+  20.0% { transform: translate(109.6px, 48.1px) scale(0.72); opacity: 0.58; filter: brightness(0.80); }
+  22.5% { transform: translate(84.6px, 51.3px) scale(0.70); opacity: 0.56; filter: brightness(0.78); }
+  25.0% { transform: translate(58.9px, 53.6px) scale(0.69); opacity: 0.55; filter: brightness(0.77); }
+  27.5% { transform: translate(32.6px, 55.1px) scale(0.69); opacity: 0.54; filter: brightness(0.76); }
+  30.0% { transform: translate(6.1px, 55.7px) scale(0.68); opacity: 0.53; filter: brightness(0.76); }
+  32.5% { transform: translate(-20.5px, 55.4px) scale(0.69); opacity: 0.54; filter: brightness(0.76); }
+  35.0% { transform: translate(-46.9px, 54.4px) scale(0.69); opacity: 0.54; filter: brightness(0.77); }
+  37.5% { transform: translate(-72.9px, 52.5px) scale(0.70); opacity: 0.55; filter: brightness(0.78); }
+  40.0% { transform: translate(-98.3px, 49.7px) scale(0.71); opacity: 0.57; filter: brightness(0.79); }
+  42.5% { transform: translate(-122.7px, 46.0px) scale(0.73); opacity: 0.60; filter: brightness(0.80); }
+  45.0% { transform: translate(-145.9px, 41.4px) scale(0.75); opacity: 0.62; filter: brightness(0.82); }
+  47.5% { transform: translate(-167.4px, 35.9px) scale(0.77); opacity: 0.65; filter: brightness(0.85); }
+  50.0% { transform: translate(-186.7px, 29.4px) scale(0.80); opacity: 0.68; filter: brightness(0.87); }
+  52.5% { transform: translate(-203.2px, 22.0px) scale(0.84); opacity: 0.72; filter: brightness(0.90); }
+  55.0% { transform: translate(-216.3px, 13.7px) scale(0.87); opacity: 0.76; filter: brightness(0.92); }
+  57.5% { transform: translate(-225.0px, 4.6px) scale(0.92); opacity: 0.79; filter: brightness(0.95); }
+  60.0% { transform: translate(-228.6px, -5.3px) scale(0.96); opacity: 0.83; filter: brightness(0.97); }
+  62.5% { transform: translate(-226.2px, -15.6px) scale(1.01); opacity: 0.86; filter: brightness(1.00); }
+  65.0% { transform: translate(-216.8px, -26.2px) scale(1.06); opacity: 0.89; filter: brightness(1.02); }
+  67.5% { transform: translate(-199.9px, -36.7px) scale(1.10); opacity: 0.92; filter: brightness(1.04); }
+  70.0% { transform: translate(-175.1px, -46.4px) scale(1.15); opacity: 0.95; filter: brightness(1.06); }
+  72.5% { transform: translate(-142.7px, -55.1px) scale(1.19); opacity: 0.97; filter: brightness(1.07); }
+  75.0% { transform: translate(-103.4px, -61.9px) scale(1.22); opacity: 0.98; filter: brightness(1.09); }
+  77.5% { transform: translate(-58.8px, -66.5px) scale(1.24); opacity: 0.99; filter: brightness(1.09); }
+  80.0% { transform: translate(-11.1px, -68.6px) scale(1.25); opacity: 0.99; filter: brightness(1.10); }
+  82.5% { transform: translate(37.2px, -67.8px) scale(1.25); opacity: 0.99; filter: brightness(1.09); }
+  85.0% { transform: translate(83.5px, -64.3px) scale(1.23); opacity: 0.99; filter: brightness(1.09); }
+  87.5% { transform: translate(125.4px, -58.4px) scale(1.20); opacity: 0.97; filter: brightness(1.08); }
+  90.0% { transform: translate(161.2px, -50.6px) scale(1.17); opacity: 0.95; filter: brightness(1.07); }
+  92.5% { transform: translate(189.5px, -41.3px) scale(1.12); opacity: 0.93; filter: brightness(1.05); }
+  95.0% { transform: translate(210.0px, -31.1px) scale(1.08); opacity: 0.91; filter: brightness(1.03); }
+  97.5% { transform: translate(222.8px, -20.5px) scale(1.03); opacity: 0.88; filter: brightness(1.01); }
+  100.0% { transform: translate(228.3px, -10.0px) scale(0.98); opacity: 0.84; filter: brightness(0.99); }
 }
 @keyframes orbit_node_9 {
-  0.0% { transform: translate(-172.3px, -55.2px) scale(1.09); opacity: 0.75; filter: brightness(0.93); }
-  2.5% { transform: translate(-164.5px, -64.0px) scale(1.12); opacity: 0.80; filter: brightness(0.96); }
-  5.0% { transform: translate(-151.1px, -72.5px) scale(1.16); opacity: 0.84; filter: brightness(0.99); }
-  7.5% { transform: translate(-132.4px, -80.2px) scale(1.19); opacity: 0.88; filter: brightness(1.02); }
-  10.0% { transform: translate(-108.8px, -86.8px) scale(1.21); opacity: 0.91; filter: brightness(1.04); }
-  12.5% { transform: translate(-81.0px, -92.1px) scale(1.23); opacity: 0.94; filter: brightness(1.06); }
-  15.0% { transform: translate(-50.1px, -95.7px) scale(1.24); opacity: 0.95; filter: brightness(1.07); }
-  17.5% { transform: translate(-17.1px, -97.6px) scale(1.25); opacity: 0.96; filter: brightness(1.07); }
-  20.0% { transform: translate(16.6px, -97.6px) scale(1.25); opacity: 0.96; filter: brightness(1.07); }
-  22.5% { transform: translate(49.6px, -95.8px) scale(1.24); opacity: 0.95; filter: brightness(1.07); }
-  25.0% { transform: translate(80.6px, -92.1px) scale(1.23); opacity: 0.94; filter: brightness(1.06); }
-  27.5% { transform: translate(108.4px, -86.9px) scale(1.21); opacity: 0.91; filter: brightness(1.04); }
-  30.0% { transform: translate(132.1px, -80.3px) scale(1.19); opacity: 0.88; filter: brightness(1.02); }
-  32.5% { transform: translate(150.9px, -72.6px) scale(1.16); opacity: 0.84; filter: brightness(0.99); }
-  35.0% { transform: translate(164.3px, -64.2px) scale(1.12); opacity: 0.80; filter: brightness(0.96); }
-  37.5% { transform: translate(172.2px, -55.3px) scale(1.09); opacity: 0.75; filter: brightness(0.93); }
-  40.0% { transform: translate(174.7px, -46.3px) scale(1.05); opacity: 0.70; filter: brightness(0.89); }
-  42.5% { transform: translate(172.1px, -37.6px) scale(1.01); opacity: 0.65; filter: brightness(0.86); }
-  45.0% { transform: translate(164.9px, -29.3px) scale(0.96); opacity: 0.60; filter: brightness(0.82); }
-  47.5% { transform: translate(154.0px, -21.7px) scale(0.92); opacity: 0.54; filter: brightness(0.78); }
-  50.0% { transform: translate(140.1px, -14.9px) scale(0.88); opacity: 0.49; filter: brightness(0.75); }
-  52.5% { transform: translate(123.9px, -9.0px) scale(0.85); opacity: 0.44; filter: brightness(0.71); }
-  55.0% { transform: translate(106.1px, -4.1px) scale(0.81); opacity: 0.40; filter: brightness(0.68); }
-  57.5% { transform: translate(87.3px, -0.1px) scale(0.78); opacity: 0.36; filter: brightness(0.66); }
-  60.0% { transform: translate(68.1px, 3.0px) scale(0.76); opacity: 0.33; filter: brightness(0.64); }
-  62.5% { transform: translate(48.7px, 5.3px) scale(0.74); opacity: 0.31; filter: brightness(0.62); }
-  65.0% { transform: translate(29.2px, 6.8px) scale(0.73); opacity: 0.29; filter: brightness(0.61); }
-  67.5% { transform: translate(9.8px, 7.5px) scale(0.72); opacity: 0.28; filter: brightness(0.60); }
-  70.0% { transform: translate(-9.5px, 7.5px) scale(0.72); opacity: 0.28; filter: brightness(0.60); }
-  72.5% { transform: translate(-28.9px, 6.8px) scale(0.73); opacity: 0.29; filter: brightness(0.61); }
-  75.0% { transform: translate(-48.4px, 5.3px) scale(0.74); opacity: 0.31; filter: brightness(0.62); }
-  77.5% { transform: translate(-67.8px, 3.1px) scale(0.76); opacity: 0.33; filter: brightness(0.64); }
-  80.0% { transform: translate(-87.0px, -0.0px) scale(0.78); opacity: 0.36; filter: brightness(0.66); }
-  82.5% { transform: translate(-105.8px, -4.0px) scale(0.81); opacity: 0.40; filter: brightness(0.68); }
-  85.0% { transform: translate(-123.6px, -8.9px) scale(0.85); opacity: 0.44; filter: brightness(0.71); }
-  87.5% { transform: translate(-139.9px, -14.8px) scale(0.88); opacity: 0.49; filter: brightness(0.75); }
-  90.0% { transform: translate(-153.8px, -21.6px) scale(0.92); opacity: 0.54; filter: brightness(0.78); }
-  92.5% { transform: translate(-164.8px, -29.2px) scale(0.96); opacity: 0.59; filter: brightness(0.82); }
-  95.0% { transform: translate(-172.0px, -37.5px) scale(1.01); opacity: 0.65; filter: brightness(0.86); }
-  97.5% { transform: translate(-174.7px, -46.2px) scale(1.05); opacity: 0.70; filter: brightness(0.89); }
-  100.0% { transform: translate(-172.3px, -55.2px) scale(1.09); opacity: 0.75; filter: brightness(0.93); }
+  0.0% { transform: translate(-225.1px, -38.6px) scale(0.98); opacity: 0.84; filter: brightness(0.99); }
+  2.5% { transform: translate(-217.7px, -50.3px) scale(1.03); opacity: 0.88; filter: brightness(1.01); }
+  5.0% { transform: translate(-203.0px, -61.9px) scale(1.08); opacity: 0.91; filter: brightness(1.03); }
+  7.5% { transform: translate(-180.6px, -73.0px) scale(1.12); opacity: 0.93; filter: brightness(1.05); }
+  10.0% { transform: translate(-150.6px, -82.9px) scale(1.16); opacity: 0.95; filter: brightness(1.07); }
+  12.5% { transform: translate(-113.5px, -91.1px) scale(1.20); opacity: 0.97; filter: brightness(1.08); }
+  15.0% { transform: translate(-70.7px, -96.9px) scale(1.22); opacity: 0.98; filter: brightness(1.09); }
+  17.5% { transform: translate(-24.3px, -100.0px) scale(1.23); opacity: 0.99; filter: brightness(1.09); }
+  20.0% { transform: translate(23.5px, -100.0px) scale(1.23); opacity: 0.99; filter: brightness(1.09); }
+  22.5% { transform: translate(70.0px, -97.0px) scale(1.22); opacity: 0.98; filter: brightness(1.09); }
+  25.0% { transform: translate(112.9px, -91.2px) scale(1.20); opacity: 0.97; filter: brightness(1.08); }
+  27.5% { transform: translate(150.0px, -83.1px) scale(1.16); opacity: 0.95; filter: brightness(1.07); }
+  30.0% { transform: translate(180.2px, -73.2px) scale(1.12); opacity: 0.93; filter: brightness(1.05); }
+  32.5% { transform: translate(202.8px, -62.1px) scale(1.08); opacity: 0.91; filter: brightness(1.03); }
+  35.0% { transform: translate(217.6px, -50.5px) scale(1.03); opacity: 0.88; filter: brightness(1.01); }
+  37.5% { transform: translate(225.1px, -38.8px) scale(0.99); opacity: 0.84; filter: brightness(0.99); }
+  40.0% { transform: translate(226.0px, -27.5px) scale(0.94); opacity: 0.81; filter: brightness(0.96); }
+  42.5% { transform: translate(221.1px, -16.7px) scale(0.90); opacity: 0.77; filter: brightness(0.94); }
+  45.0% { transform: translate(211.3px, -6.8px) scale(0.86); opacity: 0.74; filter: brightness(0.91); }
+  47.5% { transform: translate(197.5px, 2.1px) scale(0.82); opacity: 0.70; filter: brightness(0.88); }
+  50.0% { transform: translate(180.3px, 10.1px) scale(0.79); opacity: 0.67; filter: brightness(0.86); }
+  52.5% { transform: translate(160.6px, 17.0px) scale(0.76); opacity: 0.64; filter: brightness(0.83); }
+  55.0% { transform: translate(138.9px, 22.9px) scale(0.74); opacity: 0.61; filter: brightness(0.81); }
+  57.5% { transform: translate(115.5px, 27.7px) scale(0.72); opacity: 0.58; filter: brightness(0.79); }
+  60.0% { transform: translate(91.0px, 31.5px) scale(0.70); opacity: 0.56; filter: brightness(0.78); }
+  62.5% { transform: translate(65.6px, 34.4px) scale(0.69); opacity: 0.54; filter: brightness(0.77); }
+  65.0% { transform: translate(39.7px, 36.3px) scale(0.68); opacity: 0.53; filter: brightness(0.76); }
+  67.5% { transform: translate(13.4px, 37.2px) scale(0.68); opacity: 0.53; filter: brightness(0.75); }
+  70.0% { transform: translate(-13.0px, 37.2px) scale(0.68); opacity: 0.53; filter: brightness(0.75); }
+  72.5% { transform: translate(-39.3px, 36.3px) scale(0.68); opacity: 0.53; filter: brightness(0.76); }
+  75.0% { transform: translate(-65.2px, 34.4px) scale(0.69); opacity: 0.54; filter: brightness(0.77); }
+  77.5% { transform: translate(-90.6px, 31.6px) scale(0.70); opacity: 0.56; filter: brightness(0.78); }
+  80.0% { transform: translate(-115.1px, 27.8px) scale(0.72); opacity: 0.58; filter: brightness(0.79); }
+  82.5% { transform: translate(-138.5px, 22.9px) scale(0.74); opacity: 0.61; filter: brightness(0.81); }
+  85.0% { transform: translate(-160.3px, 17.1px) scale(0.76); opacity: 0.64; filter: brightness(0.83); }
+  87.5% { transform: translate(-180.1px, 10.2px) scale(0.79); opacity: 0.67; filter: brightness(0.86); }
+  90.0% { transform: translate(-197.2px, 2.3px) scale(0.82); opacity: 0.70; filter: brightness(0.88); }
+  92.5% { transform: translate(-211.1px, -6.7px) scale(0.86); opacity: 0.74; filter: brightness(0.91); }
+  95.0% { transform: translate(-221.0px, -16.6px) scale(0.90); opacity: 0.77; filter: brightness(0.94); }
+  97.5% { transform: translate(-225.9px, -27.3px) scale(0.94); opacity: 0.81; filter: brightness(0.96); }
+  100.0% { transform: translate(-225.1px, -38.6px) scale(0.98); opacity: 0.84; filter: brightness(0.99); }
 }
 @keyframes orbit_node_10 {
-  0.0% { transform: translate(52.0px, -13.1px) scale(0.74); opacity: 0.31; filter: brightness(0.62); }
-  2.5% { transform: translate(33.3px, -11.2px) scale(0.73); opacity: 0.29; filter: brightness(0.61); }
-  5.0% { transform: translate(14.7px, -10.1px) scale(0.72); opacity: 0.28; filter: brightness(0.60); }
-  7.5% { transform: translate(-4.0px, -9.8px) scale(0.72); opacity: 0.28; filter: brightness(0.60); }
-  10.0% { transform: translate(-22.6px, -10.4px) scale(0.72); opacity: 0.29; filter: brightness(0.60); }
-  12.5% { transform: translate(-41.3px, -11.9px) scale(0.73); opacity: 0.30; filter: brightness(0.61); }
-  15.0% { transform: translate(-60.0px, -14.3px) scale(0.75); opacity: 0.32; filter: brightness(0.63); }
-  17.5% { transform: translate(-78.5px, -17.5px) scale(0.77); opacity: 0.35; filter: brightness(0.65); }
-  20.0% { transform: translate(-96.5px, -21.8px) scale(0.80); opacity: 0.39; filter: brightness(0.67); }
-  22.5% { transform: translate(-113.7px, -27.0px) scale(0.83); opacity: 0.43; filter: brightness(0.70); }
-  25.0% { transform: translate(-129.6px, -33.2px) scale(0.87); opacity: 0.47; filter: brightness(0.73); }
-  27.5% { transform: translate(-143.4px, -40.3px) scale(0.90); opacity: 0.52; filter: brightness(0.77); }
-  30.0% { transform: translate(-154.6px, -48.2px) scale(0.94); opacity: 0.57; filter: brightness(0.80); }
-  32.5% { transform: translate(-162.3px, -56.9px) scale(0.98); opacity: 0.62; filter: brightness(0.84); }
-  35.0% { transform: translate(-165.9px, -66.0px) scale(1.02); opacity: 0.67; filter: brightness(0.87); }
-  37.5% { transform: translate(-164.9px, -75.4px) scale(1.06); opacity: 0.72; filter: brightness(0.91); }
-  40.0% { transform: translate(-158.8px, -84.7px) scale(1.10); opacity: 0.77; filter: brightness(0.94); }
-  42.5% { transform: translate(-147.5px, -93.6px) scale(1.13); opacity: 0.81; filter: brightness(0.97); }
-  45.0% { transform: translate(-131.0px, -101.8px) scale(1.16); opacity: 0.85; filter: brightness(0.99); }
-  47.5% { transform: translate(-109.8px, -108.9px) scale(1.19); opacity: 0.88; filter: brightness(1.02); }
-  50.0% { transform: translate(-84.5px, -114.8px) scale(1.21); opacity: 0.91; filter: brightness(1.03); }
-  52.5% { transform: translate(-55.8px, -119.0px) scale(1.22); opacity: 0.92; filter: brightness(1.05); }
-  55.0% { transform: translate(-25.0px, -121.4px) scale(1.23); opacity: 0.93; filter: brightness(1.05); }
-  57.5% { transform: translate(6.8px, -122.0px) scale(1.23); opacity: 0.94; filter: brightness(1.06); }
-  60.0% { transform: translate(38.4px, -120.6px) scale(1.23); opacity: 0.93; filter: brightness(1.05); }
-  62.5% { transform: translate(68.4px, -117.4px) scale(1.22); opacity: 0.92; filter: brightness(1.04); }
-  65.0% { transform: translate(95.7px, -112.5px) scale(1.20); opacity: 0.90; filter: brightness(1.03); }
-  67.5% { transform: translate(119.4px, -106.0px) scale(1.18); opacity: 0.87; filter: brightness(1.01); }
-  70.0% { transform: translate(138.7px, -98.4px) scale(1.15); opacity: 0.83; filter: brightness(0.98); }
-  72.5% { transform: translate(153.0px, -89.8px) scale(1.12); opacity: 0.79; filter: brightness(0.96); }
-  75.0% { transform: translate(162.0px, -80.7px) scale(1.08); opacity: 0.75; filter: brightness(0.92); }
-  77.5% { transform: translate(165.9px, -71.4px) scale(1.05); opacity: 0.70; filter: brightness(0.89); }
-  80.0% { transform: translate(164.9px, -62.1px) scale(1.01); opacity: 0.65; filter: brightness(0.86); }
-  82.5% { transform: translate(159.5px, -53.1px) scale(0.97); opacity: 0.60; filter: brightness(0.82); }
-  85.0% { transform: translate(150.2px, -44.7px) scale(0.93); opacity: 0.55; filter: brightness(0.79); }
-  87.5% { transform: translate(137.8px, -37.1px) scale(0.89); opacity: 0.50; filter: brightness(0.75); }
-  90.0% { transform: translate(123.0px, -30.4px) scale(0.85); opacity: 0.45; filter: brightness(0.72); }
-  92.5% { transform: translate(106.5px, -24.6px) scale(0.82); opacity: 0.41; filter: brightness(0.69); }
-  95.0% { transform: translate(88.9px, -19.8px) scale(0.79); opacity: 0.37; filter: brightness(0.66); }
-  97.5% { transform: translate(70.6px, -16.0px) scale(0.76); opacity: 0.34; filter: brightness(0.64); }
-  100.0% { transform: translate(52.0px, -13.1px) scale(0.74); opacity: 0.31; filter: brightness(0.62); }
+  0.0% { transform: translate(71.5px, 14.7px) scale(0.69); opacity: 0.54; filter: brightness(0.77); }
+  2.5% { transform: translate(46.1px, 17.1px) scale(0.68); opacity: 0.53; filter: brightness(0.76); }
+  5.0% { transform: translate(20.4px, 18.4px) scale(0.68); opacity: 0.52; filter: brightness(0.75); }
+  7.5% { transform: translate(-5.5px, 18.7px) scale(0.68); opacity: 0.52; filter: brightness(0.75); }
+  10.0% { transform: translate(-31.4px, 17.9px) scale(0.68); opacity: 0.53; filter: brightness(0.75); }
+  12.5% { transform: translate(-57.0px, 16.2px) scale(0.69); opacity: 0.54; filter: brightness(0.76); }
+  15.0% { transform: translate(-82.2px, 13.4px) scale(0.70); opacity: 0.55; filter: brightness(0.77); }
+  17.5% { transform: translate(-106.5px, 9.5px) scale(0.71); opacity: 0.57; filter: brightness(0.79); }
+  20.0% { transform: translate(-129.7px, 4.6px) scale(0.73); opacity: 0.59; filter: brightness(0.80); }
+  22.5% { transform: translate(-151.5px, -1.5px) scale(0.75); opacity: 0.62; filter: brightness(0.82); }
+  25.0% { transform: translate(-171.4px, -8.6px) scale(0.77); opacity: 0.65; filter: brightness(0.85); }
+  27.5% { transform: translate(-188.9px, -16.9px) scale(0.80); opacity: 0.69; filter: brightness(0.87); }
+  30.0% { transform: translate(-203.3px, -26.3px) scale(0.84); opacity: 0.72; filter: brightness(0.90); }
+  32.5% { transform: translate(-213.9px, -36.8px) scale(0.88); opacity: 0.76; filter: brightness(0.92); }
+  35.0% { transform: translate(-220.0px, -48.1px) scale(0.92); opacity: 0.79; filter: brightness(0.95); }
+  37.5% { transform: translate(-220.6px, -60.2px) scale(0.96); opacity: 0.83; filter: brightness(0.97); }
+  40.0% { transform: translate(-215.0px, -72.7px) scale(1.01); opacity: 0.86; filter: brightness(1.00); }
+  42.5% { transform: translate(-202.5px, -85.2px) scale(1.05); opacity: 0.89; filter: brightness(1.02); }
+  45.0% { transform: translate(-182.6px, -97.3px) scale(1.09); opacity: 0.92; filter: brightness(1.04); }
+  47.5% { transform: translate(-155.2px, -108.2px) scale(1.13); opacity: 0.94; filter: brightness(1.05); }
+  50.0% { transform: translate(-120.9px, -117.5px) scale(1.17); opacity: 0.96; filter: brightness(1.07); }
+  52.5% { transform: translate(-80.7px, -124.5px) scale(1.19); opacity: 0.97; filter: brightness(1.08); }
+  55.0% { transform: translate(-36.3px, -128.6px) scale(1.21); opacity: 0.97; filter: brightness(1.08); }
+  57.5% { transform: translate(9.9px, -129.5px) scale(1.21); opacity: 0.98; filter: brightness(1.08); }
+  60.0% { transform: translate(55.6px, -127.2px) scale(1.20); opacity: 0.97; filter: brightness(1.08); }
+  62.5% { transform: translate(98.5px, -121.8px) scale(1.18); opacity: 0.96; filter: brightness(1.07); }
+  65.0% { transform: translate(136.3px, -113.8px) scale(1.15); opacity: 0.95; filter: brightness(1.06); }
+  67.5% { transform: translate(167.8px, -103.7px) scale(1.12); opacity: 0.93; filter: brightness(1.05); }
+  70.0% { transform: translate(192.0px, -92.2px) scale(1.08); opacity: 0.90; filter: brightness(1.03); }
+  72.5% { transform: translate(208.7px, -79.9px) scale(1.03); opacity: 0.88; filter: brightness(1.01); }
+  75.0% { transform: translate(218.2px, -67.3px) scale(0.99); opacity: 0.85; filter: brightness(0.99); }
+  77.5% { transform: translate(221.0px, -54.9px) scale(0.94); opacity: 0.81; filter: brightness(0.96); }
+  80.0% { transform: translate(218.0px, -43.2px) scale(0.90); opacity: 0.78; filter: brightness(0.94); }
+  82.5% { transform: translate(209.9px, -32.2px) scale(0.86); opacity: 0.74; filter: brightness(0.91); }
+  85.0% { transform: translate(197.6px, -22.2px) scale(0.82); opacity: 0.71; filter: brightness(0.89); }
+  87.5% { transform: translate(181.8px, -13.3px) scale(0.79); opacity: 0.67; filter: brightness(0.86); }
+  90.0% { transform: translate(163.2px, -5.4px) scale(0.76); opacity: 0.64; filter: brightness(0.84); }
+  92.5% { transform: translate(142.4px, 1.2px) scale(0.74); opacity: 0.61; filter: brightness(0.82); }
+  95.0% { transform: translate(120.0px, 6.8px) scale(0.72); opacity: 0.58; filter: brightness(0.80); }
+  97.5% { transform: translate(96.2px, 11.3px) scale(0.70); opacity: 0.56; filter: brightness(0.78); }
+  100.0% { transform: translate(71.5px, 14.7px) scale(0.69); opacity: 0.54; filter: brightness(0.77); }
 }
 @keyframes orbit_node_11 {
-  0.0% { transform: translate(55.4px, -140.0px) scale(1.20); opacity: 0.89; filter: brightness(1.02); }
-  2.5% { transform: translate(81.3px, -135.6px) scale(1.18); opacity: 0.87; filter: brightness(1.01); }
-  5.0% { transform: translate(104.2px, -129.6px) scale(1.16); opacity: 0.85; filter: brightness(0.99); }
-  7.5% { transform: translate(123.2px, -122.3px) scale(1.14); opacity: 0.82; filter: brightness(0.97); }
-  10.0% { transform: translate(137.9px, -114.0px) scale(1.11); opacity: 0.78; filter: brightness(0.95); }
-  12.5% { transform: translate(147.8px, -105.0px) scale(1.08); opacity: 0.74; filter: brightness(0.92); }
-  15.0% { transform: translate(153.0px, -95.6px) scale(1.04); opacity: 0.69; filter: brightness(0.89); }
-  17.5% { transform: translate(153.5px, -86.1px) scale(1.01); opacity: 0.65; filter: brightness(0.86); }
-  20.0% { transform: translate(149.9px, -76.8px) scale(0.97); opacity: 0.60; filter: brightness(0.82); }
-  22.5% { transform: translate(142.5px, -68.0px) scale(0.93); opacity: 0.55; filter: brightness(0.79); }
-  25.0% { transform: translate(132.0px, -59.8px) scale(0.89); opacity: 0.50; filter: brightness(0.76); }
-  27.5% { transform: translate(119.1px, -52.5px) scale(0.86); opacity: 0.46; filter: brightness(0.72); }
-  30.0% { transform: translate(104.3px, -46.0px) scale(0.83); opacity: 0.42; filter: brightness(0.70); }
-  32.5% { transform: translate(88.2px, -40.6px) scale(0.80); opacity: 0.38; filter: brightness(0.67); }
-  35.0% { transform: translate(71.3px, -36.1px) scale(0.77); opacity: 0.35; filter: brightness(0.65); }
-  37.5% { transform: translate(54.0px, -32.7px) scale(0.75); opacity: 0.32; filter: brightness(0.63); }
-  40.0% { transform: translate(36.4px, -30.2px) scale(0.74); opacity: 0.31; filter: brightness(0.62); }
-  42.5% { transform: translate(18.8px, -28.7px) scale(0.73); opacity: 0.29; filter: brightness(0.61); }
-  45.0% { transform: translate(1.1px, -28.2px) scale(0.73); opacity: 0.29; filter: brightness(0.61); }
-  47.5% { transform: translate(-16.5px, -28.6px) scale(0.73); opacity: 0.29; filter: brightness(0.61); }
-  50.0% { transform: translate(-34.1px, -30.0px) scale(0.74); opacity: 0.30; filter: brightness(0.62); }
-  52.5% { transform: translate(-51.7px, -32.3px) scale(0.75); opacity: 0.32; filter: brightness(0.63); }
-  55.0% { transform: translate(-69.1px, -35.6px) scale(0.77); opacity: 0.35; filter: brightness(0.65); }
-  57.5% { transform: translate(-86.0px, -39.9px) scale(0.79); opacity: 0.38; filter: brightness(0.67); }
-  60.0% { transform: translate(-102.3px, -45.3px) scale(0.82); opacity: 0.41; filter: brightness(0.69); }
-  62.5% { transform: translate(-117.3px, -51.6px) scale(0.85); opacity: 0.45; filter: brightness(0.72); }
-  65.0% { transform: translate(-130.5px, -58.8px) scale(0.89); opacity: 0.50; filter: brightness(0.75); }
-  67.5% { transform: translate(-141.3px, -66.9px) scale(0.93); opacity: 0.55; filter: brightness(0.78); }
-  70.0% { transform: translate(-149.1px, -75.6px) scale(0.96); opacity: 0.59; filter: brightness(0.82); }
-  72.5% { transform: translate(-153.3px, -84.8px) scale(1.00); opacity: 0.64; filter: brightness(0.85); }
-  75.0% { transform: translate(-153.3px, -94.3px) scale(1.04); opacity: 0.69; filter: brightness(0.88); }
-  77.5% { transform: translate(-148.7px, -103.8px) scale(1.07); opacity: 0.73; filter: brightness(0.91); }
-  80.0% { transform: translate(-139.4px, -112.8px) scale(1.11); opacity: 0.77; filter: brightness(0.94); }
-  82.5% { transform: translate(-125.4px, -121.3px) scale(1.13); opacity: 0.81; filter: brightness(0.97); }
-  85.0% { transform: translate(-106.9px, -128.7px) scale(1.16); opacity: 0.84; filter: brightness(0.99); }
-  87.5% { transform: translate(-84.5px, -134.9px) scale(1.18); opacity: 0.87; filter: brightness(1.01); }
-  90.0% { transform: translate(-58.9px, -139.5px) scale(1.19); opacity: 0.89; filter: brightness(1.02); }
-  92.5% { transform: translate(-31.0px, -142.4px) scale(1.20); opacity: 0.90; filter: brightness(1.03); }
-  95.0% { transform: translate(-1.9px, -143.5px) scale(1.21); opacity: 0.90; filter: brightness(1.03); }
-  97.5% { transform: translate(27.3px, -142.7px) scale(1.20); opacity: 0.90; filter: brightness(1.03); }
-  100.0% { transform: translate(55.4px, -140.0px) scale(1.20); opacity: 0.89; filter: brightness(1.02); }
+  0.0% { transform: translate(82.9px, -149.8px) scale(1.16); opacity: 0.95; filter: brightness(1.07); }
+  2.5% { transform: translate(120.6px, -142.3px) scale(1.14); opacity: 0.94; filter: brightness(1.06); }
+  5.0% { transform: translate(152.6px, -132.4px) scale(1.11); opacity: 0.92; filter: brightness(1.04); }
+  7.5% { transform: translate(178.0px, -120.8px) scale(1.07); opacity: 0.90; filter: brightness(1.03); }
+  10.0% { transform: translate(196.4px, -108.1px) scale(1.03); opacity: 0.87; filter: brightness(1.01); }
+  12.5% { transform: translate(207.7px, -95.1px) scale(0.98); opacity: 0.84; filter: brightness(0.99); }
+  15.0% { transform: translate(212.5px, -82.0px) scale(0.94); opacity: 0.81; filter: brightness(0.96); }
+  17.5% { transform: translate(211.4px, -69.4px) scale(0.90); opacity: 0.78; filter: brightness(0.94); }
+  20.0% { transform: translate(205.2px, -57.6px) scale(0.86); opacity: 0.74; filter: brightness(0.91); }
+  22.5% { transform: translate(194.7px, -46.8px) scale(0.83); opacity: 0.71; filter: brightness(0.89); }
+  25.0% { transform: translate(180.5px, -37.0px) scale(0.79); opacity: 0.68; filter: brightness(0.86); }
+  27.5% { transform: translate(163.4px, -28.3px) scale(0.77); opacity: 0.64; filter: brightness(0.84); }
+  30.0% { transform: translate(144.0px, -20.9px) scale(0.74); opacity: 0.61; filter: brightness(0.82); }
+  32.5% { transform: translate(122.7px, -14.6px) scale(0.72); opacity: 0.59; filter: brightness(0.80); }
+  35.0% { transform: translate(100.0px, -9.5px) scale(0.71); opacity: 0.56; filter: brightness(0.78); }
+  37.5% { transform: translate(76.3px, -5.5px) scale(0.69); opacity: 0.55; filter: brightness(0.77); }
+  40.0% { transform: translate(51.8px, -2.7px) scale(0.68); opacity: 0.53; filter: brightness(0.76); }
+  42.5% { transform: translate(26.8px, -1.0px) scale(0.68); opacity: 0.52; filter: brightness(0.75); }
+  45.0% { transform: translate(1.6px, -0.4px) scale(0.68); opacity: 0.52; filter: brightness(0.75); }
+  47.5% { transform: translate(-23.6px, -0.9px) scale(0.68); opacity: 0.52; filter: brightness(0.75); }
+  50.0% { transform: translate(-48.6px, -2.4px) scale(0.68); opacity: 0.53; filter: brightness(0.76); }
+  52.5% { transform: translate(-73.1px, -5.1px) scale(0.69); opacity: 0.54; filter: brightness(0.77); }
+  55.0% { transform: translate(-97.0px, -8.9px) scale(0.70); opacity: 0.56; filter: brightness(0.78); }
+  57.5% { transform: translate(-119.8px, -13.9px) scale(0.72); opacity: 0.58; filter: brightness(0.80); }
+  60.0% { transform: translate(-141.3px, -20.0px) scale(0.74); opacity: 0.61; filter: brightness(0.82); }
+  62.5% { transform: translate(-161.0px, -27.3px) scale(0.76); opacity: 0.64; filter: brightness(0.84); }
+  65.0% { transform: translate(-178.4px, -35.8px) scale(0.79); opacity: 0.67; filter: brightness(0.86); }
+  67.5% { transform: translate(-193.0px, -45.4px) scale(0.82); opacity: 0.70; filter: brightness(0.88); }
+  70.0% { transform: translate(-204.1px, -56.2px) scale(0.86); opacity: 0.74; filter: brightness(0.91); }
+  72.5% { transform: translate(-210.9px, -67.9px) scale(0.90); opacity: 0.77; filter: brightness(0.94); }
+  75.0% { transform: translate(-212.7px, -80.4px) scale(0.94); opacity: 0.81; filter: brightness(0.96); }
+  77.5% { transform: translate(-208.7px, -93.3px) scale(0.98); opacity: 0.84; filter: brightness(0.98); }
+  80.0% { transform: translate(-198.2px, -106.5px) scale(1.02); opacity: 0.87; filter: brightness(1.01); }
+  82.5% { transform: translate(-180.8px, -119.2px) scale(1.06); opacity: 0.90; filter: brightness(1.02); }
+  85.0% { transform: translate(-156.3px, -130.9px) scale(1.10); opacity: 0.92; filter: brightness(1.04); }
+  87.5% { transform: translate(-125.1px, -141.1px) scale(1.14); opacity: 0.94; filter: brightness(1.05); }
+  90.0% { transform: translate(-88.1px, -149.0px) scale(1.16); opacity: 0.95; filter: brightness(1.06); }
+  92.5% { transform: translate(-46.7px, -154.1px) scale(1.18); opacity: 0.96; filter: brightness(1.07); }
+  95.0% { transform: translate(-2.9px, -155.9px) scale(1.18); opacity: 0.96; filter: brightness(1.07); }
+  97.5% { transform: translate(41.1px, -154.5px) scale(1.18); opacity: 0.96; filter: brightness(1.07); }
+  100.0% { transform: translate(82.9px, -149.8px) scale(1.16); opacity: 0.95; filter: brightness(1.07); }
 }
 @keyframes orbit_node_12 {
-  0.0% { transform: translate(-102.6px, -70.5px) scale(0.85); opacity: 0.44; filter: brightness(0.71); }
-  2.5% { transform: translate(-114.7px, -77.6px) scale(0.88); opacity: 0.48; filter: brightness(0.74); }
-  5.0% { transform: translate(-124.7px, -85.5px) scale(0.91); opacity: 0.53; filter: brightness(0.77); }
-  7.5% { transform: translate(-132.1px, -94.0px) scale(0.94); opacity: 0.57; filter: brightness(0.80); }
-  10.0% { transform: translate(-136.3px, -102.9px) scale(0.98); opacity: 0.61; filter: brightness(0.83); }
-  12.5% { transform: translate(-136.9px, -112.1px) scale(1.01); opacity: 0.66; filter: brightness(0.86); }
-  15.0% { transform: translate(-133.7px, -121.3px) scale(1.04); opacity: 0.70; filter: brightness(0.89); }
-  17.5% { transform: translate(-126.3px, -130.1px) scale(1.07); opacity: 0.74; filter: brightness(0.92); }
-  20.0% { transform: translate(-114.8px, -138.4px) scale(1.10); opacity: 0.77; filter: brightness(0.94); }
-  22.5% { transform: translate(-99.3px, -145.7px) scale(1.13); opacity: 0.80; filter: brightness(0.96); }
-  25.0% { transform: translate(-80.3px, -151.9px) scale(1.14); opacity: 0.82; filter: brightness(0.98); }
-  27.5% { transform: translate(-58.4px, -156.7px) scale(1.16); opacity: 0.84; filter: brightness(0.99); }
-  30.0% { transform: translate(-34.3px, -160.0px) scale(1.17); opacity: 0.86; filter: brightness(1.00); }
-  32.5% { transform: translate(-8.9px, -161.5px) scale(1.17); opacity: 0.86; filter: brightness(1.00); }
-  35.0% { transform: translate(16.9px, -161.2px) scale(1.17); opacity: 0.86; filter: brightness(1.00); }
-  37.5% { transform: translate(42.0px, -159.1px) scale(1.17); opacity: 0.85; filter: brightness(1.00); }
-  40.0% { transform: translate(65.5px, -155.4px) scale(1.16); opacity: 0.84; filter: brightness(0.99); }
-  42.5% { transform: translate(86.6px, -150.1px) scale(1.14); opacity: 0.82; filter: brightness(0.97); }
-  45.0% { transform: translate(104.5px, -143.5px) scale(1.12); opacity: 0.79; filter: brightness(0.95); }
-  47.5% { transform: translate(118.8px, -135.9px) scale(1.09); opacity: 0.76; filter: brightness(0.93); }
-  50.0% { transform: translate(129.0px, -127.4px) scale(1.07); opacity: 0.72; filter: brightness(0.91); }
-  52.5% { transform: translate(135.1px, -118.4px) scale(1.03); opacity: 0.68; filter: brightness(0.88); }
-  55.0% { transform: translate(137.1px, -109.2px) scale(1.00); opacity: 0.64; filter: brightness(0.85); }
-  57.5% { transform: translate(135.3px, -100.1px) scale(0.97); opacity: 0.60; filter: brightness(0.82); }
-  60.0% { transform: translate(130.1px, -91.2px) scale(0.93); opacity: 0.56; filter: brightness(0.79); }
-  62.5% { transform: translate(121.8px, -82.9px) scale(0.90); opacity: 0.51; filter: brightness(0.76); }
-  65.0% { transform: translate(111.1px, -75.3px) scale(0.87); opacity: 0.47; filter: brightness(0.73); }
-  67.5% { transform: translate(98.5px, -68.5px) scale(0.84); opacity: 0.43; filter: brightness(0.71); }
-  70.0% { transform: translate(84.5px, -62.6px) scale(0.81); opacity: 0.40; filter: brightness(0.68); }
-  72.5% { transform: translate(69.5px, -57.7px) scale(0.79); opacity: 0.37; filter: brightness(0.66); }
-  75.0% { transform: translate(53.9px, -53.8px) scale(0.77); opacity: 0.34; filter: brightness(0.64); }
-  77.5% { transform: translate(38.0px, -51.0px) scale(0.75); opacity: 0.32; filter: brightness(0.63); }
-  80.0% { transform: translate(21.8px, -49.1px) scale(0.74); opacity: 0.31; filter: brightness(0.62); }
-  82.5% { transform: translate(5.6px, -48.2px) scale(0.74); opacity: 0.31; filter: brightness(0.62); }
-  85.0% { transform: translate(-10.7px, -48.4px) scale(0.74); opacity: 0.31; filter: brightness(0.62); }
-  87.5% { transform: translate(-26.9px, -49.6px) scale(0.75); opacity: 0.32; filter: brightness(0.62); }
-  90.0% { transform: translate(-43.0px, -51.7px) scale(0.76); opacity: 0.33; filter: brightness(0.63); }
-  92.5% { transform: translate(-58.9px, -54.9px) scale(0.77); opacity: 0.35; filter: brightness(0.65); }
-  95.0% { transform: translate(-74.3px, -59.2px) scale(0.79); opacity: 0.38; filter: brightness(0.67); }
-  97.5% { transform: translate(-89.0px, -64.4px) scale(0.82); opacity: 0.41; filter: brightness(0.69); }
-  100.0% { transform: translate(-102.6px, -70.5px) scale(0.85); opacity: 0.44; filter: brightness(0.71); }
+  0.0% { transform: translate(-148.9px, -46.0px) scale(0.75); opacity: 0.63; filter: brightness(0.83); }
+  2.5% { transform: translate(-166.0px, -54.5px) scale(0.78); opacity: 0.66; filter: brightness(0.85); }
+  5.0% { transform: translate(-180.4px, -64.2px) scale(0.81); opacity: 0.69; filter: brightness(0.87); }
+  7.5% { transform: translate(-191.6px, -75.0px) scale(0.84); opacity: 0.72; filter: brightness(0.90); }
+  10.0% { transform: translate(-198.8px, -86.8px) scale(0.88); opacity: 0.76; filter: brightness(0.92); }
+  12.5% { transform: translate(-201.4px, -99.4px) scale(0.91); opacity: 0.79; filter: brightness(0.95); }
+  15.0% { transform: translate(-198.8px, -112.5px) scale(0.95); opacity: 0.82; filter: brightness(0.97); }
+  17.5% { transform: translate(-190.2px, -125.8px) scale(0.99); opacity: 0.85; filter: brightness(0.99); }
+  20.0% { transform: translate(-175.2px, -138.8px) scale(1.03); opacity: 0.88; filter: brightness(1.01); }
+  22.5% { transform: translate(-153.7px, -151.0px) scale(1.07); opacity: 0.90; filter: brightness(1.03); }
+  25.0% { transform: translate(-125.8px, -161.7px) scale(1.10); opacity: 0.92; filter: brightness(1.04); }
+  27.5% { transform: translate(-92.4px, -170.2px) scale(1.13); opacity: 0.93; filter: brightness(1.05); }
+  30.0% { transform: translate(-54.6px, -176.1px) scale(1.14); opacity: 0.94; filter: brightness(1.06); }
+  32.5% { transform: translate(-14.2px, -178.9px) scale(1.15); opacity: 0.95; filter: brightness(1.06); }
+  35.0% { transform: translate(27.0px, -178.4px) scale(1.15); opacity: 0.95; filter: brightness(1.06); }
+  37.5% { transform: translate(66.8px, -174.6px) scale(1.14); opacity: 0.94; filter: brightness(1.06); }
+  40.0% { transform: translate(103.4px, -167.8px) scale(1.12); opacity: 0.93; filter: brightness(1.05); }
+  42.5% { transform: translate(135.2px, -158.5px) scale(1.09); opacity: 0.91; filter: brightness(1.04); }
+  45.0% { transform: translate(161.1px, -147.3px) scale(1.06); opacity: 0.89; filter: brightness(1.02); }
+  47.5% { transform: translate(180.6px, -134.8px) scale(1.02); opacity: 0.87; filter: brightness(1.00); }
+  50.0% { transform: translate(193.5px, -121.7px) scale(0.98); opacity: 0.84; filter: brightness(0.98); }
+  52.5% { transform: translate(200.2px, -108.4px) scale(0.94); opacity: 0.81; filter: brightness(0.96); }
+  55.0% { transform: translate(201.2px, -95.4px) scale(0.90); opacity: 0.78; filter: brightness(0.94); }
+  57.5% { transform: translate(197.0px, -83.0px) scale(0.86); opacity: 0.75; filter: brightness(0.91); }
+  60.0% { transform: translate(188.4px, -71.5px) scale(0.83); opacity: 0.71; filter: brightness(0.89); }
+  62.5% { transform: translate(176.2px, -61.1px) scale(0.80); opacity: 0.68; filter: brightness(0.87); }
+  65.0% { transform: translate(160.9px, -51.8px) scale(0.77); opacity: 0.65; filter: brightness(0.84); }
+  67.5% { transform: translate(143.1px, -43.6px) scale(0.75); opacity: 0.62; filter: brightness(0.82); }
+  70.0% { transform: translate(123.4px, -36.7px) scale(0.73); opacity: 0.59; filter: brightness(0.80); }
+  72.5% { transform: translate(102.1px, -31.1px) scale(0.71); opacity: 0.57; filter: brightness(0.79); }
+  75.0% { transform: translate(79.6px, -26.6px) scale(0.70); opacity: 0.55; filter: brightness(0.77); }
+  77.5% { transform: translate(56.3px, -23.3px) scale(0.69); opacity: 0.54; filter: brightness(0.76); }
+  80.0% { transform: translate(32.5px, -21.1px) scale(0.68); opacity: 0.53; filter: brightness(0.75); }
+  82.5% { transform: translate(8.3px, -20.2px) scale(0.68); opacity: 0.52; filter: brightness(0.75); }
+  85.0% { transform: translate(-15.9px, -20.3px) scale(0.68); opacity: 0.52; filter: brightness(0.75); }
+  87.5% { transform: translate(-40.0px, -21.7px) scale(0.68); opacity: 0.53; filter: brightness(0.76); }
+  90.0% { transform: translate(-63.7px, -24.2px) scale(0.69); opacity: 0.54; filter: brightness(0.76); }
+  92.5% { transform: translate(-86.7px, -27.8px) scale(0.70); opacity: 0.56; filter: brightness(0.78); }
+  95.0% { transform: translate(-108.9px, -32.7px) scale(0.71); opacity: 0.58; filter: brightness(0.79); }
+  97.5% { transform: translate(-129.7px, -38.8px) scale(0.73); opacity: 0.60; filter: brightness(0.81); }
+  100.0% { transform: translate(-148.9px, -46.0px) scale(0.75); opacity: 0.63; filter: brightness(0.83); }
 }
 @keyframes orbit_node_13 {
-  0.0% { transform: translate(105.4px, -106.4px) scale(0.91); opacity: 0.52; filter: brightness(0.77); }
-  2.5% { transform: translate(97.4px, -99.1px) scale(0.88); opacity: 0.49; filter: brightness(0.74); }
-  5.0% { transform: translate(87.6px, -92.5px) scale(0.85); opacity: 0.45; filter: brightness(0.72); }
-  7.5% { transform: translate(76.3px, -86.6px) scale(0.83); opacity: 0.42; filter: brightness(0.70); }
-  10.0% { transform: translate(63.9px, -81.6px) scale(0.81); opacity: 0.39; filter: brightness(0.68); }
-  12.5% { transform: translate(50.7px, -77.5px) scale(0.79); opacity: 0.37; filter: brightness(0.66); }
-  15.0% { transform: translate(37.0px, -74.4px) scale(0.78); opacity: 0.36; filter: brightness(0.65); }
-  17.5% { transform: translate(23.0px, -72.3px) scale(0.77); opacity: 0.34; filter: brightness(0.64); }
-  20.0% { transform: translate(8.9px, -71.2px) scale(0.76); opacity: 0.34; filter: brightness(0.64); }
-  22.5% { transform: translate(-5.4px, -71.1px) scale(0.76); opacity: 0.34; filter: brightness(0.64); }
-  25.0% { transform: translate(-19.6px, -71.9px) scale(0.77); opacity: 0.34; filter: brightness(0.64); }
-  27.5% { transform: translate(-33.6px, -73.8px) scale(0.77); opacity: 0.35; filter: brightness(0.65); }
-  30.0% { transform: translate(-47.4px, -76.7px) scale(0.79); opacity: 0.37; filter: brightness(0.66); }
-  32.5% { transform: translate(-60.7px, -80.5px) scale(0.80); opacity: 0.39; filter: brightness(0.68); }
-  35.0% { transform: translate(-73.3px, -85.3px) scale(0.82); opacity: 0.41; filter: brightness(0.69); }
-  37.5% { transform: translate(-84.9px, -91.0px) scale(0.85); opacity: 0.44; filter: brightness(0.71); }
-  40.0% { transform: translate(-95.1px, -97.4px) scale(0.87); opacity: 0.48; filter: brightness(0.74); }
-  42.5% { transform: translate(-103.6px, -104.6px) scale(0.90); opacity: 0.51; filter: brightness(0.76); }
-  45.0% { transform: translate(-110.0px, -112.3px) scale(0.93); opacity: 0.55; filter: brightness(0.79); }
-  47.5% { transform: translate(-113.7px, -120.4px) scale(0.96); opacity: 0.59; filter: brightness(0.81); }
-  50.0% { transform: translate(-114.6px, -128.8px) scale(0.99); opacity: 0.62; filter: brightness(0.84); }
-  52.5% { transform: translate(-112.3px, -137.1px) scale(1.01); opacity: 0.66; filter: brightness(0.86); }
-  55.0% { transform: translate(-106.7px, -145.1px) scale(1.04); opacity: 0.69; filter: brightness(0.89); }
-  57.5% { transform: translate(-97.8px, -152.7px) scale(1.06); opacity: 0.72; filter: brightness(0.91); }
-  60.0% { transform: translate(-85.7px, -159.4px) scale(1.08); opacity: 0.75; filter: brightness(0.93); }
-  62.5% { transform: translate(-70.7px, -165.2px) scale(1.10); opacity: 0.77; filter: brightness(0.94); }
-  65.0% { transform: translate(-53.2px, -169.8px) scale(1.12); opacity: 0.79; filter: brightness(0.95); }
-  67.5% { transform: translate(-33.8px, -173.0px) scale(1.13); opacity: 0.80; filter: brightness(0.96); }
-  70.0% { transform: translate(-13.1px, -174.8px) scale(1.13); opacity: 0.81; filter: brightness(0.97); }
-  72.5% { transform: translate(8.0px, -175.0px) scale(1.13); opacity: 0.81; filter: brightness(0.97); }
-  75.0% { transform: translate(28.8px, -173.6px) scale(1.13); opacity: 0.80; filter: brightness(0.96); }
-  77.5% { transform: translate(48.6px, -170.7px) scale(1.12); opacity: 0.79; filter: brightness(0.96); }
-  80.0% { transform: translate(66.6px, -166.5px) scale(1.11); opacity: 0.78; filter: brightness(0.94); }
-  82.5% { transform: translate(82.3px, -161.0px) scale(1.09); opacity: 0.75; filter: brightness(0.93); }
-  85.0% { transform: translate(95.1px, -154.4px) scale(1.07); opacity: 0.73; filter: brightness(0.91); }
-  87.5% { transform: translate(104.9px, -147.0px) scale(1.05); opacity: 0.70; filter: brightness(0.89); }
-  90.0% { transform: translate(111.3px, -139.1px) scale(1.02); opacity: 0.67; filter: brightness(0.87); }
-  92.5% { transform: translate(114.3px, -130.8px) scale(0.99); opacity: 0.63; filter: brightness(0.84); }
-  95.0% { transform: translate(114.2px, -122.5px) scale(0.96); opacity: 0.59; filter: brightness(0.82); }
-  97.5% { transform: translate(111.1px, -114.3px) scale(0.94); opacity: 0.56; filter: brightness(0.79); }
-  100.0% { transform: translate(105.4px, -106.4px) scale(0.91); opacity: 0.52; filter: brightness(0.77); }
+  0.0% { transform: translate(168.2px, -85.4px) scale(0.80); opacity: 0.68; filter: brightness(0.87); }
+  2.5% { transform: translate(155.0px, -75.7px) scale(0.78); opacity: 0.65; filter: brightness(0.85); }
+  5.0% { transform: translate(139.2px, -67.1px) scale(0.75); opacity: 0.63; filter: brightness(0.83); }
+  7.5% { transform: translate(121.4px, -59.7px) scale(0.73); opacity: 0.60; filter: brightness(0.81); }
+  10.0% { transform: translate(101.9px, -53.5px) scale(0.72); opacity: 0.58; filter: brightness(0.79); }
+  12.5% { transform: translate(81.1px, -48.6px) scale(0.70); opacity: 0.56; filter: brightness(0.78); }
+  15.0% { transform: translate(59.4px, -44.9px) scale(0.69); opacity: 0.54; filter: brightness(0.77); }
+  17.5% { transform: translate(37.0px, -42.3px) scale(0.68); opacity: 0.53; filter: brightness(0.76); }
+  20.0% { transform: translate(14.3px, -41.0px) scale(0.68); opacity: 0.53; filter: brightness(0.76); }
+  22.5% { transform: translate(-8.7px, -40.8px) scale(0.68); opacity: 0.53; filter: brightness(0.76); }
+  25.0% { transform: translate(-31.5px, -41.9px) scale(0.68); opacity: 0.53; filter: brightness(0.76); }
+  27.5% { transform: translate(-54.0px, -44.1px) scale(0.69); opacity: 0.54; filter: brightness(0.77); }
+  30.0% { transform: translate(-75.9px, -47.6px) scale(0.70); opacity: 0.55; filter: brightness(0.78); }
+  32.5% { transform: translate(-96.9px, -52.2px) scale(0.71); opacity: 0.57; filter: brightness(0.79); }
+  35.0% { transform: translate(-116.7px, -58.1px) scale(0.73); opacity: 0.59; filter: brightness(0.80); }
+  37.5% { transform: translate(-135.1px, -65.2px) scale(0.75); opacity: 0.62; filter: brightness(0.82); }
+  40.0% { transform: translate(-151.4px, -73.5px) scale(0.77); opacity: 0.65; filter: brightness(0.84); }
+  42.5% { transform: translate(-165.3px, -82.9px) scale(0.80); opacity: 0.68; filter: brightness(0.86); }
+  45.0% { transform: translate(-176.2px, -93.5px) scale(0.83); opacity: 0.71; filter: brightness(0.89); }
+  47.5% { transform: translate(-183.5px, -105.0px) scale(0.86); opacity: 0.74; filter: brightness(0.91); }
+  50.0% { transform: translate(-186.7px, -117.4px) scale(0.89); opacity: 0.77; filter: brightness(0.93); }
+  52.5% { transform: translate(-185.1px, -130.3px) scale(0.93); opacity: 0.80; filter: brightness(0.95); }
+  55.0% { transform: translate(-178.1px, -143.4px) scale(0.96); opacity: 0.83; filter: brightness(0.97); }
+  57.5% { transform: translate(-165.5px, -156.3px) scale(1.00); opacity: 0.85; filter: brightness(0.99); }
+  60.0% { transform: translate(-146.9px, -168.4px) scale(1.03); opacity: 0.88; filter: brightness(1.01); }
+  62.5% { transform: translate(-122.7px, -179.2px) scale(1.06); opacity: 0.90; filter: brightness(1.02); }
+  65.0% { transform: translate(-93.2px, -188.1px) scale(1.09); opacity: 0.91; filter: brightness(1.03); }
+  67.5% { transform: translate(-59.7px, -194.5px) scale(1.10); opacity: 0.92; filter: brightness(1.04); }
+  70.0% { transform: translate(-23.3px, -198.0px) scale(1.11); opacity: 0.93; filter: brightness(1.05); }
+  72.5% { transform: translate(14.2px, -198.4px) scale(1.11); opacity: 0.93; filter: brightness(1.05); }
+  75.0% { transform: translate(51.0px, -195.6px) scale(1.11); opacity: 0.92; filter: brightness(1.04); }
+  77.5% { transform: translate(85.4px, -189.9px) scale(1.09); opacity: 0.91; filter: brightness(1.04); }
+  80.0% { transform: translate(115.9px, -181.6px) scale(1.07); opacity: 0.90; filter: brightness(1.03); }
+  82.5% { transform: translate(141.5px, -171.2px) scale(1.04); opacity: 0.88; filter: brightness(1.01); }
+  85.0% { transform: translate(161.5px, -159.4px) scale(1.01); opacity: 0.86; filter: brightness(1.00); }
+  87.5% { transform: translate(175.6px, -146.6px) scale(0.97); opacity: 0.83; filter: brightness(0.98); }
+  90.0% { transform: translate(183.9px, -133.5px) scale(0.94); opacity: 0.81; filter: brightness(0.96); }
+  92.5% { transform: translate(186.8px, -120.5px) scale(0.90); opacity: 0.78; filter: brightness(0.94); }
+  95.0% { transform: translate(184.7px, -108.0px) scale(0.87); opacity: 0.75; filter: brightness(0.92); }
+  97.5% { transform: translate(178.3px, -96.2px) scale(0.83); opacity: 0.72; filter: brightness(0.89); }
+  100.0% { transform: translate(168.2px, -85.4px) scale(0.80); opacity: 0.68; filter: brightness(0.87); }
 }
 @keyframes orbit_node_14 {
-  0.0% { transform: translate(-52.6px, -172.9px) scale(1.05); opacity: 0.70; filter: brightness(0.89); }
-  2.5% { transform: translate(-40.7px, -176.6px) scale(1.06); opacity: 0.72; filter: brightness(0.90); }
-  5.0% { transform: translate(-27.4px, -179.3px) scale(1.07); opacity: 0.73; filter: brightness(0.91); }
-  7.5% { transform: translate(-13.2px, -180.9px) scale(1.07); opacity: 0.73; filter: brightness(0.91); }
-  10.0% { transform: translate(1.5px, -181.3px) scale(1.07); opacity: 0.73; filter: brightness(0.91); }
-  12.5% { transform: translate(16.1px, -180.6px) scale(1.07); opacity: 0.73; filter: brightness(0.91); }
-  15.0% { transform: translate(30.1px, -178.8px) scale(1.07); opacity: 0.72; filter: brightness(0.91); }
-  17.5% { transform: translate(43.2px, -175.9px) scale(1.06); opacity: 0.71; filter: brightness(0.90); }
-  20.0% { transform: translate(54.8px, -172.0px) scale(1.05); opacity: 0.70; filter: brightness(0.89); }
-  22.5% { transform: translate(64.6px, -167.3px) scale(1.03); opacity: 0.68; filter: brightness(0.88); }
-  25.0% { transform: translate(72.5px, -161.9px) scale(1.01); opacity: 0.66; filter: brightness(0.86); }
-  27.5% { transform: translate(78.1px, -155.9px) scale(1.00); opacity: 0.64; filter: brightness(0.85); }
-  30.0% { transform: translate(81.5px, -149.6px) scale(0.98); opacity: 0.61; filter: brightness(0.83); }
-  32.5% { transform: translate(82.6px, -143.1px) scale(0.96); opacity: 0.58; filter: brightness(0.81); }
-  35.0% { transform: translate(81.6px, -136.6px) scale(0.93); opacity: 0.56; filter: brightness(0.79); }
-  37.5% { transform: translate(78.6px, -130.3px) scale(0.91); opacity: 0.53; filter: brightness(0.77); }
-  40.0% { transform: translate(73.8px, -124.3px) scale(0.89); opacity: 0.50; filter: brightness(0.75); }
-  42.5% { transform: translate(67.4px, -118.7px) scale(0.87); opacity: 0.48; filter: brightness(0.74); }
-  45.0% { transform: translate(59.7px, -113.7px) scale(0.86); opacity: 0.46; filter: brightness(0.72); }
-  47.5% { transform: translate(51.0px, -109.4px) scale(0.84); opacity: 0.43; filter: brightness(0.71); }
-  50.0% { transform: translate(41.5px, -105.7px) scale(0.83); opacity: 0.42; filter: brightness(0.70); }
-  52.5% { transform: translate(31.3px, -102.9px) scale(0.82); opacity: 0.40; filter: brightness(0.69); }
-  55.0% { transform: translate(20.7px, -100.8px) scale(0.81); opacity: 0.39; filter: brightness(0.68); }
-  57.5% { transform: translate(9.9px, -99.6px) scale(0.80); opacity: 0.39; filter: brightness(0.67); }
-  60.0% { transform: translate(-1.1px, -99.3px) scale(0.80); opacity: 0.39; filter: brightness(0.67); }
-  62.5% { transform: translate(-12.0px, -99.8px) scale(0.80); opacity: 0.39; filter: brightness(0.68); }
-  65.0% { transform: translate(-22.9px, -101.2px) scale(0.81); opacity: 0.40; filter: brightness(0.68); }
-  67.5% { transform: translate(-33.4px, -103.4px) scale(0.82); opacity: 0.41; filter: brightness(0.69); }
-  70.0% { transform: translate(-43.4px, -106.4px) scale(0.83); opacity: 0.42; filter: brightness(0.70); }
-  72.5% { transform: translate(-52.8px, -110.2px) scale(0.84); opacity: 0.44; filter: brightness(0.71); }
-  75.0% { transform: translate(-61.3px, -114.7px) scale(0.86); opacity: 0.46; filter: brightness(0.72); }
-  77.5% { transform: translate(-68.8px, -119.8px) scale(0.88); opacity: 0.48; filter: brightness(0.74); }
-  80.0% { transform: translate(-74.9px, -125.5px) scale(0.90); opacity: 0.51; filter: brightness(0.76); }
-  82.5% { transform: translate(-79.3px, -131.5px) scale(0.92); opacity: 0.53; filter: brightness(0.78); }
-  85.0% { transform: translate(-82.0px, -137.9px) scale(0.94); opacity: 0.56; filter: brightness(0.80); }
-  87.5% { transform: translate(-82.6px, -144.4px) scale(0.96); opacity: 0.59; filter: brightness(0.81); }
-  90.0% { transform: translate(-81.0px, -150.9px) scale(0.98); opacity: 0.62; filter: brightness(0.83); }
-  92.5% { transform: translate(-77.2px, -157.1px) scale(1.00); opacity: 0.64; filter: brightness(0.85); }
-  95.0% { transform: translate(-71.1px, -163.0px) scale(1.02); opacity: 0.66; filter: brightness(0.87); }
-  97.5% { transform: translate(-62.8px, -168.3px) scale(1.03); opacity: 0.68; filter: brightness(0.88); }
-  100.0% { transform: translate(-52.6px, -172.9px) scale(1.05); opacity: 0.70; filter: brightness(0.89); }
+  0.0% { transform: translate(-115.1px, -193.6px) scale(1.02); opacity: 0.87; filter: brightness(1.00); }
+  2.5% { transform: translate(-90.0px, -202.3px) scale(1.04); opacity: 0.88; filter: brightness(1.02); }
+  5.0% { transform: translate(-61.1px, -208.9px) scale(1.06); opacity: 0.89; filter: brightness(1.02); }
+  7.5% { transform: translate(-29.6px, -212.9px) scale(1.07); opacity: 0.90; filter: brightness(1.03); }
+  10.0% { transform: translate(3.3px, -214.0px) scale(1.07); opacity: 0.90; filter: brightness(1.03); }
+  12.5% { transform: translate(36.0px, -212.3px) scale(1.07); opacity: 0.90; filter: brightness(1.03); }
+  15.0% { transform: translate(67.1px, -207.8px) scale(1.06); opacity: 0.89; filter: brightness(1.02); }
+  17.5% { transform: translate(95.3px, -200.8px) scale(1.04); opacity: 0.88; filter: brightness(1.01); }
+  20.0% { transform: translate(119.5px, -191.7px) scale(1.02); opacity: 0.87; filter: brightness(1.00); }
+  22.5% { transform: translate(139.1px, -181.0px) scale(0.99); opacity: 0.85; filter: brightness(0.99); }
+  25.0% { transform: translate(153.7px, -169.2px) scale(0.96); opacity: 0.82; filter: brightness(0.97); }
+  27.5% { transform: translate(163.2px, -156.9px) scale(0.93); opacity: 0.80; filter: brightness(0.95); }
+  30.0% { transform: translate(167.7px, -144.5px) scale(0.90); opacity: 0.77; filter: brightness(0.93); }
+  32.5% { transform: translate(167.7px, -132.3px) scale(0.86); opacity: 0.75; filter: brightness(0.91); }
+  35.0% { transform: translate(163.6px, -120.7px) scale(0.83); opacity: 0.72; filter: brightness(0.89); }
+  37.5% { transform: translate(155.9px, -109.9px) scale(0.81); opacity: 0.69; filter: brightness(0.87); }
+  40.0% { transform: translate(145.0px, -100.1px) scale(0.78); opacity: 0.66; filter: brightness(0.85); }
+  42.5% { transform: translate(131.6px, -91.3px) scale(0.76); opacity: 0.63; filter: brightness(0.83); }
+  45.0% { transform: translate(116.0px, -83.7px) scale(0.74); opacity: 0.61; filter: brightness(0.82); }
+  47.5% { transform: translate(98.7px, -77.2px) scale(0.72); opacity: 0.59; filter: brightness(0.80); }
+  50.0% { transform: translate(80.1px, -71.9px) scale(0.71); opacity: 0.57; filter: brightness(0.79); }
+  52.5% { transform: translate(60.4px, -67.8px) scale(0.70); opacity: 0.56; filter: brightness(0.78); }
+  55.0% { transform: translate(39.9px, -65.0px) scale(0.69); opacity: 0.55; filter: brightness(0.77); }
+  57.5% { transform: translate(19.0px, -63.3px) scale(0.69); opacity: 0.54; filter: brightness(0.76); }
+  60.0% { transform: translate(-2.1px, -62.8px) scale(0.69); opacity: 0.54; filter: brightness(0.76); }
+  62.5% { transform: translate(-23.2px, -63.5px) scale(0.69); opacity: 0.54; filter: brightness(0.76); }
+  65.0% { transform: translate(-44.0px, -65.4px) scale(0.69); opacity: 0.55; filter: brightness(0.77); }
+  67.5% { transform: translate(-64.3px, -68.6px) scale(0.70); opacity: 0.56; filter: brightness(0.78); }
+  70.0% { transform: translate(-83.8px, -72.9px) scale(0.71); opacity: 0.57; filter: brightness(0.79); }
+  72.5% { transform: translate(-102.3px, -78.4px) scale(0.73); opacity: 0.59; filter: brightness(0.80); }
+  75.0% { transform: translate(-119.3px, -85.1px) scale(0.74); opacity: 0.61; filter: brightness(0.82); }
+  77.5% { transform: translate(-134.4px, -93.0px) scale(0.76); opacity: 0.64; filter: brightness(0.84); }
+  80.0% { transform: translate(-147.4px, -101.9px) scale(0.79); opacity: 0.67; filter: brightness(0.86); }
+  82.5% { transform: translate(-157.7px, -112.0px) scale(0.81); opacity: 0.69; filter: brightness(0.88); }
+  85.0% { transform: translate(-164.7px, -123.0px) scale(0.84); opacity: 0.72; filter: brightness(0.90); }
+  87.5% { transform: translate(-168.1px, -134.7px) scale(0.87); opacity: 0.75; filter: brightness(0.92); }
+  90.0% { transform: translate(-167.2px, -146.9px) scale(0.90); opacity: 0.78; filter: brightness(0.94); }
+  92.5% { transform: translate(-161.7px, -159.4px) scale(0.93); opacity: 0.80; filter: brightness(0.96); }
+  95.0% { transform: translate(-151.2px, -171.6px) scale(0.96); opacity: 0.83; filter: brightness(0.98); }
+  97.5% { transform: translate(-135.6px, -183.2px) scale(0.99); opacity: 0.85; filter: brightness(0.99); }
+  100.0% { transform: translate(-115.1px, -193.6px) scale(1.02); opacity: 0.87; filter: brightness(1.00); }
 }
 @keyframes orbit_node_15 {
-  0.0% { transform: translate(0.0px, -156.7px) scale(0.93); opacity: 0.55; filter: brightness(0.79); }
-  2.5% { transform: translate(0.0px, -156.7px) scale(0.93); opacity: 0.55; filter: brightness(0.79); }
-  5.0% { transform: translate(0.0px, -156.7px) scale(0.93); opacity: 0.55; filter: brightness(0.79); }
-  7.5% { transform: translate(0.0px, -156.7px) scale(0.93); opacity: 0.55; filter: brightness(0.79); }
-  10.0% { transform: translate(0.0px, -156.7px) scale(0.93); opacity: 0.55; filter: brightness(0.79); }
-  12.5% { transform: translate(0.0px, -156.7px) scale(0.93); opacity: 0.55; filter: brightness(0.79); }
-  15.0% { transform: translate(0.0px, -156.7px) scale(0.93); opacity: 0.55; filter: brightness(0.79); }
-  17.5% { transform: translate(0.0px, -156.7px) scale(0.93); opacity: 0.55; filter: brightness(0.79); }
-  20.0% { transform: translate(0.0px, -156.7px) scale(0.93); opacity: 0.55; filter: brightness(0.79); }
-  22.5% { transform: translate(0.0px, -156.7px) scale(0.93); opacity: 0.55; filter: brightness(0.79); }
-  25.0% { transform: translate(0.0px, -156.7px) scale(0.93); opacity: 0.55; filter: brightness(0.79); }
-  27.5% { transform: translate(0.0px, -156.7px) scale(0.93); opacity: 0.55; filter: brightness(0.79); }
-  30.0% { transform: translate(0.0px, -156.7px) scale(0.93); opacity: 0.55; filter: brightness(0.79); }
-  32.5% { transform: translate(0.0px, -156.7px) scale(0.93); opacity: 0.55; filter: brightness(0.79); }
-  35.0% { transform: translate(0.0px, -156.7px) scale(0.93); opacity: 0.55; filter: brightness(0.79); }
-  37.5% { transform: translate(0.0px, -156.7px) scale(0.93); opacity: 0.55; filter: brightness(0.79); }
-  40.0% { transform: translate(0.0px, -156.7px) scale(0.93); opacity: 0.55; filter: brightness(0.79); }
-  42.5% { transform: translate(0.0px, -156.7px) scale(0.93); opacity: 0.55; filter: brightness(0.79); }
-  45.0% { transform: translate(0.0px, -156.7px) scale(0.93); opacity: 0.55; filter: brightness(0.79); }
-  47.5% { transform: translate(0.0px, -156.7px) scale(0.93); opacity: 0.55; filter: brightness(0.79); }
-  50.0% { transform: translate(0.0px, -156.7px) scale(0.93); opacity: 0.55; filter: brightness(0.79); }
-  52.5% { transform: translate(0.0px, -156.7px) scale(0.93); opacity: 0.55; filter: brightness(0.79); }
-  55.0% { transform: translate(0.0px, -156.7px) scale(0.93); opacity: 0.55; filter: brightness(0.79); }
-  57.5% { transform: translate(0.0px, -156.7px) scale(0.93); opacity: 0.55; filter: brightness(0.79); }
-  60.0% { transform: translate(0.0px, -156.7px) scale(0.93); opacity: 0.55; filter: brightness(0.79); }
-  62.5% { transform: translate(0.0px, -156.7px) scale(0.93); opacity: 0.55; filter: brightness(0.79); }
-  65.0% { transform: translate(0.0px, -156.7px) scale(0.93); opacity: 0.55; filter: brightness(0.79); }
-  67.5% { transform: translate(0.0px, -156.7px) scale(0.93); opacity: 0.55; filter: brightness(0.79); }
-  70.0% { transform: translate(0.0px, -156.7px) scale(0.93); opacity: 0.55; filter: brightness(0.79); }
-  72.5% { transform: translate(0.0px, -156.7px) scale(0.93); opacity: 0.55; filter: brightness(0.79); }
-  75.0% { transform: translate(0.0px, -156.7px) scale(0.93); opacity: 0.55; filter: brightness(0.79); }
-  77.5% { transform: translate(0.0px, -156.7px) scale(0.93); opacity: 0.55; filter: brightness(0.79); }
-  80.0% { transform: translate(0.0px, -156.7px) scale(0.93); opacity: 0.55; filter: brightness(0.79); }
-  82.5% { transform: translate(0.0px, -156.7px) scale(0.93); opacity: 0.55; filter: brightness(0.79); }
-  85.0% { transform: translate(0.0px, -156.7px) scale(0.93); opacity: 0.55; filter: brightness(0.79); }
-  87.5% { transform: translate(0.0px, -156.7px) scale(0.93); opacity: 0.55; filter: brightness(0.79); }
-  90.0% { transform: translate(0.0px, -156.7px) scale(0.93); opacity: 0.55; filter: brightness(0.79); }
-  92.5% { transform: translate(0.0px, -156.7px) scale(0.93); opacity: 0.55; filter: brightness(0.79); }
-  95.0% { transform: translate(0.0px, -156.7px) scale(0.93); opacity: 0.55; filter: brightness(0.79); }
-  97.5% { transform: translate(0.0px, -156.7px) scale(0.93); opacity: 0.55; filter: brightness(0.79); }
-  100.0% { transform: translate(0.0px, -156.7px) scale(0.93); opacity: 0.55; filter: brightness(0.79); }
+  0.0% { transform: translate(-15.4px, -87.4px) scale(0.70); opacity: 0.55; filter: brightness(0.77); }
+  2.5% { transform: translate(-33.9px, -88.9px) scale(0.70); opacity: 0.56; filter: brightness(0.78); }
+  5.0% { transform: translate(-52.0px, -91.6px) scale(0.71); opacity: 0.57; filter: brightness(0.79); }
+  7.5% { transform: translate(-69.4px, -95.4px) scale(0.72); opacity: 0.58; filter: brightness(0.79); }
+  10.0% { transform: translate(-85.8px, -100.4px) scale(0.73); opacity: 0.60; filter: brightness(0.81); }
+  12.5% { transform: translate(-100.9px, -106.5px) scale(0.74); opacity: 0.61; filter: brightness(0.82); }
+  15.0% { transform: translate(-114.4px, -113.6px) scale(0.76); opacity: 0.64; filter: brightness(0.83); }
+  17.5% { transform: translate(-125.9px, -121.8px) scale(0.78); opacity: 0.66; filter: brightness(0.85); }
+  20.0% { transform: translate(-135.0px, -130.9px) scale(0.80); opacity: 0.68; filter: brightness(0.87); }
+  22.5% { transform: translate(-141.4px, -140.9px) scale(0.83); opacity: 0.71; filter: brightness(0.89); }
+  25.0% { transform: translate(-144.6px, -151.5px) scale(0.85); opacity: 0.73; filter: brightness(0.91); }
+  27.5% { transform: translate(-144.2px, -162.5px) scale(0.88); opacity: 0.76; filter: brightness(0.92); }
+  30.0% { transform: translate(-139.9px, -173.7px) scale(0.90); opacity: 0.78; filter: brightness(0.94); }
+  32.5% { transform: translate(-131.5px, -184.7px) scale(0.93); opacity: 0.80; filter: brightness(0.96); }
+  35.0% { transform: translate(-118.9px, -195.1px) scale(0.95); opacity: 0.82; filter: brightness(0.97); }
+  37.5% { transform: translate(-102.2px, -204.6px) scale(0.98); opacity: 0.84; filter: brightness(0.98); }
+  40.0% { transform: translate(-81.7px, -212.6px) scale(1.00); opacity: 0.85; filter: brightness(0.99); }
+  42.5% { transform: translate(-58.1px, -218.8px) scale(1.01); opacity: 0.86; filter: brightness(1.00); }
+  45.0% { transform: translate(-32.2px, -222.9px) scale(1.02); opacity: 0.87; filter: brightness(1.00); }
+  47.5% { transform: translate(-5.0px, -224.6px) scale(1.02); opacity: 0.87; filter: brightness(1.01); }
+  50.0% { transform: translate(22.5px, -223.8px) scale(1.02); opacity: 0.87; filter: brightness(1.01); }
+  52.5% { transform: translate(49.1px, -220.5px) scale(1.01); opacity: 0.87; filter: brightness(1.00); }
+  55.0% { transform: translate(73.6px, -215.1px) scale(1.00); opacity: 0.86; filter: brightness(1.00); }
+  57.5% { transform: translate(95.2px, -207.6px) scale(0.98); opacity: 0.84; filter: brightness(0.99); }
+  60.0% { transform: translate(113.3px, -198.7px) scale(0.96); opacity: 0.83; filter: brightness(0.97); }
+  62.5% { transform: translate(127.4px, -188.5px) scale(0.94); opacity: 0.81; filter: brightness(0.96); }
+  65.0% { transform: translate(137.3px, -177.7px) scale(0.91); opacity: 0.79; filter: brightness(0.95); }
+  67.5% { transform: translate(143.1px, -166.5px) scale(0.89); opacity: 0.77; filter: brightness(0.93); }
+  70.0% { transform: translate(144.8px, -155.4px) scale(0.86); opacity: 0.74; filter: brightness(0.91); }
+  72.5% { transform: translate(142.9px, -144.6px) scale(0.83); opacity: 0.72; filter: brightness(0.89); }
+  75.0% { transform: translate(137.7px, -134.4px) scale(0.81); opacity: 0.69; filter: brightness(0.88); }
+  77.5% { transform: translate(129.5px, -125.0px) scale(0.79); opacity: 0.67; filter: brightness(0.86); }
+  80.0% { transform: translate(118.8px, -116.4px) scale(0.77); opacity: 0.64; filter: brightness(0.84); }
+  82.5% { transform: translate(106.0px, -108.9px) scale(0.75); opacity: 0.62; filter: brightness(0.82); }
+  85.0% { transform: translate(91.4px, -102.4px) scale(0.73); opacity: 0.60; filter: brightness(0.81); }
+  87.5% { transform: translate(75.4px, -97.1px) scale(0.72); opacity: 0.59; filter: brightness(0.80); }
+  90.0% { transform: translate(58.4px, -92.8px) scale(0.71); opacity: 0.57; filter: brightness(0.79); }
+  92.5% { transform: translate(40.5px, -89.7px) scale(0.70); opacity: 0.56; filter: brightness(0.78); }
+  95.0% { transform: translate(22.1px, -87.8px) scale(0.70); opacity: 0.56; filter: brightness(0.78); }
+  97.5% { transform: translate(3.4px, -87.0px) scale(0.70); opacity: 0.55; filter: brightness(0.77); }
+  100.0% { transform: translate(-15.4px, -87.4px) scale(0.70); opacity: 0.55; filter: brightness(0.77); }
+}
+@keyframes orbit_node_16 {
+  0.0% { transform: translate(95.4px, -203.0px) scale(0.91); opacity: 0.79; filter: brightness(0.94); }
+  2.5% { transform: translate(104.6px, -194.4px) scale(0.89); opacity: 0.77; filter: brightness(0.93); }
+  5.0% { transform: translate(110.6px, -185.5px) scale(0.87); opacity: 0.75; filter: brightness(0.92); }
+  7.5% { transform: translate(113.6px, -176.3px) scale(0.85); opacity: 0.73; filter: brightness(0.91); }
+  10.0% { transform: translate(113.6px, -167.3px) scale(0.83); opacity: 0.71; filter: brightness(0.89); }
+  12.5% { transform: translate(110.8px, -158.6px) scale(0.81); opacity: 0.69; filter: brightness(0.88); }
+  15.0% { transform: translate(105.6px, -150.4px) scale(0.79); opacity: 0.67; filter: brightness(0.86); }
+  17.5% { transform: translate(98.1px, -142.8px) scale(0.78); opacity: 0.66; filter: brightness(0.85); }
+  20.0% { transform: translate(88.6px, -136.1px) scale(0.76); opacity: 0.64; filter: brightness(0.84); }
+  22.5% { transform: translate(77.5px, -130.1px) scale(0.75); opacity: 0.62; filter: brightness(0.82); }
+  25.0% { transform: translate(65.1px, -125.1px) scale(0.74); opacity: 0.61; filter: brightness(0.81); }
+  27.5% { transform: translate(51.6px, -121.1px) scale(0.73); opacity: 0.60; filter: brightness(0.81); }
+  30.0% { transform: translate(37.2px, -118.0px) scale(0.72); opacity: 0.59; filter: brightness(0.80); }
+  32.5% { transform: translate(22.3px, -116.0px) scale(0.72); opacity: 0.58; filter: brightness(0.79); }
+  35.0% { transform: translate(7.0px, -115.0px) scale(0.72); opacity: 0.58; filter: brightness(0.79); }
+  37.5% { transform: translate(-8.3px, -115.1px) scale(0.72); opacity: 0.58; filter: brightness(0.79); }
+  40.0% { transform: translate(-23.6px, -116.1px) scale(0.72); opacity: 0.58; filter: brightness(0.79); }
+  42.5% { transform: translate(-38.5px, -118.3px) scale(0.72); opacity: 0.59; filter: brightness(0.80); }
+  45.0% { transform: translate(-52.8px, -121.4px) scale(0.73); opacity: 0.60; filter: brightness(0.81); }
+  47.5% { transform: translate(-66.2px, -125.5px) scale(0.74); opacity: 0.61; filter: brightness(0.81); }
+  50.0% { transform: translate(-78.5px, -130.6px) scale(0.75); opacity: 0.62; filter: brightness(0.82); }
+  52.5% { transform: translate(-89.5px, -136.6px) scale(0.76); opacity: 0.64; filter: brightness(0.84); }
+  55.0% { transform: translate(-98.8px, -143.4px) scale(0.78); opacity: 0.66; filter: brightness(0.85); }
+  57.5% { transform: translate(-106.1px, -151.1px) scale(0.80); opacity: 0.68; filter: brightness(0.86); }
+  60.0% { transform: translate(-111.2px, -159.3px) scale(0.81); opacity: 0.70; filter: brightness(0.88); }
+  62.5% { transform: translate(-113.7px, -168.1px) scale(0.83); opacity: 0.72; filter: brightness(0.89); }
+  65.0% { transform: translate(-113.5px, -177.1px) scale(0.85); opacity: 0.74; filter: brightness(0.91); }
+  67.5% { transform: translate(-110.3px, -186.2px) scale(0.87); opacity: 0.75; filter: brightness(0.92); }
+  70.0% { transform: translate(-103.9px, -195.2px) scale(0.89); opacity: 0.77; filter: brightness(0.93); }
+  72.5% { transform: translate(-94.5px, -203.7px) scale(0.91); opacity: 0.79; filter: brightness(0.95); }
+  75.0% { transform: translate(-82.0px, -211.3px) scale(0.93); opacity: 0.80; filter: brightness(0.96); }
+  77.5% { transform: translate(-66.8px, -217.9px) scale(0.94); opacity: 0.81; filter: brightness(0.96); }
+  80.0% { transform: translate(-49.3px, -223.2px) scale(0.96); opacity: 0.82; filter: brightness(0.97); }
+  82.5% { transform: translate(-30.0px, -226.8px) scale(0.96); opacity: 0.83; filter: brightness(0.98); }
+  85.0% { transform: translate(-9.5px, -228.6px) scale(0.97); opacity: 0.83; filter: brightness(0.98); }
+  87.5% { transform: translate(11.3px, -228.5px) scale(0.97); opacity: 0.83; filter: brightness(0.98); }
+  90.0% { transform: translate(31.6px, -226.5px) scale(0.96); opacity: 0.83; filter: brightness(0.98); }
+  92.5% { transform: translate(50.8px, -222.8px) scale(0.96); opacity: 0.82; filter: brightness(0.97); }
+  95.0% { transform: translate(68.2px, -217.4px) scale(0.94); opacity: 0.81; filter: brightness(0.96); }
+  97.5% { transform: translate(83.2px, -210.7px) scale(0.93); opacity: 0.80; filter: brightness(0.96); }
+  100.0% { transform: translate(95.4px, -203.0px) scale(0.91); opacity: 0.79; filter: brightness(0.94); }
+}
+@keyframes orbit_node_17 {
+  0.0% { transform: translate(-66.6px, -184.9px) scale(0.82); opacity: 0.70; filter: brightness(0.88); }
+  2.5% { transform: translate(-66.3px, -190.4px) scale(0.83); opacity: 0.71; filter: brightness(0.89); }
+  5.0% { transform: translate(-64.2px, -195.9px) scale(0.84); opacity: 0.72; filter: brightness(0.90); }
+  7.5% { transform: translate(-60.5px, -201.2px) scale(0.85); opacity: 0.73; filter: brightness(0.91); }
+  10.0% { transform: translate(-55.1px, -206.2px) scale(0.86); opacity: 0.74; filter: brightness(0.91); }
+  12.5% { transform: translate(-48.1px, -210.7px) scale(0.87); opacity: 0.75; filter: brightness(0.92); }
+  15.0% { transform: translate(-39.7px, -214.5px) scale(0.88); opacity: 0.76; filter: brightness(0.93); }
+  17.5% { transform: translate(-30.1px, -217.6px) scale(0.89); opacity: 0.77; filter: brightness(0.93); }
+  20.0% { transform: translate(-19.6px, -219.9px) scale(0.89); opacity: 0.77; filter: brightness(0.93); }
+  22.5% { transform: translate(-8.4px, -221.1px) scale(0.89); opacity: 0.77; filter: brightness(0.93); }
+  25.0% { transform: translate(3.0px, -221.4px) scale(0.90); opacity: 0.77; filter: brightness(0.93); }
+  27.5% { transform: translate(14.3px, -220.6px) scale(0.89); opacity: 0.77; filter: brightness(0.93); }
+  30.0% { transform: translate(25.2px, -218.8px) scale(0.89); opacity: 0.77; filter: brightness(0.93); }
+  32.5% { transform: translate(35.3px, -216.1px) scale(0.88); opacity: 0.76; filter: brightness(0.93); }
+  35.0% { transform: translate(44.3px, -212.6px) scale(0.88); opacity: 0.76; filter: brightness(0.92); }
+  37.5% { transform: translate(52.0px, -208.4px) scale(0.87); opacity: 0.75; filter: brightness(0.92); }
+  40.0% { transform: translate(58.2px, -203.6px) scale(0.86); opacity: 0.74; filter: brightness(0.91); }
+  42.5% { transform: translate(62.7px, -198.4px) scale(0.85); opacity: 0.73; filter: brightness(0.90); }
+  45.0% { transform: translate(65.5px, -193.0px) scale(0.84); opacity: 0.72; filter: brightness(0.89); }
+  47.5% { transform: translate(66.7px, -187.5px) scale(0.82); opacity: 0.71; filter: brightness(0.89); }
+  50.0% { transform: translate(66.1px, -182.0px) scale(0.81); opacity: 0.69; filter: brightness(0.88); }
+  52.5% { transform: translate(64.0px, -176.7px) scale(0.80); opacity: 0.68; filter: brightness(0.87); }
+  55.0% { transform: translate(60.4px, -171.8px) scale(0.79); opacity: 0.67; filter: brightness(0.86); }
+  57.5% { transform: translate(55.5px, -167.2px) scale(0.78); opacity: 0.66; filter: brightness(0.85); }
+  60.0% { transform: translate(49.4px, -163.1px) scale(0.77); opacity: 0.65; filter: brightness(0.85); }
+  62.5% { transform: translate(42.2px, -159.6px) scale(0.77); opacity: 0.64; filter: brightness(0.84); }
+  65.0% { transform: translate(34.3px, -156.6px) scale(0.76); opacity: 0.63; filter: brightness(0.83); }
+  67.5% { transform: translate(25.6px, -154.4px) scale(0.75); opacity: 0.63; filter: brightness(0.83); }
+  70.0% { transform: translate(16.5px, -152.8px) scale(0.75); opacity: 0.62; filter: brightness(0.83); }
+  72.5% { transform: translate(7.0px, -151.9px) scale(0.75); opacity: 0.62; filter: brightness(0.82); }
+  75.0% { transform: translate(-2.5px, -151.7px) scale(0.75); opacity: 0.62; filter: brightness(0.82); }
+  77.5% { transform: translate(-12.0px, -152.3px) scale(0.75); opacity: 0.62; filter: brightness(0.83); }
+  80.0% { transform: translate(-21.3px, -153.5px) scale(0.75); opacity: 0.63; filter: brightness(0.83); }
+  82.5% { transform: translate(-30.2px, -155.5px) scale(0.76); opacity: 0.63; filter: brightness(0.83); }
+  85.0% { transform: translate(-38.5px, -158.1px) scale(0.76); opacity: 0.64; filter: brightness(0.84); }
+  87.5% { transform: translate(-46.1px, -161.3px) scale(0.77); opacity: 0.65; filter: brightness(0.84); }
+  90.0% { transform: translate(-52.7px, -165.2px) scale(0.78); opacity: 0.66; filter: brightness(0.85); }
+  92.5% { transform: translate(-58.2px, -169.5px) scale(0.79); opacity: 0.67; filter: brightness(0.86); }
+  95.0% { transform: translate(-62.5px, -174.3px) scale(0.80); opacity: 0.68; filter: brightness(0.86); }
+  97.5% { transform: translate(-65.3px, -179.5px) scale(0.81); opacity: 0.69; filter: brightness(0.87); }
+  100.0% { transform: translate(-66.6px, -184.9px) scale(0.82); opacity: 0.70; filter: brightness(0.88); }
 }
 
-
     @keyframes rotateRingA {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
     }
-    @keyframes rotateRingB {
-      0% { transform: rotate(360deg); }
-      100% { transform: rotate(0deg); }
+    @keyframes pulseCore {
+      0%, 100% { transform: scale(1); opacity: 0.9; }
+      50% { transform: scale(1.15); opacity: 1; filter: drop-shadow(0 0 25px #38bdae); }
     }
-    @keyframes rotateRingC {
-      0% { transform: rotate(0deg) scale(1); }
-      50% { transform: rotate(180deg) scale(1.05); }
-      100% { transform: rotate(360deg) scale(1); }
+    @keyframes borderGaze {
+      0%, 100% { stroke: #00F2FE; }
+      33% { stroke: #70A5FD; }
+      66% { stroke: #BB9AF7; }
     }
-
-    .ring-a {
-      transform-origin: 425px 250px;
-      animation: rotateRingA 24s linear infinite;
-    }
-    .ring-b {
-      transform-origin: 425px 250px;
-      animation: rotateRingB 30s linear infinite;
-    }
-    .ring-c {
-      transform-origin: 425px 250px;
-      animation: rotateRingC 18s ease-in-out infinite;
-    }
-
-    @keyframes corePulse {
-      0%, 100% { transform: scale(1); opacity: 0.8; }
-      50% { transform: scale(1.18); opacity: 1; filter: drop-shadow(0 0 24px #38bdae); }
-    }
-    .sphere-core {
-      transform-origin: 425px 250px;
-      animation: corePulse 4s ease-in-out infinite;
-    }
-
-    @keyframes particleDrift {
-      0% { transform: translateY(0px); opacity: 0.2; }
-      50% { transform: translateY(-8px); opacity: 0.7; }
-      100% { transform: translateY(0px); opacity: 0.2; }
-    }
-    .star-dust { animation: particleDrift 6s ease-in-out infinite; }
-
-    .tech-node {
-      position: absolute;
-      transform-origin: center;
-      cursor: pointer;
-    }
+    .ring-a { transform-origin: 425px 250px; animation: rotateRingA 28s linear infinite; }
+    .sphere-core { transform-origin: 425px 250px; animation: pulseCore 4s ease-in-out infinite; }
+    .laser-border { animation: borderGaze 9s ease-in-out infinite; }
     ]]>
   </style>
 
-  <!-- Background Space Canvas -->
-  <rect width="100%" height="100%" rx="14" fill="url(#spaceBg)" stroke="#24283b" stroke-width="1.5"/>
+  <!-- Base Card with Clip -->
+  <g clip-path="url(#cardClip)">
+    <!-- Deep Cyber Dark Background -->
+    <rect width="850" height="500" fill="url(#spaceBg)"/>
 
-  <!-- Background Star Dust & Cyber Constellations -->
-  <g class="star-dust" fill="#7aa2f7">
-    <circle cx="90" cy="80" r="1.5" opacity="0.6"/>
-    <circle cx="150" cy="380" r="1" opacity="0.4"/>
-    <circle cx="210" cy="110" r="1.5" opacity="0.5"/>
-    <circle cx="730" cy="95" r="1.5" opacity="0.7"/>
-    <circle cx="780" cy="360" r="1.2" opacity="0.5"/>
-    <circle cx="680" cy="420" r="1.5" opacity="0.4"/>
-    <circle cx="120" cy="240" r="1.2" opacity="0.6"/>
-    <circle cx="760" cy="220" r="1" opacity="0.5"/>
-    <!-- Cyber Grid Lines -->
-    <path d="M 50 250 L 800 250" stroke="#1f2335" stroke-width="0.6" stroke-dasharray="4 6" opacity="0.5"/>
-    <path d="M 425 40 L 425 460" stroke="#1f2335" stroke-width="0.6" stroke-dasharray="4 6" opacity="0.5"/>
-  </g>
+    <!-- Subtle Cyber Isometric Background Lines -->
+    <g opacity="0.15">
+      <circle cx="425" cy="250" r="240" fill="none" stroke="#1f2335" stroke-width="1" stroke-dasharray="4 8" />
+      <circle cx="425" cy="250" r="170" fill="none" stroke="#1f2335" stroke-width="0.8" stroke-dasharray="2 6" />
+      <path d="M 40 250 L 810 250" stroke="#1f2335" stroke-width="0.6" stroke-dasharray="4 6" opacity="0.5"/>
+      <path d="M 425 30 L 425 470" stroke="#1f2335" stroke-width="0.6" stroke-dasharray="4 6" opacity="0.5"/>
+    </g>
 
-  <!-- ==================== 3D WIREFRAME ORBITAL RINGS ==================== -->
-  <g id="sphere-wireframe" opacity="0.85">
-    <!-- Latitudinal Ring 1 (Equator) -->
-    <ellipse cx="425" cy="250" rx="175" ry="55" fill="none" stroke="url(#ringGrad)" stroke-width="1.2" stroke-dasharray="8 4" class="ring-a" filter="url(#neonGlow)"/>
-    <!-- Latitudinal Ring 2 (Tilted Angle) -->
-    <ellipse cx="425" cy="250" rx="165" ry="85" fill="none" stroke="#70a5fd" stroke-width="1" stroke-dasharray="6 6" opacity="0.6" class="ring-b"/>
-    <!-- Longitudinal Ring 3 (Polar Meridian) -->
-    <ellipse cx="425" cy="250" rx="65" ry="175" fill="none" stroke="#bb9af7" stroke-width="1" stroke-dasharray="10 5" opacity="0.5" class="ring-c"/>
-    <!-- Outer Quantum Halo -->
-    <circle cx="425" cy="250" r="185" fill="none" stroke="#38bdae" stroke-width="0.8" stroke-dasharray="3 9" opacity="0.4"/>
-  </g>
+    <!-- ==================== 3D WIREFRAME ORBITAL RINGS ==================== -->
+    <g id="sphere-wireframe" opacity="0.85">
+      <!-- Latitudinal Ring 1 (Equator - Enlarged) -->
+      <ellipse cx="425" cy="250" rx="218" ry="70" fill="none" stroke="url(#ringGrad)" stroke-width="1.4" stroke-dasharray="8 4" class="ring-a" filter="url(#neonGlow)"/>
+      <!-- Latitudinal Ring 2 (Tilted Angle - Enlarged) -->
+      <ellipse cx="425" cy="250" rx="205" ry="110" fill="none" stroke="#70a5fd" stroke-width="1.1" stroke-dasharray="6 6" opacity="0.6"/>
+      <!-- Longitudinal Ring 3 (Polar Meridian - Enlarged) -->
+      <ellipse cx="425" cy="250" rx="80" ry="218" fill="none" stroke="#bb9af7" stroke-width="1.1" stroke-dasharray="10 5" opacity="0.5"/>
+      <!-- Outer Quantum Halo -->
+      <circle cx="425" cy="250" r="230" fill="none" stroke="#38bdae" stroke-width="0.8" stroke-dasharray="3 9" opacity="0.45"/>
+    </g>
 
-  <!-- ==================== GLOWING CYBER CORE ==================== -->
-  <g id="cyber-core">
-    <!-- Outer Energy Nebula -->
-    <circle cx="425" cy="250" r="90" fill="url(#coreGlow)" class="sphere-core"/>
-    <!-- Inner Core Hub -->
-    <circle cx="425" cy="250" r="22" fill="#13141f" stroke="url(#ringGrad)" stroke-width="2" filter="url(#neonGlow)"/>
-    <!-- Center AI / Backend Emblem -->
-    <text x="425" y="254.5" text-anchor="middle" font-family="'JetBrains Mono', 'Segoe UI', monospace" font-size="10px" font-weight="900" fill="#38bdae" letter-spacing="1">SPRING</text>
-  </g>
+    <!-- ==================== GLOWING CYBER CORE ==================== -->
+    <g id="cyber-core">
+      <!-- Outer Energy Nebula (Enlarged) -->
+      <circle cx="425" cy="250" r="105" fill="url(#coreGlow)" class="sphere-core"/>
+      <!-- Inner Core Hub -->
+      <circle cx="425" cy="250" r="26" fill="#13141f" stroke="url(#ringGrad)" stroke-width="2.2" filter="url(#neonGlow)"/>
+      <!-- Center AI / Backend Emblem (CODE) -->
+      <text x="425" y="254.5" text-anchor="middle" font-family="'JetBrains Mono', 'Segoe UI', monospace" font-size="11px" font-weight="900" fill="#38bdae" letter-spacing="1.2">CODE</text>
+    </g>
 
-  <!-- ==================== 16 3D ORBITING TECH NODES ==================== -->
-  <g id="tech-nodes">
-    
-    <!-- Node 0: Java 21 -->
+    <!-- ==================== 18 3D ORBITING TECH NODES ==================== -->
+    <g id="tech-nodes">
+    <!-- Node 0: Java -->
     <g transform="translate(425, 250)">
-      <g style="animation: orbit_node_0 22s cubic-bezier(0.445, 0.05, 0.55, 0.95) infinite;">
+      <g style="animation: orbit_node_0 24s cubic-bezier(0.445, 0.05, 0.55, 0.95) infinite;">
         <!-- Node Background Capsule -->
-        <rect x="-44" y="-14" width="88" height="28" rx="14" fill="#2b1d0f" stroke="#ED8B00" stroke-width="1.5" filter="url(#badgeGlow)"/>
+        <rect x="-46" y="-14" width="92" height="28" rx="14" fill="#2b1d0f" stroke="#ED8B00" stroke-width="1.5" filter="url(#badgeGlow)"/>
         <!-- Tech Icon -->
-        <text x="-30" y="4" font-size="12px" text-anchor="middle">☕</text>
+        <text x="-31" y="4" font-size="12px" text-anchor="middle">☕</text>
         <!-- Tech Label -->
-        <text x="6" y="3.5" font-family="'JetBrains Mono', 'Segoe UI', sans-serif" font-size="9px" font-weight="800" fill="#f0f6fc" text-anchor="middle" letter-spacing="0.3">Java 21</text>
+        <text x="8" y="3.5" font-family="'JetBrains Mono', 'Segoe UI', sans-serif" font-size="9px" font-weight="800" fill="#f0f6fc" text-anchor="middle" letter-spacing="0.3">Java</text>
         <!-- Mini Indicator Dot -->
-        <circle cx="34" cy="0" r="2.2" fill="#ED8B00"/>
+        <circle cx="36" cy="0" r="2.2" fill="#ED8B00"/>
       </g>
     </g>
 
-    <!-- Node 1: Spring Boot -->
+    <!-- Node 1: TypeScript -->
     <g transform="translate(425, 250)">
-      <g style="animation: orbit_node_1 22s cubic-bezier(0.445, 0.05, 0.55, 0.95) infinite;">
+      <g style="animation: orbit_node_1 24s cubic-bezier(0.445, 0.05, 0.55, 0.95) infinite;">
         <!-- Node Background Capsule -->
-        <rect x="-44" y="-14" width="88" height="28" rx="14" fill="#132616" stroke="#6DB33F" stroke-width="1.5" filter="url(#badgeGlow)"/>
+        <rect x="-46" y="-14" width="92" height="28" rx="14" fill="#0b1d30" stroke="#007ACC" stroke-width="1.5" filter="url(#badgeGlow)"/>
         <!-- Tech Icon -->
-        <text x="-30" y="4" font-size="12px" text-anchor="middle">🍃</text>
+        <text x="-31" y="4" font-size="12px" text-anchor="middle">📘</text>
         <!-- Tech Label -->
-        <text x="6" y="3.5" font-family="'JetBrains Mono', 'Segoe UI', sans-serif" font-size="9px" font-weight="800" fill="#f0f6fc" text-anchor="middle" letter-spacing="0.3">Spring Boot</text>
+        <text x="8" y="3.5" font-family="'JetBrains Mono', 'Segoe UI', sans-serif" font-size="9px" font-weight="800" fill="#f0f6fc" text-anchor="middle" letter-spacing="0.3">TypeScript</text>
         <!-- Mini Indicator Dot -->
-        <circle cx="34" cy="0" r="2.2" fill="#6DB33F"/>
+        <circle cx="36" cy="0" r="2.2" fill="#007ACC"/>
       </g>
     </g>
 
-    <!-- Node 2: RabbitMQ -->
+    <!-- Node 2: JavaScript -->
     <g transform="translate(425, 250)">
-      <g style="animation: orbit_node_2 22s cubic-bezier(0.445, 0.05, 0.55, 0.95) infinite;">
+      <g style="animation: orbit_node_2 24s cubic-bezier(0.445, 0.05, 0.55, 0.95) infinite;">
         <!-- Node Background Capsule -->
-        <rect x="-44" y="-14" width="88" height="28" rx="14" fill="#2e190b" stroke="#FF6600" stroke-width="1.5" filter="url(#badgeGlow)"/>
+        <rect x="-46" y="-14" width="92" height="28" rx="14" fill="#2e2b0c" stroke="#F7DF1E" stroke-width="1.5" filter="url(#badgeGlow)"/>
         <!-- Tech Icon -->
-        <text x="-30" y="4" font-size="12px" text-anchor="middle">🐇</text>
+        <text x="-31" y="4" font-size="12px" text-anchor="middle">💛</text>
         <!-- Tech Label -->
-        <text x="6" y="3.5" font-family="'JetBrains Mono', 'Segoe UI', sans-serif" font-size="9px" font-weight="800" fill="#f0f6fc" text-anchor="middle" letter-spacing="0.3">RabbitMQ</text>
+        <text x="8" y="3.5" font-family="'JetBrains Mono', 'Segoe UI', sans-serif" font-size="9px" font-weight="800" fill="#f0f6fc" text-anchor="middle" letter-spacing="0.3">JavaScript</text>
         <!-- Mini Indicator Dot -->
-        <circle cx="34" cy="0" r="2.2" fill="#FF6600"/>
+        <circle cx="36" cy="0" r="2.2" fill="#F7DF1E"/>
       </g>
     </g>
 
-    <!-- Node 3: PostgreSQL -->
+    <!-- Node 3: C++ -->
     <g transform="translate(425, 250)">
-      <g style="animation: orbit_node_3 22s cubic-bezier(0.445, 0.05, 0.55, 0.95) infinite;">
+      <g style="animation: orbit_node_3 24s cubic-bezier(0.445, 0.05, 0.55, 0.95) infinite;">
         <!-- Node Background Capsule -->
-        <rect x="-44" y="-14" width="88" height="28" rx="14" fill="#101a33" stroke="#4169E1" stroke-width="1.5" filter="url(#badgeGlow)"/>
+        <rect x="-46" y="-14" width="92" height="28" rx="14" fill="#0a1c2d" stroke="#00599C" stroke-width="1.5" filter="url(#badgeGlow)"/>
         <!-- Tech Icon -->
-        <text x="-30" y="4" font-size="12px" text-anchor="middle">🐘</text>
+        <text x="-31" y="4" font-size="12px" text-anchor="middle">⚡</text>
         <!-- Tech Label -->
-        <text x="6" y="3.5" font-family="'JetBrains Mono', 'Segoe UI', sans-serif" font-size="9px" font-weight="800" fill="#f0f6fc" text-anchor="middle" letter-spacing="0.3">PostgreSQL</text>
+        <text x="8" y="3.5" font-family="'JetBrains Mono', 'Segoe UI', sans-serif" font-size="9px" font-weight="800" fill="#f0f6fc" text-anchor="middle" letter-spacing="0.3">C++</text>
         <!-- Mini Indicator Dot -->
-        <circle cx="34" cy="0" r="2.2" fill="#4169E1"/>
+        <circle cx="36" cy="0" r="2.2" fill="#00599C"/>
       </g>
     </g>
 
-    <!-- Node 4: Redis -->
+    <!-- Node 4: Spring Boot -->
     <g transform="translate(425, 250)">
-      <g style="animation: orbit_node_4 22s cubic-bezier(0.445, 0.05, 0.55, 0.95) infinite;">
+      <g style="animation: orbit_node_4 24s cubic-bezier(0.445, 0.05, 0.55, 0.95) infinite;">
         <!-- Node Background Capsule -->
-        <rect x="-44" y="-14" width="88" height="28" rx="14" fill="#2b1010" stroke="#DC382D" stroke-width="1.5" filter="url(#badgeGlow)"/>
+        <rect x="-46" y="-14" width="92" height="28" rx="14" fill="#132616" stroke="#6DB33F" stroke-width="1.5" filter="url(#badgeGlow)"/>
         <!-- Tech Icon -->
-        <text x="-30" y="4" font-size="12px" text-anchor="middle">⚡</text>
+        <text x="-31" y="4" font-size="12px" text-anchor="middle">🍃</text>
         <!-- Tech Label -->
-        <text x="6" y="3.5" font-family="'JetBrains Mono', 'Segoe UI', sans-serif" font-size="9px" font-weight="800" fill="#f0f6fc" text-anchor="middle" letter-spacing="0.3">Redis</text>
+        <text x="8" y="3.5" font-family="'JetBrains Mono', 'Segoe UI', sans-serif" font-size="9px" font-weight="800" fill="#f0f6fc" text-anchor="middle" letter-spacing="0.3">Spring Boot</text>
         <!-- Mini Indicator Dot -->
-        <circle cx="34" cy="0" r="2.2" fill="#DC382D"/>
+        <circle cx="36" cy="0" r="2.2" fill="#6DB33F"/>
       </g>
     </g>
 
-    <!-- Node 5: Docker -->
+    <!-- Node 5: Spring Security -->
     <g transform="translate(425, 250)">
-      <g style="animation: orbit_node_5 22s cubic-bezier(0.445, 0.05, 0.55, 0.95) infinite;">
+      <g style="animation: orbit_node_5 24s cubic-bezier(0.445, 0.05, 0.55, 0.95) infinite;">
         <!-- Node Background Capsule -->
-        <rect x="-44" y="-14" width="88" height="28" rx="14" fill="#0d2238" stroke="#2496ED" stroke-width="1.5" filter="url(#badgeGlow)"/>
+        <rect x="-46" y="-14" width="92" height="28" rx="14" fill="#141e33" stroke="#70A5FD" stroke-width="1.5" filter="url(#badgeGlow)"/>
         <!-- Tech Icon -->
-        <text x="-30" y="4" font-size="12px" text-anchor="middle">🐳</text>
+        <text x="-31" y="4" font-size="12px" text-anchor="middle">🛡️</text>
         <!-- Tech Label -->
-        <text x="6" y="3.5" font-family="'JetBrains Mono', 'Segoe UI', sans-serif" font-size="9px" font-weight="800" fill="#f0f6fc" text-anchor="middle" letter-spacing="0.3">Docker</text>
+        <text x="8" y="3.5" font-family="'JetBrains Mono', 'Segoe UI', sans-serif" font-size="9px" font-weight="800" fill="#f0f6fc" text-anchor="middle" letter-spacing="0.3">Spring Security</text>
         <!-- Mini Indicator Dot -->
-        <circle cx="34" cy="0" r="2.2" fill="#2496ED"/>
+        <circle cx="36" cy="0" r="2.2" fill="#70A5FD"/>
       </g>
     </g>
 
     <!-- Node 6: Spring Cloud -->
     <g transform="translate(425, 250)">
-      <g style="animation: orbit_node_6 22s cubic-bezier(0.445, 0.05, 0.55, 0.95) infinite;">
+      <g style="animation: orbit_node_6 24s cubic-bezier(0.445, 0.05, 0.55, 0.95) infinite;">
         <!-- Node Background Capsule -->
-        <rect x="-44" y="-14" width="88" height="28" rx="14" fill="#142918" stroke="#6DB33F" stroke-width="1.5" filter="url(#badgeGlow)"/>
+        <rect x="-46" y="-14" width="92" height="28" rx="14" fill="#142918" stroke="#6DB33F" stroke-width="1.5" filter="url(#badgeGlow)"/>
         <!-- Tech Icon -->
-        <text x="-30" y="4" font-size="12px" text-anchor="middle">☁️</text>
+        <text x="-31" y="4" font-size="12px" text-anchor="middle">☁️</text>
         <!-- Tech Label -->
-        <text x="6" y="3.5" font-family="'JetBrains Mono', 'Segoe UI', sans-serif" font-size="9px" font-weight="800" fill="#f0f6fc" text-anchor="middle" letter-spacing="0.3">Spring Cloud</text>
+        <text x="8" y="3.5" font-family="'JetBrains Mono', 'Segoe UI', sans-serif" font-size="9px" font-weight="800" fill="#f0f6fc" text-anchor="middle" letter-spacing="0.3">Spring Cloud</text>
         <!-- Mini Indicator Dot -->
-        <circle cx="34" cy="0" r="2.2" fill="#6DB33F"/>
+        <circle cx="36" cy="0" r="2.2" fill="#6DB33F"/>
       </g>
     </g>
 
     <!-- Node 7: Spring AI -->
     <g transform="translate(425, 250)">
-      <g style="animation: orbit_node_7 22s cubic-bezier(0.445, 0.05, 0.55, 0.95) infinite;">
+      <g style="animation: orbit_node_7 24s cubic-bezier(0.445, 0.05, 0.55, 0.95) infinite;">
         <!-- Node Background Capsule -->
-        <rect x="-44" y="-14" width="88" height="28" rx="14" fill="#0f2b27" stroke="#38BDAE" stroke-width="1.5" filter="url(#badgeGlow)"/>
+        <rect x="-46" y="-14" width="92" height="28" rx="14" fill="#0f2b27" stroke="#38BDAE" stroke-width="1.5" filter="url(#badgeGlow)"/>
         <!-- Tech Icon -->
-        <text x="-30" y="4" font-size="12px" text-anchor="middle">🤖</text>
+        <text x="-31" y="4" font-size="12px" text-anchor="middle">🤖</text>
         <!-- Tech Label -->
-        <text x="6" y="3.5" font-family="'JetBrains Mono', 'Segoe UI', sans-serif" font-size="9px" font-weight="800" fill="#f0f6fc" text-anchor="middle" letter-spacing="0.3">Spring AI</text>
+        <text x="8" y="3.5" font-family="'JetBrains Mono', 'Segoe UI', sans-serif" font-size="9px" font-weight="800" fill="#f0f6fc" text-anchor="middle" letter-spacing="0.3">Spring AI</text>
         <!-- Mini Indicator Dot -->
-        <circle cx="34" cy="0" r="2.2" fill="#38BDAE"/>
+        <circle cx="36" cy="0" r="2.2" fill="#38BDAE"/>
       </g>
     </g>
 
-    <!-- Node 8: TypeScript -->
+    <!-- Node 8: RabbitMQ -->
     <g transform="translate(425, 250)">
-      <g style="animation: orbit_node_8 22s cubic-bezier(0.445, 0.05, 0.55, 0.95) infinite;">
+      <g style="animation: orbit_node_8 24s cubic-bezier(0.445, 0.05, 0.55, 0.95) infinite;">
         <!-- Node Background Capsule -->
-        <rect x="-44" y="-14" width="88" height="28" rx="14" fill="#0b1d30" stroke="#007ACC" stroke-width="1.5" filter="url(#badgeGlow)"/>
+        <rect x="-46" y="-14" width="92" height="28" rx="14" fill="#2e190b" stroke="#FF6600" stroke-width="1.5" filter="url(#badgeGlow)"/>
         <!-- Tech Icon -->
-        <text x="-30" y="4" font-size="12px" text-anchor="middle">📘</text>
+        <text x="-31" y="4" font-size="12px" text-anchor="middle">🐇</text>
         <!-- Tech Label -->
-        <text x="6" y="3.5" font-family="'JetBrains Mono', 'Segoe UI', sans-serif" font-size="9px" font-weight="800" fill="#f0f6fc" text-anchor="middle" letter-spacing="0.3">TypeScript</text>
+        <text x="8" y="3.5" font-family="'JetBrains Mono', 'Segoe UI', sans-serif" font-size="9px" font-weight="800" fill="#f0f6fc" text-anchor="middle" letter-spacing="0.3">RabbitMQ</text>
         <!-- Mini Indicator Dot -->
-        <circle cx="34" cy="0" r="2.2" fill="#007ACC"/>
+        <circle cx="36" cy="0" r="2.2" fill="#FF6600"/>
       </g>
     </g>
 
-    <!-- Node 9: Linux VPS -->
+    <!-- Node 9: MySQL -->
     <g transform="translate(425, 250)">
-      <g style="animation: orbit_node_9 22s cubic-bezier(0.445, 0.05, 0.55, 0.95) infinite;">
+      <g style="animation: orbit_node_9 24s cubic-bezier(0.445, 0.05, 0.55, 0.95) infinite;">
         <!-- Node Background Capsule -->
-        <rect x="-44" y="-14" width="88" height="28" rx="14" fill="#2e260c" stroke="#FCC624" stroke-width="1.5" filter="url(#badgeGlow)"/>
+        <rect x="-46" y="-14" width="92" height="28" rx="14" fill="#092129" stroke="#005C84" stroke-width="1.5" filter="url(#badgeGlow)"/>
         <!-- Tech Icon -->
-        <text x="-30" y="4" font-size="12px" text-anchor="middle">🐧</text>
+        <text x="-31" y="4" font-size="12px" text-anchor="middle">🐬</text>
         <!-- Tech Label -->
-        <text x="6" y="3.5" font-family="'JetBrains Mono', 'Segoe UI', sans-serif" font-size="9px" font-weight="800" fill="#f0f6fc" text-anchor="middle" letter-spacing="0.3">Linux VPS</text>
+        <text x="8" y="3.5" font-family="'JetBrains Mono', 'Segoe UI', sans-serif" font-size="9px" font-weight="800" fill="#f0f6fc" text-anchor="middle" letter-spacing="0.3">MySQL</text>
         <!-- Mini Indicator Dot -->
-        <circle cx="34" cy="0" r="2.2" fill="#FCC624"/>
+        <circle cx="36" cy="0" r="2.2" fill="#005C84"/>
       </g>
     </g>
 
-    <!-- Node 10: MySQL -->
+    <!-- Node 10: PostgreSQL -->
     <g transform="translate(425, 250)">
-      <g style="animation: orbit_node_10 22s cubic-bezier(0.445, 0.05, 0.55, 0.95) infinite;">
+      <g style="animation: orbit_node_10 24s cubic-bezier(0.445, 0.05, 0.55, 0.95) infinite;">
         <!-- Node Background Capsule -->
-        <rect x="-44" y="-14" width="88" height="28" rx="14" fill="#092129" stroke="#00758F" stroke-width="1.5" filter="url(#badgeGlow)"/>
+        <rect x="-46" y="-14" width="92" height="28" rx="14" fill="#101a33" stroke="#316192" stroke-width="1.5" filter="url(#badgeGlow)"/>
         <!-- Tech Icon -->
-        <text x="-30" y="4" font-size="12px" text-anchor="middle">🐬</text>
+        <text x="-31" y="4" font-size="12px" text-anchor="middle">🐘</text>
         <!-- Tech Label -->
-        <text x="6" y="3.5" font-family="'JetBrains Mono', 'Segoe UI', sans-serif" font-size="9px" font-weight="800" fill="#f0f6fc" text-anchor="middle" letter-spacing="0.3">MySQL</text>
+        <text x="8" y="3.5" font-family="'JetBrains Mono', 'Segoe UI', sans-serif" font-size="9px" font-weight="800" fill="#f0f6fc" text-anchor="middle" letter-spacing="0.3">PostgreSQL</text>
         <!-- Mini Indicator Dot -->
-        <circle cx="34" cy="0" r="2.2" fill="#00758F"/>
+        <circle cx="36" cy="0" r="2.2" fill="#316192"/>
       </g>
     </g>
 
-    <!-- Node 11: Spring Security -->
+    <!-- Node 11: SQL Server -->
     <g transform="translate(425, 250)">
-      <g style="animation: orbit_node_11 22s cubic-bezier(0.445, 0.05, 0.55, 0.95) infinite;">
+      <g style="animation: orbit_node_11 24s cubic-bezier(0.445, 0.05, 0.55, 0.95) infinite;">
         <!-- Node Background Capsule -->
-        <rect x="-44" y="-14" width="88" height="28" rx="14" fill="#141e33" stroke="#70A5FD" stroke-width="1.5" filter="url(#badgeGlow)"/>
+        <rect x="-46" y="-14" width="92" height="28" rx="14" fill="#2b0f10" stroke="#CC292B" stroke-width="1.5" filter="url(#badgeGlow)"/>
         <!-- Tech Icon -->
-        <text x="-30" y="4" font-size="12px" text-anchor="middle">🛡️</text>
+        <text x="-31" y="4" font-size="12px" text-anchor="middle">🗄️</text>
         <!-- Tech Label -->
-        <text x="6" y="3.5" font-family="'JetBrains Mono', 'Segoe UI', sans-serif" font-size="9px" font-weight="800" fill="#f0f6fc" text-anchor="middle" letter-spacing="0.3">Spring Security</text>
+        <text x="8" y="3.5" font-family="'JetBrains Mono', 'Segoe UI', sans-serif" font-size="9px" font-weight="800" fill="#f0f6fc" text-anchor="middle" letter-spacing="0.3">SQL Server</text>
         <!-- Mini Indicator Dot -->
-        <circle cx="34" cy="0" r="2.2" fill="#70A5FD"/>
+        <circle cx="36" cy="0" r="2.2" fill="#CC292B"/>
       </g>
     </g>
 
-    <!-- Node 12: SQL Server -->
+    <!-- Node 12: Redis -->
     <g transform="translate(425, 250)">
-      <g style="animation: orbit_node_12 22s cubic-bezier(0.445, 0.05, 0.55, 0.95) infinite;">
+      <g style="animation: orbit_node_12 24s cubic-bezier(0.445, 0.05, 0.55, 0.95) infinite;">
         <!-- Node Background Capsule -->
-        <rect x="-44" y="-14" width="88" height="28" rx="14" fill="#2b0f10" stroke="#CC292B" stroke-width="1.5" filter="url(#badgeGlow)"/>
+        <rect x="-46" y="-14" width="92" height="28" rx="14" fill="#2b1010" stroke="#DC382D" stroke-width="1.5" filter="url(#badgeGlow)"/>
         <!-- Tech Icon -->
-        <text x="-30" y="4" font-size="12px" text-anchor="middle">🗄️</text>
+        <text x="-31" y="4" font-size="12px" text-anchor="middle">🔴</text>
         <!-- Tech Label -->
-        <text x="6" y="3.5" font-family="'JetBrains Mono', 'Segoe UI', sans-serif" font-size="9px" font-weight="800" fill="#f0f6fc" text-anchor="middle" letter-spacing="0.3">SQL Server</text>
+        <text x="8" y="3.5" font-family="'JetBrains Mono', 'Segoe UI', sans-serif" font-size="9px" font-weight="800" fill="#f0f6fc" text-anchor="middle" letter-spacing="0.3">Redis</text>
         <!-- Mini Indicator Dot -->
-        <circle cx="34" cy="0" r="2.2" fill="#CC292B"/>
+        <circle cx="36" cy="0" r="2.2" fill="#DC382D"/>
       </g>
     </g>
 
-    <!-- Node 13: JavaScript -->
+    <!-- Node 13: Docker -->
     <g transform="translate(425, 250)">
-      <g style="animation: orbit_node_13 22s cubic-bezier(0.445, 0.05, 0.55, 0.95) infinite;">
+      <g style="animation: orbit_node_13 24s cubic-bezier(0.445, 0.05, 0.55, 0.95) infinite;">
         <!-- Node Background Capsule -->
-        <rect x="-44" y="-14" width="88" height="28" rx="14" fill="#2e2b0c" stroke="#F7DF1E" stroke-width="1.5" filter="url(#badgeGlow)"/>
+        <rect x="-46" y="-14" width="92" height="28" rx="14" fill="#0d2238" stroke="#2496ED" stroke-width="1.5" filter="url(#badgeGlow)"/>
         <!-- Tech Icon -->
-        <text x="-30" y="4" font-size="12px" text-anchor="middle">💛</text>
+        <text x="-31" y="4" font-size="12px" text-anchor="middle">🐳</text>
         <!-- Tech Label -->
-        <text x="6" y="3.5" font-family="'JetBrains Mono', 'Segoe UI', sans-serif" font-size="9px" font-weight="800" fill="#f0f6fc" text-anchor="middle" letter-spacing="0.3">JavaScript</text>
+        <text x="8" y="3.5" font-family="'JetBrains Mono', 'Segoe UI', sans-serif" font-size="9px" font-weight="800" fill="#f0f6fc" text-anchor="middle" letter-spacing="0.3">Docker</text>
         <!-- Mini Indicator Dot -->
-        <circle cx="34" cy="0" r="2.2" fill="#F7DF1E"/>
+        <circle cx="36" cy="0" r="2.2" fill="#2496ED"/>
       </g>
     </g>
 
-    <!-- Node 14: LeetCode -->
+    <!-- Node 14: VPS Linux -->
     <g transform="translate(425, 250)">
-      <g style="animation: orbit_node_14 22s cubic-bezier(0.445, 0.05, 0.55, 0.95) infinite;">
+      <g style="animation: orbit_node_14 24s cubic-bezier(0.445, 0.05, 0.55, 0.95) infinite;">
         <!-- Node Background Capsule -->
-        <rect x="-44" y="-14" width="88" height="28" rx="14" fill="#2b1c09" stroke="#FFA116" stroke-width="1.5" filter="url(#badgeGlow)"/>
+        <rect x="-46" y="-14" width="92" height="28" rx="14" fill="#2e260c" stroke="#FCC624" stroke-width="1.5" filter="url(#badgeGlow)"/>
         <!-- Tech Icon -->
-        <text x="-30" y="4" font-size="12px" text-anchor="middle">🧠</text>
+        <text x="-31" y="4" font-size="12px" text-anchor="middle">🐧</text>
         <!-- Tech Label -->
-        <text x="6" y="3.5" font-family="'JetBrains Mono', 'Segoe UI', sans-serif" font-size="9px" font-weight="800" fill="#f0f6fc" text-anchor="middle" letter-spacing="0.3">LeetCode</text>
+        <text x="8" y="3.5" font-family="'JetBrains Mono', 'Segoe UI', sans-serif" font-size="9px" font-weight="800" fill="#f0f6fc" text-anchor="middle" letter-spacing="0.3">VPS Linux</text>
         <!-- Mini Indicator Dot -->
-        <circle cx="34" cy="0" r="2.2" fill="#FFA116"/>
+        <circle cx="36" cy="0" r="2.2" fill="#FCC624"/>
       </g>
     </g>
 
-    <!-- Node 15: CI/CD Git -->
+    <!-- Node 15: Vercel -->
     <g transform="translate(425, 250)">
-      <g style="animation: orbit_node_15 22s cubic-bezier(0.445, 0.05, 0.55, 0.95) infinite;">
+      <g style="animation: orbit_node_15 24s cubic-bezier(0.445, 0.05, 0.55, 0.95) infinite;">
         <!-- Node Background Capsule -->
-        <rect x="-44" y="-14" width="88" height="28" rx="14" fill="#2b1410" stroke="#F05032" stroke-width="1.5" filter="url(#badgeGlow)"/>
+        <rect x="-46" y="-14" width="92" height="28" rx="14" fill="#1a1a1a" stroke="#FFFFFF" stroke-width="1.5" filter="url(#badgeGlow)"/>
         <!-- Tech Icon -->
-        <text x="-30" y="4" font-size="12px" text-anchor="middle">🚀</text>
+        <text x="-31" y="4" font-size="12px" text-anchor="middle">▲</text>
         <!-- Tech Label -->
-        <text x="6" y="3.5" font-family="'JetBrains Mono', 'Segoe UI', sans-serif" font-size="9px" font-weight="800" fill="#f0f6fc" text-anchor="middle" letter-spacing="0.3">CI/CD Git</text>
+        <text x="8" y="3.5" font-family="'JetBrains Mono', 'Segoe UI', sans-serif" font-size="9px" font-weight="800" fill="#f0f6fc" text-anchor="middle" letter-spacing="0.3">Vercel</text>
         <!-- Mini Indicator Dot -->
-        <circle cx="34" cy="0" r="2.2" fill="#F05032"/>
+        <circle cx="36" cy="0" r="2.2" fill="#FFFFFF"/>
       </g>
     </g>
-  </g>
 
-  <!-- ==================== TOP BADGE TAG ==================== -->
-  <g transform="translate(20, 20)">
-    <rect x="0" y="0" width="220" height="26" rx="6" fill="#10111a" stroke="#24283b" stroke-width="1.2"/>
-    <circle cx="14" cy="13" r="4" fill="#38bdae" class="sphere-core"/>
-    <text x="26" y="16.5" font-family="'JetBrains Mono', 'Segoe UI', monospace" font-size="9px" font-weight="800" fill="#a9b1d6" letter-spacing="0.8">3D TECH ORBIT SPHERE</text>
+    <!-- Node 16: Git -->
+    <g transform="translate(425, 250)">
+      <g style="animation: orbit_node_16 24s cubic-bezier(0.445, 0.05, 0.55, 0.95) infinite;">
+        <!-- Node Background Capsule -->
+        <rect x="-46" y="-14" width="92" height="28" rx="14" fill="#2b1410" stroke="#F05032" stroke-width="1.5" filter="url(#badgeGlow)"/>
+        <!-- Tech Icon -->
+        <text x="-31" y="4" font-size="12px" text-anchor="middle">🔥</text>
+        <!-- Tech Label -->
+        <text x="8" y="3.5" font-family="'JetBrains Mono', 'Segoe UI', sans-serif" font-size="9px" font-weight="800" fill="#f0f6fc" text-anchor="middle" letter-spacing="0.3">Git</text>
+        <!-- Mini Indicator Dot -->
+        <circle cx="36" cy="0" r="2.2" fill="#F05032"/>
+      </g>
+    </g>
+
+    <!-- Node 17: GitHub -->
+    <g transform="translate(425, 250)">
+      <g style="animation: orbit_node_17 24s cubic-bezier(0.445, 0.05, 0.55, 0.95) infinite;">
+        <!-- Node Background Capsule -->
+        <rect x="-46" y="-14" width="92" height="28" rx="14" fill="#161b22" stroke="#C9D1D9" stroke-width="1.5" filter="url(#badgeGlow)"/>
+        <!-- Tech Icon -->
+        <text x="-31" y="4" font-size="12px" text-anchor="middle">🐙</text>
+        <!-- Tech Label -->
+        <text x="8" y="3.5" font-family="'JetBrains Mono', 'Segoe UI', sans-serif" font-size="9px" font-weight="800" fill="#f0f6fc" text-anchor="middle" letter-spacing="0.3">GitHub</text>
+        <!-- Mini Indicator Dot -->
+        <circle cx="36" cy="0" r="2.2" fill="#C9D1D9"/>
+      </g>
+    </g>
+    </g>
+
+    <!-- ==================== TOP BADGE TAG ==================== -->
+    <g transform="translate(20, 20)">
+      <rect x="0" y="0" width="220" height="26" rx="6" fill="#10111a" stroke="#24283b" stroke-width="1.2"/>
+      <circle cx="14" cy="13" r="4" fill="#38bdae" class="sphere-core"/>
+      <text x="26" y="16.5" font-family="'JetBrains Mono', 'Segoe UI', monospace" font-size="9px" font-weight="800" fill="#a9b1d6" letter-spacing="0.8">3D TECH ORBIT SPHERE</text>
+    </g>
+
+    <!-- Cyber Outer Laser Glowing Border -->
+    <rect x="2" y="2" width="846" height="496" rx="14" fill="none" stroke="url(#laserGrad)" stroke-width="2" class="laser-border" filter="url(#neonGlow)"/>
   </g>
 </svg>

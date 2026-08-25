@@ -25,8 +25,6 @@
   <img src="./profile-3d-contrib/profile-night-rainbow.svg" width="100%" alt="ThanhMiLa 3D Contribution City" />
 </p>
 
-<br/>
-
 ### 🪐 3D Rotating Tech Sphere
 
 <p align="center">
@@ -91,7 +89,7 @@
 ### 🧠 Problem Solving & LeetCode
 
 <p align="center">
-  <img src="https://leetcard.jacoblin.cool/Thanh_MiLa?theme=dark&font=Fira%20Code" width="100%" alt="LeetCode Stats" />
+  <img src="./assets/leetcode-stats.svg" width="100%" alt="ThanhMiLa LeetCode Stats" />
 </p>
 
 </td>
@@ -104,7 +102,7 @@
 ### 📈 Most Used Languages
 
 <p align="center">
-  <img src="https://github-stats-extended.vercel.app/api/top-langs/?username=ThanhMiLa&layout=compact&theme=tokyonight&hide_border=true" width="100%" alt="Most Used Languages" />
+  <img src="./assets/most-used-langs.svg" width="100%" alt="ThanhMiLa Most Used Languages" />
 </p>
 
 </td>
