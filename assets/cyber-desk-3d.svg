@@ -1,0 +1,565 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 540" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="wallBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0d0e15"/>
+      <stop offset="40%" stop-color="#141622"/>
+      <stop offset="100%" stop-color="#0a0a0f"/>
+    </linearGradient>
+
+    <!-- Isometric Surface Gradients -->
+    <linearGradient id="deskTop" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#24283b"/>
+      <stop offset="50%" stop-color="#1c1e2d"/>
+      <stop offset="100%" stop-color="#151722"/>
+    </linearGradient>
+
+    <linearGradient id="matGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1a1b26"/>
+      <stop offset="100%" stop-color="#11121a"/>
+    </linearGradient>
+
+    <linearGradient id="screenGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#13141f"/>
+      <stop offset="100%" stop-color="#090a0f"/>
+    </linearGradient>
+
+    <linearGradient id="neonCyan" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdae"/>
+      <stop offset="100%" stop-color="#70a5fd"/>
+    </linearGradient>
+
+    <linearGradient id="neonPink" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f7768e"/>
+      <stop offset="100%" stop-color="#bb9af7"/>
+    </linearGradient>
+
+    <linearGradient id="neonOrange" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ff9e64"/>
+      <stop offset="100%" stop-color="#e0af68"/>
+    </linearGradient>
+
+    <linearGradient id="rgbLoop" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f7768e"/>
+      <stop offset="20%" stop-color="#e0af68"/>
+      <stop offset="40%" stop-color="#9ece6a"/>
+      <stop offset="60%" stop-color="#70a5fd"/>
+      <stop offset="80%" stop-color="#bb9af7"/>
+      <stop offset="100%" stop-color="#f7768e"/>
+    </linearGradient>
+
+    <!-- Glow Filters -->
+    <filter id="glowCyan" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3.5" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <filter id="glowPurple" x="-25%" y="-25%" width="150%" height="150%">
+      <feGaussianBlur stdDeviation="4.5" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <filter id="glowScreen" x="-15%" y="-15%" width="130%" height="130%">
+      <feGaussianBlur stdDeviation="7" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <filter id="glowSteam" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="2" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <style>
+    <![CDATA[
+    .code-font { font-family: "JetBrains Mono", "Fira Code", monospace; font-size: 7.5px; fill: #a9b1d6; }
+    .kw { fill: #bb9af7; font-weight: bold; }
+    .fn { fill: #7aa2f7; }
+    .str { fill: #9ece6a; }
+    .num { fill: #ff9e64; }
+    .anno { fill: #e0af68; }
+
+    @keyframes cursorBlink {
+      0%, 49% { opacity: 1; }
+      50%, 100% { opacity: 0; }
+    }
+    .cur { animation: cursorBlink 0.85s infinite; }
+
+    @keyframes screenAmbient {
+      0%, 100% { filter: drop-shadow(0 0 10px rgba(56, 189, 174, 0.45)); }
+      50% { filter: drop-shadow(0 0 22px rgba(187, 154, 247, 0.65)); }
+    }
+    .main-screen { animation: screenAmbient 4s ease-in-out infinite; }
+
+    @keyframes rgbShift {
+      0% { filter: hue-rotate(0deg); }
+      100% { filter: hue-rotate(360deg); }
+    }
+    .rgb-anim { animation: rgbShift 8s linear infinite; }
+
+    @keyframes fanSpin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    .fan-1 { transform-origin: 30px 45px; animation: fanSpin 1.2s linear infinite; }
+    .fan-2 { transform-origin: 30px 75px; animation: fanSpin 1.2s linear infinite; }
+    .fan-3 { transform-origin: 30px 105px; animation: fanSpin 1.2s linear infinite; }
+
+    @keyframes fluidPulse {
+      0%, 100% { stroke-dashoffset: 0; opacity: 0.8; }
+      50% { stroke-dashoffset: -30; opacity: 1; filter: drop-shadow(0 0 8px #38bdae); }
+    }
+    .water-tube {
+      stroke-dasharray: 6 3;
+      animation: fluidPulse 2s linear infinite;
+    }
+
+    @keyframes liveMetricWave {
+      0% { transform: scaleY(1); }
+      50% { transform: scaleY(1.3); }
+      100% { transform: scaleY(1); }
+    }
+    .metric-bar { animation: liveMetricWave 1.8s ease-in-out infinite alternate; transform-origin: bottom; }
+
+    @keyframes steamFloat {
+      0% { transform: translateY(0) scaleX(1); opacity: 0.8; }
+      50% { transform: translateY(-10px) scaleX(1.4); opacity: 0.4; }
+      100% { transform: translateY(-20px) scaleX(1.9); opacity: 0; }
+    }
+    .steam-a { animation: steamFloat 2.8s ease-out infinite; transform-origin: 310px 290px; }
+    .steam-b { animation: steamFloat 2.8s ease-out infinite 1.4s; transform-origin: 310px 290px; }
+
+    @keyframes chairSway {
+      0%, 100% { transform: rotate(0deg); }
+      30% { transform: rotate(-1.2deg) translateX(-1px); }
+      70% { transform: rotate(1.2deg) translateX(1px); }
+    }
+    .swivel-coder {
+      transform-origin: 450px 430px;
+      animation: chairSway 5s ease-in-out infinite;
+    }
+
+    @keyframes tapLeft {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-2px); }
+    }
+    @keyframes tapRight {
+      0%, 100% { transform: translateY(-2px); }
+      50% { transform: translateY(0.5px); }
+    }
+    .hand-left { animation: tapLeft 0.32s ease-in-out infinite; }
+    .hand-right { animation: tapRight 0.35s ease-in-out infinite 0.08s; }
+
+    @keyframes neonSignGlow {
+      0%, 100% { opacity: 0.85; filter: drop-shadow(0 0 6px #7aa2f7); }
+      50% { opacity: 1; filter: drop-shadow(0 0 16px #38bdae) drop-shadow(0 0 28px #bb9af7); }
+    }
+    .neon-wall { animation: neonSignGlow 3s ease-in-out infinite; }
+    ]]>
+  </style>
+
+  <!-- Background Room Canvas -->
+  <rect width="100%" height="100%" rx="14" fill="url(#wallBg)" stroke="#24283b" stroke-width="1.5"/>
+
+  <!-- ==================== ROOM WALL DECOR (ACOUSTIC FOAM & SHELVES) ==================== -->
+  <g id="wall-decor">
+    <!-- Hexagonal Acoustic Soundproofing Panels (Back Wall) -->
+    <g fill="#161722" stroke="#24283b" stroke-width="1" opacity="0.75">
+      <polygon points="120,40 145,25 170,40 170,70 145,85 120,70" />
+      <polygon points="170,40 195,25 220,40 220,70 195,85 170,70" />
+      <polygon points="145,85 170,70 195,85 195,115 170,130 145,115" />
+      <polygon points="95,85 120,70 145,85 145,115 120,130 95,115" />
+      <polygon points="120,130 145,115 170,130 170,160 145,175 120,160" />
+    </g>
+
+    <!-- Wall Floating Shelf (Top Right) with Action Figure & Books -->
+    <g transform="translate(640, 50)">
+      <!-- Shelf Board -->
+      <polygon points="0,20 180,20 200,30 20,30" fill="#1f2335" stroke="#7aa2f7" stroke-width="0.8"/>
+      <polygon points="20,30 200,30 200,34 20,34" fill="#13141f"/>
+      <!-- Books (Java Concurrency, Clean Code, System Design) -->
+      <rect x="35" y="2" width="10" height="28" fill="#e0af68" rx="1"/>
+      <rect x="47" y="5" width="8" height="25" fill="#70a5fd" rx="1"/>
+      <rect x="57" y="0" width="12" height="30" fill="#f7768e" rx="1"/>
+      <rect x="71" y="6" width="9" height="24" fill="#38bdae" rx="1"/>
+      <!-- Mini Mascot Android / Duke -->
+      <circle cx="120" cy="18" r="7" fill="#9ece6a"/>
+      <circle cx="118" cy="16" r="1.5" fill="#000"/>
+      <circle cx="122" cy="16" r="1.5" fill="#000"/>
+      <!-- Plant Pot with Cyber Succulent -->
+      <polygon points="150,20 166,20 162,30 154,30" fill="#24283b" stroke="#7aa2f7" stroke-width="0.5"/>
+      <circle cx="158" cy="16" r="5" fill="#38bdae" opacity="0.9"/>
+    </g>
+
+    <!-- Neon Wall Sign "THANHMILA ● BACKEND CORE" -->
+    <g class="neon-wall" transform="translate(360, 25)">
+      <rect x="0" y="0" width="220" height="32" rx="8" fill="#10111a" stroke="url(#neonCyan)" stroke-width="1.2"/>
+      <circle cx="16" cy="16" r="4" fill="#38bdae"/>
+      <text x="28" y="20.5" font-family="'JetBrains Mono', 'Segoe UI', monospace" font-size="10px" font-weight="900" fill="#70a5fd" letter-spacing="1.2">THANHMILA.DEV</text>
+      <text x="145" y="20.5" font-family="'JetBrains Mono', 'Segoe UI', monospace" font-size="8px" font-weight="700" fill="#bb9af7">&lt; JAVA 21 /&gt;</text>
+    </g>
+
+    <!-- Studio Boom Arm Microphone (Articulated Arm from Left) -->
+    <g transform="translate(250, 160)">
+      <!-- Boom Arm Segments -->
+      <line x1="-30" y1="90" x2="20" y2="30" stroke="#1f2335" stroke-width="3.5" stroke-linecap="round"/>
+      <line x1="-30" y1="90" x2="20" y2="30" stroke="#7aa2f7" stroke-width="1" stroke-linecap="round"/>
+      <circle cx="20" cy="30" r="4" fill="#38bdae"/>
+      <line x1="20" y1="30" x2="55" y2="60" stroke="#1f2335" stroke-width="3" stroke-linecap="round"/>
+      <!-- Shock Mount & Mic Capsule -->
+      <circle cx="55" cy="60" r="7" fill="none" stroke="#bb9af7" stroke-width="1.5"/>
+      <rect x="51" y="52" width="8" height="18" rx="4" fill="#0f0f14" stroke="#70a5fd" stroke-width="1"/>
+      <circle cx="55" cy="57" r="2.5" fill="#f7768e" class="cur"/>
+    </g>
+  </g>
+
+  <!-- ==================== 3D ISOMETRIC CYBER FLOOR GRID ==================== -->
+  <g stroke="#7aa2f7" stroke-width="0.75" fill="none" opacity="0.22">
+    <path d="M 80 270 L 450 480 M 150 230 L 520 440 M 220 190 L 590 400 M 290 150 L 660 360 M 360 110 L 730 320 M 430 70 L 800 280" />
+    <path d="M 820 270 L 450 480 M 750 230 L 380 440 M 680 190 L 310 400 M 610 150 L 240 360 M 540 110 L 170 320 M 470 70 L 100 280" />
+  </g>
+
+  <!-- Giant Ambient Floor Shadow under Battlestation -->
+  <ellipse cx="450" cy="425" rx="360" ry="95" fill="#000000" opacity="0.7"/>
+
+  <!-- ==================== 3D VOXEL BATTLESTATION DESK ==================== -->
+  <g id="battlestation-desk">
+    <!-- Desk Legs (Heavy Duty Steel Frame) -->
+    <!-- Back-Left Leg -->
+    <path d="M 190 320 L 205 329 L 205 440 L 190 431 Z" fill="#13141f" stroke="#24283b" stroke-width="0.5"/>
+    <!-- Back-Right Leg -->
+    <path d="M 700 320 L 715 329 L 715 440 L 700 431 Z" fill="#13141f" stroke="#24283b" stroke-width="0.5"/>
+    <!-- Front-Left Leg -->
+    <path d="M 230 350 L 246 360 L 246 455 L 230 445 Z" fill="#1a1c29" stroke="#24283b" stroke-width="0.5"/>
+    <path d="M 246 360 L 262 350 L 262 445 L 246 455 Z" fill="#0f0f14" stroke="#24283b" stroke-width="0.5"/>
+    <!-- Front-Right Leg -->
+    <path d="M 640 350 L 656 360 L 656 455 L 640 445 Z" fill="#1a1c29" stroke="#24283b" stroke-width="0.5"/>
+    <path d="M 656 360 L 672 350 L 672 445 L 656 455 Z" fill="#0f0f14" stroke="#24283b" stroke-width="0.5"/>
+
+    <!-- Desk Surface (Large Ergonomic Chamfered Top) -->
+    <!-- Coords: Back(450, 185), Right(760, 345), Front(450, 390), Left(140, 345) -->
+    <polygon points="450,185 760,345 450,390 140,345" fill="url(#deskTop)" stroke="#38bdae" stroke-width="1.5"/>
+    
+    <!-- Desk Front Bevels (Carbon Fiber Front Lip) -->
+    <polygon points="140,345 450,390 450,404 140,359" fill="#13141f" stroke="#1f2335" stroke-width="0.5"/>
+    <polygon points="450,390 760,345 760,359 450,404" fill="#0b0c11" stroke="#1f2335" stroke-width="0.5"/>
+
+    <!-- Dual RGB Underglow Light Strips -->
+    <path d="M 140 359 L 450 404 L 760 359" stroke="url(#rgbLoop)" stroke-width="3" fill="none" class="rgb-anim" filter="url(#glowCyan)"/>
+
+    <!-- Giant XL Deskmat with Cyber Geometry -->
+    <polygon points="450,235 680,345 450,378 220,345" fill="url(#matGrad)" stroke="#70a5fd" stroke-width="1"/>
+    <!-- Deskmat Topo Pattern Lines -->
+    <path d="M 300 320 Q 450 280 600 320 M 340 335 Q 450 310 560 335" stroke="#24283b" stroke-width="0.8" fill="none"/>
+  </g>
+
+  <!-- ==================== STUDIO SPEAKERS (LEFT & RIGHT) ==================== -->
+  <g id="speakers">
+    <!-- Left Studio Monitor Speaker -->
+    <g transform="translate(230, 255)">
+      <polygon points="15,0 35,10 35,50 15,40" fill="#1f2335" stroke="#7aa2f7" stroke-width="0.8"/>
+      <polygon points="0,8 15,0 15,40 0,48" fill="#13141f" stroke="#7aa2f7" stroke-width="0.8"/>
+      <circle cx="25" cy="22" r="5" fill="#0f0f14" stroke="#38bdae" stroke-width="1.2"/>
+      <circle cx="25" cy="35" r="3" fill="#0f0f14" stroke="#bb9af7" stroke-width="1"/>
+    </g>
+    <!-- Right Studio Monitor Speaker -->
+    <g transform="translate(630, 255)">
+      <polygon points="0,10 20,0 20,40 0,50" fill="#1f2335" stroke="#7aa2f7" stroke-width="0.8"/>
+      <polygon points="20,0 35,8 35,48 20,40" fill="#13141f" stroke="#7aa2f7" stroke-width="0.8"/>
+      <circle cx="10" cy="22" r="5" fill="#0f0f14" stroke="#38bdae" stroke-width="1.2"/>
+      <circle cx="10" cy="35" r="3" fill="#0f0f14" stroke="#bb9af7" stroke-width="1"/>
+    </g>
+  </g>
+
+  <!-- ==================== CUSTOM WATER-COOLED PC TOWER (EXTREME) ==================== -->
+  <g id="extreme-pc" transform="translate(660, 200)">
+    <!-- Main Chassis Frame -->
+    <!-- Top Face -->
+    <polygon points="45,0 95,25 50,50 0,25" fill="#24283b" stroke="#70a5fd" stroke-width="1"/>
+    <!-- Left Face (Tempered Glass Panel with Visible Internals) -->
+    <polygon points="0,25 50,50 50,145 0,120" fill="rgba(19, 20, 31, 0.9)" stroke="#38bdae" stroke-width="1.2"/>
+    <!-- Right Face (Brushed Aluminum) -->
+    <polygon points="50,50 95,25 95,120 50,145" fill="#0f0f14" stroke="#24283b" stroke-width="1"/>
+
+    <!-- Internals: Triple Glowing ARGB Fans -->
+    <g transform="translate(18, 50) skewY(26.5)">
+      <!-- Fan 1 (Top) -->
+      <circle cx="12" cy="15" r="11" fill="#13141f" stroke="#bb9af7" stroke-width="2" class="rgb-anim" filter="url(#glowPurple)"/>
+      <circle cx="12" cy="15" r="4" fill="#7aa2f7"/>
+      <!-- Fan 2 (Middle) -->
+      <circle cx="12" cy="42" r="11" fill="#13141f" stroke="#38bdae" stroke-width="2" class="rgb-anim" filter="url(#glowCyan)"/>
+      <circle cx="12" cy="42" r="4" fill="#70a5fd"/>
+      <!-- Fan 3 (Bottom) -->
+      <circle cx="12" cy="69" r="11" fill="#13141f" stroke="#f7768e" stroke-width="2" class="rgb-anim" filter="url(#glowPurple)"/>
+      <circle cx="12" cy="69" r="4" fill="#e0af68"/>
+    </g>
+
+    <!-- Custom Water Cooling Neon Tubes & Reservoir -->
+    <!-- Cylindrical Reservoir -->
+    <rect x="36" y="60" width="7" height="35" rx="3.5" fill="#16161e" stroke="#38bdae" stroke-width="1"/>
+    <rect x="37.5" y="65" width="4" height="25" rx="2" fill="#38bdae" opacity="0.8" class="cur"/>
+    <!-- Pulsing Coolant Tubes -->
+    <path d="M 40 60 Q 30 45 15 45 Q 5 60 20 80" fill="none" stroke="#38bdae" stroke-width="2.5" class="water-tube" filter="url(#glowCyan)"/>
+    <path d="M 40 95 Q 25 110 15 105" fill="none" stroke="#f7768e" stroke-width="2.5" class="water-tube" filter="url(#glowPurple)"/>
+
+    <!-- High-end GPU RGB Logo Backplate -->
+    <polygon points="5,90 35,105 35,115 5,100" fill="#16161e" stroke="#7aa2f7" stroke-width="0.8"/>
+    <text x="12" y="103" font-family="sans-serif" font-size="5px" font-weight="bold" fill="#38bdae" transform="skewY(26.5)">RTX 4090</text>
+  </g>
+
+  <!-- ==================== DUAL MONITOR PRO SETUP ==================== -->
+  
+  <!-- 1. TOP METRICS & GRAFANA MONITOR -->
+  <g id="top-metrics-monitor" transform="translate(370, 75)">
+    <!-- Frame -->
+    <polygon points="0,0 160,0 160,55 0,55" fill="#0d0e15" stroke="#bb9af7" stroke-width="1.2" rx="3"/>
+    <polygon points="3,3 157,3 157,52 3,52" fill="#13141f"/>
+    <!-- Window Header -->
+    <rect x="3" y="3" width="154" height="9" fill="#1a1b26"/>
+    <text x="8" y="10" font-family="'JetBrains Mono', monospace" font-size="5.5px" fill="#70a5fd">GRAFANA ● SYSTEM VITALS</text>
+    <circle cx="145" cy="7.5" r="2" fill="#9ece6a"/>
+    <circle cx="151" cy="7.5" r="2" fill="#7aa2f7"/>
+
+    <!-- Live Fluctuating Server Metric Bars -->
+    <g transform="translate(10, 48)">
+      <rect x="0" y="-12" width="6" height="12" fill="#38bdae" class="metric-bar"/>
+      <rect x="9" y="-20" width="6" height="20" fill="#70a5fd" class="metric-bar" style="animation-delay: 0.2s"/>
+      <rect x="18" y="-15" width="6" height="15" fill="#bb9af7" class="metric-bar" style="animation-delay: 0.4s"/>
+      <rect x="27" y="-25" width="6" height="25" fill="#38bdae" class="metric-bar" style="animation-delay: 0.6s"/>
+      <rect x="36" y="-18" width="6" height="18" fill="#f7768e" class="metric-bar" style="animation-delay: 0.1s"/>
+      <rect x="45" y="-28" width="6" height="28" fill="#9ece6a" class="metric-bar" style="animation-delay: 0.5s"/>
+      <rect x="54" y="-22" width="6" height="22" fill="#7aa2f7" class="metric-bar" style="animation-delay: 0.3s"/>
+      <rect x="63" y="-30" width="6" height="30" fill="#e0af68" class="metric-bar" style="animation-delay: 0.7s"/>
+      <!-- Gauge Info -->
+      <text x="75" y="-18" font-family="'JetBrains Mono', monospace" font-size="6px" fill="#a9b1d6">CPU: <tspan fill="#38bdae">14.2%</tspan></text>
+      <text x="75" y="-9" font-family="'JetBrains Mono', monospace" font-size="6px" fill="#a9b1d6">TPS: <tspan fill="#70a5fd">28.4k/s</tspan></text>
+      <text x="75" y="0" font-family="'JetBrains Mono', monospace" font-size="6px" fill="#a9b1d6">RAM: <tspan fill="#bb9af7">5.1 GB</tspan></text>
+    </g>
+  </g>
+
+  <!-- 2. LEFT VERTICAL MONITOR (TERMINAL & DOCKER LOGS) -->
+  <g id="vertical-monitor">
+    <!-- Stand -->
+    <polygon points="275,255 295,265 275,270 255,265" fill="#16161e"/>
+    <polygon points="273,200 277,200 277,260 273,260" fill="#24283b"/>
+    <!-- Screen Frame & Glass (Rotated Isometric Angle) -->
+    <polygon points="240,130 295,155 295,260 240,235" fill="#0c0d13" stroke="#bb9af7" stroke-width="1.2"/>
+    <polygon points="243,133 292,156 292,257 243,234" fill="#10111a"/>
+    <!-- Terminal Logs Skewed -->
+    <g transform="translate(247, 155) skewY(24.5)">
+      <text x="0" y="5" font-family="'JetBrains Mono', monospace" font-size="5px" fill="#38bdae">➜ zsh docker-up</text>
+      <text x="0" y="13" font-family="'JetBrains Mono', monospace" font-size="4.5px" fill="#9ece6a">[OK] spring-api:8080</text>
+      <text x="0" y="21" font-family="'JetBrains Mono', monospace" font-size="4.5px" fill="#70a5fd">[OK] postgres:5432</text>
+      <text x="0" y="29" font-family="'JetBrains Mono', monospace" font-size="4.5px" fill="#ff9e64">[OK] rabbitmq:5672</text>
+      <text x="0" y="37" font-family="'JetBrains Mono', monospace" font-size="4.5px" fill="#f7768e">[OK] redis:6379</text>
+      <text x="0" y="45" font-family="'JetBrains Mono', monospace" font-size="4.5px" fill="#bb9af7">[LOG] TPS: 14,280/s</text>
+      <text x="0" y="53" font-family="'JetBrains Mono', monospace" font-size="4.5px" fill="#38bdae">Connected to cluster<tspan class="cur" fill="#7aa2f7">_</tspan></text>
+    </g>
+  </g>
+
+  <!-- 3. MAIN ULTRAWIDE CURVED SCREEN (INTELLIJ IDEA BACKEND CODE) -->
+  <g id="main-monitor" class="main-screen">
+    <!-- Stand Base -->
+    <polygon points="450,270 485,288 450,295 415,288" fill="#16161e" stroke="#7aa2f7" stroke-width="1"/>
+    <!-- Heavy Duty Metal Column -->
+    <polygon points="446,220 454,220 454,280 446,280" fill="#24283b"/>
+
+    <!-- Screen Frame (Curved Ultrawide Bevel) -->
+    <!-- Coords: TopL(310, 135), TopR(590, 155), BotR(590, 260), BotL(310, 240) -->
+    <polygon points="305,130 595,150 595,265 305,245" fill="#090a0f" stroke="#70a5fd" stroke-width="1.8" rx="4"/>
+    <polygon points="310,135 590,155 590,260 310,240" fill="url(#screenGrad)"/>
+
+    <!-- Ambient Screen Lightbar mounted on top of monitor -->
+    <polygon points="350,130 550,145 550,136 350,121" fill="#1f2335" stroke="#38bdae" stroke-width="0.8"/>
+    <line x1="355" y1="135" x2="545" y2="150" stroke="#70a5fd" stroke-width="2" filter="url(#glowCyan)"/>
+
+    <!-- IntelliJ Window Header Bar -->
+    <polygon points="310,135 590,155 590,166 310,146" fill="#1a1b26"/>
+    <circle cx="320" cy="143" r="2.2" fill="#f7768e"/>
+    <circle cx="327" cy="144" r="2.2" fill="#e0af68"/>
+    <circle cx="334" cy="145" r="2.2" fill="#9ece6a"/>
+    <text x="345" y="146" font-family="'JetBrains Mono', monospace" font-size="5.5px" fill="#7aa2f7" transform="skewY(4.1)">ThanhMilaCoreApplication.java — IntelliJ IDEA</text>
+
+    <!-- IDE Live Code Lines (Skewed in Isometric Perspective) -->
+    <g transform="translate(318, 158) skewY(4.1)">
+      <text x="0" y="8" class="code-font"><tspan class="anno">@SpringBootApplication</tspan></text>
+      <text x="0" y="18" class="code-font"><tspan class="anno">@EnableRabbit</tspan> <tspan class="anno">@EnableCaching</tspan></text>
+      <text x="0" y="28" class="code-font"><tspan class="kw">public class</tspan> <tspan class="fn">ThanhMilaService</tspan> {</text>
+      <text x="12" y="38" class="code-font"><tspan class="anno">@Autowired</tspan> <tspan class="kw">private</tspan> <tspan class="fn">RabbitTemplate</tspan> eventBus;</text>
+      <text x="12" y="48" class="code-font"><tspan class="anno">@Autowired</tspan> <tspan class="kw">private</tspan> <tspan class="fn">RedisCacheManager</tspan> cache;</text>
+      <text x="12" y="58" class="code-font"><tspan class="anno">@Transactional</tspan></text>
+      <text x="12" y="68" class="code-font"><tspan class="kw">public</tspan> <tspan class="fn">ClusterResponse</tspan> <tspan class="fn">dispatchAsync</tspan>(<tspan class="fn">Task</tspan> req) {</text>
+      <text x="24" y="78" class="code-font">eventBus.<tspan class="fn">convertAndSend</tspan>(<tspan class="str">"prod.events"</tspan>, req);</text>
+      <text x="24" y="88" class="code-font"><tspan class="kw">return</tspan> <tspan class="fn">ClusterResponse</tspan>.<tspan class="fn">ok</tspan>(<tspan class="str">"STATUS: 100% HEALTHY"</tspan>);</text>
+      <text x="12" y="98" class="code-font">} <tspan class="cur" fill="#70a5fd">█</tspan></text>
+    </g>
+  </g>
+
+  <!-- ==================== KEYBOARD, MACRO STREAM DECK & MOUSE ==================== -->
+  <g id="peripherals">
+    <!-- Stream Deck Macro Pad (Left of Keyboard) -->
+    <polygon points="325,305 355,312 345,324 315,317" fill="#16161e" stroke="#70a5fd" stroke-width="0.8"/>
+    <!-- 6 Glowing Macro Keys -->
+    <circle cx="328" cy="312" r="2" fill="#38bdae"/>
+    <circle cx="336" cy="314" r="2" fill="#bb9af7"/>
+    <circle cx="344" cy="316" r="2" fill="#f7768e"/>
+    <circle cx="324" cy="317" r="2" fill="#e0af68"/>
+    <circle cx="332" cy="319" r="2" fill="#70a5fd"/>
+    <circle cx="340" cy="321" r="2" fill="#9ece6a"/>
+
+    <!-- Custom 75% Mechanical Keyboard with Coiled Cable -->
+    <!-- Coiled Cable -->
+    <path d="M 450 288 Q 440 282 430 288 Q 420 282 410 288 Q 400 282 390 288" fill="none" stroke="#bb9af7" stroke-width="2"/>
+    <!-- Keyboard Chassis -->
+    <polygon points="380,295 500,320 465,335 345,310" fill="#16161e" stroke="#bb9af7" stroke-width="1.2"/>
+    <polygon points="345,310 465,335 465,340 345,315" fill="#0f0f14"/>
+    <polygon points="465,335 500,320 500,325 465,340" fill="#1a1b26"/>
+    <!-- Keycaps Backlight Grid -->
+    <line x1="370" y1="305" x2="480" y2="328" stroke="#70a5fd" stroke-width="2" opacity="0.9"/>
+    <line x1="360" y1="312" x2="470" y2="335" stroke="#38bdae" stroke-width="2" opacity="0.9"/>
+
+    <!-- Ergonomic Wireless Mouse & RGB Charging Dock -->
+    <polygon points="535,325 560,330 550,342 525,337" fill="#24283b" stroke="#38bdae" stroke-width="1"/>
+    <circle cx="542" cy="333" r="2" fill="#38bdae" class="cur"/>
+  </g>
+
+  <!-- ==================== COFFEE MUG & ENERGY DRINK CAN ==================== -->
+  <g id="refreshments">
+    <!-- Cyber Energy Drink Can (Neon Pink/Cyan) -->
+    <g transform="translate(295, 290)">
+      <ellipse cx="6" cy="6" rx="4" ry="2" fill="#bb9af7" stroke="#f7768e" stroke-width="0.5"/>
+      <rect x="2" y="6" width="8" height="15" fill="#16161e" stroke="#f7768e" stroke-width="0.5"/>
+      <line x1="4" y1="9" x2="8" y2="15" stroke="#38bdae" stroke-width="1"/>
+    </g>
+
+    <!-- Steaming Coffee Cup -->
+    <g id="coffee-cup" transform="translate(325, 280)">
+      <ellipse cx="12" cy="18" rx="9" ry="4.5" fill="#0f0f14"/>
+      <path d="M 3 18 L 3 29 A 9 4.5 0 0 0 21 29 L 21 18 Z" fill="#24283b" stroke="#7aa2f7" stroke-width="0.8"/>
+      <ellipse cx="12" cy="18" rx="9" ry="4.5" fill="#1f2335" stroke="#7aa2f7" stroke-width="0.8"/>
+      <ellipse cx="12" cy="18" rx="7.5" ry="3.5" fill="#5a3d28"/>
+      <path d="M 3 20 C -1 20 -1 27 3 27" fill="none" stroke="#7aa2f7" stroke-width="1.2"/>
+      
+      <!-- Animated Coffee Steam -->
+      <path d="M 10 14 Q 7 7 12 2 Q 15 -3 11 -8" fill="none" stroke="#a9b1d6" stroke-width="1.2" stroke-linecap="round" class="steam-a" filter="url(#glowSteam)"/>
+      <path d="M 15 14 Q 18 7 14 2 Q 11 -3 15 -8" fill="none" stroke="#70a5fd" stroke-width="1.2" stroke-linecap="round" class="steam-b" filter="url(#glowSteam)"/>
+    </g>
+  </g>
+
+  <!-- ==================== THE DEVELOPER & 3D ERGONOMIC SWIVEL CHAIR ==================== -->
+  <g id="dev-coder-group" class="swivel-coder">
+    <!-- 1. 5-STAR METAL CASTER BASE ON FLOOR -->
+    <g id="chair-spider-base" transform="translate(450, 470)">
+      <!-- 5 Wheels -->
+      <circle cx="0" cy="0" r="5" fill="#24283b" stroke="#7aa2f7" stroke-width="1"/>
+      <circle cx="-38" cy="-14" r="4" fill="#13141f"/>
+      <circle cx="38" cy="-14" r="4" fill="#13141f"/>
+      <circle cx="-30" cy="19" r="4" fill="#13141f"/>
+      <circle cx="30" cy="19" r="4" fill="#13141f"/>
+      <circle cx="0" cy="26" r="4" fill="#13141f"/>
+
+      <!-- Star Legs -->
+      <path d="M 0 0 L -38 -14 M 0 0 L 38 -14 M 0 0 L -30 19 M 0 0 L 30 19 M 0 0 L 0 26" stroke="#24283b" stroke-width="4" stroke-linecap="round"/>
+      <path d="M 0 0 L -38 -14 M 0 0 L 38 -14 M 0 0 L -30 19 M 0 0 L 30 19 M 0 0 L 0 26" stroke="#7aa2f7" stroke-width="1.2" stroke-linecap="round"/>
+      
+      <!-- Hydraulic Gas Lift Piston -->
+      <rect x="-5" y="-45" width="10" height="45" rx="3" fill="#0f0f14" stroke="#38bdae" stroke-width="1"/>
+    </g>
+
+    <!-- 2. CHAIR SEAT WITH 4D ARMRESTS -->
+    <g id="chair-cushion">
+      <ellipse cx="450" cy="425" rx="44" ry="18" fill="#161724" stroke="#7aa2f7" stroke-width="1.5"/>
+      <ellipse cx="450" cy="420" rx="40" ry="15" fill="#1f2335" stroke="#38bdae" stroke-width="1"/>
+      <!-- Cyan Stitching Lines -->
+      <path d="M 420 420 Q 450 428 480 420" fill="none" stroke="#38bdae" stroke-width="1.2"/>
+      
+      <!-- Left 4D Armrest -->
+      <path d="M 400 405 L 395 365 L 415 362" stroke="#24283b" stroke-width="4" stroke-linecap="round" fill="none"/>
+      <!-- Right 4D Armrest -->
+      <path d="M 500 405 L 505 365 L 485 362" stroke="#24283b" stroke-width="4" stroke-linecap="round" fill="none"/>
+    </g>
+
+    <!-- 3. DEVELOPER LOWER BODY / LEGS -->
+    <g id="dev-pants">
+      <!-- Dark Cyber Cargo Pants -->
+      <path d="M 422 405 L 400 418 L 402 445 L 428 430 Z" fill="#13141f" stroke="#1f2335" stroke-width="1"/>
+      <path d="M 478 405 L 500 418 L 498 445 L 472 430 Z" fill="#0e0f17" stroke="#1f2335" stroke-width="1"/>
+    </g>
+
+    <!-- 4. CHAIR HIGH BACKREST & HEADREST -->
+    <g id="chair-backrest">
+      <!-- High Ergonomic Back Frame -->
+      <path d="M 412 295 C 405 355 415 410 420 420 L 480 420 C 485 410 495 355 488 295 Z" fill="#161724" stroke="#7aa2f7" stroke-width="1.8"/>
+      <!-- Lumbar Support with Neon Accent -->
+      <rect x="428" y="375" width="44" height="18" rx="5" fill="#0f0f14" stroke="#bb9af7" stroke-width="1"/>
+      <!-- Ergonomic Spine Ribs -->
+      <path d="M 426 315 L 474 315 M 428 340 L 472 340 M 430 365 L 470 365" stroke="#38bdae" stroke-width="1.2" opacity="0.8"/>
+      <!-- Memory Foam Headrest -->
+      <rect x="428" y="250" width="44" height="24" rx="10" fill="#10111a" stroke="#38bdae" stroke-width="1.5"/>
+    </g>
+
+    <!-- 5. DEVELOPER TORSO (TOKYO NIGHT HOODIE) -->
+    <g id="dev-torso">
+      <!-- Oversized Cyber Hoodie -->
+      <path d="M 416 295 Q 450 286 484 295 L 480 400 Q 450 406 420 400 Z" fill="#1f2335" stroke="#7aa2f7" stroke-width="1.2"/>
+      <!-- Spring Framework / Java Icon on Back -->
+      <circle cx="450" cy="340" r="14" fill="#161722" stroke="#38bdae" stroke-width="1.5" filter="url(#glowCyan)"/>
+      <path d="M 444 340 Q 450 332 456 340 Q 450 348 444 340" fill="#38bdae"/>
+      <text x="450" y="365" font-family="'JetBrains Mono', monospace" font-size="6px" font-weight="bold" fill="#70a5fd" text-anchor="middle">SPRING CORE</text>
+    </g>
+
+    <!-- 6. DEVELOPER ARMS & TYPING HANDS -->
+    <g id="dev-arms">
+      <!-- Left Arm reaching to mechanical keyboard -->
+      <path d="M 418 305 L 385 330 L 372 328 L 398 315 Z" fill="#24283b" stroke="#16161e" stroke-width="1"/>
+      <!-- Left Hand typing animation -->
+      <g class="hand-left">
+        <circle cx="372" cy="328" r="5.5" fill="#f5c2a5"/>
+      </g>
+
+      <!-- Right Arm reaching to keyboard / mouse -->
+      <path d="M 482 305 L 512 334 L 500 339 L 474 316 Z" fill="#1f2335" stroke="#16161e" stroke-width="1"/>
+      <!-- Right Hand typing animation -->
+      <g class="hand-right">
+        <circle cx="500" cy="339" r="5.5" fill="#f5c2a5"/>
+      </g>
+    </g>
+
+    <!-- 7. DEVELOPER HEAD & RGB PRO HEADSET -->
+    <g id="dev-head-set">
+      <!-- Neck -->
+      <rect x="442" y="270" width="16" height="15" fill="#e0a890"/>
+
+      <!-- Head / Hair (Back view) -->
+      <ellipse cx="450" cy="265" rx="20" ry="22" fill="#13141f"/>
+      <path d="M 430 265 Q 450 240 470 265 Q 462 280 450 282 Q 438 280 430 265 Z" fill="#1f2335"/>
+
+      <!-- Cyber Headset Headband -->
+      <path d="M 424 266 C 424 238 476 238 476 266" fill="none" stroke="#24283b" stroke-width="4.5" stroke-linecap="round"/>
+      <path d="M 424 266 C 424 238 476 238 476 266" fill="none" stroke="#38bdae" stroke-width="1.8" stroke-linecap="round" filter="url(#glowCyan)"/>
+
+      <!-- RGB Glowing Earpieces (Left & Right) -->
+      <ellipse cx="424" cy="266" rx="5" ry="9" fill="#16161e" stroke="#38bdae" stroke-width="2" class="rgb-anim"/>
+      <ellipse cx="476" cy="266" rx="5" ry="9" fill="#16161e" stroke="#bb9af7" stroke-width="2" class="rgb-anim"/>
+    </g>
+  </g>
+
+  <!-- ==================== TOP BADGE TAG ==================== -->
+  <g transform="translate(20, 20)">
+    <rect x="0" y="0" width="210" height="26" rx="6" fill="#10111a" stroke="#24283b" stroke-width="1.2"/>
+    <circle cx="14" cy="13" r="4" fill="#38bdae" class="cur"/>
+    <text x="26" y="16.5" font-family="'JetBrains Mono', 'Segoe UI', monospace" font-size="9.5px" font-weight="800" fill="#a9b1d6" letter-spacing="0.8">DEV BATTLESTATION 3D</text>
+  </g>
+</svg>
