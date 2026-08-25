@@ -4,7 +4,7 @@
 
 <!-- ─── BENTO ROW 1: 3D City & Tech Ecosystem ─── -->
 <tr>
-<td width="50%" valign="top">
+<td width="500" valign="top">
 
 ### 🧊 3D Contribution City
 
@@ -13,7 +13,7 @@
 </p>
 
 </td>
-<td width="50%" valign="top">
+<td width="500" valign="top">
 
 ### 🛠 Core Tech Stack
 
@@ -26,7 +26,7 @@
 
 <!-- ─── BENTO ROW 2: GitHub Streak & LeetCode Stats ─── -->
 <tr>
-<td width="50%" valign="top">
+<td width="500" valign="top">
 
 ### 🔥 GitHub Streak & Consistency
 
@@ -35,7 +35,7 @@
 </p>
 
 </td>
-<td width="50%" valign="top">
+<td width="500" valign="top">
 
 ### 🧠 Problem Solving & LeetCode
 
@@ -48,7 +48,7 @@
 
 <!-- ─── BENTO ROW 3: Languages & Live Activity ─── -->
 <tr>
-<td width="50%" valign="top">
+<td width="500" valign="top">
 
 ### 📈 Most Used Languages
 
@@ -57,7 +57,7 @@
 </p>
 
 </td>
-<td width="50%" valign="top">
+<td width="500" valign="top">
 
 ### ⚡ Live GitHub Recent Activity
 
