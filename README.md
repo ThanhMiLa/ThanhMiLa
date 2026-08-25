@@ -34,14 +34,6 @@
 ---
 
 
-### 📊 Git Activity Graph
-
-<p align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=ThanhMiLa&theme=tokyonight&bg_color=1a1b26&hide_border=true" width="100%" />
-</p>
-
----
-
 ### 📈 Most Used Languages
 
 <p align="center">
@@ -49,6 +41,22 @@
     src="https://github-stats-extended.vercel.app/api/top-langs/?username=ThanhMiLa&layout=compact&theme=tokyonight&hide_border=true"
     width="100%"
   />
+</p>
+
+---
+
+## 🚀 Featured Projects
+
+<p align="center">
+  <a href="https://github.com/ThanhMiLa/codelearning-platform" target="_blank">
+    <img src="https://github-stats-extended.vercel.app/api/pin/?username=ThanhMiLa&repo=codelearning-platform&theme=tokyonight&hide_border=true" width="100%" alt="CodeLearning Platform" />
+  </a>
+</p>
+
+<p align="center">
+  <a href="https://github.com/ThanhMiLa/argostranslate" target="_blank">
+    <img src="https://github-stats-extended.vercel.app/api/pin/?username=ThanhMiLa&repo=argostranslate&theme=tokyonight&hide_border=true" width="100%" alt="Argos Translate" />
+  </a>
 </p>
 
 ---
@@ -133,3 +141,10 @@
 </td>
 </tr>
 </table>
+
+<br/>
+
+<p align="center">
+  <img src="https://komarev.com/ghpvc/?username=ThanhMiLa&label=Profile%20Views&color=7aa2f7&style=for-the-badge" alt="Profile Views" />
+</p>
+
