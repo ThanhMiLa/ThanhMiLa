@@ -119,6 +119,14 @@
 
 ---
 
+## 🧊 3D Contribution Graph
+
+<p align="center">
+  <img src="./profile-3d-contrib/profile-night-view.svg" width="100%" alt="ThanhMiLa 3D Contribution City" />
+</p>
+
+---
+
 ## 📬 Contact Me
 
 <p>
@@ -141,10 +149,4 @@
 </td>
 </tr>
 </table>
-
-<br/>
-
-<p align="center">
-  <img src="https://komarev.com/ghpvc/?username=ThanhMiLa&label=Profile%20Views&color=7aa2f7&style=for-the-badge" alt="Profile Views" />
-</p>
 
