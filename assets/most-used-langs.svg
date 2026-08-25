@@ -24,7 +24,9 @@
         100% { transform: translateX(500px); opacity: 0; }
       }
       @keyframes pulseGlow {
-        0%, 100% { filter: drop-shadow(0 0 3px #00F2FE) drop-shadow(0 0 8px #70A5FD); }
+        0%, 100% { opacity: 0.85; }
+        50% { opacity: 1; }
+      }
         50% { filter: drop-shadow(0 0 6px #00FF88) drop-shadow(0 0 12px #00F2FE); }
       }
       @keyframes nodeBreathe {

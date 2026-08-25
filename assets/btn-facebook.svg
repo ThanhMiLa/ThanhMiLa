@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="150" height="40" viewBox="0 0 150 40" style="isolation: isolate">
+  <defs>
+    <style><![CDATA[
+      @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@700&family=Outfit:wght@700;800&display=swap');
+      * {
+        font-family: 'Outfit', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      }
+      .btn-text {
+        font-family: 'Outfit', sans-serif;
+        font-weight: 800;
+        font-size: 11px;
+        letter-spacing: 1.2px;
+      }
+    ]]></style>
+
+    <!-- Deep Space Background Gradient -->
+    <linearGradient id="btnBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#111625"/>
+      <stop offset="50%" stop-color="#0a0e18"/>
+      <stop offset="100%" stop-color="#080b12"/>
+    </linearGradient>
+
+    <!-- Glowing Border Gradient -->
+    <linearGradient id="btnBorder" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1877F2" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#1877F2" stop-opacity="0.4"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Button Surface -->
+  <rect x="1.5" y="1.5" width="147" height="37" rx="18.5" fill="url(#btnBg)" stroke="url(#btnBorder)" stroke-width="1.4"/>
+
+  <!-- Subtle Inner Glow Ring -->
+  <rect x="3" y="3" width="144" height="34" rx="17" fill="none" stroke="#1877F2" stroke-width="0.6" stroke-opacity="0.2"/>
+
+  <!-- Brand Icon -->
+  <g transform="translate(8, 4)">
+    <path d="M16 8.5C11.86 8.5 8.5 11.86 8.5 16c0 3.74 2.74 6.84 6.33 7.4v-5.23h-1.9v-2.17h1.9v-1.65c0-1.87 1.11-2.9 2.82-2.9.82 0 1.68.15 1.68.15v1.85h-.95c-.93 0-1.22.58-1.22 1.17v1.38h2.08l-.33 2.17h-1.75V23.4c3.59-.56 6.33-3.66 6.33-7.4 0-4.14-3.36-7.5-7.5-7.5z" fill="#1877F2"/>
+  </g>
+
+  <!-- Button Text -->
+  <text x="48" y="24.5" fill="#f0f6fc" class="btn-text">FACEBOOK</text>
+
+  <!-- Mini Dot Indicator -->
+  <circle cx="135" cy="20" r="2.2" fill="#1877F2"/>
+</svg>

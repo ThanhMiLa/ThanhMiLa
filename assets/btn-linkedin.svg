@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="150" height="40" viewBox="0 0 150 40" style="isolation: isolate">
+  <defs>
+    <style><![CDATA[
+      @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@700&family=Outfit:wght@700;800&display=swap');
+      * {
+        font-family: 'Outfit', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      }
+      .btn-text {
+        font-family: 'Outfit', sans-serif;
+        font-weight: 800;
+        font-size: 11px;
+        letter-spacing: 1.2px;
+      }
+    ]]></style>
+
+    <!-- Deep Space Background Gradient -->
+    <linearGradient id="btnBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#111625"/>
+      <stop offset="50%" stop-color="#0a0e18"/>
+      <stop offset="100%" stop-color="#080b12"/>
+    </linearGradient>
+
+    <!-- Glowing Border Gradient -->
+    <linearGradient id="btnBorder" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0A66C2" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#0A66C2" stop-opacity="0.4"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Button Surface -->
+  <rect x="1.5" y="1.5" width="147" height="37" rx="18.5" fill="url(#btnBg)" stroke="url(#btnBorder)" stroke-width="1.4"/>
+
+  <!-- Subtle Inner Glow Ring -->
+  <rect x="3" y="3" width="144" height="34" rx="17" fill="none" stroke="#0A66C2" stroke-width="0.6" stroke-opacity="0.2"/>
+
+  <!-- Brand Icon -->
+  <g transform="translate(8, 4)">
+    <path d="M10.2 12.8h2.6v8.4h-2.6v-8.4zm1.3-4.3c.8 0 1.5.7 1.5 1.5s-.7 1.5-1.5 1.5-1.5-.7-1.5-1.5.7-1.5 1.5-1.5zm3.7 4.3h2.5v1.2h.1c.4-.7 1.2-1.4 2.5-1.4 2.7 0 3.2 1.8 3.2 4.1v4.5h-2.6v-4c0-.9 0-2.2-1.3-2.2-1.3 0-1.5 1-1.5 2.1v4.1h-2.6v-8.4z" fill="#0A66C2"/>
+  </g>
+
+  <!-- Button Text -->
+  <text x="48" y="24.5" fill="#f0f6fc" class="btn-text">LINKEDIN</text>
+
+  <!-- Mini Dot Indicator -->
+  <circle cx="135" cy="20" r="2.2" fill="#0A66C2"/>
+</svg>

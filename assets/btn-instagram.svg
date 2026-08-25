@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="150" height="40" viewBox="0 0 150 40" style="isolation: isolate">
+  <defs>
+    <style><![CDATA[
+      @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@700&family=Outfit:wght@700;800&display=swap');
+      * {
+        font-family: 'Outfit', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      }
+      .btn-text {
+        font-family: 'Outfit', sans-serif;
+        font-weight: 800;
+        font-size: 11px;
+        letter-spacing: 1.2px;
+      }
+    ]]></style>
+
+    <!-- Deep Space Background Gradient -->
+    <linearGradient id="btnBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#111625"/>
+      <stop offset="50%" stop-color="#0a0e18"/>
+      <stop offset="100%" stop-color="#080b12"/>
+    </linearGradient>
+
+    <!-- Glowing Border Gradient -->
+    <linearGradient id="btnBorder" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E4405F" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#E4405F" stop-opacity="0.4"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Button Surface -->
+  <rect x="1.5" y="1.5" width="147" height="37" rx="18.5" fill="url(#btnBg)" stroke="url(#btnBorder)" stroke-width="1.4"/>
+
+  <!-- Subtle Inner Glow Ring -->
+  <rect x="3" y="3" width="144" height="34" rx="17" fill="none" stroke="#E4405F" stroke-width="0.6" stroke-opacity="0.2"/>
+
+  <!-- Brand Icon -->
+  <g transform="translate(8, 4)">
+    <path d="M16 11.2c-2.65 0-4.8 2.15-4.8 4.8 0 2.65 2.15 4.8 4.8 4.8 2.65 0 4.8-2.15 4.8-4.8 0-2.65-2.15-4.8-4.8-4.8zm0 7.9c-1.71 0-3.1-1.39-3.1-3.1s1.39-3.1 3.1-3.1 3.1 1.39 3.1 3.1-1.39 3.1-3.1 3.1zm5.3-8.2c0 .61-.49 1.1-1.1 1.1s-1.1-.49-1.1-1.1.49-1.1 1.1-1.1 1.1.49 1.1 1.1zm2.7 2.4c-.1-1.5-.4-2.8-1.5-3.9-1.1-1.1-2.4-1.4-3.9-1.5-1.5-.1-6.1-.1-7.6 0-1.5.1-2.8.4-3.9 1.5-1.1 1.1-1.4 2.4-1.5 3.9-.1 1.5-.1 6.1 0 7.6.1 1.5.4 2.8 1.5 3.9 1.1 1.1 2.4 1.4 3.9 1.5 1.5.1 6.1.1 7.6 0 1.5-.1 2.8-.4 3.9-1.5 1.1-1.1 1.4-2.4 1.5-3.9.1-1.5.1-6.1 0-7.6zm-2.1 9.4c-.3.8-.9 1.4-1.7 1.7-1.2.5-4.1.4-6.2.4s-5 .1-6.2-.4c-.8-.3-1.4-.9-1.7-1.7-.5-1.2-.4-4.1-.4-6.2s-.1-5 .4-6.2c.3-.8.9-1.4 1.7-1.7 1.2-.5 4.1-.4 6.2-.4s5-.1 6.2.4c.8.3 1.4.9 1.7 1.7.5 1.2.4 4.1.4 6.2s.1 5-.4 6.2z" fill="#E4405F"/>
+  </g>
+
+  <!-- Button Text -->
+  <text x="48" y="24.5" fill="#f0f6fc" class="btn-text">INSTAGRAM</text>
+
+  <!-- Mini Dot Indicator -->
+  <circle cx="135" cy="20" r="2.2" fill="#E4405F"/>
+</svg>

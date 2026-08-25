@@ -19,6 +19,8 @@
       }
       @keyframes pulseMeter {
         0%, 100% { transform: scale(1); opacity: 0.9; }
+        50% { transform: scale(1.04); opacity: 1; }
+      }
         50% { transform: scale(1.03); opacity: 1; filter: drop-shadow(0 0 10px #FFA116); }
       }
       @keyframes shimmerBar {

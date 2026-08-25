@@ -13,7 +13,9 @@
 
       /* Glow & Entrance Animations */
       @keyframes pulseFlame {
-        0%, 100% { transform: scale(1); filter: drop-shadow(0 0 4px #00F2FE) drop-shadow(0 0 10px #70A5FD); }
+        0%, 100% { transform: scale(1); opacity: 0.9; }
+        50% { transform: scale(1.1); opacity: 1; }
+      }
         50% { transform: scale(1.12); filter: drop-shadow(0 0 8px #00FF88) drop-shadow(0 0 16px #00F2FE); }
       }
       @keyframes orbitParticle {
