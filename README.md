@@ -1,13 +1,6 @@
-<table width="100%">
+<img src="./assets/banner-animated.svg" width="100%" alt="ThanhMiLa Animated Cyber Backend Banner" />
 
-<!-- ════════════════════════════════════════════════════════════ -->
-<!--   BENTO HERO: DYNAMIC ANIMATED CYBER BANNER                  -->
-<!-- ════════════════════════════════════════════════════════════ -->
-<tr>
-<td colspan="2">
-  <img src="./assets/banner-animated.svg" width="100%" alt="ThanhMiLa Animated Cyber Backend Banner">
-</td>
-</tr>
+<table width="100%">
 
 <!-- ─── BENTO ROW 1: 3D City & Tech Ecosystem ─── -->
 <tr>
