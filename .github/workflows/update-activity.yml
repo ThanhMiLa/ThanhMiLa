@@ -50,6 +50,10 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           USERNAME: ${{ github.repository_owner }}
 
+      - name: 🔄 Bust GitHub Camo Image Cache in README
+        run: |
+          python .github/scripts/bust_cache.py
+
       - name: 🚀 Commit & Push All Updated Assets
         run: |
           git config --local user.email "action@github.com"
