@@ -1,8 +1,8 @@
-name: Update Live GitHub Activity Feed
+name: ⚡ Sync GitHub Profile Stats & Activity
 
 on:
   schedule:
-    # Run every 6 hours
+    # Tự động cập nhật mỗi 6 tiếng một lần
     - cron: '0 */6 * * *'
   workflow_dispatch:
   push:
@@ -10,13 +10,14 @@ on:
       - main
     paths-ignore:
       - 'README.md'
-      - 'assets/recent-activity.svg'
+      - 'assets/**'
+      - 'profile-3d-contrib/**'
 
 permissions:
   contents: write
 
 jobs:
-  update-activity:
+  update-profile-stats:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
@@ -27,16 +28,31 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Fetch and Update GitHub Activity
+      - name: ⚡ Fetch and Update Live GitHub Activity
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           python .github/scripts/update_activity.py
 
-      - name: Commit & Push Changes
+      - name: 🔥 Calculate & Update GitHub Streak Stats
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          python .github/scripts/update_streak.py
+
+      - name: 🧠 Fetch and Update LeetCode Stats
+        run: |
+          python .github/scripts/update_leetcode.py
+
+      - name: 🧊 Generate 3D Contribution City SVGs
+        uses: yoshi389111/github-profile-3d-contrib@0.7.1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          USERNAME: ${{ github.repository_owner }}
+
+      - name: 🚀 Commit & Push All Updated Assets
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add assets/recent-activity.svg README.md
-          git diff --quiet && git diff --staged --quiet || (git commit -m "⚡ chore(activity): update live GitHub activity feed [skip ci]" && git push)
-
+          git add assets/ profile-3d-contrib/ README.md
+          git diff --quiet && git diff --staged --quiet || (git commit -m "⚡ chore(profile): sync 3D city, streak stats, LeetCode & activity feed [skip ci]" && git push)
