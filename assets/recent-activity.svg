@@ -112,7 +112,7 @@
       <!-- Commit Message -->
       <text x="96" y="18.5" fill="#f0f6fc" font-size="10px" font-weight="600">feat: enhance URL handling with regex s...</text>
       <!-- Right Tag (Repo & Time) -->
-      <text x="452" y="18.5" text-anchor="end" fill="#7AA2F7" font-size="9px" font-weight="600" class="mono-text">SpringLens • 5m ago</text>
+      <text x="452" y="18.5" text-anchor="end" fill="#7AA2F7" font-size="9px" font-weight="600" class="mono-text">SpringLens • 4h ago</text>
     </g>
     <!-- Activity Row 2 -->
     <g transform="translate(18, 82)">
@@ -125,7 +125,7 @@
       <!-- Commit Message -->
       <text x="96" y="18.5" fill="#f0f6fc" font-size="10px" font-weight="600">feat: add soft wrap toggle functionalit...</text>
       <!-- Right Tag (Repo & Time) -->
-      <text x="452" y="18.5" text-anchor="end" fill="#7AA2F7" font-size="9px" font-weight="600" class="mono-text">SpringLens • 18m ago</text>
+      <text x="452" y="18.5" text-anchor="end" fill="#7AA2F7" font-size="9px" font-weight="600" class="mono-text">SpringLens • 4h ago</text>
     </g>
     <!-- Activity Row 3 -->
     <g transform="translate(18, 118)">
@@ -138,7 +138,7 @@
       <!-- Commit Message -->
       <text x="96" y="18.5" fill="#f0f6fc" font-size="10px" font-weight="600">feat: implement gateway configuration h...</text>
       <!-- Right Tag (Repo & Time) -->
-      <text x="452" y="18.5" text-anchor="end" fill="#7AA2F7" font-size="9px" font-weight="600" class="mono-text">SpringLens • 10h ago</text>
+      <text x="452" y="18.5" text-anchor="end" fill="#7AA2F7" font-size="9px" font-weight="600" class="mono-text">SpringLens • 14h ago</text>
     </g>
     <!-- Activity Row 4 -->
     <g transform="translate(18, 154)">
@@ -151,7 +151,7 @@
       <!-- Commit Message -->
       <text x="96" y="18.5" fill="#f0f6fc" font-size="10px" font-weight="600">feat: add functionality to apply authen...</text>
       <!-- Right Tag (Repo & Time) -->
-      <text x="452" y="18.5" text-anchor="end" fill="#7AA2F7" font-size="9px" font-weight="600" class="mono-text">SpringLens • 9h ago</text>
+      <text x="452" y="18.5" text-anchor="end" fill="#7AA2F7" font-size="9px" font-weight="600" class="mono-text">SpringLens • 14h ago</text>
     </g>
 
     <!-- Cyber Outer Laser Glowing Border -->
