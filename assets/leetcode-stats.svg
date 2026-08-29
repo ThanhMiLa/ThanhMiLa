@@ -158,7 +158,7 @@
       <g transform="translate(440, 2)">
         <rect x="-106" y="0" width="106" height="20" rx="10" fill="rgba(122, 162, 247, 0.08)" stroke="rgba(122, 162, 247, 0.3)" stroke-width="0.9"/>
         <text x="-53.0" y="14" text-anchor="middle" fill="#A9B1D6" font-size="10px" font-weight="700" letter-spacing="0.5" class="mono-text">
-          #2,306,326
+          #2,307,544
         </text>
       </g>
     </g>
@@ -223,7 +223,7 @@
       <text x="14" y="15" fill="#FFFFFF" font-size="12.5px" font-weight="700">Medium</text>
       <!-- Count Ratio -->
       <text x="306" y="15" text-anchor="end" fill="#C0CAF5" font-size="11px" font-weight="600" class="mono-text">
-        <tspan fill="#FFB800" font-weight="700">3</tspan> / 2105
+        <tspan fill="#FFB800" font-weight="700">3</tspan> / 2107
       </text>
       <!-- Progress Bar Track -->
       <rect x="14" y="22" width="292" height="6" rx="3" fill="#151828"/>
@@ -240,7 +240,7 @@
       <text x="14" y="15" fill="#FFFFFF" font-size="12.5px" font-weight="700">Hard</text>
       <!-- Count Ratio -->
       <text x="306" y="15" text-anchor="end" fill="#C0CAF5" font-size="11px" font-weight="600" class="mono-text">
-        <tspan fill="#F7768E" font-weight="700">1</tspan> / 967
+        <tspan fill="#F7768E" font-weight="700">1</tspan> / 969
       </text>
       <!-- Progress Bar Track -->
       <rect x="14" y="22" width="292" height="6" rx="3" fill="#151828"/>

@@ -108,11 +108,11 @@
       <text x="16" y="19.5" font-size="13px" text-anchor="middle">✨</text>
       <!-- SHA Pill -->
       <rect x="32" y="5.5" width="56" height="18" rx="4" fill="rgba(0, 242, 254, 0.1)" stroke="rgba(0, 242, 254, 0.35)" stroke-width="0.8"/>
-      <text x="60" y="18" text-anchor="middle" fill="#7DCFFF" font-size="9.5px" font-weight="700" class="mono-text">ff88dd5</text>
+      <text x="60" y="18" text-anchor="middle" fill="#7DCFFF" font-size="9.5px" font-weight="700" class="mono-text">a98ed43</text>
       <!-- Commit Message -->
-      <text x="96" y="18.5" fill="#f0f6fc" font-size="10px" font-weight="600">feat: enhance EndpointDetailPanel and E...</text>
+      <text x="96" y="18.5" fill="#f0f6fc" font-size="10px" font-weight="600">feat: enhance URL handling with regex s...</text>
       <!-- Right Tag (Repo & Time) -->
-      <text x="452" y="18.5" text-anchor="end" fill="#7AA2F7" font-size="9px" font-weight="600" class="mono-text">SpringLens • 2d ago</text>
+      <text x="452" y="18.5" text-anchor="end" fill="#7AA2F7" font-size="9px" font-weight="600" class="mono-text">SpringLens • 5m ago</text>
     </g>
     <!-- Activity Row 2 -->
     <g transform="translate(18, 82)">
@@ -121,11 +121,11 @@
       <text x="16" y="19.5" font-size="13px" text-anchor="middle">✨</text>
       <!-- SHA Pill -->
       <rect x="32" y="5.5" width="56" height="18" rx="4" fill="rgba(0, 242, 254, 0.1)" stroke="rgba(0, 242, 254, 0.35)" stroke-width="0.8"/>
-      <text x="60" y="18" text-anchor="middle" fill="#7DCFFF" font-size="9.5px" font-weight="700" class="mono-text">935e247</text>
+      <text x="60" y="18" text-anchor="middle" fill="#7DCFFF" font-size="9.5px" font-weight="700" class="mono-text">99b02d7</text>
       <!-- Commit Message -->
-      <text x="96" y="18.5" fill="#f0f6fc" font-size="10px" font-weight="600">feat: enhance InMemoryCookieJar for RFC...</text>
+      <text x="96" y="18.5" fill="#f0f6fc" font-size="10px" font-weight="600">feat: add soft wrap toggle functionalit...</text>
       <!-- Right Tag (Repo & Time) -->
-      <text x="452" y="18.5" text-anchor="end" fill="#7AA2F7" font-size="9px" font-weight="600" class="mono-text">SpringLens • 2d ago</text>
+      <text x="452" y="18.5" text-anchor="end" fill="#7AA2F7" font-size="9px" font-weight="600" class="mono-text">SpringLens • 18m ago</text>
     </g>
     <!-- Activity Row 3 -->
     <g transform="translate(18, 118)">
@@ -134,24 +134,24 @@
       <text x="16" y="19.5" font-size="13px" text-anchor="middle">✨</text>
       <!-- SHA Pill -->
       <rect x="32" y="5.5" width="56" height="18" rx="4" fill="rgba(0, 242, 254, 0.1)" stroke="rgba(0, 242, 254, 0.35)" stroke-width="0.8"/>
-      <text x="60" y="18" text-anchor="middle" fill="#7DCFFF" font-size="9.5px" font-weight="700" class="mono-text">ffb705a</text>
+      <text x="60" y="18" text-anchor="middle" fill="#7DCFFF" font-size="9.5px" font-weight="700" class="mono-text">cc4cdee</text>
       <!-- Commit Message -->
-      <text x="96" y="18.5" fill="#f0f6fc" font-size="10px" font-weight="600">feat: enhance Send button appearance wi...</text>
+      <text x="96" y="18.5" fill="#f0f6fc" font-size="10px" font-weight="600">feat: implement gateway configuration h...</text>
       <!-- Right Tag (Repo & Time) -->
-      <text x="452" y="18.5" text-anchor="end" fill="#7AA2F7" font-size="9px" font-weight="600" class="mono-text">SpringLens • 1d ago</text>
+      <text x="452" y="18.5" text-anchor="end" fill="#7AA2F7" font-size="9px" font-weight="600" class="mono-text">SpringLens • 10h ago</text>
     </g>
     <!-- Activity Row 4 -->
     <g transform="translate(18, 154)">
       <rect x="0" y="0" width="464" height="29" rx="7" fill="rgba(18, 23, 38, 0.7)" stroke="rgba(122, 162, 247, 0.16)" stroke-width="0.8"/>
       <!-- Icon -->
-      <text x="16" y="19.5" font-size="13px" text-anchor="middle">🐛</text>
+      <text x="16" y="19.5" font-size="13px" text-anchor="middle">✨</text>
       <!-- SHA Pill -->
       <rect x="32" y="5.5" width="56" height="18" rx="4" fill="rgba(0, 242, 254, 0.1)" stroke="rgba(0, 242, 254, 0.35)" stroke-width="0.8"/>
-      <text x="60" y="18" text-anchor="middle" fill="#7DCFFF" font-size="9.5px" font-weight="700" class="mono-text">b0162a1</text>
+      <text x="60" y="18" text-anchor="middle" fill="#7DCFFF" font-size="9.5px" font-weight="700" class="mono-text">bb3c2b1</text>
       <!-- Commit Message -->
-      <text x="96" y="18.5" fill="#f0f6fc" font-size="10px" font-weight="600">fix(security): prevent empty token exce...</text>
+      <text x="96" y="18.5" fill="#f0f6fc" font-size="10px" font-weight="600">feat: add functionality to apply authen...</text>
       <!-- Right Tag (Repo & Time) -->
-      <text x="452" y="18.5" text-anchor="end" fill="#7AA2F7" font-size="9px" font-weight="600" class="mono-text">CodeLearning • 1d ago</text>
+      <text x="452" y="18.5" text-anchor="end" fill="#7AA2F7" font-size="9px" font-weight="600" class="mono-text">SpringLens • 9h ago</text>
     </g>
 
     <!-- Cyber Outer Laser Glowing Border -->
