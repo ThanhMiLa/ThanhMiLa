@@ -206,7 +206,7 @@
       <text x="14" y="15" fill="#FFFFFF" font-size="12.5px" font-weight="700">Easy</text>
       <!-- Count Ratio -->
       <text x="306" y="15" text-anchor="end" fill="#C0CAF5" font-size="11px" font-weight="600" class="mono-text">
-        <tspan fill="#00FF88" font-weight="700">59</tspan> / 961
+        <tspan fill="#00FF88" font-weight="700">59</tspan> / 962
       </text>
       <!-- Progress Bar Track -->
       <rect x="14" y="22" width="292" height="6" rx="3" fill="#151828"/>
@@ -223,7 +223,7 @@
       <text x="14" y="15" fill="#FFFFFF" font-size="12.5px" font-weight="700">Medium</text>
       <!-- Count Ratio -->
       <text x="306" y="15" text-anchor="end" fill="#C0CAF5" font-size="11px" font-weight="600" class="mono-text">
-        <tspan fill="#FFB800" font-weight="700">3</tspan> / 2107
+        <tspan fill="#FFB800" font-weight="700">3</tspan> / 2109
       </text>
       <!-- Progress Bar Track -->
       <rect x="14" y="22" width="292" height="6" rx="3" fill="#151828"/>
@@ -240,7 +240,7 @@
       <text x="14" y="15" fill="#FFFFFF" font-size="12.5px" font-weight="700">Hard</text>
       <!-- Count Ratio -->
       <text x="306" y="15" text-anchor="end" fill="#C0CAF5" font-size="11px" font-weight="600" class="mono-text">
-        <tspan fill="#F7768E" font-weight="700">1</tspan> / 969
+        <tspan fill="#F7768E" font-weight="700">1</tspan> / 970
       </text>
       <!-- Progress Bar Track -->
       <rect x="14" y="22" width="292" height="6" rx="3" fill="#151828"/>
