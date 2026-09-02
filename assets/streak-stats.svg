@@ -171,7 +171,7 @@
 
       <!-- Big Metric Number -->
       <text x="0" y="78" text-anchor="middle" fill="url(#cyanBlueGrad)" font-size="28px" font-weight="900" letter-spacing="0.5" filter="url(#neonGlow)">
-        1,293
+        1,294
       </text>
 
       <!-- Label -->
@@ -212,7 +212,7 @@
 
       <!-- Big Streak Number -->
       <text x="0" y="67" text-anchor="middle" fill="#FFFFFF" font-size="26px" font-weight="900" letter-spacing="0.5" filter="url(#neonGlow)" class="stat-num-center">
-        9
+        10
       </text>
 
       <!-- Current Streak Badge Pill -->
@@ -226,7 +226,7 @@
       <!-- Range Pill -->
       <rect x="-60.0" y="132" width="120" height="22" rx="11" fill="rgba(0, 242, 254, 0.08)" stroke="rgba(0, 242, 254, 0.35)" stroke-width="0.9"/>
       <text x="0" y="146.5" text-anchor="middle" fill="#7DCFFF" font-size="9px" font-weight="600" class="mono-text">
-        Aug 24 - Sep 1
+        Aug 24 - Sep 2
       </text>
     </g>
 
