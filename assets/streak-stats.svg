@@ -171,7 +171,7 @@
 
       <!-- Big Metric Number -->
       <text x="0" y="78" text-anchor="middle" fill="url(#cyanBlueGrad)" font-size="28px" font-weight="900" letter-spacing="0.5" filter="url(#neonGlow)">
-        1,330
+        1,332
       </text>
 
       <!-- Label -->
@@ -180,7 +180,7 @@
       </text>
 
       <!-- Range Pill -->
-      <rect x="-62" y="132" width="124" height="22" rx="11" fill="rgba(56, 189, 174, 0.08)" stroke="rgba(56, 189, 174, 0.35)" stroke-width="0.9"/>
+      <rect x="-62.0" y="132" width="124" height="22" rx="11" fill="rgba(56, 189, 174, 0.08)" stroke="rgba(56, 189, 174, 0.35)" stroke-width="0.9"/>
       <text x="0" y="146.5" text-anchor="middle" fill="#73DAC6" font-size="8px" font-weight="600" letter-spacing="-0.2" class="mono-text">
         Jan 7, 2025 - Present
       </text>
@@ -224,7 +224,7 @@
       </g>
 
       <!-- Range Pill -->
-      <rect x="-62" y="132" width="124" height="22" rx="11" fill="rgba(0, 242, 254, 0.08)" stroke="rgba(0, 242, 254, 0.35)" stroke-width="0.9"/>
+      <rect x="-62.0" y="132" width="124" height="22" rx="11" fill="rgba(0, 242, 254, 0.08)" stroke="rgba(0, 242, 254, 0.35)" stroke-width="0.9"/>
       <text x="0" y="146.5" text-anchor="middle" fill="#7DCFFF" font-size="9px" font-weight="600" letter-spacing="0.2" class="mono-text">
         Aug 24 - Sep 3
       </text>
@@ -252,7 +252,7 @@
       </text>
 
       <!-- Range Pill -->
-      <rect x="-62" y="132" width="124" height="22" rx="11" fill="rgba(187, 154, 247, 0.08)" stroke="rgba(187, 154, 247, 0.35)" stroke-width="0.9"/>
+      <rect x="-62.0" y="132" width="124" height="22" rx="11" fill="rgba(187, 154, 247, 0.08)" stroke="rgba(187, 154, 247, 0.35)" stroke-width="0.9"/>
       <text x="0" y="146.5" text-anchor="middle" fill="#C0CAF5" font-size="9px" font-weight="600" letter-spacing="0.2" class="mono-text">
         Apr 27 - Jun 12
       </text>
