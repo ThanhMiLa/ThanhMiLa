@@ -1,4 +1,4 @@
-<img src="./assets/banner-animated.svg" width="100%" alt="ThanhMiLa Animated Cyber Backend Banner" />
+<img src="./assets/banner-animated.svg" width="100%" alt="ThanhMiLa Cyber Backend Banner" />
 
 <table width="100%">
 
@@ -93,4 +93,3 @@
 </tr>
 
 </table>
-

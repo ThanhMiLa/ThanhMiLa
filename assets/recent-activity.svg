@@ -1,29 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 200" width="100%" height="100%" style="isolation: isolate">
   <defs>
-    <!-- Fonts & Animations -->
+    <!-- System fonts keep this card self-contained. -->
     <style><![CDATA[
-      @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@500;700&family=Outfit:wght@600;700;800;900&display=swap');
       * {
         font-family: 'Outfit', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
       }
       .mono-text {
         font-family: 'Fira Code', ui-monospace, 'SF Mono', monospace;
-      }
-      @keyframes borderGaze {
-        0%, 100% { stroke: #00F2FE; }
-        33% { stroke: #70A5FD; }
-        66% { stroke: #BB9AF7; }
-      }
-      @keyframes livePulse {
-        0%, 100% { opacity: 1; transform: scale(1); }
-        50% { opacity: 0.35; transform: scale(0.85); }
-      }
-      .laser-border {
-        animation: borderGaze 9s ease-in-out infinite;
-      }
-      .live-dot {
-        animation: livePulse 2s ease-in-out infinite;
-        transform-origin: 405px 25px;
       }
     ]]></style>
 

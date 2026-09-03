@@ -7,10 +7,8 @@
   preserveAspectRatio="xMidYMid meet"
 >
   <defs>
-    <!-- Modern Fonts and Animations in CDATA to guarantee valid XML -->
+    <!-- System fonts keep the banner self-contained and fast to render. -->
     <style><![CDATA[
-      @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600;700&family=Outfit:wght@800;900&display=swap');
-
       .main-title {
         font-family: 'Outfit', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
         font-weight: 900;
@@ -36,61 +34,6 @@
         font-weight: 600;
       }
 
-      /* Hardware Accelerated 2D Floating Animations */
-      @keyframes floatJavaAnim {
-        0%, 100% { transform: translate(0px, 0px) rotate(0deg); }
-        25% { transform: translate(14px, -18px) rotate(3deg); }
-        50% { transform: translate(22px, -8px) rotate(0deg); }
-        75% { transform: translate(8px, 12px) rotate(-3deg); }
-      }
-      @keyframes floatFptAnim {
-        0%, 100% { transform: translate(0px, 0px) rotate(0deg); }
-        25% { transform: translate(-14px, 18px) rotate(-3deg); }
-        50% { transform: translate(-22px, 8px) rotate(0deg); }
-        75% { transform: translate(-8px, -12px) rotate(3deg); }
-      }
-      @keyframes floatBackendAnim {
-        0%, 100% { transform: translate(0px, 0px) rotate(0deg); }
-        25% { transform: translate(16px, -16px) rotate(3deg); }
-        50% { transform: translate(24px, -6px) rotate(0deg); }
-        75% { transform: translate(8px, 14px) rotate(-3deg); }
-      }
-      @keyframes floatDevopsAnim {
-        0%, 100% { transform: translate(0px, 0px) rotate(0deg); }
-        25% { transform: translate(-16px, -14px) rotate(-3deg); }
-        50% { transform: translate(-24px, 4px) rotate(0deg); }
-        75% { transform: translate(-8px, 16px) rotate(3deg); }
-      }
-
-      @keyframes floatLeftIcon {
-        0%, 100% { transform: translate(0px, 0px); }
-        25% { transform: translate(6px, -18px); }
-        50% { transform: translate(12px, 0px); }
-        75% { transform: translate(6px, 18px); }
-      }
-      @keyframes floatRightIcon {
-        0%, 100% { transform: translate(0px, 0px); }
-        25% { transform: translate(-6px, 18px); }
-        50% { transform: translate(-12px, 0px); }
-        75% { transform: translate(-6px, -18px); }
-      }
-
-      @keyframes twinkle {
-        0%, 100% { opacity: 0.3; transform: scale(0.8); }
-        50% { opacity: 1; transform: scale(1.2); }
-      }
-
-      .float-java { animation: floatJavaAnim 4.2s ease-in-out infinite; }
-      .float-fpt { animation: floatFptAnim 4.6s ease-in-out infinite; }
-      .float-backend { animation: floatBackendAnim 4.8s ease-in-out infinite; }
-      .float-devops { animation: floatDevopsAnim 4.4s ease-in-out infinite; }
-      .float-icon-left { animation: floatLeftIcon 3.8s ease-in-out infinite; }
-      .float-icon-right { animation: floatRightIcon 3.8s ease-in-out infinite; }
-
-      .star-1 { animation: twinkle 3s ease-in-out infinite; transform-origin: 230px 55px; }
-      .star-2 { animation: twinkle 4s ease-in-out infinite 1s; transform-origin: 720px 80px; }
-      .star-3 { animation: twinkle 3.5s ease-in-out infinite 2s; transform-origin: 240px 240px; }
-      .star-4 { animation: twinkle 4.5s ease-in-out infinite 1.5s; transform-origin: 690px 235px; }
     ]]></style>
 
     <!-- Background Gradients -->
@@ -285,8 +228,7 @@
     </g>
   </g>
 
-  <!-- ==================== DUAL LASER RACING SNAKE BORDER ==================== -->
-  <!-- Perimeter = 2 * (948 + 288) ≈ 2472 px -->
+  <!-- ==================== DUAL LASER RACING BORDER ==================== -->
 
   <!-- Snake 1: Cyan-Green-Purple Clockwise Laser -->
   <rect x="6" y="6" width="948" height="288" rx="14"
