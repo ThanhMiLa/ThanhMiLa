@@ -1,12 +1,29 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 200" width="100%" height="100%" style="isolation: isolate">
   <defs>
-    <!-- System fonts keep this card self-contained. -->
+    <!-- Fonts & Animations -->
     <style><![CDATA[
+      @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@500;700&family=Outfit:wght@600;700;800;900&display=swap');
       * {
         font-family: 'Outfit', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
       }
       .mono-text {
         font-family: 'Fira Code', ui-monospace, 'SF Mono', monospace;
+      }
+      @keyframes borderGaze {
+        0%, 100% { stroke: #00F2FE; }
+        33% { stroke: #70A5FD; }
+        66% { stroke: #BB9AF7; }
+      }
+      @keyframes livePulse {
+        0%, 100% { opacity: 1; transform: scale(1); }
+        50% { opacity: 0.35; transform: scale(0.85); }
+      }
+      .laser-border {
+        animation: borderGaze 9s ease-in-out infinite;
+      }
+      .live-dot {
+        animation: livePulse 2s ease-in-out infinite;
+        transform-origin: 405px 25px;
       }
     ]]></style>
 
@@ -95,7 +112,7 @@
       <!-- Commit Message -->
       <text x="96" y="18.5" fill="#f0f6fc" font-size="10px" font-weight="600">feat(ui): support absolute URLs for man...</text>
       <!-- Right Tag (Repo & Time) -->
-      <text x="452" y="18.5" text-anchor="end" fill="#7AA2F7" font-size="9px" font-weight="600" class="mono-text">SpringLens • 10h ago</text>
+      <text x="452" y="18.5" text-anchor="end" fill="#7AA2F7" font-size="9px" font-weight="600" class="mono-text">SpringLens • 13h ago</text>
     </g>
     <!-- Activity Row 2 -->
     <g transform="translate(18, 82)">
