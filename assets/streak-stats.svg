@@ -171,7 +171,7 @@
 
       <!-- Big Metric Number -->
       <text x="0" y="78" text-anchor="middle" fill="url(#cyanBlueGrad)" font-size="28px" font-weight="900" letter-spacing="0.5" filter="url(#neonGlow)">
-        1,318
+        1,330
       </text>
 
       <!-- Label -->
