@@ -13,7 +13,8 @@ def bust_readme_cache():
         "profile-3d-contrib/profile-night-view.svg",
         "assets/streak-stats.svg",
         "assets/leetcode-stats.svg",
-        "assets/recent-activity.svg"
+        "assets/recent-activity.svg",
+        "assets/most-used-langs.svg"
     ]
 
     for card in dynamic_cards:

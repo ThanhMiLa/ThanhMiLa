@@ -40,6 +40,12 @@ jobs:
         run: |
           python .github/scripts/update_streak.py
 
+      - name: 📈 Fetch and Update Most Used Languages
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          python .github/scripts/update_langs.py
+
       - name: 🧠 Fetch and Update LeetCode Stats
         run: |
           python .github/scripts/update_leetcode.py
@@ -59,4 +65,4 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add assets/ profile-3d-contrib/ README.md
-          git diff --quiet && git diff --staged --quiet || (git commit -m "⚡ chore(profile): sync 3D city, streak stats, LeetCode & activity feed [skip ci]" && git push)
+          git diff --quiet && git diff --staged --quiet || (git commit -m "⚡ chore(profile): sync 3D city, streak stats, LeetCode, languages & activity feed [skip ci]" && git push)

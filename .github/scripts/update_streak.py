@@ -197,16 +197,34 @@ def compute_streak_metrics(created_at_dt, daily_contributions):
 
     return total_contributions, total_range, current_streak, current_range, longest_streak, longest_range
 
+def get_pill_dimensions(text, max_w=124):
+    """
+    Ensures pill width never exceeds the pod width (136px)
+    and dynamically adjusts font size so text never overflows.
+    """
+    length = len(text)
+    pill_w = max_w
+    pill_x = -round(pill_w / 2, 1)
+
+    if length <= 15:
+        font_size = "9px"
+        letter_spacing = "0.2"
+    elif length <= 18:
+        font_size = "8.5px"
+        letter_spacing = "0"
+    elif length <= 22:
+        font_size = "8px"
+        letter_spacing = "-0.2"
+    else:
+        font_size = "7.5px"
+        letter_spacing = "-0.4"
+
+    return pill_w, pill_x, font_size, letter_spacing
+
 def generate_streak_svg(total_contribs, total_range, current_streak, current_range, longest_streak, longest_range):
-    # Dynamic widths for pills to fit texts gracefully
-    total_pill_w = max(126, len(total_range) * 7 + 22)
-    total_pill_x = -round(total_pill_w / 2, 1)
-
-    curr_pill_w = max(104, len(current_range) * 7 + 22)
-    curr_pill_x = -round(curr_pill_w / 2, 1)
-
-    longest_pill_w = max(114, len(longest_range) * 7 + 22)
-    longest_pill_x = -round(longest_pill_w / 2, 1)
+    total_pill_w, total_pill_x, total_font_size, total_letter_spacing = get_pill_dimensions(total_range)
+    curr_pill_w, curr_pill_x, curr_font_size, curr_letter_spacing = get_pill_dimensions(current_range)
+    longest_pill_w, longest_pill_x, longest_font_size, longest_letter_spacing = get_pill_dimensions(longest_range)
 
     svg_content = f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 200" width="100%" height="100%" style="isolation: isolate">
   <defs>
@@ -390,8 +408,8 @@ def generate_streak_svg(total_contribs, total_range, current_streak, current_ran
       </text>
 
       <!-- Range Pill -->
-      <rect x="{total_pill_x}" y="132" width="{total_pill_w}" height="23" rx="11.5" fill="rgba(56, 189, 174, 0.08)" stroke="rgba(56, 189, 174, 0.35)" stroke-width="0.9"/>
-      <text x="0" y="147" text-anchor="middle" fill="#73DAC6" font-size="9px" font-weight="600" class="mono-text">
+      <rect x="{total_pill_x}" y="132" width="{total_pill_w}" height="22" rx="11" fill="rgba(56, 189, 174, 0.08)" stroke="rgba(56, 189, 174, 0.35)" stroke-width="0.9"/>
+      <text x="0" y="146.5" text-anchor="middle" fill="#73DAC6" font-size="{total_font_size}" font-weight="600" letter-spacing="{total_letter_spacing}" class="mono-text">
         {total_range}
       </text>
     </g>
@@ -435,7 +453,7 @@ def generate_streak_svg(total_contribs, total_range, current_streak, current_ran
 
       <!-- Range Pill -->
       <rect x="{curr_pill_x}" y="132" width="{curr_pill_w}" height="22" rx="11" fill="rgba(0, 242, 254, 0.08)" stroke="rgba(0, 242, 254, 0.35)" stroke-width="0.9"/>
-      <text x="0" y="146.5" text-anchor="middle" fill="#7DCFFF" font-size="9px" font-weight="600" class="mono-text">
+      <text x="0" y="146.5" text-anchor="middle" fill="#7DCFFF" font-size="{curr_font_size}" font-weight="600" letter-spacing="{curr_letter_spacing}" class="mono-text">
         {current_range}
       </text>
     </g>
@@ -462,8 +480,8 @@ def generate_streak_svg(total_contribs, total_range, current_streak, current_ran
       </text>
 
       <!-- Range Pill -->
-      <rect x="{longest_pill_x}" y="132" width="{longest_pill_w}" height="23" rx="11.5" fill="rgba(187, 154, 247, 0.08)" stroke="rgba(187, 154, 247, 0.35)" stroke-width="0.9"/>
-      <text x="0" y="147" text-anchor="middle" fill="#C0CAF5" font-size="9px" font-weight="600" class="mono-text">
+      <rect x="{longest_pill_x}" y="132" width="{longest_pill_w}" height="22" rx="11" fill="rgba(187, 154, 247, 0.08)" stroke="rgba(187, 154, 247, 0.35)" stroke-width="0.9"/>
+      <text x="0" y="146.5" text-anchor="middle" fill="#C0CAF5" font-size="{longest_font_size}" font-weight="600" letter-spacing="{longest_letter_spacing}" class="mono-text">
         {longest_range}
       </text>
     </g>

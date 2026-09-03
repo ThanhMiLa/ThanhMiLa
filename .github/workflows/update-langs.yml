@@ -1,0 +1,45 @@
+name: 📈 Sync Most Used Languages
+
+on:
+  schedule:
+    # Tự động cập nhật định kỳ mỗi 6 tiếng
+    - cron: '0 */6 * * *'
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - '.github/scripts/update_langs.py'
+      - '.github/workflows/update-langs.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  sync-languages:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: 📈 Fetch and Update Most Used Languages
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          python .github/scripts/update_langs.py
+
+      - name: 🔄 Bust GitHub Camo Image Cache in README
+        run: |
+          python .github/scripts/bust_cache.py
+
+      - name: 🚀 Commit & Push Most Used Languages Card
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add assets/most-used-langs.svg README.md
+          git diff --quiet && git diff --staged --quiet || (git pull --rebase origin main && git commit -m "📈 chore(profile): sync most used languages stats [skip ci]" && git push)
