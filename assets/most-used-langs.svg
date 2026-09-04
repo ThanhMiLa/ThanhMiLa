@@ -245,19 +245,19 @@
       <!-- Track Background -->
       <rect x="30" y="52" width="440" height="14" fill="#151828"/>
 
-      <!-- Java: 69.79% = 307.1px -->
-      <rect x="30.0" y="52" width="307.1" height="14" fill="url(#langGrad0)"/>
-      <line x1="337.1" y1="52" x2="337.1" y2="66" stroke="#080911" stroke-width="1.5"/>
-      <!-- TypeScript: 26.62% = 117.1px -->
-      <rect x="337.1" y="52" width="117.1" height="14" fill="url(#langGrad1)"/>
-      <line x1="454.2" y1="52" x2="454.2" y2="66" stroke="#080911" stroke-width="1.5"/>
-      <!-- PLpgSQL: 2.60% = 11.4px -->
-      <rect x="454.2" y="52" width="11.4" height="14" fill="url(#langGrad2)"/>
-      <line x1="465.6" y1="52" x2="465.6" y2="66" stroke="#080911" stroke-width="1.5"/>
-      <!-- Python: 0.71% = 3.1px -->
-      <rect x="465.6" y="52" width="3.1" height="14" fill="url(#langGrad3)"/>
-      <!-- CSS: 0.19% = 1.3px -->
-      <rect x="468.7" y="52" width="1.3" height="14" fill="url(#langGrad4)"/>
+      <!-- Java: 70.26% = 309.1px -->
+      <rect x="30.0" y="52" width="309.1" height="14" fill="url(#langGrad0)"/>
+      <line x1="339.1" y1="52" x2="339.1" y2="66" stroke="#080911" stroke-width="1.5"/>
+      <!-- TypeScript: 26.21% = 115.3px -->
+      <rect x="339.1" y="52" width="115.3" height="14" fill="url(#langGrad1)"/>
+      <line x1="454.4" y1="52" x2="454.4" y2="66" stroke="#080911" stroke-width="1.5"/>
+      <!-- PLpgSQL: 2.56% = 11.3px -->
+      <rect x="454.4" y="52" width="11.3" height="14" fill="url(#langGrad2)"/>
+      <line x1="465.7" y1="52" x2="465.7" y2="66" stroke="#080911" stroke-width="1.5"/>
+      <!-- Python: 0.70% = 3.1px -->
+      <rect x="465.7" y="52" width="3.1" height="14" fill="url(#langGrad3)"/>
+      <!-- CSS: 0.19% = 1.2px -->
+      <rect x="468.8" y="52" width="1.2" height="14" fill="url(#langGrad4)"/>
       <!-- Dockerfile: 0.04% = 1.0px -->
       <rect x="470.0" y="52" width="1.0" height="14" fill="url(#langGrad5)"/>
 
@@ -271,40 +271,40 @@
     <!-- ======================================================== -->
     <!-- LANGUAGE STATS GRID (2 COLUMNS x 3 ROWS)                 -->
     <!-- ======================================================== -->
-    <!-- Java (69.79%) -->
+    <!-- Java (70.26%) -->
     <g transform="translate(30, 88)">
       <circle cx="8" cy="8" r="5.5" fill="url(#langNode0)" filter="url(#softGlow)" class="node-pulse"/>
       <circle cx="6" cy="6" r="1.8" fill="#FFFFFF" opacity="0.85"/>
       <text x="20" y="12" fill="#FFFFFF" font-size="12px" font-weight="700">Java</text>
       <rect x="135" y="0" width="68" height="18" rx="9" fill="rgba(255, 158, 100, 0.1)" stroke="rgba(255, 158, 100, 0.35)" stroke-width="0.8"/>
-      <text x="169" y="13" text-anchor="middle" fill="#FF9E64" font-size="10px" font-weight="700" class="mono-text">69.79%</text>
+      <text x="169" y="13" text-anchor="middle" fill="#FF9E64" font-size="10px" font-weight="700" class="mono-text">70.26%</text>
     </g>
 
-    <!-- TypeScript (26.62%) -->
+    <!-- TypeScript (26.21%) -->
     <g transform="translate(30, 120)">
       <circle cx="8" cy="8" r="5.5" fill="url(#langNode1)" filter="url(#softGlow)"/>
       <circle cx="6" cy="6" r="1.8" fill="#FFFFFF" opacity="0.85"/>
       <text x="20" y="12" fill="#FFFFFF" font-size="12px" font-weight="700">TypeScript</text>
       <rect x="135" y="0" width="68" height="18" rx="9" fill="rgba(0, 242, 254, 0.1)" stroke="rgba(0, 242, 254, 0.35)" stroke-width="0.8"/>
-      <text x="169" y="13" text-anchor="middle" fill="#00F2FE" font-size="10px" font-weight="700" class="mono-text">26.62%</text>
+      <text x="169" y="13" text-anchor="middle" fill="#00F2FE" font-size="10px" font-weight="700" class="mono-text">26.21%</text>
     </g>
 
-    <!-- PLpgSQL (2.60%) -->
+    <!-- PLpgSQL (2.56%) -->
     <g transform="translate(30, 152)">
       <circle cx="8" cy="8" r="5.5" fill="url(#langNode2)" filter="url(#softGlow)"/>
       <circle cx="6" cy="6" r="1.8" fill="#FFFFFF" opacity="0.85"/>
       <text x="20" y="12" fill="#FFFFFF" font-size="12px" font-weight="700">PLpgSQL</text>
       <rect x="135" y="0" width="68" height="18" rx="9" fill="rgba(56, 189, 174, 0.1)" stroke="rgba(56, 189, 174, 0.35)" stroke-width="0.8"/>
-      <text x="169" y="13" text-anchor="middle" fill="#38BDAE" font-size="10px" font-weight="700" class="mono-text">2.60%</text>
+      <text x="169" y="13" text-anchor="middle" fill="#38BDAE" font-size="10px" font-weight="700" class="mono-text">2.56%</text>
     </g>
 
-    <!-- Python (0.71%) -->
+    <!-- Python (0.70%) -->
     <g transform="translate(265, 88)">
       <circle cx="8" cy="8" r="5.5" fill="url(#langNode3)" filter="url(#softGlow)"/>
       <circle cx="6" cy="6" r="1.8" fill="#FFFFFF" opacity="0.85"/>
       <text x="20" y="12" fill="#FFFFFF" font-size="12px" font-weight="700">Python</text>
       <rect x="135" y="0" width="66" height="18" rx="9" fill="rgba(112, 165, 253, 0.1)" stroke="rgba(112, 165, 253, 0.35)" stroke-width="0.8"/>
-      <text x="168" y="13" text-anchor="middle" fill="#70A5FD" font-size="10px" font-weight="700" class="mono-text">0.71%</text>
+      <text x="168" y="13" text-anchor="middle" fill="#70A5FD" font-size="10px" font-weight="700" class="mono-text">0.70%</text>
     </g>
 
     <!-- CSS (0.19%) -->
