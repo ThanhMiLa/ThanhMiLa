@@ -108,35 +108,35 @@
       <text x="16" y="19.5" font-size="13px" text-anchor="middle">🐛</text>
       <!-- SHA Pill -->
       <rect x="32" y="5.5" width="56" height="18" rx="4" fill="rgba(0, 242, 254, 0.1)" stroke="rgba(0, 242, 254, 0.35)" stroke-width="0.8"/>
-      <text x="60" y="18" text-anchor="middle" fill="#7DCFFF" font-size="9.5px" font-weight="700" class="mono-text">b122f17</text>
+      <text x="60" y="18" text-anchor="middle" fill="#7DCFFF" font-size="9.5px" font-weight="700" class="mono-text">2fb4f5e</text>
       <!-- Commit Message -->
-      <text x="96" y="18.5" fill="#f0f6fc" font-size="10px" font-weight="600">fix(scanner): preserve context-path on ...</text>
+      <text x="96" y="18.5" fill="#f0f6fc" font-size="10px" font-weight="600">fix(security): enforce explicit host co...</text>
       <!-- Right Tag (Repo & Time) -->
-      <text x="452" y="18.5" text-anchor="end" fill="#7AA2F7" font-size="9px" font-weight="600" class="mono-text">SpringLens • 1d ago</text>
+      <text x="452" y="18.5" text-anchor="end" fill="#7AA2F7" font-size="9px" font-weight="600" class="mono-text">SpringLens • 2d ago</text>
     </g>
     <!-- Activity Row 2 -->
     <g transform="translate(18, 82)">
       <rect x="0" y="0" width="464" height="29" rx="7" fill="rgba(18, 23, 38, 0.7)" stroke="rgba(122, 162, 247, 0.16)" stroke-width="0.8"/>
       <!-- Icon -->
-      <text x="16" y="19.5" font-size="13px" text-anchor="middle">🐛</text>
+      <text x="16" y="19.5" font-size="13px" text-anchor="middle">✨</text>
       <!-- SHA Pill -->
       <rect x="32" y="5.5" width="56" height="18" rx="4" fill="rgba(0, 242, 254, 0.1)" stroke="rgba(0, 242, 254, 0.35)" stroke-width="0.8"/>
-      <text x="60" y="18" text-anchor="middle" fill="#7DCFFF" font-size="9.5px" font-weight="700" class="mono-text">1d8bad4</text>
+      <text x="60" y="18" text-anchor="middle" fill="#7DCFFF" font-size="9.5px" font-weight="700" class="mono-text">b994f7a</text>
       <!-- Commit Message -->
-      <text x="96" y="18.5" fill="#f0f6fc" font-size="10px" font-weight="600">fix(state): defer legacy credential mig...</text>
+      <text x="96" y="18.5" fill="#f0f6fc" font-size="10px" font-weight="600">feat: add automated language statistics...</text>
       <!-- Right Tag (Repo & Time) -->
-      <text x="452" y="18.5" text-anchor="end" fill="#7AA2F7" font-size="9px" font-weight="600" class="mono-text">SpringLens • 1d ago</text>
+      <text x="452" y="18.5" text-anchor="end" fill="#7AA2F7" font-size="9px" font-weight="600" class="mono-text">ThanhMiLa • 1d ago</text>
     </g>
     <!-- Activity Row 3 -->
     <g transform="translate(18, 118)">
       <rect x="0" y="0" width="464" height="29" rx="7" fill="rgba(18, 23, 38, 0.7)" stroke="rgba(122, 162, 247, 0.16)" stroke-width="0.8"/>
       <!-- Icon -->
-      <text x="16" y="19.5" font-size="13px" text-anchor="middle">✨</text>
+      <text x="16" y="19.5" font-size="13px" text-anchor="middle">🐛</text>
       <!-- SHA Pill -->
       <rect x="32" y="5.5" width="56" height="18" rx="4" fill="rgba(0, 242, 254, 0.1)" stroke="rgba(0, 242, 254, 0.35)" stroke-width="0.8"/>
-      <text x="60" y="18" text-anchor="middle" fill="#7DCFFF" font-size="9.5px" font-weight="700" class="mono-text">eb5c30a</text>
+      <text x="60" y="18" text-anchor="middle" fill="#7DCFFF" font-size="9.5px" font-weight="700" class="mono-text">5a70f57</text>
       <!-- Commit Message -->
-      <text x="96" y="18.5" fill="#f0f6fc" font-size="10px" font-weight="600">feat(client): harden cURL export with P...</text>
+      <text x="96" y="18.5" fill="#f0f6fc" font-size="10px" font-weight="600">fix(ui): prevent state overwrite by sta...</text>
       <!-- Right Tag (Repo & Time) -->
       <text x="452" y="18.5" text-anchor="end" fill="#7AA2F7" font-size="9px" font-weight="600" class="mono-text">SpringLens • 2d ago</text>
     </g>
@@ -144,14 +144,14 @@
     <g transform="translate(18, 154)">
       <rect x="0" y="0" width="464" height="29" rx="7" fill="rgba(18, 23, 38, 0.7)" stroke="rgba(122, 162, 247, 0.16)" stroke-width="0.8"/>
       <!-- Icon -->
-      <text x="16" y="19.5" font-size="13px" text-anchor="middle">🧪</text>
+      <text x="16" y="19.5" font-size="13px" text-anchor="middle">🔨</text>
       <!-- SHA Pill -->
       <rect x="32" y="5.5" width="56" height="18" rx="4" fill="rgba(0, 242, 254, 0.1)" stroke="rgba(0, 242, 254, 0.35)" stroke-width="0.8"/>
-      <text x="60" y="18" text-anchor="middle" fill="#7DCFFF" font-size="9.5px" font-weight="700" class="mono-text">fd759ff</text>
+      <text x="60" y="18" text-anchor="middle" fill="#7DCFFF" font-size="9.5px" font-weight="700" class="mono-text">beafacc</text>
       <!-- Commit Message -->
-      <text x="96" y="18.5" fill="#f0f6fc" font-size="10px" font-weight="600">test: add unit tests for remaining serv...</text>
+      <text x="96" y="18.5" fill="#f0f6fc" font-size="10px" font-weight="600">refactor: comment out PaymentCronJob un...</text>
       <!-- Right Tag (Repo & Time) -->
-      <text x="452" y="18.5" text-anchor="end" fill="#7AA2F7" font-size="9px" font-weight="600" class="mono-text">CodeLearning • 19h ago</text>
+      <text x="452" y="18.5" text-anchor="end" fill="#7AA2F7" font-size="9px" font-weight="600" class="mono-text">CodeLearning • 23h ago</text>
     </g>
 
     <!-- Cyber Outer Laser Glowing Border -->
