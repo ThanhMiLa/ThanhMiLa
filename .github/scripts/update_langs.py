@@ -16,6 +16,48 @@ USERNAME = "ThanhMiLa"
 OUTPUT_SVG = "assets/most-used-langs.svg"
 GRAPHQL_URL = "https://api.github.com/graphql"
 
+# Whitelist các repository private được phép tính vào thống kê Most Used Languages.
+# Hỗ trợ cả định dạng "owner/repo" hoặc "repo".
+INCLUDED_PRIVATE_REPOS = [
+    "ThanhMiLa/bookteria-microservice",
+    "ThanhMiLa/source-hsf-pe",
+    "ThanhMiLa/Identity_Service_FullStack",
+    "ThanhMiLa/devteria",
+    "fudn-traltb-su26/course-project-hsf302_se20a11_quang_tan_thanh",
+]
+
+# Các repository muốn loại trừ hoàn toàn (kể cả public lẫn private):
+EXCLUDED_REPOS = [
+    "fptu-se-su26/swp391-su26-ai-audit-project-swp391_se20a11_group-02",
+]
+
+def get_included_private_repos():
+    env_val = os.environ.get("INCLUDED_PRIVATE_REPOS", "").strip()
+    if env_val:
+        return [r.strip() for r in env_val.split(",") if r.strip()]
+    return INCLUDED_PRIVATE_REPOS
+
+def get_excluded_repos():
+    env_val = os.environ.get("EXCLUDED_REPOS", "").strip()
+    if env_val:
+        return [r.strip() for r in env_val.split(",") if r.strip()]
+    return EXCLUDED_REPOS
+
+def repo_matches_list(repo, target_list):
+    if not target_list:
+        return False
+    repo_name = repo.get("name", "").strip().lower()
+    full_name = repo.get("nameWithOwner", f"{USERNAME}/{repo_name}").strip().lower()
+    for target in target_list:
+        t = target.strip().lower()
+        if "/" in t:
+            if full_name == t:
+                return True
+        else:
+            if repo_name == t:
+                return True
+    return False
+
 # Predefined high-contrast cyber neon palettes for top languages
 LANGUAGE_PALETTES = {
     "TypeScript": {
@@ -172,109 +214,240 @@ def get_palette_for_language(lang_name, fallback_hex=None):
         return generate_palette_from_hex(fallback_hex)
     return generate_palette_from_hex("#00F2FE")
 
-def fetch_languages_graphql(token):
-    """
-    Fetch repository languages using GitHub GraphQL API.
-    If authenticated viewer matches USERNAME, queries both public and private repositories.
-    Otherwise queries user repositories.
-    """
+def fetch_specific_repo(owner, name, headers):
+    """Directly fetch a specific repository by owner and name (supports organization & collaborator repos)."""
     query = """
-    query($username: String!) {
-      viewer {
-        login
-        repositories(first: 100, ownerAffiliations: [OWNER], isFork: false) {
-          nodes {
-            name
-            isPrivate
-            languages(first: 20, orderBy: {field: SIZE, direction: DESC}) {
-              edges {
-                size
-                node {
-                  name
-                  color
-                }
-              }
-            }
-          }
-        }
-      }
-      user(login: $username) {
-        repositories(first: 100, ownerAffiliations: [OWNER], isFork: false) {
-          nodes {
-            name
-            isPrivate
-            languages(first: 20, orderBy: {field: SIZE, direction: DESC}) {
-              edges {
-                size
-                node {
-                  name
-                  color
-                }
-              }
+    query($owner: String!, $name: String!) {
+      repository(owner: $owner, name: $name) {
+        name
+        nameWithOwner
+        isPrivate
+        languages(first: 20, orderBy: {field: SIZE, direction: DESC}) {
+          edges {
+            size
+            node {
+              name
+              color
             }
           }
         }
       }
     }
+    """
+    data = json.dumps({"query": query, "variables": {"owner": owner, "name": name}}).encode("utf-8")
+    req = urllib.request.Request(GRAPHQL_URL, data=data, headers=headers)
+    try:
+        with urllib.request.urlopen(req) as resp:
+            res = json.loads(resp.read().decode("utf-8"))
+            if "errors" in res:
+                print(f"GraphQL notice for repo '{owner}/{name}': {res['errors']}")
+            return res.get("data", {}).get("repository")
+    except Exception as e:
+        print(f"⚠️ Could not fetch specific repo '{owner}/{name}': {e}")
+    return None
+
+def fetch_languages_graphql(token):
+    """
+    Fetch repository languages using GitHub GraphQL API with pagination.
+    If authenticated viewer matches USERNAME, queries public, private, collaborator, and organization repositories.
+    Otherwise queries user repositories.
     """
     headers = {
         "Authorization": f"Bearer {token}",
         "User-Agent": "GitHub-Action-Language-Updater",
         "Content-Type": "application/json",
     }
-    data = json.dumps({"query": query, "variables": {"username": USERNAME}}).encode("utf-8")
-    req = urllib.request.Request(GRAPHQL_URL, data=data, headers=headers)
     
-    with urllib.request.urlopen(req) as resp:
-        res = json.loads(resp.read().decode("utf-8"))
-        if "errors" in res:
-            print(f"GraphQL notice: {res['errors']}")
-        data = res.get("data", {})
+    # Check viewer identity to determine if token has viewer privileges
+    is_viewer = False
+    try:
+        check_data = json.dumps({"query": "query { viewer { login } }"}).encode("utf-8")
+        check_req = urllib.request.Request(GRAPHQL_URL, data=check_data, headers=headers)
+        with urllib.request.urlopen(check_req) as resp:
+            v_res = json.loads(resp.read().decode("utf-8"))
+            v_login = v_res.get("data", {}).get("viewer", {}).get("login", "")
+            if v_login.lower() == USERNAME.lower():
+                is_viewer = True
+                print(f"✅ Authenticated as viewer '{USERNAME}' (PAT detected). Fetching all accessible repositories...")
+            else:
+                print(f"ℹ️ Authenticated as '{v_login}'. Fetching public repositories for '{USERNAME}'...")
+    except Exception as e:
+        print(f"Viewer check note: {e}")
+
+    all_nodes = []
+    cursor = None
+    has_next_page = True
+
+    while has_next_page:
+        if is_viewer:
+            query = """
+            query($after: String) {
+              viewer {
+                repositories(first: 100, ownerAffiliations: [OWNER, COLLABORATOR, ORGANIZATION_MEMBER], isFork: false, after: $after) {
+                  pageInfo {
+                    hasNextPage
+                    endCursor
+                  }
+                  nodes {
+                    name
+                    nameWithOwner
+                    isPrivate
+                    languages(first: 20, orderBy: {field: SIZE, direction: DESC}) {
+                      edges {
+                        size
+                        node {
+                          name
+                          color
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+            """
+            variables = {"after": cursor}
+        else:
+            query = """
+            query($username: String!, $after: String) {
+              user(login: $username) {
+                repositories(first: 100, ownerAffiliations: [OWNER], isFork: false, after: $after) {
+                  pageInfo {
+                    hasNextPage
+                    endCursor
+                  }
+                  nodes {
+                    name
+                    nameWithOwner
+                    isPrivate
+                    languages(first: 20, orderBy: {field: SIZE, direction: DESC}) {
+                      edges {
+                        size
+                        node {
+                          name
+                          color
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+            """
+            variables = {"username": USERNAME, "after": cursor}
+
+        data = json.dumps({"query": query, "variables": variables}).encode("utf-8")
+        req = urllib.request.Request(GRAPHQL_URL, data=data, headers=headers)
         
-        viewer = data.get("viewer")
-        if viewer and viewer.get("login", "").lower() == USERNAME.lower():
-            print(f"Authenticated as viewer '{USERNAME}'. Inspecting all (public + private) repositories...")
-            return viewer.get("repositories", {}).get("nodes", [])
+        with urllib.request.urlopen(req) as resp:
+            res = json.loads(resp.read().decode("utf-8"))
+            if "errors" in res:
+                print(f"GraphQL notice: {res['errors']}")
             
-        user = data.get("user")
-        if user:
-            print(f"Fetched public repositories for user '{USERNAME}'...")
-            return user.get("repositories", {}).get("nodes", [])
-            
-    return []
+            entity = res.get("data", {}).get("viewer" if is_viewer else "user")
+            if not entity:
+                break
+                
+            repo_data = entity.get("repositories", {})
+            nodes = repo_data.get("nodes", [])
+            all_nodes.extend(nodes)
+
+            page_info = repo_data.get("pageInfo", {})
+            has_next_page = page_info.get("hasNextPage", False)
+            cursor = page_info.get("endCursor")
+            if not cursor:
+                break
+
+    # Directly check and load any explicitly whitelisted repositories (including org repos)
+    known_repos = {
+        (r.get("nameWithOwner") or f"{USERNAME}/{r.get('name')}").lower(): r
+        for r in all_nodes
+    }
+    known_by_name = {r.get("name", "").lower(): r for r in all_nodes}
+
+    included_private = get_included_private_repos()
+    for item in included_private:
+        item_lower = item.lower().strip()
+        if "/" in item_lower:
+            owner, repo_name = item_lower.split("/", 1)
+        else:
+            owner, repo_name = USERNAME, item_lower
+
+        full_key = f"{owner}/{repo_name}".lower()
+        if full_key not in known_repos and repo_name not in known_by_name:
+            print(f"🔍 Directly fetching requested repository '{owner}/{repo_name}'...")
+            node = fetch_specific_repo(owner, repo_name, headers)
+            if node:
+                all_nodes.append(node)
+                known_repos[full_key] = node
+                print(f"  ✅ Successfully loaded '{full_key}' ({'private' if node.get('isPrivate') else 'public'})")
+            else:
+                print(f"  ⚠️ Could not fetch '{full_key}' directly (check PAT permissions or repo URL)")
+
+    private_count = sum(1 for r in all_nodes if r.get("isPrivate"))
+    public_count = len(all_nodes) - private_count
+    print(f"📊 Total repositories analyzed: {len(all_nodes)} ({public_count} public, {private_count} private)")
+    return all_nodes
 
 def fetch_languages_rest(token=None):
     """Fallback to GitHub REST API if GraphQL or token is unavailable."""
     print("Fetching repositories via GitHub REST API...")
-    repos_url = f"https://api.github.com/users/{USERNAME}/repos?per_page=100&type=owner"
     headers = {"User-Agent": "GitHub-Action-Language-Updater", "Accept": "application/vnd.github.v3+json"}
     if token:
         headers["Authorization"] = f"Bearer {token}"
 
-    req = urllib.request.Request(repos_url, headers=headers)
+    repos_url = f"https://api.github.com/user/repos?per_page=100&type=owner" if token else f"https://api.github.com/users/{USERNAME}/repos?per_page=100&type=owner"
+    
     repos = []
-    with urllib.request.urlopen(req) as resp:
-        repos = json.loads(resp.read().decode("utf-8"))
+    try:
+        req = urllib.request.Request(repos_url, headers=headers)
+        with urllib.request.urlopen(req) as resp:
+            repos = json.loads(resp.read().decode("utf-8"))
+    except Exception:
+        repos_url = f"https://api.github.com/users/{USERNAME}/repos?per_page=100&type=owner"
+        req = urllib.request.Request(repos_url, headers=headers)
+        with urllib.request.urlopen(req) as resp:
+            repos = json.loads(resp.read().decode("utf-8"))
 
     repo_nodes = []
     for r in repos:
         if r.get("fork"):
             continue
         repo_name = r.get("name")
-        lang_url = f"https://api.github.com/repos/{USERNAME}/{repo_name}/languages"
+        full_name = r.get("full_name", f"{USERNAME}/{repo_name}")
+        lang_url = f"https://api.github.com/repos/{full_name}/languages"
         lang_req = urllib.request.Request(lang_url, headers=headers)
         try:
             with urllib.request.urlopen(lang_req) as l_resp:
                 langs = json.loads(l_resp.read().decode("utf-8"))
                 edges = [{"size": size, "node": {"name": name, "color": None}} for name, size in langs.items()]
-                repo_nodes.append({"name": repo_name, "isPrivate": r.get("private", False), "languages": {"edges": edges}})
+                repo_nodes.append({"name": repo_name, "nameWithOwner": full_name, "isPrivate": r.get("private", False), "languages": {"edges": edges}})
         except Exception as e:
-            print(f"Could not fetch languages for repo {repo_name}: {e}")
+            print(f"Could not fetch languages for repo {full_name}: {e}")
+
+    # Also attempt to fetch any requested private repos not in list
+    included_private = get_included_private_repos()
+    existing_names = {r.get("name", "").lower() for r in repo_nodes}
+    existing_full = {r.get("nameWithOwner", "").lower() for r in repo_nodes}
+    for item in included_private:
+        item_lower = item.lower().strip()
+        full_name = item_lower if "/" in item_lower else f"{USERNAME.lower()}/{item_lower}"
+        if full_name not in existing_full and item_lower not in existing_names:
+            lang_url = f"https://api.github.com/repos/{item}/languages"
+            lang_req = urllib.request.Request(lang_url, headers=headers)
+            try:
+                with urllib.request.urlopen(lang_req) as l_resp:
+                    langs = json.loads(l_resp.read().decode("utf-8"))
+                    edges = [{"size": size, "node": {"name": name, "color": None}} for name, size in langs.items()]
+                    repo_name = item.split("/")[-1]
+                    repo_nodes.append({"name": repo_name, "nameWithOwner": item, "isPrivate": True, "languages": {"edges": edges}})
+            except Exception as e:
+                print(f"Could not fetch languages for external repo {item}: {e}")
 
     return repo_nodes
 
 def collect_language_stats():
-    token = os.environ.get("GH_PAT") or os.environ.get("GITHUB_TOKEN")
+    token = (os.environ.get("GH_PAT") or "").strip() or os.environ.get("GITHUB_TOKEN")
     repo_nodes = []
 
     if token:
@@ -293,10 +466,43 @@ def collect_language_stats():
         except Exception as e:
             print(f"Unauthenticated REST query failed: {e}")
 
+    included_private = get_included_private_repos()
+    excluded = get_excluded_repos()
+
+    print(f"🎯 Target private repos filter active: {len(included_private)} private repos specified")
+    if excluded:
+        print(f"🚫 Blacklist active: {len(excluded)} repos excluded")
+
+    processed_repos = []
+    skipped_private = 0
+
+    for repo in repo_nodes:
+        repo_name = repo.get("name", "")
+        full_name = repo.get("nameWithOwner", f"{USERNAME}/{repo_name}")
+        is_private = repo.get("isPrivate", False)
+
+        # 1. Skip if blacklisted
+        if repo_matches_list(repo, excluded):
+            print(f"  ⏩ Skipping blacklisted repo: {full_name}")
+            continue
+
+        # 2. If private, check whitelist
+        if is_private:
+            if included_private:
+                if not repo_matches_list(repo, included_private):
+                    skipped_private += 1
+                    continue
+                else:
+                    print(f"  🔒 Including selected private repo: {full_name}")
+
+        processed_repos.append(repo)
+
+    print(f"📈 Processing {len(processed_repos)} repos for language breakdown (skipped {skipped_private} other private repos)")
+
     lang_sizes = defaultdict(int)
     lang_colors = {}
 
-    for repo in repo_nodes:
+    for repo in processed_repos:
         languages = repo.get("languages", {}).get("edges", [])
         for edge in languages:
             size = edge.get("size", 0)

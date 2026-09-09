@@ -494,9 +494,9 @@ def generate_streak_svg(total_contribs, total_range, current_streak, current_ran
     return svg_content
 
 def update_streak():
-    token = os.environ.get("GITHUB_TOKEN")
+    token = (os.environ.get("GH_PAT") or "").strip() or os.environ.get("GITHUB_TOKEN")
     if not token:
-        print("Warning: GITHUB_TOKEN not found. Skipping live streak calculation.")
+        print("Warning: GITHUB_TOKEN or GH_PAT not found. Skipping live streak calculation.")
         return
 
     try:
