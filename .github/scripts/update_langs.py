@@ -27,9 +27,7 @@ INCLUDED_PRIVATE_REPOS = [
 ]
 
 # Các repository muốn loại trừ hoàn toàn (kể cả public lẫn private):
-EXCLUDED_REPOS = [
-    "fptu-se-su26/swp391-su26-ai-audit-project-swp391_se20a11_group-02",
-]
+EXCLUDED_REPOS = []
 
 def get_included_private_repos():
     env_val = os.environ.get("INCLUDED_PRIVATE_REPOS", "").strip()
