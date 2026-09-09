@@ -228,51 +228,13 @@ def generate_streak_svg(total_contribs, total_range, current_streak, current_ran
 
     svg_content = f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 200" width="100%" height="100%" style="isolation: isolate">
   <defs>
-    <!-- Cross-platform System Font Stacks with Webfont Enhancement -->
+    <!-- Cross-platform System Font Stacks -->
     <style><![CDATA[
-      @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@500;700&family=Outfit:wght@600;700;800;900&display=swap');
-
       * {{
-        font-family: 'Outfit', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
       }}
       .mono-text {{
-        font-family: 'Fira Code', ui-monospace, 'SF Mono', SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-      }}
-
-      /* Glow & Entrance Animations */
-      @keyframes pulseFlame {{
-        0%, 100% {{ transform: scale(1); opacity: 0.9; }}
-        50% {{ transform: scale(1.12); opacity: 1; filter: drop-shadow(0 0 8px #00FF88) drop-shadow(0 0 16px #00F2FE); }}
-      }}
-      @keyframes orbitParticle {{
-        from {{ transform: rotate(0deg); }}
-        to {{ transform: rotate(360deg); }}
-      }}
-      @keyframes borderGaze {{
-        0%, 100% {{ stroke: #00F2FE; }}
-        33% {{ stroke: #70A5FD; }}
-        66% {{ stroke: #BB9AF7; }}
-      }}
-      @keyframes countPop {{
-        0% {{ transform: scale(0.6); opacity: 0; }}
-        70% {{ transform: scale(1.08); opacity: 1; }}
-        100% {{ transform: scale(1); opacity: 1; }}
-      }}
-
-      .flame-icon {{
-        animation: pulseFlame 3s ease-in-out infinite;
-        transform-origin: 250px 24px;
-      }}
-      .orbit-particle-group {{
-        animation: orbitParticle 8s linear infinite;
-        transform-origin: 250px 58px;
-      }}
-      .laser-border {{
-        animation: borderGaze 9s ease-in-out infinite;
-      }}
-      .stat-num-center {{
-        animation: countPop 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
-        transform-origin: 250px 65px;
+        font-family: ui-monospace, 'SF Mono', SFMono-Regular, Menlo, Monaco, Consolas, monospace;
       }}
     ]]></style>
 
@@ -424,14 +386,14 @@ def generate_streak_svg(total_contribs, total_range, current_streak, current_ran
       <!-- Middle glowing energy ring with mask opening for flame -->
       <circle cx="0" cy="58" r="28" fill="none" stroke="url(#laserGrad)" stroke-width="2.2" opacity="0.85" filter="url(#neonGlow)" stroke-dasharray="135 40" stroke-dashoffset="-18"/>
 
-      <!-- Orbiting Energy Particle Group -->
-      <g class="orbit-particle-group">
+      <!-- Orbiting Energy Particle Group (Static Accents) -->
+      <g>
         <circle cx="0" cy="24" r="2.5" fill="#00FF88" filter="url(#neonGlow)"/>
         <circle cx="0" cy="92" r="1.8" fill="#00F2FE" filter="url(#neonGlow)"/>
       </g>
 
-      <!-- 3D Floating Flame Icon -->
-      <g class="flame-icon">
+      <!-- 3D Floating Flame Icon (Static Neon Glow) -->
+      <g>
         <circle cx="0" cy="25" r="11" fill="rgba(0, 242, 254, 0.15)" filter="url(#neonGlow)"/>
         <path d="M 0 16 C 0 16 1.8 19 1.8 21.4 C 1.8 23.7 0.4 25.5 -1.7 25.5 C -3.9 25.5 -5.5 23.7 -5.5 21.4 L -5.4 21 C -7.6 23.7 -8.9 27 -8.9 30.5 C -8.9 35.2 -5.1 39 0 39 C 5.1 39 8.9 35.2 8.9 30.5 C 8.9 24.8 5.9 19.5 0 16 Z M -0.3 35.8 C -2.3 35.8 -3.8 34.3 -3.8 32.4 C -3.8 30.7 -2.7 29.5 -0.7 29.1 C 1.1 28.7 3.1 27.8 4.2 26.3 C 4.7 27.7 4.9 29.2 4.9 30.6 C 4.9 33.5 2.6 35.8 -0.3 35.8 Z" 
               fill="url(#flameRadial)" 
@@ -439,7 +401,7 @@ def generate_streak_svg(total_contribs, total_range, current_streak, current_ran
       </g>
 
       <!-- Big Streak Number -->
-      <text x="0" y="67" text-anchor="middle" fill="#FFFFFF" font-size="26px" font-weight="900" letter-spacing="0.5" filter="url(#neonGlow)" class="stat-num-center">
+      <text x="0" y="67" text-anchor="middle" fill="#FFFFFF" font-size="26px" font-weight="900" letter-spacing="0.5" filter="url(#neonGlow)">
         {current_streak}
       </text>
 
@@ -487,7 +449,7 @@ def generate_streak_svg(total_contribs, total_range, current_streak, current_ran
     </g>
 
     <!-- Cyber Outer Laser Glowing Border -->
-    <rect x="2" y="2" width="496" height="196" rx="14" fill="none" stroke="url(#laserGrad)" stroke-width="1.8" class="laser-border" filter="url(#neonGlow)"/>
+    <rect x="2" y="2" width="496" height="196" rx="14" fill="none" stroke="url(#laserGrad)" stroke-width="1.8" filter="url(#neonGlow)"/>
   </g>
 </svg>
 """
@@ -496,7 +458,13 @@ def generate_streak_svg(total_contribs, total_range, current_streak, current_ran
 def update_streak():
     token = (os.environ.get("GH_PAT") or "").strip() or os.environ.get("GITHUB_TOKEN")
     if not token:
-        print("Warning: GITHUB_TOKEN or GH_PAT not found. Skipping live streak calculation.")
+        print("Warning: GITHUB_TOKEN or GH_PAT not found. Generating SVG with baseline cached metrics...")
+        total_c, total_r, cur_s, cur_r, max_s, max_r = compute_streak_metrics(None, None)
+        svg_code = generate_streak_svg(total_c, total_r, cur_s, cur_r, max_s, max_r)
+        os.makedirs(os.path.dirname(OUTPUT_SVG), exist_ok=True)
+        with open(OUTPUT_SVG, "w", encoding="utf-8") as f:
+            f.write(svg_code)
+        print(f"Generated {OUTPUT_SVG} successfully with baseline metrics.")
         return
 
     try:

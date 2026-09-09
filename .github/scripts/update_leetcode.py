@@ -111,38 +111,13 @@ def generate_svg(stats):
 
     svg_content = f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 200" width="100%" height="100%" style="isolation: isolate">
   <defs>
-    <!-- Cross-platform System Font Stacks with Webfont Enhancement -->
+    <!-- Cross-platform System Font Stacks -->
     <style><![CDATA[
-      @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@500;700&family=Outfit:wght@600;700;800;900&display=swap');
-
       * {{
-        font-family: 'Outfit', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
       }}
       .mono-text {{
-        font-family: 'Fira Code', ui-monospace, 'SF Mono', SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-      }}
-
-      /* Glow & Animation Effects */
-      @keyframes borderGaze {{
-        0%, 100% {{ stroke: #00F2FE; }}
-        33% {{ stroke: #70A5FD; }}
-        66% {{ stroke: #BB9AF7; }}
-      }}
-      @keyframes pulseMeter {{
-        0%, 100% {{ transform: scale(1); opacity: 0.9; }}
-        50% {{ transform: scale(1.04); opacity: 1; }}
-      }}
-      @keyframes shimmerBar {{
-        0% {{ transform: translateX(-60px); opacity: 0; }}
-        50% {{ opacity: 0.7; }}
-        100% {{ transform: translateX(320px); opacity: 0; }}
-      }}
-
-      .laser-border {{
-        animation: borderGaze 9s ease-in-out infinite;
-      }}
-      .shimmer-effect {{
-        animation: shimmerBar 4s ease-in-out infinite;
+        font-family: ui-monospace, 'SF Mono', SFMono-Regular, Menlo, Monaco, Consolas, monospace;
       }}
     ]]></style>
 
@@ -361,7 +336,7 @@ def generate_svg(stats):
     </g>
 
     <!-- Cyber Outer Laser Glowing Border -->
-    <rect x="2" y="2" width="496" height="196" rx="14" fill="none" stroke="url(#laserGrad)" stroke-width="1.8" class="laser-border" filter="url(#neonGlow)"/>
+    <rect x="2" y="2" width="496" height="196" rx="14" fill="none" stroke="url(#laserGrad)" stroke-width="1.8" filter="url(#neonGlow)"/>
   </g>
 </svg>
 """

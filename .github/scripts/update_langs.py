@@ -597,7 +597,7 @@ def render_svg(lang_stats):
         palette = get_palette_for_language(item["name"], item.get("color"))
         badge_c = palette["badge_color"]
         r, g, b = palette["badge_rgb"]
-        pulse_class = ' class="node-pulse"' if idx == 0 else ""
+        pulse_class = ""
         
         badge_w = 68 if col_x == 30 else 66
         badge_text_x = 169 if col_x == 30 else 168
@@ -620,49 +620,13 @@ def render_svg(lang_stats):
 
     svg_content = f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 200" width="100%" height="100%" style="isolation: isolate">
   <defs>
-    <!-- Cross-platform System Font Stacks with Webfont Enhancement -->
+    <!-- Cross-platform System Font Stacks -->
     <style><![CDATA[
-      @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@500;700&family=Outfit:wght@600;700;800;900&display=swap');
-
       * {{
-        font-family: 'Outfit', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
       }}
       .mono-text {{
-        font-family: 'Fira Code', ui-monospace, 'SF Mono', SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-      }}
-
-      /* Glowing / Shimmer Animations */
-      @keyframes borderGaze {{
-        0%, 100% {{ stroke: #00F2FE; }}
-        33% {{ stroke: #70A5FD; }}
-        66% {{ stroke: #BB9AF7; }}
-      }}
-      @keyframes shimmerBar {{
-        0% {{ transform: translateX(-100px); opacity: 0; }}
-        30% {{ opacity: 0.8; }}
-        70% {{ opacity: 0.8; }}
-        100% {{ transform: translateX(500px); opacity: 0; }}
-      }}
-      @keyframes pulseGlow {{
-        0%, 100% {{ opacity: 0.85; }}
-        50% {{ opacity: 1; }}
-      }}
-      @keyframes nodeBreathe {{
-        0%, 100% {{ transform: scale(1); opacity: 0.9; }}
-        50% {{ transform: scale(1.2); opacity: 1; }}
-      }}
-
-      .laser-border {{
-        animation: borderGaze 9s ease-in-out infinite;
-      }}
-      .shimmer-effect {{
-        animation: shimmerBar 4s ease-in-out infinite;
-      }}
-      .title-glow {{
-        animation: pulseGlow 4s ease-in-out infinite;
-      }}
-      .node-pulse {{
-        animation: nodeBreathe 3s ease-in-out infinite;
+        font-family: ui-monospace, 'SF Mono', SFMono-Regular, Menlo, Monaco, Consolas, monospace;
       }}
     ]]></style>
 
@@ -799,9 +763,6 @@ def render_svg(lang_stats):
 
       <!-- 3D Cylindrical Top Specular Highlight -->
       <rect x="30" y="53" width="440" height="3.5" fill="#FFFFFF" opacity="0.32" rx="1.5"/>
-
-      <!-- Animated Scanning Shimmer Beam -->
-      <rect x="0" y="52" width="80" height="14" fill="url(#shimmerBeam)" class="shimmer-effect"/>
     </g>
 
     <!-- ======================================================== -->
@@ -810,7 +771,7 @@ def render_svg(lang_stats):
 {grid_items_str}
 
     <!-- Cyber Outer Laser Glowing Border -->
-    <rect x="2" y="2" width="496" height="196" rx="14" fill="none" stroke="url(#laserGrad)" stroke-width="1.8" class="laser-border" filter="url(#neonGlow)"/>
+    <rect x="2" y="2" width="496" height="196" rx="14" fill="none" stroke="url(#laserGrad)" stroke-width="1.8" filter="url(#neonGlow)"/>
   </g>
 </svg>
 """

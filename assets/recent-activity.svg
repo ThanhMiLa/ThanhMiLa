@@ -1,29 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 200" width="100%" height="100%" style="isolation: isolate">
   <defs>
-    <!-- Fonts & Animations -->
+    <!-- Fonts -->
     <style><![CDATA[
-      @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@500;700&family=Outfit:wght@600;700;800;900&display=swap');
       * {
-        font-family: 'Outfit', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
       }
       .mono-text {
-        font-family: 'Fira Code', ui-monospace, 'SF Mono', monospace;
-      }
-      @keyframes borderGaze {
-        0%, 100% { stroke: #00F2FE; }
-        33% { stroke: #70A5FD; }
-        66% { stroke: #BB9AF7; }
-      }
-      @keyframes livePulse {
-        0%, 100% { opacity: 1; transform: scale(1); }
-        50% { opacity: 0.35; transform: scale(0.85); }
-      }
-      .laser-border {
-        animation: borderGaze 9s ease-in-out infinite;
-      }
-      .live-dot {
-        animation: livePulse 2s ease-in-out infinite;
-        transform-origin: 405px 25px;
+        font-family: ui-monospace, 'SF Mono', monospace;
       }
     ]]></style>
 
@@ -93,7 +76,7 @@
       <!-- Right HUD Live Tag -->
       <g transform="translate(452, 2)">
         <rect x="-86" y="0" width="86" height="18" rx="9" fill="rgba(0, 255, 136, 0.08)" stroke="rgba(0, 255, 136, 0.35)" stroke-width="0.9"/>
-        <circle cx="-74" cy="9" r="2.5" fill="#00FF88" class="live-dot"/>
+        <circle cx="-74" cy="9" r="2.5" fill="#00FF88"/>
         <text x="-38" y="13" text-anchor="middle" fill="#73DAC6" font-size="8.5px" font-weight="700" letter-spacing="0.8" class="mono-text">
           LIVE SYNC
         </text>
@@ -155,6 +138,6 @@
     </g>
 
     <!-- Cyber Outer Laser Glowing Border -->
-    <rect x="2" y="2" width="496" height="196" rx="14" fill="none" stroke="url(#laserGrad)" stroke-width="2" class="laser-border"/>
+    <rect x="2" y="2" width="496" height="196" rx="14" fill="none" stroke="url(#laserGrad)" stroke-width="2"/>
   </g>
 </svg>
