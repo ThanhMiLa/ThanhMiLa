@@ -28,6 +28,12 @@
         font-weight: 600;
         letter-spacing: 1px;
       }
+      .badge-text-sm {
+        font-family: 'Fira Code', monospace;
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.8px;
+      }
       .code-sub {
         font-family: 'Fira Code', monospace;
         font-size: 12px;
@@ -143,24 +149,87 @@
       </g>
     </g>
 
-    <!-- [3] Bottom-Left: BACKEND Badge -->
-    <g transform="translate(65, 225)">
-      <g class="float-backend">
-        <rect x="0" y="0" width="135" height="34" rx="17" fill="#141a29" stroke="#00F2FE" stroke-width="1.2" stroke-opacity="0.85"/>
-        <text x="14" y="22" font-size="15">⚙️</text>
-        <text x="36" y="22" fill="#00F2FE" class="badge-text">BACKEND</text>
-        <circle cx="118" cy="17" r="3" fill="#00FF88"/>
-      </g>
+    <!-- ==================== CAREER ROADMAP PIPELINE ==================== -->
+    <!-- DSA -> DATABASE -> BACKEND -> DEVOPS -> SOLUTION ARCHITECTURE -->
+
+    <!-- [Node 1] DSA -->
+    <g transform="translate(50, 230)">
+      <rect x="0" y="0" width="80" height="34" rx="17" fill="#141a29" stroke="#00F2FE" stroke-width="1.2" stroke-opacity="0.85"/>
+      <text x="13" y="22" font-size="15">⚡</text>
+      <text x="34" y="22" fill="#00F2FE" class="badge-text">DSA</text>
+      <circle cx="68" cy="17" r="3" fill="#00FF88"/>
     </g>
 
-    <!-- [4] Bottom-Right: DEVOPS Badge -->
-    <g transform="translate(765, 225)">
-      <g class="float-devops">
-        <rect x="0" y="0" width="130" height="34" rx="17" fill="#141a29" stroke="#9d4edd" stroke-width="1.2" stroke-opacity="0.85"/>
-        <text x="14" y="22" font-size="16">☁️</text>
-        <text x="40" y="22" fill="#E599F7" class="badge-text">DEVOPS</text>
-        <circle cx="114" cy="17" r="3" fill="#9d4edd"/>
-      </g>
+    <!-- [Connector 1: DSA -> DATABASE] -->
+    <g>
+      <line x1="136" y1="247" x2="179" y2="247" stroke="#00F2FE" stroke-opacity="0.3" stroke-width="1.5" stroke-dasharray="3 3"/>
+      <path d="M 174 243 L 180 247 L 174 251" fill="none" stroke="#00FF88" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cy="247" r="2.5" fill="#00FF88">
+        <animate attributeName="cx" from="136" to="179" dur="2s" begin="0s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;1;1;0" dur="2s" begin="0s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+
+    <!-- [Node 2] DATABASE -->
+    <g transform="translate(187, 230)">
+      <rect x="0" y="0" width="122" height="34" rx="17" fill="#141a29" stroke="#00FF88" stroke-width="1.2" stroke-opacity="0.85"/>
+      <text x="13" y="22" font-size="14">🗄️</text>
+      <text x="34" y="22" fill="#00FF88" class="badge-text">DATABASE</text>
+      <circle cx="110" cy="17" r="3" fill="#00F2FE"/>
+    </g>
+
+    <!-- [Connector 2: DATABASE -> BACKEND] -->
+    <g>
+      <line x1="315" y1="247" x2="358" y2="247" stroke="#00FF88" stroke-opacity="0.3" stroke-width="1.5" stroke-dasharray="3 3"/>
+      <path d="M 353 243 L 359 247 L 353 251" fill="none" stroke="#4FACFE" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cy="247" r="2.5" fill="#4FACFE">
+        <animate attributeName="cx" from="315" to="358" dur="2s" begin="0.5s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;1;1;0" dur="2s" begin="0.5s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+
+    <!-- [Node 3] BACKEND -->
+    <g transform="translate(366, 230)">
+      <rect x="0" y="0" width="114" height="34" rx="17" fill="#141a29" stroke="#4FACFE" stroke-width="1.2" stroke-opacity="0.85"/>
+      <text x="13" y="22" font-size="15">⚙️</text>
+      <text x="34" y="22" fill="#7DCFFF" class="badge-text">BACKEND</text>
+      <circle cx="102" cy="17" r="3" fill="#00FF88"/>
+    </g>
+
+    <!-- [Connector 3: BACKEND -> DEVOPS] -->
+    <g>
+      <line x1="486" y1="247" x2="529" y2="247" stroke="#4FACFE" stroke-opacity="0.3" stroke-width="1.5" stroke-dasharray="3 3"/>
+      <path d="M 524 243 L 530 247 L 524 251" fill="none" stroke="#BB9AF7" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cy="247" r="2.5" fill="#BB9AF7">
+        <animate attributeName="cx" from="486" to="529" dur="2s" begin="1s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;1;1;0" dur="2s" begin="1s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+
+    <!-- [Node 4] DEVOPS -->
+    <g transform="translate(537, 230)">
+      <rect x="0" y="0" width="107" height="34" rx="17" fill="#141a29" stroke="#9d4edd" stroke-width="1.2" stroke-opacity="0.85"/>
+      <text x="13" y="22" font-size="15">☁️</text>
+      <text x="35" y="22" fill="#E599F7" class="badge-text">DEVOPS</text>
+      <circle cx="95" cy="17" r="3" fill="#9d4edd"/>
+    </g>
+
+    <!-- [Connector 4: DEVOPS -> SOLUTION ARCHITECTURE] -->
+    <g>
+      <line x1="650" y1="247" x2="693" y2="247" stroke="#9d4edd" stroke-opacity="0.3" stroke-width="1.5" stroke-dasharray="3 3"/>
+      <path d="M 688 243 L 694 247 L 688 251" fill="none" stroke="#FF922B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cy="247" r="2.5" fill="#FFA94D">
+        <animate attributeName="cx" from="650" to="693" dur="2s" begin="1.5s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;1;1;0" dur="2s" begin="1.5s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+
+    <!-- [Node 5] SOLUTION ARCHITECTURE -->
+    <g transform="translate(701, 230)">
+      <rect x="0" y="0" width="208" height="34" rx="17" fill="#141a29" stroke="#FF922B" stroke-width="1.2" stroke-opacity="0.85"/>
+      <text x="13" y="22" font-size="14">🏛️</text>
+      <text x="34" y="22" fill="#FFA94D" class="badge-text-sm">SOLUTION ARCHITECTURE</text>
+      <circle cx="196" cy="17" r="3" fill="#00FF88"/>
     </g>
 
     <!-- [5] Mid-Left: Code Brackets { } -->
@@ -187,43 +256,36 @@
       <path d="M 720,74 Q 720,80 726,80 Q 720,80 720,86 Q 720,80 714,80 Q 720,80 720,74" fill="#00FF88"/>
     </g>
     <g class="star-3">
-      <path d="M 240,234 Q 240,240 246,240 Q 240,240 240,246 Q 240,240 234,240 Q 240,240 240,234" fill="#FF007F"/>
+      <path d="M 240,208 Q 240,214 246,214 Q 240,214 240,220 Q 240,214 234,214 Q 240,214 240,208" fill="#FF007F"/>
     </g>
     <g class="star-4">
-      <path d="M 690,228 Q 690,235 697,235 Q 690,235 690,242 Q 690,235 683,235 Q 690,235 690,228" fill="#FFE600"/>
+      <path d="M 680,208 Q 680,214 686,214 Q 680,214 680,220 Q 680,214 674,214 Q 680,214 680,208" fill="#FFE600"/>
     </g>
 
     <!-- Floating Binary Matrix Bits -->
-    <text x="180" y="155" fill="#7aa2f7" fill-opacity="0.25" font-family="'Fira Code', monospace" font-size="12">10110</text>
-    <text x="740" y="155" fill="#7aa2f7" fill-opacity="0.25" font-family="'Fira Code', monospace" font-size="12">01001</text>
+    <text x="180" y="150" fill="#7aa2f7" fill-opacity="0.25" font-family="'Fira Code', monospace" font-size="12" dominant-baseline="central">10110</text>
+    <text x="740" y="150" fill="#7aa2f7" fill-opacity="0.25" font-family="'Fira Code', monospace" font-size="12" dominant-baseline="central">01001</text>
 
     <!-- ==================== CENTER HERO: THANH MILA ==================== -->
 
-    <!-- Ambient Aura Glow Behind Name -->
-    <ellipse cx="480" cy="140" rx="270" ry="48" fill="#00F2FE" opacity="0.15"/>
+    <!-- Ambient Aura Glow Behind Name (Centered at 480, 150) -->
+    <ellipse cx="480" cy="150" rx="270" ry="50" fill="#00F2FE" opacity="0.15"/>
 
-    <!-- Top Status Indicator Pill: BACKEND DEVELOPER -->
+    <!-- Top Status Indicator Pill: SOFTWARE ENGINEERING -->
     <g transform="translate(480, 42)">
-      <rect x="-105" y="0" width="210" height="28" rx="14" fill="url(#pillGrad)" stroke="#7aa2f7" stroke-width="0.8" stroke-opacity="0.4"/>
-      <circle cx="-86" cy="14" r="4.5" fill="#00FF88"/>
-      <text x="-72" y="19" fill="#7DCFFF" class="code-sub" font-size="12" letter-spacing="1.5">BACKEND DEVELOPER</text>
+      <rect x="-113" y="0" width="226" height="28" rx="14" fill="url(#pillGrad)" stroke="#7aa2f7" stroke-width="0.8" stroke-opacity="0.4"/>
+      <circle cx="-94" cy="14" r="4.5" fill="#00FF88"/>
+      <text x="-80" y="19" fill="#7DCFFF" class="code-sub" font-size="12" letter-spacing="1.5">SOFTWARE ENGINEERING</text>
     </g>
 
-    <!-- MAIN NAME: THANH MILA -->
-    <g transform="translate(480, 148)" text-anchor="middle">
+    <!-- MAIN NAME: THANH MILA (Centered exactly in Aura Ellipse) -->
+    <g transform="translate(480, 150)" text-anchor="middle" dominant-baseline="central">
       <!-- Subtle Shadow Backdrop -->
-      <text x="2" y="2" class="main-title" fill="#000000" opacity="0.6">
+      <text x="2" y="2" class="main-title" dominant-baseline="central" fill="#000000" opacity="0.6">
         THANH MILA
       </text>
-      <text x="0" y="0" class="main-title" fill="url(#titleGrad)">
+      <text x="0" y="0" class="main-title" dominant-baseline="central" fill="url(#titleGrad)">
         THANH MILA
-      </text>
-    </g>
-
-    <!-- Tagline: Java and Spring Boot Ecosystem -->
-    <g transform="translate(480, 198)" text-anchor="middle">
-      <text x="0" y="0" class="tagline" fill="url(#subGrad)">
-        JAVA &amp; SPRING BOOT ECOSYSTEM • SOFTWARE ENGINEERING
       </text>
     </g>
   </g>
