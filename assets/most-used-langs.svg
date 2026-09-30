@@ -75,39 +75,39 @@
     </radialGradient>
 
     <linearGradient id="langGrad3" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#CE9FFC"/>
+      <stop offset="50%" stop-color="#7F52FF"/>
+      <stop offset="100%" stop-color="#471DB3"/>
+    </linearGradient>
+
+    <radialGradient id="langNode3" cx="35%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#F3EBFF"/>
+      <stop offset="40%" stop-color="#7F52FF"/>
+      <stop offset="100%" stop-color="#321185"/>
+    </radialGradient>
+
+    <linearGradient id="langGrad4" x1="0%" y1="0%" x2="0%" y2="100%">
       <stop offset="0%" stop-color="#FFA07A"/>
       <stop offset="50%" stop-color="#FF5722"/>
       <stop offset="100%" stop-color="#A82D0D"/>
     </linearGradient>
 
-    <radialGradient id="langNode3" cx="35%" cy="35%" r="65%">
+    <radialGradient id="langNode4" cx="35%" cy="35%" r="65%">
       <stop offset="0%" stop-color="#FFE4DD"/>
       <stop offset="40%" stop-color="#FF5722"/>
       <stop offset="100%" stop-color="#821E06"/>
     </radialGradient>
 
-    <linearGradient id="langGrad4" x1="0%" y1="0%" x2="0%" y2="100%">
+    <linearGradient id="langGrad5" x1="0%" y1="0%" x2="0%" y2="100%">
       <stop offset="0%" stop-color="#55E6D5"/>
       <stop offset="50%" stop-color="#38BDAE"/>
       <stop offset="100%" stop-color="#246888"/>
     </linearGradient>
 
-    <radialGradient id="langNode4" cx="35%" cy="35%" r="65%">
+    <radialGradient id="langNode5" cx="35%" cy="35%" r="65%">
       <stop offset="0%" stop-color="#E0FFFF"/>
       <stop offset="40%" stop-color="#38BDAE"/>
       <stop offset="100%" stop-color="#1B4F72"/>
-    </radialGradient>
-
-    <linearGradient id="langGrad5" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#D6B8FF"/>
-      <stop offset="50%" stop-color="#BB9AF7"/>
-      <stop offset="100%" stop-color="#7000FF"/>
-    </linearGradient>
-
-    <radialGradient id="langNode5" cx="35%" cy="35%" r="65%">
-      <stop offset="0%" stop-color="#F5EEFF"/>
-      <stop offset="40%" stop-color="#BB9AF7"/>
-      <stop offset="100%" stop-color="#4B0082"/>
     </radialGradient>
 
     <!-- Shimmer Beam Gradient -->
@@ -209,23 +209,23 @@
       <!-- Track Background -->
       <rect x="30" y="52" width="440" height="14" fill="#151828"/>
 
-      <!-- Java: 54.21% = 238.5px -->
-      <rect x="30.0" y="52" width="238.5" height="14" fill="url(#langGrad0)"/>
-      <line x1="268.5" y1="52" x2="268.5" y2="66" stroke="#080911" stroke-width="1.5"/>
-      <!-- TypeScript: 40.18% = 176.8px -->
-      <rect x="268.5" y="52" width="176.8" height="14" fill="url(#langGrad1)"/>
-      <line x1="445.3" y1="52" x2="445.3" y2="66" stroke="#080911" stroke-width="1.5"/>
-      <!-- JavaScript: 2.50% = 11.0px -->
-      <rect x="445.3" y="52" width="11.0" height="14" fill="url(#langGrad2)"/>
-      <line x1="456.3" y1="52" x2="456.3" y2="66" stroke="#080911" stroke-width="1.5"/>
-      <!-- HTML: 1.91% = 8.4px -->
-      <rect x="456.3" y="52" width="8.4" height="14" fill="url(#langGrad3)"/>
-      <line x1="464.7" y1="52" x2="464.7" y2="66" stroke="#080911" stroke-width="1.5"/>
-      <!-- PLpgSQL: 0.53% = 2.3px -->
-      <rect x="464.7" y="52" width="2.3" height="14" fill="url(#langGrad4)"/>
-      <line x1="467.0" y1="52" x2="467.0" y2="66" stroke="#080911" stroke-width="1.5"/>
-      <!-- CSS: 0.41% = 2.0px -->
-      <rect x="467.0" y="52" width="2.0" height="14" fill="url(#langGrad5)"/>
+      <!-- Java: 53.09% = 233.6px -->
+      <rect x="30.0" y="52" width="233.6" height="14" fill="url(#langGrad0)"/>
+      <line x1="263.6" y1="52" x2="263.6" y2="66" stroke="#080911" stroke-width="1.5"/>
+      <!-- TypeScript: 39.36% = 173.2px -->
+      <rect x="263.6" y="52" width="173.2" height="14" fill="url(#langGrad1)"/>
+      <line x1="436.8" y1="52" x2="436.8" y2="66" stroke="#080911" stroke-width="1.5"/>
+      <!-- JavaScript: 2.45% = 10.8px -->
+      <rect x="436.8" y="52" width="10.8" height="14" fill="url(#langGrad2)"/>
+      <line x1="447.6" y1="52" x2="447.6" y2="66" stroke="#080911" stroke-width="1.5"/>
+      <!-- Kotlin: 2.06% = 9.0px -->
+      <rect x="447.6" y="52" width="9.0" height="14" fill="url(#langGrad3)"/>
+      <line x1="456.6" y1="52" x2="456.6" y2="66" stroke="#080911" stroke-width="1.5"/>
+      <!-- HTML: 1.87% = 8.2px -->
+      <rect x="456.6" y="52" width="8.2" height="14" fill="url(#langGrad4)"/>
+      <line x1="464.8" y1="52" x2="464.8" y2="66" stroke="#080911" stroke-width="1.5"/>
+      <!-- PLpgSQL: 0.52% = 2.3px -->
+      <rect x="464.8" y="52" width="2.3" height="14" fill="url(#langGrad5)"/>
 
       <!-- 3D Cylindrical Top Specular Highlight -->
       <rect x="30" y="53" width="440" height="3.5" fill="#FFFFFF" opacity="0.32" rx="1.5"/>
@@ -234,58 +234,58 @@
     <!-- ======================================================== -->
     <!-- LANGUAGE STATS GRID (2 COLUMNS x 3 ROWS)                 -->
     <!-- ======================================================== -->
-    <!-- Java (54.21%) -->
+    <!-- Java (53.09%) -->
     <g transform="translate(30, 88)">
       <circle cx="8" cy="8" r="5.5" fill="url(#langNode0)" filter="url(#softGlow)"/>
       <circle cx="6" cy="6" r="1.8" fill="#FFFFFF" opacity="0.85"/>
       <text x="20" y="12" fill="#FFFFFF" font-size="12px" font-weight="700">Java</text>
       <rect x="135" y="0" width="68" height="18" rx="9" fill="rgba(255, 158, 100, 0.1)" stroke="rgba(255, 158, 100, 0.35)" stroke-width="0.8"/>
-      <text x="169" y="13" text-anchor="middle" fill="#FF9E64" font-size="10px" font-weight="700" class="mono-text">54.21%</text>
+      <text x="169" y="13" text-anchor="middle" fill="#FF9E64" font-size="10px" font-weight="700" class="mono-text">53.09%</text>
     </g>
 
-    <!-- TypeScript (40.18%) -->
+    <!-- TypeScript (39.36%) -->
     <g transform="translate(30, 120)">
       <circle cx="8" cy="8" r="5.5" fill="url(#langNode1)" filter="url(#softGlow)"/>
       <circle cx="6" cy="6" r="1.8" fill="#FFFFFF" opacity="0.85"/>
       <text x="20" y="12" fill="#FFFFFF" font-size="12px" font-weight="700">TypeScript</text>
       <rect x="135" y="0" width="68" height="18" rx="9" fill="rgba(0, 242, 254, 0.1)" stroke="rgba(0, 242, 254, 0.35)" stroke-width="0.8"/>
-      <text x="169" y="13" text-anchor="middle" fill="#00F2FE" font-size="10px" font-weight="700" class="mono-text">40.18%</text>
+      <text x="169" y="13" text-anchor="middle" fill="#00F2FE" font-size="10px" font-weight="700" class="mono-text">39.36%</text>
     </g>
 
-    <!-- JavaScript (2.50%) -->
+    <!-- JavaScript (2.45%) -->
     <g transform="translate(30, 152)">
       <circle cx="8" cy="8" r="5.5" fill="url(#langNode2)" filter="url(#softGlow)"/>
       <circle cx="6" cy="6" r="1.8" fill="#FFFFFF" opacity="0.85"/>
       <text x="20" y="12" fill="#FFFFFF" font-size="12px" font-weight="700">JavaScript</text>
       <rect x="135" y="0" width="68" height="18" rx="9" fill="rgba(255, 230, 0, 0.1)" stroke="rgba(255, 230, 0, 0.35)" stroke-width="0.8"/>
-      <text x="169" y="13" text-anchor="middle" fill="#FFE600" font-size="10px" font-weight="700" class="mono-text">2.50%</text>
+      <text x="169" y="13" text-anchor="middle" fill="#FFE600" font-size="10px" font-weight="700" class="mono-text">2.45%</text>
     </g>
 
-    <!-- HTML (1.91%) -->
+    <!-- Kotlin (2.06%) -->
     <g transform="translate(265, 88)">
       <circle cx="8" cy="8" r="5.5" fill="url(#langNode3)" filter="url(#softGlow)"/>
       <circle cx="6" cy="6" r="1.8" fill="#FFFFFF" opacity="0.85"/>
-      <text x="20" y="12" fill="#FFFFFF" font-size="12px" font-weight="700">HTML</text>
-      <rect x="135" y="0" width="66" height="18" rx="9" fill="rgba(255, 112, 67, 0.1)" stroke="rgba(255, 112, 67, 0.35)" stroke-width="0.8"/>
-      <text x="168" y="13" text-anchor="middle" fill="#FF7043" font-size="10px" font-weight="700" class="mono-text">1.91%</text>
+      <text x="20" y="12" fill="#FFFFFF" font-size="12px" font-weight="700">Kotlin</text>
+      <rect x="135" y="0" width="66" height="18" rx="9" fill="rgba(169, 123, 255, 0.1)" stroke="rgba(169, 123, 255, 0.35)" stroke-width="0.8"/>
+      <text x="168" y="13" text-anchor="middle" fill="#A97BFF" font-size="10px" font-weight="700" class="mono-text">2.06%</text>
     </g>
 
-    <!-- PLpgSQL (0.53%) -->
+    <!-- HTML (1.87%) -->
     <g transform="translate(265, 120)">
       <circle cx="8" cy="8" r="5.5" fill="url(#langNode4)" filter="url(#softGlow)"/>
       <circle cx="6" cy="6" r="1.8" fill="#FFFFFF" opacity="0.85"/>
-      <text x="20" y="12" fill="#FFFFFF" font-size="12px" font-weight="700">PLpgSQL</text>
-      <rect x="135" y="0" width="66" height="18" rx="9" fill="rgba(56, 189, 174, 0.1)" stroke="rgba(56, 189, 174, 0.35)" stroke-width="0.8"/>
-      <text x="168" y="13" text-anchor="middle" fill="#38BDAE" font-size="10px" font-weight="700" class="mono-text">0.53%</text>
+      <text x="20" y="12" fill="#FFFFFF" font-size="12px" font-weight="700">HTML</text>
+      <rect x="135" y="0" width="66" height="18" rx="9" fill="rgba(255, 112, 67, 0.1)" stroke="rgba(255, 112, 67, 0.35)" stroke-width="0.8"/>
+      <text x="168" y="13" text-anchor="middle" fill="#FF7043" font-size="10px" font-weight="700" class="mono-text">1.87%</text>
     </g>
 
-    <!-- CSS (0.41%) -->
+    <!-- PLpgSQL (0.52%) -->
     <g transform="translate(265, 152)">
       <circle cx="8" cy="8" r="5.5" fill="url(#langNode5)" filter="url(#softGlow)"/>
       <circle cx="6" cy="6" r="1.8" fill="#FFFFFF" opacity="0.85"/>
-      <text x="20" y="12" fill="#FFFFFF" font-size="12px" font-weight="700">CSS</text>
-      <rect x="135" y="0" width="66" height="18" rx="9" fill="rgba(187, 154, 247, 0.1)" stroke="rgba(187, 154, 247, 0.35)" stroke-width="0.8"/>
-      <text x="168" y="13" text-anchor="middle" fill="#BB9AF7" font-size="10px" font-weight="700" class="mono-text">0.41%</text>
+      <text x="20" y="12" fill="#FFFFFF" font-size="12px" font-weight="700">PLpgSQL</text>
+      <rect x="135" y="0" width="66" height="18" rx="9" fill="rgba(56, 189, 174, 0.1)" stroke="rgba(56, 189, 174, 0.35)" stroke-width="0.8"/>
+      <text x="168" y="13" text-anchor="middle" fill="#38BDAE" font-size="10px" font-weight="700" class="mono-text">0.52%</text>
     </g>
 
     <!-- Cyber Outer Laser Glowing Border -->
