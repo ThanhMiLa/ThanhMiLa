@@ -24,10 +24,18 @@ INCLUDED_PRIVATE_REPOS = [
     "ThanhMiLa/Identity_Service_FullStack",
     "ThanhMiLa/devteria",
     "fudn-traltb-su26/course-project-hsf302_se20a11_quang_tan_thanh",
+    "fudn-traltb-su26/assignment-2-ThanhMiLa",
+    "fudn-traltb-su26/progress-test-2-ThanhMiLa",
+    "ThanhMiLa/HSF302_VoNgocThanh_SE20A11",
+    "fudn-traltb-su26/chapter5-thymeleaf-exercises-ThanhMiLa",
+    "ThanhMiLa/spring-ai-demo",
 ]
 
 # Các repository muốn loại trừ hoàn toàn (kể cả public lẫn private):
-EXCLUDED_REPOS = []
+EXCLUDED_REPOS = [
+    "FUSU26SWR302/project-course-swr302_se20a11_su26__group1",
+    "trithanhsoft/group-project-swt301_se20a11_su26__group2",
+]
 
 def get_included_private_repos():
     env_val = os.environ.get("INCLUDED_PRIVATE_REPOS", "").strip()
