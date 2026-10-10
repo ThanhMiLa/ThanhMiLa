@@ -1,9 +1,8 @@
 name: 📈 Sync Most Used Languages
 
+# on.schedule đã được tích hợp trong workflow chính 'update-activity.yml' (chạy mỗi 6 tiếng cho toàn bộ profile).
+# Giữ workflow_dispatch và push để có thể chạy lẻ hoặc test khi chỉnh sửa script.
 on:
-  schedule:
-    # Tự động cập nhật định kỳ mỗi 6 tiếng
-    - cron: '0 */6 * * *'
   workflow_dispatch:
   push:
     branches:
