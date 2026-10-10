@@ -68,4 +68,4 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add assets/ profile-3d-contrib/ README.md
-          git diff --staged --quiet || (git commit -m "⚡ chore(profile): sync 3D city, streak stats, LeetCode, languages & activity feed [skip ci]" && git pull --rebase origin main && git push)
+          git diff --staged --quiet || (git commit -m "⚡ chore(profile): sync 3D city, streak stats, LeetCode, languages & activity feed [skip ci]" && git pull --rebase -X theirs origin main && git push)
