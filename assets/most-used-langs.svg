@@ -209,20 +209,20 @@
       <!-- Track Background -->
       <rect x="30" y="52" width="440" height="14" fill="#151828"/>
 
-      <!-- Java: 61.25% = 269.5px -->
-      <rect x="30.0" y="52" width="269.5" height="14" fill="url(#langGrad0)"/>
-      <line x1="299.5" y1="52" x2="299.5" y2="66" stroke="#080911" stroke-width="1.5"/>
-      <!-- TypeScript: 25.04% = 110.2px -->
-      <rect x="299.5" y="52" width="110.2" height="14" fill="url(#langGrad1)"/>
-      <line x1="409.7" y1="52" x2="409.7" y2="66" stroke="#080911" stroke-width="1.5"/>
-      <!-- Kotlin: 5.74% = 25.3px -->
-      <rect x="409.7" y="52" width="25.3" height="14" fill="url(#langGrad2)"/>
-      <line x1="435.0" y1="52" x2="435.0" y2="66" stroke="#080911" stroke-width="1.5"/>
-      <!-- HTML: 3.80% = 16.7px -->
-      <rect x="435.0" y="52" width="16.7" height="14" fill="url(#langGrad3)"/>
-      <line x1="451.7" y1="52" x2="451.7" y2="66" stroke="#080911" stroke-width="1.5"/>
-      <!-- JavaScript: 2.56% = 11.3px -->
-      <rect x="451.7" y="52" width="11.3" height="14" fill="url(#langGrad4)"/>
+      <!-- Java: 61.60% = 271.0px -->
+      <rect x="30.0" y="52" width="271.0" height="14" fill="url(#langGrad0)"/>
+      <line x1="301.0" y1="52" x2="301.0" y2="66" stroke="#080911" stroke-width="1.5"/>
+      <!-- TypeScript: 24.81% = 109.2px -->
+      <rect x="301.0" y="52" width="109.2" height="14" fill="url(#langGrad1)"/>
+      <line x1="410.2" y1="52" x2="410.2" y2="66" stroke="#080911" stroke-width="1.5"/>
+      <!-- Kotlin: 5.69% = 25.0px -->
+      <rect x="410.2" y="52" width="25.0" height="14" fill="url(#langGrad2)"/>
+      <line x1="435.2" y1="52" x2="435.2" y2="66" stroke="#080911" stroke-width="1.5"/>
+      <!-- HTML: 3.77% = 16.6px -->
+      <rect x="435.2" y="52" width="16.6" height="14" fill="url(#langGrad3)"/>
+      <line x1="451.8" y1="52" x2="451.8" y2="66" stroke="#080911" stroke-width="1.5"/>
+      <!-- JavaScript: 2.53% = 11.2px -->
+      <rect x="451.8" y="52" width="11.2" height="14" fill="url(#langGrad4)"/>
       <line x1="463.0" y1="52" x2="463.0" y2="66" stroke="#080911" stroke-width="1.5"/>
       <!-- PLpgSQL: 0.79% = 3.5px -->
       <rect x="463.0" y="52" width="3.5" height="14" fill="url(#langGrad5)"/>
@@ -234,49 +234,49 @@
     <!-- ======================================================== -->
     <!-- LANGUAGE STATS GRID (2 COLUMNS x 3 ROWS)                 -->
     <!-- ======================================================== -->
-    <!-- Java (61.25%) -->
+    <!-- Java (61.60%) -->
     <g transform="translate(30, 88)">
       <circle cx="8" cy="8" r="5.5" fill="url(#langNode0)" filter="url(#softGlow)"/>
       <circle cx="6" cy="6" r="1.8" fill="#FFFFFF" opacity="0.85"/>
       <text x="20" y="12" fill="#FFFFFF" font-size="12px" font-weight="700">Java</text>
       <rect x="135" y="0" width="68" height="18" rx="9" fill="rgba(255, 158, 100, 0.1)" stroke="rgba(255, 158, 100, 0.35)" stroke-width="0.8"/>
-      <text x="169" y="13" text-anchor="middle" fill="#FF9E64" font-size="10px" font-weight="700" class="mono-text">61.25%</text>
+      <text x="169" y="13" text-anchor="middle" fill="#FF9E64" font-size="10px" font-weight="700" class="mono-text">61.60%</text>
     </g>
 
-    <!-- TypeScript (25.04%) -->
+    <!-- TypeScript (24.81%) -->
     <g transform="translate(30, 120)">
       <circle cx="8" cy="8" r="5.5" fill="url(#langNode1)" filter="url(#softGlow)"/>
       <circle cx="6" cy="6" r="1.8" fill="#FFFFFF" opacity="0.85"/>
       <text x="20" y="12" fill="#FFFFFF" font-size="12px" font-weight="700">TypeScript</text>
       <rect x="135" y="0" width="68" height="18" rx="9" fill="rgba(0, 242, 254, 0.1)" stroke="rgba(0, 242, 254, 0.35)" stroke-width="0.8"/>
-      <text x="169" y="13" text-anchor="middle" fill="#00F2FE" font-size="10px" font-weight="700" class="mono-text">25.04%</text>
+      <text x="169" y="13" text-anchor="middle" fill="#00F2FE" font-size="10px" font-weight="700" class="mono-text">24.81%</text>
     </g>
 
-    <!-- Kotlin (5.74%) -->
+    <!-- Kotlin (5.69%) -->
     <g transform="translate(30, 152)">
       <circle cx="8" cy="8" r="5.5" fill="url(#langNode2)" filter="url(#softGlow)"/>
       <circle cx="6" cy="6" r="1.8" fill="#FFFFFF" opacity="0.85"/>
       <text x="20" y="12" fill="#FFFFFF" font-size="12px" font-weight="700">Kotlin</text>
       <rect x="135" y="0" width="68" height="18" rx="9" fill="rgba(169, 123, 255, 0.1)" stroke="rgba(169, 123, 255, 0.35)" stroke-width="0.8"/>
-      <text x="169" y="13" text-anchor="middle" fill="#A97BFF" font-size="10px" font-weight="700" class="mono-text">5.74%</text>
+      <text x="169" y="13" text-anchor="middle" fill="#A97BFF" font-size="10px" font-weight="700" class="mono-text">5.69%</text>
     </g>
 
-    <!-- HTML (3.80%) -->
+    <!-- HTML (3.77%) -->
     <g transform="translate(265, 88)">
       <circle cx="8" cy="8" r="5.5" fill="url(#langNode3)" filter="url(#softGlow)"/>
       <circle cx="6" cy="6" r="1.8" fill="#FFFFFF" opacity="0.85"/>
       <text x="20" y="12" fill="#FFFFFF" font-size="12px" font-weight="700">HTML</text>
       <rect x="135" y="0" width="66" height="18" rx="9" fill="rgba(255, 112, 67, 0.1)" stroke="rgba(255, 112, 67, 0.35)" stroke-width="0.8"/>
-      <text x="168" y="13" text-anchor="middle" fill="#FF7043" font-size="10px" font-weight="700" class="mono-text">3.80%</text>
+      <text x="168" y="13" text-anchor="middle" fill="#FF7043" font-size="10px" font-weight="700" class="mono-text">3.77%</text>
     </g>
 
-    <!-- JavaScript (2.56%) -->
+    <!-- JavaScript (2.53%) -->
     <g transform="translate(265, 120)">
       <circle cx="8" cy="8" r="5.5" fill="url(#langNode4)" filter="url(#softGlow)"/>
       <circle cx="6" cy="6" r="1.8" fill="#FFFFFF" opacity="0.85"/>
       <text x="20" y="12" fill="#FFFFFF" font-size="12px" font-weight="700">JavaScript</text>
       <rect x="135" y="0" width="66" height="18" rx="9" fill="rgba(255, 230, 0, 0.1)" stroke="rgba(255, 230, 0, 0.35)" stroke-width="0.8"/>
-      <text x="168" y="13" text-anchor="middle" fill="#FFE600" font-size="10px" font-weight="700" class="mono-text">2.56%</text>
+      <text x="168" y="13" text-anchor="middle" fill="#FFE600" font-size="10px" font-weight="700" class="mono-text">2.53%</text>
     </g>
 
     <!-- PLpgSQL (0.79%) -->
