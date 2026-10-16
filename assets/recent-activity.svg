@@ -91,9 +91,9 @@
       <text x="16" y="19.5" font-size="13px" text-anchor="middle">✨</text>
       <!-- SHA Pill -->
       <rect x="32" y="5.5" width="56" height="18" rx="4" fill="rgba(0, 242, 254, 0.1)" stroke="rgba(0, 242, 254, 0.35)" stroke-width="0.8"/>
-      <text x="60" y="18" text-anchor="middle" fill="#7DCFFF" font-size="9.5px" font-weight="700" class="mono-text">8161348</text>
+      <text x="60" y="18" text-anchor="middle" fill="#7DCFFF" font-size="9.5px" font-weight="700" class="mono-text">8d908ab</text>
       <!-- Commit Message -->
-      <text x="96" y="18.5" fill="#f0f6fc" font-size="10px" font-weight="600">feat(user): add update user category pr...</text>
+      <text x="96" y="18.5" fill="#f0f6fc" font-size="10px" font-weight="600">feat(channel): add follower count and c...</text>
       <!-- Right Tag (Repo & Time) -->
       <text x="452" y="18.5" text-anchor="end" fill="#7AA2F7" font-size="9px" font-weight="600" class="mono-text">reallive • 1d ago</text>
     </g>
@@ -104,9 +104,9 @@
       <text x="16" y="19.5" font-size="13px" text-anchor="middle">✨</text>
       <!-- SHA Pill -->
       <rect x="32" y="5.5" width="56" height="18" rx="4" fill="rgba(0, 242, 254, 0.1)" stroke="rgba(0, 242, 254, 0.35)" stroke-width="0.8"/>
-      <text x="60" y="18" text-anchor="middle" fill="#7DCFFF" font-size="9.5px" font-weight="700" class="mono-text">30cdf22</text>
+      <text x="60" y="18" text-anchor="middle" fill="#7DCFFF" font-size="9.5px" font-weight="700" class="mono-text">05201e6</text>
       <!-- Commit Message -->
-      <text x="96" y="18.5" fill="#f0f6fc" font-size="10px" font-weight="600">feat: add internal category validation ...</text>
+      <text x="96" y="18.5" fill="#f0f6fc" font-size="10px" font-weight="600">feat(channel): add multi-category and k...</text>
       <!-- Right Tag (Repo & Time) -->
       <text x="452" y="18.5" text-anchor="end" fill="#7AA2F7" font-size="9px" font-weight="600" class="mono-text">reallive • 1d ago</text>
     </g>
@@ -117,9 +117,9 @@
       <text x="16" y="19.5" font-size="13px" text-anchor="middle">✨</text>
       <!-- SHA Pill -->
       <rect x="32" y="5.5" width="56" height="18" rx="4" fill="rgba(0, 242, 254, 0.1)" stroke="rgba(0, 242, 254, 0.35)" stroke-width="0.8"/>
-      <text x="60" y="18" text-anchor="middle" fill="#7DCFFF" font-size="9.5px" font-weight="700" class="mono-text">d6e8a5e</text>
+      <text x="60" y="18" text-anchor="middle" fill="#7DCFFF" font-size="9.5px" font-weight="700" class="mono-text">7cb1e63</text>
       <!-- Commit Message -->
-      <text x="96" y="18.5" fill="#f0f6fc" font-size="10px" font-weight="600">feat(user): add get user category prefe...</text>
+      <text x="96" y="18.5" fill="#f0f6fc" font-size="10px" font-weight="600">feat(channel): add paginated public cha...</text>
       <!-- Right Tag (Repo & Time) -->
       <text x="452" y="18.5" text-anchor="end" fill="#7AA2F7" font-size="9px" font-weight="600" class="mono-text">reallive • 1d ago</text>
     </g>
@@ -127,12 +127,12 @@
     <g transform="translate(18, 154)">
       <rect x="0" y="0" width="464" height="29" rx="7" fill="rgba(18, 23, 38, 0.7)" stroke="rgba(122, 162, 247, 0.16)" stroke-width="0.8"/>
       <!-- Icon -->
-      <text x="16" y="19.5" font-size="13px" text-anchor="middle">📝</text>
+      <text x="16" y="19.5" font-size="13px" text-anchor="middle">✨</text>
       <!-- SHA Pill -->
       <rect x="32" y="5.5" width="56" height="18" rx="4" fill="rgba(0, 242, 254, 0.1)" stroke="rgba(0, 242, 254, 0.35)" stroke-width="0.8"/>
-      <text x="60" y="18" text-anchor="middle" fill="#7DCFFF" font-size="9.5px" font-weight="700" class="mono-text">41550f9</text>
+      <text x="60" y="18" text-anchor="middle" fill="#7DCFFF" font-size="9.5px" font-weight="700" class="mono-text">fa2e3a4</text>
       <!-- Commit Message -->
-      <text x="96" y="18.5" fill="#f0f6fc" font-size="10px" font-weight="600">docs: mark category preferences and cat...</text>
+      <text x="96" y="18.5" fill="#f0f6fc" font-size="10px" font-weight="600">feat(web-app): implement login and regi...</text>
       <!-- Right Tag (Repo & Time) -->
       <text x="452" y="18.5" text-anchor="end" fill="#7AA2F7" font-size="9px" font-weight="600" class="mono-text">reallive • 1d ago</text>
     </g>
