@@ -91,50 +91,50 @@
       <text x="16" y="19.5" font-size="13px" text-anchor="middle">📦</text>
       <!-- SHA Pill -->
       <rect x="32" y="5.5" width="56" height="18" rx="4" fill="rgba(0, 242, 254, 0.1)" stroke="rgba(0, 242, 254, 0.35)" stroke-width="0.8"/>
-      <text x="60" y="18" text-anchor="middle" fill="#7DCFFF" font-size="9.5px" font-weight="700" class="mono-text">92c1eb1</text>
+      <text x="60" y="18" text-anchor="middle" fill="#7DCFFF" font-size="9.5px" font-weight="700" class="mono-text">4dfaafd</text>
       <!-- Commit Message -->
-      <text x="96" y="18.5" fill="#f0f6fc" font-size="10px" font-weight="600">Consolidate description under Overview ...</text>
+      <text x="96" y="18.5" fill="#f0f6fc" font-size="10px" font-weight="600">Update README.md</text>
       <!-- Right Tag (Repo & Time) -->
-      <text x="452" y="18.5" text-anchor="end" fill="#7AA2F7" font-size="9px" font-weight="600" class="mono-text">tube-to-sound • 19h ago</text>
+      <text x="452" y="18.5" text-anchor="end" fill="#7AA2F7" font-size="9px" font-weight="600" class="mono-text">codelearning • 1d ago</text>
     </g>
     <!-- Activity Row 2 -->
     <g transform="translate(18, 82)">
       <rect x="0" y="0" width="464" height="29" rx="7" fill="rgba(18, 23, 38, 0.7)" stroke="rgba(122, 162, 247, 0.16)" stroke-width="0.8"/>
       <!-- Icon -->
-      <text x="16" y="19.5" font-size="13px" text-anchor="middle">📦</text>
+      <text x="16" y="19.5" font-size="13px" text-anchor="middle">🐛</text>
       <!-- SHA Pill -->
       <rect x="32" y="5.5" width="56" height="18" rx="4" fill="rgba(0, 242, 254, 0.1)" stroke="rgba(0, 242, 254, 0.35)" stroke-width="0.8"/>
-      <text x="60" y="18" text-anchor="middle" fill="#7DCFFF" font-size="9.5px" font-weight="700" class="mono-text">ef4737a</text>
+      <text x="60" y="18" text-anchor="middle" fill="#7DCFFF" font-size="9.5px" font-weight="700" class="mono-text">bfaa876</text>
       <!-- Commit Message -->
-      <text x="96" y="18.5" fill="#f0f6fc" font-size="10px" font-weight="600">Simplify Overview and Features to be co...</text>
+      <text x="96" y="18.5" fill="#f0f6fc" font-size="10px" font-weight="600">Fix Windows window and taskbar icon</text>
       <!-- Right Tag (Repo & Time) -->
-      <text x="452" y="18.5" text-anchor="end" fill="#7AA2F7" font-size="9px" font-weight="600" class="mono-text">tube-to-sound • 19h ago</text>
+      <text x="452" y="18.5" text-anchor="end" fill="#7AA2F7" font-size="9px" font-weight="600" class="mono-text">tube-to-sound • 1d ago</text>
     </g>
     <!-- Activity Row 3 -->
     <g transform="translate(18, 118)">
       <rect x="0" y="0" width="464" height="29" rx="7" fill="rgba(18, 23, 38, 0.7)" stroke="rgba(122, 162, 247, 0.16)" stroke-width="0.8"/>
       <!-- Icon -->
-      <text x="16" y="19.5" font-size="13px" text-anchor="middle">✨</text>
+      <text x="16" y="19.5" font-size="13px" text-anchor="middle">📦</text>
       <!-- SHA Pill -->
       <rect x="32" y="5.5" width="56" height="18" rx="4" fill="rgba(0, 242, 254, 0.1)" stroke="rgba(0, 242, 254, 0.35)" stroke-width="0.8"/>
-      <text x="60" y="18" text-anchor="middle" fill="#7DCFFF" font-size="9.5px" font-weight="700" class="mono-text">93b486c</text>
+      <text x="60" y="18" text-anchor="middle" fill="#7DCFFF" font-size="9.5px" font-weight="700" class="mono-text">ff32cfe</text>
       <!-- Commit Message -->
-      <text x="96" y="18.5" fill="#f0f6fc" font-size="10px" font-weight="600">feat(config): increase multipart file s...</text>
+      <text x="96" y="18.5" fill="#f0f6fc" font-size="10px" font-weight="600">Add 1-click build script build.sh</text>
       <!-- Right Tag (Repo & Time) -->
-      <text x="452" y="18.5" text-anchor="end" fill="#7AA2F7" font-size="9px" font-weight="600" class="mono-text">reallive • 20h ago</text>
+      <text x="452" y="18.5" text-anchor="end" fill="#7AA2F7" font-size="9px" font-weight="600" class="mono-text">tube-to-sound • 1d ago</text>
     </g>
     <!-- Activity Row 4 -->
     <g transform="translate(18, 154)">
       <rect x="0" y="0" width="464" height="29" rx="7" fill="rgba(18, 23, 38, 0.7)" stroke="rgba(122, 162, 247, 0.16)" stroke-width="0.8"/>
       <!-- Icon -->
-      <text x="16" y="19.5" font-size="13px" text-anchor="middle">✨</text>
+      <text x="16" y="19.5" font-size="13px" text-anchor="middle">📦</text>
       <!-- SHA Pill -->
       <rect x="32" y="5.5" width="56" height="18" rx="4" fill="rgba(0, 242, 254, 0.1)" stroke="rgba(0, 242, 254, 0.35)" stroke-width="0.8"/>
-      <text x="60" y="18" text-anchor="middle" fill="#7DCFFF" font-size="9.5px" font-weight="700" class="mono-text">f5559f4</text>
+      <text x="60" y="18" text-anchor="middle" fill="#7DCFFF" font-size="9.5px" font-weight="700" class="mono-text">3849381</text>
       <!-- Commit Message -->
-      <text x="96" y="18.5" fill="#f0f6fc" font-size="10px" font-weight="600">feat: add k6 script for user registrati...</text>
+      <text x="96" y="18.5" fill="#f0f6fc" font-size="10px" font-weight="600">Update app interface to full English</text>
       <!-- Right Tag (Repo & Time) -->
-      <text x="452" y="18.5" text-anchor="end" fill="#7AA2F7" font-size="9px" font-weight="600" class="mono-text">reallive • 21h ago</text>
+      <text x="452" y="18.5" text-anchor="end" fill="#7AA2F7" font-size="9px" font-weight="600" class="mono-text">tube-to-sound • 1d ago</text>
     </g>
 
     <!-- Cyber Outer Laser Glowing Border -->
