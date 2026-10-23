@@ -47,12 +47,14 @@ PROJECTS = [
 ]
 TECH = [
     ("Java", "java", "#d66a36"), ("Spring Boot", "spring", "#6db33f"),
-    ("React", "react", "#149eca"), ("TypeScript", "typescript", "#3178c6"),
-    ("Kotlin", "kotlin", "#9b62ee"), ("C#", "csharp", "#8848c8"),
-    (".NET", "dotnet", "#7655d7"), ("Kafka", "kafka", "#8b949e"),
-    ("RabbitMQ", "rabbitmq", "#ed780e"), ("PostgreSQL", "postgresql", "#416d9b"),
-    ("MySQL", "mysql", "#36749b"), ("Redis", "redis", "#c94040"),
-    ("Docker", "docker", "#248aca"), ("Git", "git", "#e75c3c"),
+    ("TypeScript", "typescript", "#3178c6"), ("React", "react", "#149eca"),
+    ("Kotlin", "kotlin", "#9b62ee"), ("Jetpack Compose", "jetpackcompose", "#1d5f7a"),
+    ("PostgreSQL", "postgresql", "#416d9b"), ("MySQL", "mysql", "#36749b"),
+    ("MongoDB", "mongodb", "#00684a"), ("Redis", "redis", "#c94040"),
+    ("RabbitMQ", "rabbitmq", "#ed780e"), ("Kafka", "kafka", "#8b949e"),
+    ("Git", "git", "#e75c3c"), ("GitHub", "github", "#484f58"),
+    ("Docker", "docker", "#248aca"), ("VPS", "vps", "#5856d6"),
+    ("Vercel", "vercel", "#2b3137"), ("Cloudflare", "cloudflare", "#334155"),
 ]
 CONTACTS = [
     {"slug": "email", "title": "Email", "category": "EMAIL ADDRESS",
@@ -191,11 +193,15 @@ def refresh(snapshot):
 
 
 def text(x, y, value, size=16, color=FG, weight=400, extra=""):
-    return f'<text x="{x}" y="{y}" fill="{color}" font-size="{size}" font-weight="{weight}" {extra}>{escape(str(value))}</text>'
+    w_attr = f' font-weight="{weight}"' if weight != 400 else ""
+    e_attr = f" {extra}" if extra else ""
+    return f'<text x="{x}" y="{y}" fill="{color}" font-size="{size}"{w_attr}{e_attr}>{escape(str(value))}</text>'
 
 
 def rect(x, y, w, h, fill=SURFACE, radius=10, stroke="none"):
-    return f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="{radius}" fill="{fill}" stroke="{stroke}"/>'
+    r_attr = f' rx="{radius}"' if radius else ""
+    s_attr = f' stroke="{stroke}"' if stroke != "none" else ""
+    return f'<rect x="{x}" y="{y}" width="{w}" height="{h}"{r_attr} fill="{fill}"{s_attr}/>'
 
 
 def svg(width, height, content, title, description=""):
@@ -231,7 +237,8 @@ def hero():
 
 def technology():
     # Brisk vertical turns keep larger badges clear while the rows stay close.
-    left, top, width, height = 72, 36, 1056, 84
+    left, top, width, height = 57, 36, 1086, 84
+    duration = 56
     corners = (0, 0.497, 0.5, 0.997, 1)
     points = ((left, top), (left + width, top), (left + width, top + height),
               (left, top + height), (left, top))
@@ -244,30 +251,36 @@ def technology():
                 next_x, next_y = points[i + 1]
                 return x + (next_x - x) * fraction, y + (next_y - y) * fraction
 
-    styles, badges = [], []
+    keyframes = "".join(f'{c*100:g}%{{transform:translate({x}px,{y}px)}}' for c, (x, y) in zip(corners, points))
+    styles = [f'@keyframes orbit{{{keyframes}}} .badge{{animation:orbit {duration}s linear infinite;will-change:transform}}']
+    badges = []
     for index, (label, filename, color) in enumerate(TECH):
         offset = index / len(TECH)
-        stops = [0, 1] + [(corner - offset) % 1 for corner in corners[:-1]]
-        frames = []
-        for stop in sorted(set(stops)):
-            x, y = point(offset + stop)
-            frames.append(f'{stop*100:.6f}%{{transform:translate({x:.3f}px,{y:.3f}px)}}')
-        styles.append(f'@keyframes orbit{index}{{{"".join(frames)}}} .badge{index}{{animation:orbit{index} 56s linear infinite}}')
+        styles.append(f'.badge{index}{{animation-delay:-{offset * duration:.3f}s}}')
         x, y = point(offset)
         logo = ET.fromstring((ASSETS / "icons" / f"{filename}.svg").read_text())
         # Native SVG geometry works in image mode without external image requests.
-        logo.set("x", "-61.5414725"); logo.set("y", "-22.1267475"); logo.set("width", "44.253495"); logo.set("height", "44.253495")
+        logo.set("x", "-49"); logo.set("y", "-17"); logo.set("width", "34"); logo.set("height", "34")
         ET.register_namespace("", "http://www.w3.org/2000/svg")
         logo_code = ET.tostring(logo, encoding="unicode")
         for identifier in re.findall(r'\bid="([^"]+)"', logo_code):
             logo_code = logo_code.replace(f'"{identifier}"', f'"tech{index}-{identifier}"').replace(f'#{identifier})', f'#tech{index}-{identifier})')
         if filename == "kafka":
-            logo_code = logo_code.replace('fill="#000"', 'fill="#e6edf3"').replace('fill="#000000"', 'fill="#e6edf3"')
+            logo_code = (logo_code.replace('fill="#000"', 'fill="#e6edf3"')
+                         .replace('fill="#000000"', 'fill="#e6edf3"')
+                         .replace('fill="#231f20"', 'fill="#e6edf3"'))
+        if filename == "github":
+            logo_code = logo_code.replace('fill="#181616"', 'fill="#f0f6fc"')
         if filename == "mysql":
             logo_code = logo_code.replace('fill="#00618A"', 'fill="#f0f6fc"')
-        badges.append(f'<g class="badge badge{index}" transform="translate({x} {y})">' + rect(-72, -29, 144, 58, color, 7)
-                      + '<rect x="-71" y="-28" width="142" height="56" rx="6" fill="#0d1117" fill-opacity=".17"/>'
-                      + logo_code + text(-8, 4.5, label, 12, "#ffffff", 600) + '</g>')
+        if " " in label:
+            first, second = label.split(" ", 1)
+            label_svg = text(-8, -2.5, first, 11, "#ffffff", 600) + text(-8, 11, second, 11, "#ffffff", 600)
+        else:
+            label_svg = text(-8, 4, label, 11, "#ffffff", 600)
+        badges.append(f'<g class="badge badge{index}" transform="translate({x:.2f} {y:.2f})">' + rect(-57, -27, 114, 54, color, 7)
+                      + '<rect x="-56" y="-26" width="112" height="52" rx="6" fill="#0d1117" fill-opacity=".17"/>'
+                      + logo_code + label_svg + '</g>')
     content = '<style>' + ''.join(styles) + '@media(prefers-reduced-motion:reduce){.badge{animation:none!important}}</style>'
     content += rect(0, 0, 1200, 156, BG, 0)
     content += rect(left, top, width, height, "none", 0, "#252d38")
@@ -353,15 +366,20 @@ def github(snapshot):
     content += '<path d="M495 42v128" stroke="#30363d"/>'
     cell, gap, origin_x, origin_y = 9, 3, 535, 60
     colors = ["#212b26", "#0e4429", "#006d32", "#26a641", "#39d353"]
+    content += f'<defs><rect id="c" width="{cell}" height="{cell}" rx="2"/></defs>'
     sunday = start - timedelta(days=(start.weekday() + 1) % 7)
     month = None
+    groups = [[] for _ in colors]
     for entry in days:
         d = date.fromisoformat(entry["date"])
         column, row = (d - sunday).days // 7, (d.weekday() + 1) % 7
         if d.month != month and (row == 0 or month is None):
             content += text(origin_x + column * (cell + gap), 48, d.strftime("%b"), 10, MUTED)
             month = d.month
-        content += f'<rect x="{origin_x + column * (cell + gap)}" y="{origin_y + row * (cell + gap)}" width="{cell}" height="{cell}" rx="2" fill="{colors[entry["level"]]}"><title>{entry["date"]}: {entry["count"]} contributions</title></rect>'
+        groups[entry["level"]].append(f'<use href="#c" x="{origin_x + column * (cell + gap)}" y="{origin_y + row * (cell + gap)}"/>')
+    for color, rects in zip(colors, groups):
+        if rects:
+            content += f'<g fill="{color}">{"".join(rects)}</g>'
     for row, label in ((1, "M"), (3, "W"), (5, "F")):
         content += text(516, origin_y + row * 12 + 8, label, 9, MUTED)
     content += text(1020, 166, "Less", 10, MUTED)
