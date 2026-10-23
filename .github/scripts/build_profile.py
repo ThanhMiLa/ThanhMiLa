@@ -160,8 +160,8 @@ def icon(name, color, x, y):
 
 def hero():
     content = rect(0, 0, 1200, 162, BG, 0)
-    content += text(0, 30, "ThanhMiLa", 26, GREEN, 600, 'letter-spacing="3" class="mono"')
-    content += text(0, 92, "Vo Ngoc Thanh", 54, FG, 750, 'letter-spacing="-1.5"')
+    content += text(0, 30, "ThanhMiLa", 28.6, GREEN, 600, 'letter-spacing="3" class="mono"')
+    content += text(0, 92, "Vo Ngoc Thanh", 48.6, FG, 750, 'letter-spacing="-1.5"')
     content += text(2, 133, "Software Engineer · Student at FPT University", 25, "#c9d1d9", 500)
     content += '<line x1="0" y1="161" x2="1200" y2="161" stroke="#30363d"/>'
     write("profile-header.svg", 1200, 162, content, "Vo Ngoc Thanh (ThanhMiLa) — Software Engineer · Student at FPT University")
@@ -169,7 +169,7 @@ def hero():
 
 def technology():
     # Constant-speed, clockwise travel; the badges stay upright at every corner.
-    left, top, width, height = 88, 36, 1024, 90
+    left, top, width, height = 78, 36, 1044, 64
     length = 2 * (width + height)
     def point(distance):
         d = distance % length
@@ -193,7 +193,7 @@ def technology():
         x, y = point(offset)
         logo = ET.fromstring((ASSETS / "icons" / f"{filename}.svg").read_text())
         # Native SVG geometry works in image mode without external image requests.
-        logo.set("x", "-50"); logo.set("y", "-11"); logo.set("width", "22"); logo.set("height", "22")
+        logo.set("x", "-53.5475"); logo.set("y", "-14.5475"); logo.set("width", "29.095"); logo.set("height", "29.095")
         ET.register_namespace("", "http://www.w3.org/2000/svg")
         logo_code = ET.tostring(logo, encoding="unicode")
         for identifier in re.findall(r'\bid="([^"]+)"', logo_code):
@@ -204,10 +204,10 @@ def technology():
                       + '<rect x="-59" y="-18" width="118" height="36" rx="6" fill="#0d1117" fill-opacity=".17"/>'
                       + logo_code + text(-22, 4.5, label, 12, "#ffffff", 600) + '</g>')
     content = '<style>' + ''.join(styles) + '@media(prefers-reduced-motion:reduce){.badge{animation:none!important}}</style>'
-    content += rect(0, 0, 1200, 162, BG, 0)
+    content += rect(0, 0, 1200, 136, BG, 0)
     content += rect(left, top, width, height, "none", 0, "#252d38")
     content += ''.join(badges)
-    write("tech-stack.svg", 1200, 162, content, "Tech stack — clockwise rectangular animation", ", ".join(t[0] for t in TECH))
+    write("tech-stack.svg", 1200, 136, content, "Tech stack — clockwise rectangular animation", ", ".join(t[0] for t in TECH))
 
 
 def projects(snapshot):
