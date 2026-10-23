@@ -34,14 +34,16 @@ ADDITIONAL_LANGUAGE_REPOSITORIES = (
 )
 BG, SURFACE, BORDER = "#0d1117", "#161b22", "#30363d"
 FG, MUTED, GREEN = "#f0f6fc", "#919ba8", "#3fb950"
+FPT_BLUE, FPT_GREEN, FPT_ORANGE = "#0066b3", "#0db14b", "#f37021"
+FPT_COLORS = (FPT_BLUE, FPT_GREEN, FPT_ORANGE)
 PROJECTS = [
-    {"repo": "codelearning", "title": "CodeLearning", "color": "#79c0ff", "logo": "LOGO_SINGLE.png",
+    {"repo": "codelearning", "title": "CodeLearning", "color": FPT_BLUE, "logo": "LOGO_SINGLE.png",
      "category": "DSA - COMPETITIVE PROGRAMING",
      "tags": ["Spring Boot", "React", "Judge0"]},
-    {"repo": "reallive", "title": "RealLive", "color": "#ff7b72", "icon": "live",
+    {"repo": "reallive", "title": "RealLive", "color": FPT_ORANGE, "icon": "live",
      "category": "STREAMING - MICROSERVICES",
      "tags": ["Spring Boot", "MediaMTX", "Kafka"]},
-    {"repo": "springlens", "title": "SpringLens", "color": "#7ee787", "logo": "Logo_SpringLens.svg",
+    {"repo": "springlens", "title": "SpringLens", "color": FPT_GREEN, "logo": "Logo_SpringLens.svg",
      "category": "DEVELOPER TOOLS",
      "tags": ["Java", "IntelliJ SDK", "REST API"]},
 ]
@@ -358,7 +360,7 @@ def github(snapshot):
     total = sum(d["count"] for d in days)
     content = rect(.5, .5, 1199, 185, SURFACE, 12, BORDER)
     content += text(1174, 24, f'Updated {section["updated_at"][:10]} UTC', 12, MUTED, 400, 'text-anchor="end"')
-    for x, value, label, color in ((27, f"{total:,}", "Contributions", "#3fb9a5"), (181, current, "Current Streak", "#e3b341"), (335, longest, "Longest Streak", "#f47067")):
+    for x, value, label, color in ((27, f"{total:,}", "Contributions", FPT_BLUE), (181, current, "Current Streak", FPT_GREEN), (335, longest, "Longest Streak", FPT_ORANGE)):
         content += text(x, 66, label, 14, MUTED)
         content += text(x, 112, value, 36, color, 700)
     content += text(27, 148, f'{start:%b %d, %Y} – {end:%b %d, %Y}', 12, MUTED)
@@ -395,7 +397,7 @@ def leetcode(snapshot):
     content = rect(.5, .5, 1199, 159, SURFACE, 12, BORDER)
     content += text(1174, 23, f'Updated {stats["updated_at"][:10]} UTC', 12, MUTED, 400, 'text-anchor="end"')
     content += '<circle cx="92" cy="90" r="53" fill="none" stroke="#30363d" stroke-width="8"/>'
-    colors = ["#3fb9a5", "#e3b341", "#f47067"]
+    colors = FPT_COLORS
     circumference, offset = 2 * math.pi * 53, 0
     for difficulty, color in zip(("Easy", "Medium", "Hard"), colors):
         length = circumference * solved[difficulty] / max(1, solved["All"])
