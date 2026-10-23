@@ -1,21 +1,24 @@
 {
   "projects": {
     "codelearning": {
+      "description": "E-learning & Online Judge platform for learning programming and practicing data structures and algorithms (DSA).",
       "stargazers_count": 3,
       "forks_count": 0,
       "html_url": "https://github.com/ThanhMiLa/codelearning"
     },
     "reallive": {
+      "description": "RealLive - Live streaming platform built with an event-driven microservices architecture across Web and Android.",
       "stargazers_count": 1,
       "forks_count": 0,
       "html_url": "https://github.com/ThanhMiLa/reallive"
     },
     "springlens": {
+      "description": "SpringLens - Spring Boot RESTful API Tester for IntelliJ IDEA (IntelliJ Plugin)",
       "stargazers_count": 1,
       "forks_count": 0,
       "html_url": "https://github.com/ThanhMiLa/springlens"
     },
-    "updated_at": "2026-10-23T05:06:39+00:00"
+    "updated_at": "2026-10-23T06:47:27+00:00"
   },
   "github": {
     "days": [

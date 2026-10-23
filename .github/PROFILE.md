@@ -10,7 +10,7 @@ python3 .github/scripts/build_profile.py
 python3 .github/scripts/build_profile.py --refresh
 ```
 
-Edit `PROJECTS` in `build_profile.py` to change the three featured repositories, descriptions, and tags. If the repository names change, also update their links in `README.md`, cache paths in `bust_cache.py`, and the workflow's staged asset paths. Edit `TECH` to change badge labels, colors, or local Devicon logos.
+Edit `PROJECTS` in `build_profile.py` to change the three featured repositories, titles, and tags. Project descriptions are copied verbatim from each repository's GitHub Description and refreshed automatically with the statistics; line wrapping only changes their layout. Card heights adapt to fit the full descriptions. If the repository names change, also update their links in `README.md`, cache paths in `bust_cache.py`, and the workflow's staged asset paths. Edit `TECH` to change badge labels, colors, or local Devicon logos.
 
 The **Refresh profile** workflow runs every six hours and supports manual runs. It uses the built-in `GITHUB_TOKEN`; no additional secret or external statistics image service is required. Failed sources keep their last successful data and timestamp; successful sources still update, and the workflow reports the incomplete refresh.
 

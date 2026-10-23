@@ -5,6 +5,7 @@ No dependencies. Project selection and tech badges are configured below.
 Without --refresh, rendering uses the last timestamped snapshot in assets/.
 """
 import argparse
+import base64
 import json
 import math
 import os
@@ -25,17 +26,14 @@ USER, LEETCODE = "ThanhMiLa", "Thanh_MiLa"
 BG, SURFACE, BORDER = "#0d1117", "#161b22", "#30363d"
 FG, MUTED, GREEN = "#f0f6fc", "#919ba8", "#3fb950"
 PROJECTS = [
-    {"repo": "codelearning", "title": "CodeLearning", "color": "#79c0ff", "icon": "code",
-     "category": "LEARN · CODE · COMPETE",
-     "description": "E-learning and Online Judge platform with interactive courses, automated grading and programming contests.",
-     "tags": ["Spring Boot", "React", "PostgreSQL"]},
-    {"repo": "reallive", "title": "RealLive", "color": "#d2a8ff", "icon": "live",
-     "category": "EVENT-DRIVEN MICROSERVICES",
-     "description": "Live streaming platform for Web and Android, built around an event-driven microservices architecture.",
-     "tags": ["Java", "Kafka", "Android"]},
-    {"repo": "springlens", "title": "SpringLens", "color": "#7ee787", "icon": "lens",
+    {"repo": "codelearning", "title": "CodeLearning", "color": "#79c0ff", "logo": "LOGO_SINGLE.png",
+     "category": "DSA - COMPETITIVE PROGRAMING",
+     "tags": ["Spring Boot", "React", "Judge0"]},
+    {"repo": "reallive", "title": "RealLive", "color": "#ff7b72", "icon": "live",
+     "category": "STREAMING - MICROSERVICES",
+     "tags": ["Spring Boot", "MediaMTX", "Kafka"]},
+    {"repo": "springlens", "title": "SpringLens", "color": "#7ee787", "logo": "Logo_SpringLens.svg",
      "category": "DEVELOPER TOOLS",
-     "description": "An IntelliJ IDEA plugin to discover Spring Boot endpoints, generate requests and test APIs inside the IDE.",
      "tags": ["Java", "IntelliJ SDK", "REST API"]},
 ]
 TECH = [
@@ -104,7 +102,7 @@ def refresh(snapshot):
     def repositories():
         repos = json.loads(fetch(f"https://api.github.com/users/{USER}/repos?per_page=100"))
         lookup = {repo["name"].lower(): repo for repo in repos}
-        return {p["repo"]: {k: lookup[p["repo"]][k] for k in ("stargazers_count", "forks_count", "html_url")} for p in PROJECTS}
+        return {p["repo"]: {k: lookup[p["repo"]][k] for k in ("description", "stargazers_count", "forks_count", "html_url")} for p in PROJECTS}
 
     def github():
         parser = ContributionParser()
@@ -151,9 +149,7 @@ def write(name, width, height, content, title, description=""):
 
 def icon(name, color, x, y):
     paths = {
-        "code": '<path d="m10 8-7 8 7 8m12-16 7 8-7 8m-4-20-4 32"/>',
         "live": '<rect x="7" y="9" width="18" height="14" rx="4"/><path d="m14 12 7 4-7 4zM3 7a15 15 0 0 0 0 18M29 7a15 15 0 0 1 0 18"/>',
-        "lens": '<circle cx="14" cy="14" r="10"/><path d="m21 21 9 9m-21-16h10m-5-5v10"/>',
     }
     return f'<g transform="translate({x} {y})" fill="none" stroke="{color}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">{paths[name]}</g>'
 
@@ -168,69 +164,98 @@ def hero():
 
 
 def technology():
-    # Constant-speed, clockwise travel; the badges stay upright at every corner.
-    left, top, width, height = 78, 36, 1044, 64
-    length = 2 * (width + height)
-    def point(distance):
-        d = distance % length
-        if d < width:
-            return left + d, top
-        if d < width + height:
-            return left + width, top + d - width
-        if d < 2 * width + height:
-            return left + 2 * width + height - d, top + height
-        return left, top + length - d
+    # Brisk vertical turns keep larger badges clear while the rows stay close.
+    left, top, width, height = 72, 36, 1056, 84
+    corners = (0, 0.497, 0.5, 0.997, 1)
+    points = ((left, top), (left + width, top), (left + width, top + height),
+              (left, top + height), (left, top))
+    def point(phase):
+        phase %= 1
+        for i in range(4):
+            if corners[i] <= phase < corners[i + 1]:
+                fraction = (phase - corners[i]) / (corners[i + 1] - corners[i])
+                x, y = points[i]
+                next_x, next_y = points[i + 1]
+                return x + (next_x - x) * fraction, y + (next_y - y) * fraction
 
     styles, badges = [], []
     for index, (label, filename, color) in enumerate(TECH):
-        offset = index * length / len(TECH)
-        stops = [0, 1] + [((corner - offset) % length) / length for corner in (0, width, width + height, 2 * width + height)]
+        offset = index / len(TECH)
+        stops = [0, 1] + [(corner - offset) % 1 for corner in corners[:-1]]
         frames = []
         for stop in sorted(set(stops)):
-            x, y = point(offset + stop * length)
+            x, y = point(offset + stop)
             frames.append(f'{stop*100:.6f}%{{transform:translate({x:.3f}px,{y:.3f}px)}}')
         styles.append(f'@keyframes orbit{index}{{{"".join(frames)}}} .badge{index}{{animation:orbit{index} 56s linear infinite}}')
         x, y = point(offset)
         logo = ET.fromstring((ASSETS / "icons" / f"{filename}.svg").read_text())
         # Native SVG geometry works in image mode without external image requests.
-        logo.set("x", "-57"); logo.set("y", "-18.91175"); logo.set("width", "37.8235"); logo.set("height", "37.8235")
+        logo.set("x", "-61.5414725"); logo.set("y", "-22.1267475"); logo.set("width", "44.253495"); logo.set("height", "44.253495")
         ET.register_namespace("", "http://www.w3.org/2000/svg")
         logo_code = ET.tostring(logo, encoding="unicode")
         for identifier in re.findall(r'\bid="([^"]+)"', logo_code):
             logo_code = logo_code.replace(f'"{identifier}"', f'"tech{index}-{identifier}"').replace(f'#{identifier})', f'#tech{index}-{identifier})')
         if filename == "kafka":
             logo_code = logo_code.replace('fill="#000"', 'fill="#e6edf3"').replace('fill="#000000"', 'fill="#e6edf3"')
-        badges.append(f'<g class="badge badge{index}" transform="translate({x} {y})">' + rect(-60, -19, 120, 38, color, 7)
-                      + '<rect x="-59" y="-18" width="118" height="36" rx="6" fill="#0d1117" fill-opacity=".17"/>'
-                      + logo_code + text(-15, 4.5, label, 12, "#ffffff", 600) + '</g>')
+        if filename == "mysql":
+            logo_code = logo_code.replace('fill="#00618A"', 'fill="#f0f6fc"')
+        badges.append(f'<g class="badge badge{index}" transform="translate({x} {y})">' + rect(-72, -29, 144, 58, color, 7)
+                      + '<rect x="-71" y="-28" width="142" height="56" rx="6" fill="#0d1117" fill-opacity=".17"/>'
+                      + logo_code + text(-8, 4.5, label, 12, "#ffffff", 600) + '</g>')
     content = '<style>' + ''.join(styles) + '@media(prefers-reduced-motion:reduce){.badge{animation:none!important}}</style>'
-    content += rect(0, 0, 1200, 136, BG, 0)
+    content += rect(0, 0, 1200, 156, BG, 0)
     content += rect(left, top, width, height, "none", 0, "#252d38")
     content += ''.join(badges)
-    write("tech-stack.svg", 1200, 136, content, "Tech stack — clockwise rectangular animation", ", ".join(t[0] for t in TECH))
+    write("tech-stack.svg", 1200, 156, content, "Tech stack — clockwise rectangular animation", ", ".join(t[0] for t in TECH))
 
 
 def projects(snapshot):
+    write("project-repositories-link.svg", 200, 24,
+          text(200, 18, "View all repositories →", 16, "#79c0ff", 400, 'text-anchor="end"'),
+          "View all repositories →")
+    descriptions = {p["repo"]: snapshot["projects"][p["repo"]]["description"] or "" for p in PROJECTS}
+    lines = {repo: textwrap.wrap(description, width=41, break_long_words=False, break_on_hyphens=False)
+             for repo, description in descriptions.items()}
+    tags_y = max(180, 110 + (max(len(value) for value in lines.values()) - 1) * 22 + 26)
+    card_height = tags_y + 76
+    readme_path = ROOT / "README.md"
+    readme = readme_path.read_text()
     for project in PROJECTS:
         data = snapshot["projects"][project["repo"]]
         color = project["color"]
-        content = rect(.5, .5, 387, 255, SURFACE, 12, BORDER)
+        content = rect(.5, .5, 387, card_height - 1, SURFACE, 12, BORDER)
         content += rect(1, 20, 3, 32, color, 1)
-        content += icon(project["icon"], color, 22, 23)
+        if project.get("logo"):
+            logo_path = ASSETS / "icons" / project["logo"]
+            if logo_path.suffix.lower() == ".svg":
+                logo = ET.fromstring(logo_path.read_text())
+                for name, value in {"x": "22", "y": "21", "width": "36", "height": "36",
+                                    "preserveAspectRatio": "xMidYMid meet"}.items():
+                    logo.set(name, value)
+                content += "\n".join(line.rstrip() for line in ET.tostring(logo, encoding="unicode").splitlines())
+            else:
+                logo = base64.b64encode(logo_path.read_bytes()).decode("ascii")
+                content += f'<image x="22" y="21" width="36" height="36" preserveAspectRatio="xMidYMid meet" href="data:image/png;base64,{logo}"/>'
+        else:
+            content += icon(project["icon"], color, 22, 23)
         content += text(68, 47, project["title"], 23, FG, 650)
         content += '<path d="M355 29h12v12m-1-11-15 15m11 1v6h-17V35h6" fill="none" stroke="#919ba8" stroke-width="1.7"/>'
         content += text(23, 81, project["category"], 10, color, 600, 'letter-spacing="1.2" class="mono"')
-        for i, line in enumerate(textwrap.wrap(project["description"], width=41)):
+        for i, line in enumerate(lines[project["repo"]]):
             content += text(23, 110 + i * 22, line, 16, "#b7c0cc")
         x = 23
         for tag in project["tags"]:
             w = len(tag) * 7 + 20
-            content += rect(x, 180, w, 27, "#212b36", 6)
-            content += text(x + 10, 198, tag, 12, color, 600)
+            content += rect(x, tags_y, w, 27, "#212b36", 6)
+            content += text(x + 10, tags_y + 18, tag, 12, color, 600)
             x += w + 7
-        content += text(23, 237, f'☆  {data["stargazers_count"]}    ⑂  {data["forks_count"]}', 15, MUTED)
-        content += text(365, 237, "Explore repository →", 12, color, 500, 'text-anchor="end"')
-        write(f'project-{project["repo"]}.svg', 388, 256, content, f'{project["title"]} — {project["description"]}')
+        content += text(23, tags_y + 57, f'☆  {data["stargazers_count"]}    ⑂  {data["forks_count"]}', 15, MUTED)
+        content += text(365, tags_y + 57, "Explore repository →", 12, color, 500, 'text-anchor="end"')
+        title = f'{project["title"]} — {descriptions[project["repo"]]}'
+        write(f'project-{project["repo"]}.svg', 388, card_height, content, title)
+        pattern = rf'(<img\b[^>]*\bsrc="\./assets/project-{re.escape(project["repo"])}\.svg(?:\?[^"]*)?"[^>]*\balt=")[^"]*(")'
+        readme = re.sub(pattern, lambda match: match[1] + escape(title) + match[2], readme)
+    readme_path.write_text(readme)
 
 
 def github(snapshot):
