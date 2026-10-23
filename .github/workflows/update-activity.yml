@@ -1,71 +1,50 @@
-name: ⚡ Sync GitHub Profile Stats & Activity
+name: Refresh profile
 
 on:
   schedule:
-    # Tự động cập nhật mỗi 6 tiếng một lần
     - cron: '0 */6 * * *'
   workflow_dispatch:
   push:
-    branches:
-      - main
-    paths-ignore:
-      - 'README.md'
-      - 'assets/**'
-      - 'profile-3d-contrib/**'
-      - '.github/workflows/update-langs.yml'
+    branches: [main]
+    paths:
+      - '.github/scripts/build_profile.py'
+      - '.github/workflows/update-activity.yml'
+      - 'assets/icons/**'
 
 permissions:
   contents: write
 
+concurrency:
+  group: profile-assets
+  cancel-in-progress: false
+
 jobs:
-  update-profile-stats:
+  refresh:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v4
-
-      - name: Set up Python
-        uses: actions/setup-python@v5
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-
-      - name: ⚡ Fetch and Update Live GitHub Activity
+      - name: Refresh public GitHub and LeetCode data
+        id: build
+        continue-on-error: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python .github/scripts/build_profile.py --refresh
+      - name: Update image cache keys
+        run: python .github/scripts/bust_cache.py
+      - name: Commit refreshed assets
         run: |
-          python .github/scripts/update_activity.py
-
-      - name: 🔥 Calculate & Update GitHub Streak Stats
-        env:
-          GH_PAT: ${{ secrets.GH_PAT }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config user.name "github-actions[bot]"
+          git add assets/profile-*.svg assets/tech-stack.svg assets/project-*.svg assets/github-summary.svg assets/leetcode-summary.svg assets/profile-data.json README.md
+          if ! git diff --staged --quiet; then
+            git commit -m "chore(profile): refresh projects and coding stats [skip ci]"
+            git push
+          fi
+      - name: Report incomplete refresh
+        if: steps.build.outcome == 'failure'
         run: |
-          python .github/scripts/update_streak.py
-
-      - name: 📈 Fetch and Update Most Used Languages
-        env:
-          GH_PAT: ${{ secrets.GH_PAT }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          python .github/scripts/update_langs.py
-
-      - name: 🧠 Fetch and Update LeetCode Stats
-        run: |
-          python .github/scripts/update_leetcode.py
-
-      - name: 🧊 Generate 3D Contribution City SVGs
-        uses: yoshi389111/github-profile-3d-contrib@0.7.1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          USERNAME: ${{ github.repository_owner }}
-
-      - name: 🔄 Bust GitHub Camo Image Cache in README
-        run: |
-          python .github/scripts/bust_cache.py
-
-      - name: 🚀 Commit & Push All Updated Assets
-        run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git add assets/ profile-3d-contrib/ README.md
-          git diff --staged --quiet || (git commit -m "⚡ chore(profile): sync 3D city, streak stats, LeetCode, languages & activity feed [skip ci]" && git pull --rebase -X theirs origin main && git push)
+          echo "One or more sources failed. Available updates were saved; previous data was preserved for failed sources."
+          exit 1

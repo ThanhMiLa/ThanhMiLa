@@ -10,6 +10,13 @@ def bust_readme_cache():
         content = f.read()
 
     dynamic_cards = [
+        "assets/profile-header.svg",
+        "assets/tech-stack.svg",
+        "assets/project-codelearning.svg",
+        "assets/project-reallive.svg",
+        "assets/project-springlens.svg",
+        "assets/github-summary.svg",
+        "assets/leetcode-summary.svg",
         "profile-3d-contrib/profile-night-view.svg",
         "assets/tech-sphere-3d.svg",
         "assets/streak-stats.svg",
@@ -79,5 +86,4 @@ def apply_3d_contrib_border():
         print(f"Warning: Could not apply border to 3D contrib SVG: {e}")
 
 if __name__ == "__main__":
-    apply_3d_contrib_border()
     bust_readme_cache()
