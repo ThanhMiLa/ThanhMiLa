@@ -319,7 +319,7 @@ def projects(snapshot):
             content += icon(project["icon"], color, 22, 23)
         content += text(68, 47, project["title"], 23, FG, 650)
         content += '<path d="M355 29h12v12m-1-11-15 15m11 1v6h-17V35h6" fill="none" stroke="#919ba8" stroke-width="1.7"/>'
-        content += text(23, 81, project["category"], 10, color, 600, 'letter-spacing="1.2" class="mono"')
+        content += text(23, 81, project["category"], 13, color, 600, 'letter-spacing="1.2" class="mono"')
         for i, line in enumerate(lines[project["repo"]]):
             content += text(23, 110 + i * 22, line, 16, "#b7c0cc")
         x = 23
