@@ -1,4 +1,4 @@
-<img src="./assets/profile-header.svg?raw=true&amp;t=1792726433" width="100%" alt="ThanhMila — Software Engineer. Backend systems, developer tools, and ideas brought to life." />
+<img src="./assets/profile-header.svg?raw=true&amp;t=1792726433" width="100%" alt="Vo Ngoc Thanh (ThanhMiLa) — Software Engineer Student at FPT University." />
 
 ## Tech Stack
 

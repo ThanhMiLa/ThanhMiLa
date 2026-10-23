@@ -159,15 +159,12 @@ def icon(name, color, x, y):
 
 
 def hero():
-    content = rect(0, 0, 1200, 182, BG, 0)
-    content += text(0, 19, "HELLO, WORLD", 13, GREEN, 600, 'letter-spacing="3" class="mono"')
-    content += text(0, 89, "ThanhMila", 64, FG, 750, 'letter-spacing="-2"')
-    content += text(2, 129, "Software Engineer", 25, "#c9d1d9", 500)
-    content += text(2, 161, "Backend systems. Developer tools. Ideas brought to life.", 17, MUTED)
-    content += '<g transform="translate(1028 42)">' + rect(0, 0, 170, 34, SURFACE, 17, BORDER)
-    content += '<circle cx="17" cy="17" r="4" fill="#3fb950"/>' + text(30, 22, "BUILD · LEARN · SHIP", 10, "#c9d1d9", 600, 'class="mono"') + '</g>'
-    content += '<line x1="0" y1="181" x2="1200" y2="181" stroke="#30363d"/>'
-    write("profile-header.svg", 1200, 182, content, "ThanhMila — Software Engineer")
+    content = rect(0, 0, 1200, 162, BG, 0)
+    content += text(0, 30, "ThanhMiLa", 26, GREEN, 600, 'letter-spacing="3" class="mono"')
+    content += text(0, 92, "Vo Ngoc Thanh", 54, FG, 750, 'letter-spacing="-1.5"')
+    content += text(2, 133, "Software Engineer · Student at FPT University", 25, "#c9d1d9", 500)
+    content += '<line x1="0" y1="161" x2="1200" y2="161" stroke="#30363d"/>'
+    write("profile-header.svg", 1200, 162, content, "Vo Ngoc Thanh (ThanhMiLa) — Software Engineer · Student at FPT University")
 
 
 def technology():
