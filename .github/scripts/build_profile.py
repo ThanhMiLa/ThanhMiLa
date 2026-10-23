@@ -54,6 +54,20 @@ TECH = [
     ("MySQL", "mysql", "#36749b"), ("Redis", "redis", "#c94040"),
     ("Docker", "docker", "#248aca"), ("Git", "git", "#e75c3c"),
 ]
+CONTACTS = [
+    {"slug": "email", "title": "Email", "category": "EMAIL ADDRESS",
+     "value": "vntvlogs@gmail.com", "color": "#ff7b72", "icon": "email",
+     "href": "mailto:vntvlogs@gmail.com"},
+    {"slug": "linkedin", "title": "LinkedIn", "category": "PROFESSIONAL NETWORK",
+     "value": "Võ Ngọc Thanh", "color": "#58a6ff", "icon": "linkedin",
+     "href": "https://www.linkedin.com/in/v%C3%B5-ng%E1%BB%8Dc-thanh-761067324/"},
+    {"slug": "facebook", "title": "Facebook", "category": "SOCIAL PROFILE",
+     "value": "fb.com/thanhh.mila", "color": "#79c0ff", "icon": "facebook",
+     "href": "https://www.facebook.com/thanhh.mila"},
+    {"slug": "phone", "title": "Phone", "category": "MOBILE / ZALO",
+     "value": "0763769325", "color": "#3fb950", "icon": "phone",
+     "href": "tel:0763769325"},
+]
 
 
 def fetch(url, payload=None):
@@ -198,6 +212,10 @@ def write(name, width, height, content, title, description=""):
 def icon(name, color, x, y):
     paths = {
         "live": '<rect x="7" y="9" width="18" height="14" rx="4"/><path d="m14 12 7 4-7 4zM3 7a15 15 0 0 0 0 18M29 7a15 15 0 0 1 0 18"/>',
+        "email": '<rect x="4" y="7" width="24" height="18" rx="3"/><path d="m5 9 11 8 11-8"/>',
+        "linkedin": '<rect x="5" y="5" width="22" height="22" rx="4"/><path d="M11 14v7M11 10.5v.1M16 21v-4.2a2.8 2.8 0 0 1 5.6 0V21M16 14v7"/>',
+        "facebook": '<rect x="5" y="5" width="22" height="22" rx="4"/><path d="M18 27V15h3.5M14.5 18.5H21M18 15v-2.2a2.3 2.3 0 0 1 2.3-2.3H22"/>',
+        "phone": '<path d="M24.5 21.3v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 4.6 8.6a2 2 0 0 1 2-2.2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.4 2.1L10.6 14.3a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/>',
     }
     return f'<g transform="translate({x} {y})" fill="none" stroke="{color}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">{paths[name]}</g>'
 
@@ -411,6 +429,20 @@ def languages(snapshot):
     write("languages-summary.svg", 1200, 206, content, "Top 6 most used languages", summary or "No language data available.")
 
 
+def contacts():
+    for item in CONTACTS:
+        color = item["color"]
+        content = rect(.5, .5, 287, 121, SURFACE, 12, BORDER)
+        content += rect(1, 20, 3, 32, color, 1)
+        content += icon(item["icon"], color, 18, 20)
+        content += text(58, 44, item["title"], 21, FG, 650)
+        content += '<path d="M255 29h12v12m-1-11-15 15m11 1v6h-17V35h6" fill="none" stroke="#919ba8" stroke-width="1.7"/>'
+        content += text(21, 78, item["category"], 10, color, 600, 'letter-spacing="1.2" class="mono"')
+        content += text(21, 103, item["value"], 15, "#c9d1d9", 500)
+        title = f'{item["title"]} — {item["value"]}'
+        write(f'contact-{item["slug"]}.svg', 288, 122, content, title)
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--refresh", action="store_true")
@@ -419,7 +451,7 @@ def main():
     errors = refresh(snapshot) if args.refresh else []
     if not snapshot:
         parser.error("No saved data; run with --refresh first")
-    hero(); technology(); projects(snapshot); github(snapshot); leetcode(snapshot); languages(snapshot)
+    hero(); technology(); projects(snapshot); github(snapshot); leetcode(snapshot); languages(snapshot); contacts()
     print("Built profile assets from saved, timestamped data.")
     if errors:
         print("Retained previous data for: " + ", ".join(errors))

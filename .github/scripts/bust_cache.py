@@ -18,6 +18,10 @@ def bust_readme_cache():
         "assets/github-summary.svg",
         "assets/leetcode-summary.svg",
         "assets/languages-summary.svg",
+        "assets/contact-email.svg",
+        "assets/contact-linkedin.svg",
+        "assets/contact-facebook.svg",
+        "assets/contact-phone.svg",
     ]
 
     for card in dynamic_cards:
