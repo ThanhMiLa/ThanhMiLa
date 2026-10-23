@@ -23,6 +23,15 @@ ROOT = Path(__file__).resolve().parents[2]
 ASSETS = ROOT / "assets"
 CACHE = ASSETS / "profile-data.json"
 USER, LEETCODE = "ThanhMiLa", "Thanh_MiLa"
+ADDITIONAL_LANGUAGE_REPOSITORIES = (
+    "ThanhMiLa/bookteria-microservice",
+    "ThanhMiLa/Identity_Service_FullStack",
+    "ThanhMiLa/HSF302_VoNgocThanh_SE20A11",
+    "ThanhMiLa/spring-ai-demo",
+    "ThanhMiLa/source-hsf-pe",
+    "fptu-se-su26/swp391-su26-ai-audit-project-swp391_se20a11_group-02",
+    "fudn-traltb-su26/course-project-hsf302_se20a11_quang_tan_thanh",
+)
 BG, SURFACE, BORDER = "#0d1117", "#161b22", "#30363d"
 FG, MUTED, GREEN = "#f0f6fc", "#919ba8", "#3fb950"
 PROJECTS = [
@@ -50,14 +59,46 @@ TECH = [
 def fetch(url, payload=None):
     accept = "text/html" if url.startswith("https://github.com/") else "application/json"
     headers = {"User-Agent": "ThanhMiLa-Profile", "Accept": accept}
-    if "api.github.com" in url and os.environ.get("GITHUB_TOKEN"):
-        headers["Authorization"] = "Bearer " + os.environ["GITHUB_TOKEN"]
+    token = os.environ.get("GH_PAT") or os.environ.get("GITHUB_TOKEN")
+    if "api.github.com" in url and token:
+        headers["Authorization"] = "Bearer " + token
     data = None if payload is None else json.dumps(payload).encode()
     if data:
         headers["Content-Type"] = "application/json"
     request = urllib.request.Request(url, data=data, headers=headers)
     with urllib.request.urlopen(request, timeout=30) as response:
         return response.read().decode()
+
+
+def fetch_public_repositories():
+    repositories, page = [], 1
+    while True:
+        batch = json.loads(fetch(f"https://api.github.com/users/{USER}/repos?type=owner&per_page=100&page={page}"))
+        repositories.extend(repo for repo in batch if not repo["private"])
+        if len(batch) < 100:
+            return repositories
+        page += 1
+
+
+def fetch_language_stats(repositories):
+    totals, sources = {}, {}
+    unique = {repo["full_name"].lower(): repo for repo in repositories
+              if not repo["private"] and not repo["fork"]
+              and repo["full_name"].split("/", 1)[0].lower() == USER.lower()}
+    for full_name in ADDITIONAL_LANGUAGE_REPOSITORIES:
+        repo = json.loads(fetch(f"https://api.github.com/repos/{full_name}"))
+        # Explicit selections override the general exclusion of forks and orgs.
+        if repo["full_name"].lower() != full_name.lower():
+            raise ValueError(f"Additional language repository must match its configured name: {full_name}")
+        unique[repo["full_name"].lower()] = repo
+    for repo in sorted(unique.values(), key=lambda item: item["full_name"].lower()):
+        counts = json.loads(fetch(repo["languages_url"]))
+        sources[repo["full_name"]] = counts
+        for language, byte_count in counts.items():
+            totals[language] = totals.get(language, 0) + byte_count
+    return {"bytes": totals, "repositories": sources, "repository_count": len(unique),
+            "private_repository_count": sum(bool(repo["private"]) for repo in unique.values()),
+            "included_forks": [repo["full_name"] for repo in unique.values() if repo["fork"]]}
 
 
 class ContributionParser(HTMLParser):
@@ -92,6 +133,13 @@ class ContributionParser(HTMLParser):
 def refresh(snapshot):
     errors = []
     now = datetime.now(timezone.utc).isoformat(timespec="seconds")
+    repos_cache = None
+    def public_repositories():
+        nonlocal repos_cache
+        if repos_cache is None:
+            repos_cache = fetch_public_repositories()
+        return repos_cache
+
     def save_section(name, loader):
         try:
             snapshot[name] = dict(loader(), updated_at=now)
@@ -100,8 +148,7 @@ def refresh(snapshot):
             errors.append(name)
 
     def repositories():
-        repos = json.loads(fetch(f"https://api.github.com/users/{USER}/repos?per_page=100"))
-        lookup = {repo["name"].lower(): repo for repo in repos}
+        lookup = {repo["name"].lower(): repo for repo in public_repositories()}
         return {p["repo"]: {k: lookup[p["repo"]][k] for k in ("description", "stargazers_count", "forks_count", "html_url")} for p in PROJECTS}
 
     def github():
@@ -120,9 +167,10 @@ def refresh(snapshot):
                 "solved": {item["difficulty"]: item["count"] for item in user["submitStatsGlobal"]["acSubmissionNum"]},
                 "questions": {item["difficulty"]: item["count"] for item in data["allQuestionsCount"]}}
 
-    for name, loader in (("projects", repositories), ("github", github), ("leetcode", leetcode)):
+    for name, loader in (("projects", repositories), ("github", github), ("leetcode", leetcode),
+                         ("languages", lambda: fetch_language_stats(public_repositories()))):
         save_section(name, loader)
-    if any(name not in snapshot for name in ("projects", "github", "leetcode")):
+    if any(name not in snapshot for name in ("projects", "github", "leetcode", "languages")):
         raise RuntimeError("Missing initial data; rerun --refresh when the services are available")
     CACHE.write_text(json.dumps(snapshot, indent=2) + "\n")
     return errors
@@ -211,7 +259,7 @@ def technology():
 
 def projects(snapshot):
     write("project-repositories-link.svg", 200, 24,
-          text(200, 18, "View all repositories →", 16, "#79c0ff", 400, 'text-anchor="end"'),
+          text(200, 18, "View all repositories →", 12.32, "#79c0ff", 400, 'text-anchor="end"'),
           "View all repositories →")
     descriptions = {p["repo"]: snapshot["projects"][p["repo"]]["description"] or "" for p in PROJECTS}
     lines = {repo: textwrap.wrap(description, width=41, break_long_words=False, break_on_hyphens=False)
@@ -277,17 +325,15 @@ def github(snapshot):
         current += 1
         day -= timedelta(days=1)
     total = sum(d["count"] for d in days)
-    content = rect(.5, .5, 1199, 265, SURFACE, 12, BORDER)
-    content += text(26, 35, "A little progress, every day.", 20, FG, 600)
-    content += text(1174, 34, f'Updated {section["updated_at"][:10]} UTC', 12, MUTED, 400, 'text-anchor="end"')
-    for x, value, label, color in ((27, f"{total:,}", "Contributions", FG), (181, current, "Current streak", "#ffa657"), (335, longest, "Longest streak", GREEN)):
-        content += text(x, 105, value, 36, color, 700)
-        content += text(x, 134, label, 14, MUTED)
-        content += text(x, 156, "in displayed year" if x != 181 else "days", 11, MUTED)
-    content += text(27, 214, f'{start:%b %d, %Y} – {end:%b %d, %Y}', 12, MUTED)
-    content += text(27, 239, "Public profile contribution calendar", 11, MUTED)
-    content += '<path d="M495 66v176" stroke="#30363d"/>'
-    cell, gap, origin_x, origin_y = 9, 3, 535, 99
+    content = rect(.5, .5, 1199, 185, SURFACE, 12, BORDER)
+    content += text(1174, 24, f'Updated {section["updated_at"][:10]} UTC', 12, MUTED, 400, 'text-anchor="end"')
+    for x, value, label, color in ((27, f"{total:,}", "Contributions", "#3fb9a5"), (181, current, "Current Streak", "#e3b341"), (335, longest, "Longest Streak", "#f47067")):
+        content += text(x, 66, label, 14, MUTED)
+        content += text(x, 112, value, 36, color, 700)
+    content += text(27, 148, f'{start:%b %d, %Y} – {end:%b %d, %Y}', 12, MUTED)
+    content += text(27, 168, "Public profile contribution calendar", 11, MUTED)
+    content += '<path d="M495 42v128" stroke="#30363d"/>'
+    cell, gap, origin_x, origin_y = 9, 3, 535, 60
     colors = ["#212b26", "#0e4429", "#006d32", "#26a641", "#39d353"]
     sunday = start - timedelta(days=(start.weekday() + 1) % 7)
     month = None
@@ -295,39 +341,38 @@ def github(snapshot):
         d = date.fromisoformat(entry["date"])
         column, row = (d - sunday).days // 7, (d.weekday() + 1) % 7
         if d.month != month and (row == 0 or month is None):
-            content += text(origin_x + column * (cell + gap), 83, d.strftime("%b"), 10, MUTED)
+            content += text(origin_x + column * (cell + gap), 48, d.strftime("%b"), 10, MUTED)
             month = d.month
         content += f'<rect x="{origin_x + column * (cell + gap)}" y="{origin_y + row * (cell + gap)}" width="{cell}" height="{cell}" rx="2" fill="{colors[entry["level"]]}"><title>{entry["date"]}: {entry["count"]} contributions</title></rect>'
     for row, label in ((1, "M"), (3, "W"), (5, "F")):
         content += text(516, origin_y + row * 12 + 8, label, 9, MUTED)
-    content += text(1020, 214, "Less", 10, MUTED)
+    content += text(1020, 166, "Less", 10, MUTED)
     for i, color in enumerate(colors):
-        content += rect(1053 + i * 13, 205, 9, 9, color, 2)
-    content += text(1123, 214, "More", 10, MUTED)
-    write("github-summary.svg", 1200, 266, content, "GitHub contributions summary", f"{total} contributions; current streak {current} days; longest streak {longest} days in the displayed year. Updated {section['updated_at'][:10]}.")
+        content += rect(1053 + i * 13, 157, 9, 9, color, 2)
+    content += text(1123, 166, "More", 10, MUTED)
+    write("github-summary.svg", 1200, 186, content, "GitHub contributions summary", f"{total} contributions; current streak {current} days; longest streak {longest} days in the displayed year. Updated {section['updated_at'][:10]}.")
 
 
 def leetcode(snapshot):
     stats = snapshot["leetcode"]
     solved, questions = stats["solved"], stats["questions"]
-    content = rect(.5, .5, 1199, 227, SURFACE, 12, BORDER)
-    content += text(27, 35, "Problem solving, one challenge at a time.", 20, FG, 600)
-    content += text(1174, 34, f'Updated {stats["updated_at"][:10]} UTC', 12, MUTED, 400, 'text-anchor="end"')
-    content += '<circle cx="92" cy="137" r="53" fill="none" stroke="#30363d" stroke-width="8"/>'
+    content = rect(.5, .5, 1199, 159, SURFACE, 12, BORDER)
+    content += text(1174, 23, f'Updated {stats["updated_at"][:10]} UTC', 12, MUTED, 400, 'text-anchor="end"')
+    content += '<circle cx="92" cy="90" r="53" fill="none" stroke="#30363d" stroke-width="8"/>'
     colors = ["#3fb9a5", "#e3b341", "#f47067"]
     circumference, offset = 2 * math.pi * 53, 0
     for difficulty, color in zip(("Easy", "Medium", "Hard"), colors):
         length = circumference * solved[difficulty] / max(1, solved["All"])
-        content += f'<circle cx="92" cy="137" r="53" fill="none" stroke="{color}" stroke-width="8" stroke-dasharray="{length} {circumference-length}" stroke-dashoffset="{-offset}" transform="rotate(-90 92 137)"/>'
+        content += f'<circle cx="92" cy="90" r="53" fill="none" stroke="{color}" stroke-width="8" stroke-dasharray="{length} {circumference-length}" stroke-dashoffset="{-offset}" transform="rotate(-90 92 90)"/>'
         offset += length
-    content += text(92, 143, solved["All"], 34, FG, 700, 'text-anchor="middle"')
-    content += text(92, 164, "SOLVED", 10, MUTED, 600, 'text-anchor="middle" letter-spacing="1"')
-    content += text(175, 113, LEETCODE, 24, FG, 650)
-    content += text(175, 143, f'Global rank  #{stats["ranking"]:,}', 17, "#ffa657", 500)
-    content += text(175, 174, "Practice. Understand. Improve.", 14, MUTED)
-    content += '<path d="M495 69v129" stroke="#30363d"/>'
+    content += text(92, 96, solved["All"], 34, FG, 700, 'text-anchor="middle"')
+    content += text(92, 117, "SOLVED", 10, MUTED, 600, 'text-anchor="middle" letter-spacing="1"')
+    content += text(175, 69, LEETCODE, 24, FG, 650)
+    content += text(175, 99, f'Global rank  #{stats["ranking"]:,}', 17, "#ffa657", 500)
+    content += text(175, 130, "Practice. Understand. Improve.", 14, MUTED)
+    content += '<path d="M495 42v102" stroke="#30363d"/>'
     for i, (difficulty, color) in enumerate(zip(("Easy", "Medium", "Hard"), colors)):
-        x, y = 527 + i * 220, 103
+        x, y = 527 + i * 220, 60
         content += text(x, y, difficulty, 15, color, 600)
         content += text(x, y + 39, solved[difficulty], 29, FG, 650)
         content += text(x + 55, y + 39, f'/ {questions[difficulty]:,}', 14, MUTED)
@@ -336,7 +381,34 @@ def leetcode(snapshot):
         if bar:
             content += rect(x, y + 57, round(bar, 3), 6, color, 3)
         content += text(x, y + 85, f'{100*solved[difficulty]/max(1,questions[difficulty]):.1f}% completed', 12, MUTED)
-    write("leetcode-summary.svg", 1200, 228, content, "LeetCode statistics", f'{LEETCODE}: {solved["All"]} problems solved. Easy {solved["Easy"]}, Medium {solved["Medium"]}, Hard {solved["Hard"]}. Updated {stats["updated_at"][:10]}.')
+    write("leetcode-summary.svg", 1200, 160, content, "LeetCode statistics", f'{LEETCODE}: {solved["All"]} problems solved. Easy {solved["Easy"]}, Medium {solved["Medium"]}, Hard {solved["Hard"]}. Updated {stats["updated_at"][:10]}.')
+
+
+def languages(snapshot):
+    stats = snapshot["languages"]
+    counts = stats["bytes"]
+    total = sum(counts.values())
+    top_six = sorted(counts.items(), key=lambda item: (-item[1], item[0]))[:6]
+    colors = {"Java": "#b07219", "Python": "#3572a5", "TypeScript": "#3178c6",
+              "JavaScript": "#f1e05a", "HTML": "#e34c26", "CSS": "#a78bfa",
+              "C#": "#178600", "C++": "#f34b7d", "Kotlin": "#a97bff",
+              "Shell": "#89e051", "Dart": "#00b4ab", "Swift": "#f05138"}
+    content = rect(.5, .5, 1199, 205, SURFACE, 12, BORDER)
+    content += text(1174, 26, f'Updated {stats["updated_at"][:10]} UTC', 12, MUTED, 400, 'text-anchor="end"')
+    for index, (language, byte_count) in enumerate(top_six):
+        x, y = 27 + (index % 3) * 400, 68 + (index // 3) * 72
+        color = colors.get(language, "#79c0ff")
+        percent = 100 * byte_count / max(1, total)
+        content += f'<circle cx="{x + 4}" cy="{y - 5}" r="4" fill="{color}"/>'
+        content += text(x + 17, y, language, 16, FG, 600)
+        content += text(x + 346, y, f'{percent:.1f}%', 22, color, 650, 'text-anchor="end"')
+        content += rect(x, y + 17, 346, 7, "#30363d", 3)
+        if percent:
+            content += rect(x, y + 17, round(346 * percent / 100, 3), 7, color, 3)
+    if not top_six:
+        content += text(27, 106, "No language data available.", 16, MUTED)
+    summary = "; ".join(f'{name} {100 * count / max(1, total):.1f}%' for name, count in top_six)
+    write("languages-summary.svg", 1200, 206, content, "Top 6 most used languages", summary or "No language data available.")
 
 
 def main():
@@ -347,7 +419,7 @@ def main():
     errors = refresh(snapshot) if args.refresh else []
     if not snapshot:
         parser.error("No saved data; run with --refresh first")
-    hero(); technology(); projects(snapshot); github(snapshot); leetcode(snapshot)
+    hero(); technology(); projects(snapshot); github(snapshot); leetcode(snapshot); languages(snapshot)
     print("Built profile assets from saved, timestamped data.")
     if errors:
         print("Retained previous data for: " + ", ".join(errors))

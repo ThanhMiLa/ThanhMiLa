@@ -17,6 +17,7 @@ def bust_readme_cache():
         "assets/project-springlens.svg",
         "assets/github-summary.svg",
         "assets/leetcode-summary.svg",
+        "assets/languages-summary.svg",
     ]
 
     for card in dynamic_cards:

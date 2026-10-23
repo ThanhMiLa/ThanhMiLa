@@ -26,11 +26,12 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - name: Refresh public GitHub and LeetCode data
+      - name: Refresh GitHub, selected private repo languages, and LeetCode data
         id: build
         continue-on-error: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_PAT: ${{ secrets.GH_PAT }}
         run: python .github/scripts/build_profile.py --refresh
       - name: Update image cache keys
         run: python .github/scripts/bust_cache.py
@@ -38,7 +39,7 @@ jobs:
         run: |
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git config user.name "github-actions[bot]"
-          git add assets/profile-*.svg assets/tech-stack.svg assets/project-*.svg assets/github-summary.svg assets/leetcode-summary.svg assets/profile-data.json README.md
+          git add assets/profile-*.svg assets/tech-stack.svg assets/project-*.svg assets/github-summary.svg assets/leetcode-summary.svg assets/languages-summary.svg assets/profile-data.json README.md
           if ! git diff --staged --quiet; then
             git commit -m "chore(profile): refresh projects and coding stats [skip ci]"
             git push

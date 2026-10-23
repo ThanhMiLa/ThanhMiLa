@@ -18,7 +18,7 @@
       "forks_count": 0,
       "html_url": "https://github.com/ThanhMiLa/springlens"
     },
-    "updated_at": "2026-10-23T06:47:27+00:00"
+    "updated_at": "2026-10-23T07:37:07+00:00"
   },
   "github": {
     "days": [
@@ -1870,10 +1870,10 @@
       {
         "date": "2026-10-23",
         "level": 1,
-        "count": 8
+        "count": 9
       }
     ],
-    "updated_at": "2026-10-23T05:06:39+00:00"
+    "updated_at": "2026-10-23T07:37:07+00:00"
   },
   "leetcode": {
     "ranking": 2314279,
@@ -1889,6 +1889,101 @@
       "Medium": 2131,
       "Hard": 984
     },
-    "updated_at": "2026-10-23T05:06:39+00:00"
+    "updated_at": "2026-10-23T07:37:07+00:00"
+  },
+  "languages": {
+    "bytes": {
+      "TypeScript": 2694575,
+      "Java": 6352108,
+      "JavaScript": 201948,
+      "HTML": 503487,
+      "PLpgSQL": 80107,
+      "CSS": 45561,
+      "Dockerfile": 3318,
+      "Lua": 1174,
+      "Python": 46832,
+      "Kotlin": 580208,
+      "Shell": 447
+    },
+    "repositories": {
+      "fptu-se-su26/swp391-su26-ai-audit-project-swp391_se20a11_group-02": {
+        "TypeScript": 1844011,
+        "Java": 1719146,
+        "JavaScript": 63443,
+        "HTML": 26923,
+        "PLpgSQL": 13926,
+        "CSS": 6775,
+        "Dockerfile": 1603,
+        "Lua": 1174
+      },
+      "fudn-traltb-su26/course-project-hsf302_se20a11_quang_tan_thanh": {
+        "Java": 676717,
+        "HTML": 142243,
+        "CSS": 31846,
+        "JavaScript": 7103
+      },
+      "ThanhMiLa/argostranslate": {
+        "Python": 17982
+      },
+      "ThanhMiLa/bookteria-microservice": {
+        "Kotlin": 574899,
+        "Java": 235566,
+        "JavaScript": 71443,
+        "HTML": 588,
+        "CSS": 268
+      },
+      "ThanhMiLa/codelearning": {
+        "Java": 1037300,
+        "TypeScript": 677497,
+        "PLpgSQL": 66181,
+        "CSS": 4942,
+        "Dockerfile": 1129,
+        "JavaScript": 591,
+        "HTML": 360
+      },
+      "ThanhMiLa/HSF302_VoNgocThanh_SE20A11": {
+        "Java": 40147
+      },
+      "ThanhMiLa/Identity_Service_FullStack": {
+        "Java": 107109,
+        "JavaScript": 24264,
+        "HTML": 588,
+        "Dockerfile": 586,
+        "CSS": 268
+      },
+      "ThanhMiLa/job-portal": {
+        "Java": 172675
+      },
+      "ThanhMiLa/reallive": {
+        "Java": 1392886,
+        "HTML": 269724,
+        "TypeScript": 173067,
+        "JavaScript": 35104,
+        "Python": 13564,
+        "Kotlin": 5309,
+        "CSS": 1462
+      },
+      "ThanhMiLa/source-hsf-pe": {
+        "Java": 266483,
+        "HTML": 63061
+      },
+      "ThanhMiLa/spring-ai-demo": {
+        "Java": 8577
+      },
+      "ThanhMiLa/springlens": {
+        "Java": 695502
+      },
+      "ThanhMiLa/ThanhMiLa": {},
+      "ThanhMiLa/tube-to-sound": {
+        "Python": 15286,
+        "Shell": 447
+      }
+    },
+    "repository_count": 14,
+    "private_repository_count": 6,
+    "included_forks": [
+      "fudn-traltb-su26/course-project-hsf302_se20a11_quang_tan_thanh"
+    ],
+    "updated_at": "2026-10-23T08:09:29+00:00"
   }
 }
