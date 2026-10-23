@@ -18,4 +18,4 @@ GitHub metrics cover the **displayed calendar**, rather than lifetime contributi
 
 The tech animation is self-contained SVG/CSS: badges travel clockwise around a rectangle without rotating their labels. The static positions remain visible when animations are disabled, and `prefers-reduced-motion` disables movement. There is no JavaScript, iframe, remote font, or external image dependency inside the SVGs.
 
-Older SVGs and scripts are retained as source material for the previous design. They are no longer referenced by the profile or scheduled workflows.
+The repository contains only the current profile assets, their source logos and data snapshot, the renderer, the cache helper, and the refresh workflow. Obsolete artwork and updater scripts from the previous design have been removed.

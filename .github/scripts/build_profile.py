@@ -193,7 +193,7 @@ def technology():
         x, y = point(offset)
         logo = ET.fromstring((ASSETS / "icons" / f"{filename}.svg").read_text())
         # Native SVG geometry works in image mode without external image requests.
-        logo.set("x", "-53.5475"); logo.set("y", "-14.5475"); logo.set("width", "29.095"); logo.set("height", "29.095")
+        logo.set("x", "-57"); logo.set("y", "-18.91175"); logo.set("width", "37.8235"); logo.set("height", "37.8235")
         ET.register_namespace("", "http://www.w3.org/2000/svg")
         logo_code = ET.tostring(logo, encoding="unicode")
         for identifier in re.findall(r'\bid="([^"]+)"', logo_code):
@@ -202,7 +202,7 @@ def technology():
             logo_code = logo_code.replace('fill="#000"', 'fill="#e6edf3"').replace('fill="#000000"', 'fill="#e6edf3"')
         badges.append(f'<g class="badge badge{index}" transform="translate({x} {y})">' + rect(-60, -19, 120, 38, color, 7)
                       + '<rect x="-59" y="-18" width="118" height="36" rx="6" fill="#0d1117" fill-opacity=".17"/>'
-                      + logo_code + text(-22, 4.5, label, 12, "#ffffff", 600) + '</g>')
+                      + logo_code + text(-15, 4.5, label, 12, "#ffffff", 600) + '</g>')
     content = '<style>' + ''.join(styles) + '@media(prefers-reduced-motion:reduce){.badge{animation:none!important}}</style>'
     content += rect(0, 0, 1200, 136, BG, 0)
     content += rect(left, top, width, height, "none", 0, "#252d38")
