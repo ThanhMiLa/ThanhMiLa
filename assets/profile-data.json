@@ -18,7 +18,7 @@
       "forks_count": 0,
       "html_url": "https://github.com/ThanhMiLa/springlens"
     },
-    "updated_at": "2026-10-24T07:39:46+00:00"
+    "updated_at": "2026-10-24T12:58:10+00:00"
   },
   "github": {
     "days": [
@@ -1874,14 +1874,14 @@
       },
       {
         "date": "2026-10-24",
-        "level": 0,
-        "count": 0
+        "level": 1,
+        "count": 4
       }
     ],
-    "updated_at": "2026-10-24T07:39:46+00:00"
+    "updated_at": "2026-10-24T12:58:10+00:00"
   },
   "leetcode": {
-    "ranking": 2315451,
+    "ranking": 2316475,
     "solved": {
       "All": 66,
       "Easy": 62,
@@ -1894,13 +1894,13 @@
       "Medium": 2131,
       "Hard": 984
     },
-    "updated_at": "2026-10-24T07:39:46+00:00"
+    "updated_at": "2026-10-24T12:58:10+00:00"
   },
   "languages": {
     "bytes": {
-      "TypeScript": 2694575,
+      "TypeScript": 2704445,
       "Java": 6352108,
-      "JavaScript": 201948,
+      "JavaScript": 208384,
       "HTML": 503487,
       "PLpgSQL": 80107,
       "CSS": 45561,
@@ -1962,8 +1962,8 @@
       "ThanhMiLa/reallive": {
         "Java": 1392886,
         "HTML": 269724,
-        "TypeScript": 173067,
-        "JavaScript": 35104,
+        "TypeScript": 182937,
+        "JavaScript": 41540,
         "Python": 13564,
         "Kotlin": 5309,
         "CSS": 1462
@@ -1989,6 +1989,6 @@
     "included_forks": [
       "fudn-traltb-su26/course-project-hsf302_se20a11_quang_tan_thanh"
     ],
-    "updated_at": "2026-10-24T07:39:46+00:00"
+    "updated_at": "2026-10-24T12:58:10+00:00"
   }
 }
