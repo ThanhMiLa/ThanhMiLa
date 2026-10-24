@@ -18,7 +18,7 @@
       "forks_count": 0,
       "html_url": "https://github.com/ThanhMiLa/springlens"
     },
-    "updated_at": "2026-10-24T12:58:10+00:00"
+    "updated_at": "2026-10-24T17:41:44+00:00"
   },
   "github": {
     "days": [
@@ -1875,10 +1875,10 @@
       {
         "date": "2026-10-24",
         "level": 1,
-        "count": 4
+        "count": 8
       }
     ],
-    "updated_at": "2026-10-24T12:58:10+00:00"
+    "updated_at": "2026-10-24T17:41:44+00:00"
   },
   "leetcode": {
     "ranking": 2316475,
@@ -1889,26 +1889,26 @@
       "Hard": 1
     },
     "questions": {
-      "All": 4087,
-      "Easy": 972,
-      "Medium": 2131,
-      "Hard": 984
+      "All": 4091,
+      "Easy": 973,
+      "Medium": 2133,
+      "Hard": 985
     },
-    "updated_at": "2026-10-24T12:58:10+00:00"
+    "updated_at": "2026-10-24T17:41:44+00:00"
   },
   "languages": {
     "bytes": {
-      "TypeScript": 2704445,
+      "TypeScript": 2704975,
       "Java": 6352108,
-      "JavaScript": 208384,
-      "HTML": 503487,
+      "JavaScript": 214790,
+      "HTML": 508395,
       "PLpgSQL": 80107,
       "CSS": 45561,
-      "Dockerfile": 3318,
+      "Dockerfile": 3568,
       "Lua": 1174,
-      "Python": 46832,
+      "Python": 110819,
       "Kotlin": 580208,
-      "Shell": 447
+      "Shell": 2027
     },
     "repositories": {
       "fptu-se-su26/swp391-su26-ai-audit-project-swp391_se20a11_group-02": {
@@ -1961,12 +1961,14 @@
       },
       "ThanhMiLa/reallive": {
         "Java": 1392886,
-        "HTML": 269724,
-        "TypeScript": 182937,
-        "JavaScript": 41540,
-        "Python": 13564,
+        "HTML": 274632,
+        "TypeScript": 183467,
+        "Python": 77551,
+        "JavaScript": 47946,
         "Kotlin": 5309,
-        "CSS": 1462
+        "Shell": 1580,
+        "CSS": 1462,
+        "Dockerfile": 250
       },
       "ThanhMiLa/source-hsf-pe": {
         "Java": 266483,
@@ -1989,6 +1991,6 @@
     "included_forks": [
       "fudn-traltb-su26/course-project-hsf302_se20a11_quang_tan_thanh"
     ],
-    "updated_at": "2026-10-24T12:58:10+00:00"
+    "updated_at": "2026-10-24T17:41:44+00:00"
   }
 }
