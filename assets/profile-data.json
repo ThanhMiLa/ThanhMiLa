@@ -18,45 +18,10 @@
       "forks_count": 0,
       "html_url": "https://github.com/ThanhMiLa/springlens"
     },
-    "updated_at": "2026-10-24T22:45:59+00:00"
+    "updated_at": "2026-10-25T01:55:13+00:00"
   },
   "github": {
     "days": [
-      {
-        "date": "2025-10-19",
-        "level": 1,
-        "count": 2
-      },
-      {
-        "date": "2025-10-20",
-        "level": 1,
-        "count": 3
-      },
-      {
-        "date": "2025-10-21",
-        "level": 0,
-        "count": 0
-      },
-      {
-        "date": "2025-10-22",
-        "level": 0,
-        "count": 0
-      },
-      {
-        "date": "2025-10-23",
-        "level": 0,
-        "count": 0
-      },
-      {
-        "date": "2025-10-24",
-        "level": 0,
-        "count": 0
-      },
-      {
-        "date": "2025-10-25",
-        "level": 1,
-        "count": 3
-      },
       {
         "date": "2025-10-26",
         "level": 1,
@@ -1876,9 +1841,14 @@
         "date": "2026-10-24",
         "level": 1,
         "count": 8
+      },
+      {
+        "date": "2026-10-25",
+        "level": 0,
+        "count": 0
       }
     ],
-    "updated_at": "2026-10-24T22:45:59+00:00"
+    "updated_at": "2026-10-25T01:55:13+00:00"
   },
   "leetcode": {
     "ranking": 2316475,
@@ -1894,7 +1864,7 @@
       "Medium": 2133,
       "Hard": 985
     },
-    "updated_at": "2026-10-24T22:45:59+00:00"
+    "updated_at": "2026-10-25T01:55:13+00:00"
   },
   "languages": {
     "bytes": {
@@ -1991,6 +1961,6 @@
     "included_forks": [
       "fudn-traltb-su26/course-project-hsf302_se20a11_quang_tan_thanh"
     ],
-    "updated_at": "2026-10-24T22:45:59+00:00"
+    "updated_at": "2026-10-25T01:55:13+00:00"
   }
 }
