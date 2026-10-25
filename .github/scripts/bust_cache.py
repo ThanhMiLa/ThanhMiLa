@@ -1,38 +1,47 @@
 #!/usr/bin/env python3
+import hashlib
+from pathlib import Path
 import re
-import time
 
-README_PATH = "README.md"
+README_PATH = Path("README.md")
+RAW_BASE = "https://raw.githubusercontent.com/ThanhMiLa/ThanhMiLa/main"
+
+CARDS = [
+    "assets/profile-header.svg",
+    "assets/tech-stack.svg",
+    "assets/project-repositories-link.svg",
+    "assets/project-codelearning.svg",
+    "assets/project-reallive.svg",
+    "assets/project-springlens.svg",
+    "assets/github-summary.svg",
+    "assets/leetcode-summary.svg",
+    "assets/languages-summary.svg",
+    "assets/contact-email.svg",
+    "assets/contact-linkedin.svg",
+    "assets/contact-facebook.svg",
+    "assets/contact-phone.svg",
+]
+
 
 def bust_readme_cache():
-    timestamp = int(time.time())
-    with open(README_PATH, "r", encoding="utf-8") as f:
-        content = f.read()
+    content = README_PATH.read_text(encoding="utf-8")
 
-    dynamic_cards = [
-        "assets/profile-header.svg",
-        "assets/tech-stack.svg",
-        "assets/project-codelearning.svg",
-        "assets/project-reallive.svg",
-        "assets/project-springlens.svg",
-        "assets/github-summary.svg",
-        "assets/leetcode-summary.svg",
-        "assets/languages-summary.svg",
-        "assets/contact-email.svg",
-        "assets/contact-linkedin.svg",
-        "assets/contact-facebook.svg",
-        "assets/contact-phone.svg",
-    ]
-
-    for card in dynamic_cards:
-        pattern = rf'src="\./{re.escape(card)}(\?[^"]*)?"'
-        replacement = f'src="./{card}?raw=true&amp;t={timestamp}"'
+    updated_hashes = {}
+    for card in CARDS:
+        card_path = Path(card)
+        if not card_path.exists():
+            continue
+        digest = hashlib.sha256(card_path.read_bytes()).hexdigest()[:8]
+        updated_hashes[card] = digest
+        pattern = rf'src="(?:\.|{re.escape(RAW_BASE)})/{re.escape(card)}(?:\?[^"]*)?"'
+        replacement = f'src="{RAW_BASE}/{card}?v={digest}"'
         content = re.sub(pattern, replacement, content)
 
-    with open(README_PATH, "w", encoding="utf-8") as f:
-        f.write(content)
+    README_PATH.write_text(content, encoding="utf-8")
+    print(f"Updated cache-busting hashes in {README_PATH}:")
+    for card, digest in updated_hashes.items():
+        print(f"  - {card}: {digest}")
 
-    print(f"Busted Camo cache in {README_PATH} with timestamp {timestamp}!")
 
 if __name__ == "__main__":
     bust_readme_cache()

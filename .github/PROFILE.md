@@ -1,6 +1,6 @@
 # Profile maintenance
 
-The public profile is rendered from `README.md` and the SVGs in `assets/`.
+The public profile is rendered from `README.md` and the SVGs in `assets/`. Profile images in `README.md` point directly to Fastly CDN (`raw.githubusercontent.com`) with per-file SHA-256 content hashes (`?v=<hash>`), eliminating 302 redirects and ensuring unchanged cards stay permanently cached on both CDN and visitor browsers.
 
 ```sh
 # Rebuild visuals from the last successful data snapshot (no network).

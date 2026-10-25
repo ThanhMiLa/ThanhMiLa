@@ -254,7 +254,10 @@ def technology():
                 return x + (next_x - x) * fraction, y + (next_y - y) * fraction
 
     keyframes = "".join(f'{c*100:g}%{{transform:translate({x}px,{y}px)}}' for c, (x, y) in zip(corners, points))
-    styles = [f'@keyframes orbit{{{keyframes}}} .badge{{animation:orbit {duration}s linear infinite;will-change:transform}}']
+    styles = [
+        f'@keyframes orbit{{{keyframes}}} .badge{{animation:orbit {duration}s linear infinite;will-change:transform}} '
+        f'.badge text{{fill:#ffffff;font-size:11px;font-weight:600}}'
+    ]
     badges = []
     for index, (label, filename, color) in enumerate(TECH):
         offset = index / len(TECH)
@@ -275,15 +278,20 @@ def technology():
             logo_code = logo_code.replace('fill="#181616"', 'fill="#f0f6fc"')
         if filename == "mysql":
             logo_code = logo_code.replace('fill="#00618A"', 'fill="#f0f6fc"')
+        # Strip redundant nested namespace and whitespace
+        logo_code = re.sub(r'\s*xmlns="http://www\.w3\.org/2000/svg"', '', logo_code)
+        logo_code = re.sub(r'>\s+<', '><', logo_code).strip()
         if " " in label:
             first, second = label.split(" ", 1)
-            label_svg = text(-8, -2.5, first, 11, "#ffffff", 600) + text(-8, 11, second, 11, "#ffffff", 600)
+            label_svg = f'<text x="-8" y="-2.5">{first}</text><text x="-8" y="11">{second}</text>'
         else:
-            label_svg = text(-8, 4, label, 11, "#ffffff", 600)
-        badges.append(f'<g class="badge badge{index}" transform="translate({x:.2f} {y:.2f})">' + rect(-57, -27, 114, 54, color, 7)
-                      + '<rect x="-56" y="-26" width="112" height="52" rx="6" fill="#0d1117" fill-opacity=".17"/>'
+            label_svg = f'<text x="-8" y="4">{label}</text>'
+        badges.append(f'<g class="badge badge{index}" transform="translate({x:.2f} {y:.2f})">'
+                      f'<use href="#tb" fill="{color}"/><use href="#to"/>'
                       + logo_code + label_svg + '</g>')
-    content = '<style>' + ''.join(styles) + '@media(prefers-reduced-motion:reduce){.badge{animation:none!important}}</style>'
+    content = '<defs><rect id="tb" x="-57" y="-27" width="114" height="54" rx="7"/>'
+    content += '<rect id="to" x="-56" y="-26" width="112" height="52" rx="6" fill="#0d1117" fill-opacity=".17"/></defs>'
+    content += '<style>' + ''.join(styles) + '@media(prefers-reduced-motion:reduce){.badge{animation:none!important}}</style>'
     content += rect(0, 0, 1200, 156, BG, 0)
     content += rect(left, top, width, height, "none", 0, "#252d38")
     content += ''.join(badges)
@@ -334,7 +342,7 @@ def projects(snapshot):
         content += text(365, tags_y + 57, "Explore repository →", 12, color, 500, 'text-anchor="end"')
         title = f'{project["title"]} — {descriptions[project["repo"]]}'
         write(f'project-{project["repo"]}.svg', 388, card_height, content, title)
-        pattern = rf'(<img\b[^>]*\bsrc="\./assets/project-{re.escape(project["repo"])}\.svg(?:\?[^"]*)?"[^>]*\balt=")[^"]*(")'
+        pattern = rf'(<img\b[^>]*\bsrc="(?:\.|https://raw\.githubusercontent\.com/{re.escape(USER)}/{re.escape(USER)}/main)/assets/project-{re.escape(project["repo"])}\.svg(?:\?[^"]*)?"[^>]*\balt=")[^"]*(")'
         readme = re.sub(pattern, lambda match: match[1] + escape(title) + match[2], readme)
     readme_path.write_text(readme)
 
@@ -370,20 +378,21 @@ def github(snapshot):
     colors = ["#212b26", "#0e4429", "#006d32", "#26a641", "#39d353"]
     content += f'<defs><rect id="c" width="{cell}" height="{cell}" rx="2"/></defs>'
     sunday = start - timedelta(days=(start.weekday() + 1) % 7)
+    month_labels = []
     month = None
     groups = [[] for _ in colors]
     for entry in days:
         d = date.fromisoformat(entry["date"])
         column, row = (d - sunday).days // 7, (d.weekday() + 1) % 7
         if d.month != month and (row == 0 or month is None):
-            content += text(origin_x + column * (cell + gap), 48, d.strftime("%b"), 10, MUTED)
+            month_labels.append(f'<text x="{origin_x + column * (cell + gap)}" y="48">{d.strftime("%b")}</text>')
             month = d.month
         groups[entry["level"]].append(f'<use href="#c" x="{origin_x + column * (cell + gap)}" y="{origin_y + row * (cell + gap)}"/>')
+    content += f'<g fill="{MUTED}" font-size="10">{"".join(month_labels)}</g>'
     for color, rects in zip(colors, groups):
         if rects:
             content += f'<g fill="{color}">{"".join(rects)}</g>'
-    for row, label in ((1, "M"), (3, "W"), (5, "F")):
-        content += text(516, origin_y + row * 12 + 8, label, 9, MUTED)
+    content += f'<g fill="{MUTED}" font-size="9"><text x="516" y="{origin_y + 1 * 12 + 8}">M</text><text x="516" y="{origin_y + 3 * 12 + 8}">W</text><text x="516" y="{origin_y + 5 * 12 + 8}">F</text></g>'
     content += text(1020, 166, "Less", 10, MUTED)
     for i, color in enumerate(colors):
         content += rect(1053 + i * 13, 157, 9, 9, color, 2)
@@ -401,7 +410,7 @@ def leetcode(snapshot):
     circumference, offset = 2 * math.pi * 53, 0
     for difficulty, color in zip(("Easy", "Medium", "Hard"), colors):
         length = circumference * solved[difficulty] / max(1, solved["All"])
-        content += f'<circle cx="92" cy="90" r="53" fill="none" stroke="{color}" stroke-width="8" stroke-dasharray="{length} {circumference-length}" stroke-dashoffset="{-offset}" transform="rotate(-90 92 90)"/>'
+        content += f'<circle cx="92" cy="90" r="53" fill="none" stroke="{color}" stroke-width="8" stroke-dasharray="{length:.2f} {circumference-length:.2f}" stroke-dashoffset="{-offset:.2f}" transform="rotate(-90 92 90)"/>'
         offset += length
     content += text(92, 96, solved["All"], 34, FG, 700, 'text-anchor="middle"')
     content += text(92, 117, "SOLVED", 10, MUTED, 600, 'text-anchor="middle" letter-spacing="1"')
@@ -417,7 +426,7 @@ def leetcode(snapshot):
         content += rect(x, y + 57, 187, 6, "#30363d", 3)
         bar = 187 * solved[difficulty] / max(1, questions[difficulty])
         if bar:
-            content += rect(x, y + 57, round(bar, 3), 6, color, 3)
+            content += rect(x, y + 57, round(bar, 2), 6, color, 3)
         content += text(x, y + 85, f'{100*solved[difficulty]/max(1,questions[difficulty]):.1f}% completed', 12, MUTED)
     write("leetcode-summary.svg", 1200, 160, content, "LeetCode statistics", f'{LEETCODE}: {solved["All"]} problems solved. Easy {solved["Easy"]}, Medium {solved["Medium"]}, Hard {solved["Hard"]}. Updated {stats["updated_at"][:10]}.')
 
