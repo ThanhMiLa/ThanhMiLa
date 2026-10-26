@@ -18,7 +18,7 @@
       "forks_count": 0,
       "html_url": "https://github.com/ThanhMiLa/springlens"
     },
-    "updated_at": "2026-10-26T01:56:45+00:00"
+    "updated_at": "2026-10-26T08:10:55+00:00"
   },
   "github": {
     "days": [
@@ -1849,11 +1849,11 @@
       },
       {
         "date": "2026-10-26",
-        "level": 1,
-        "count": 5
+        "level": 2,
+        "count": 13
       }
     ],
-    "updated_at": "2026-10-26T01:56:45+00:00"
+    "updated_at": "2026-10-26T08:10:55+00:00"
   },
   "leetcode": {
     "ranking": 2317648,
@@ -1869,21 +1869,21 @@
       "Medium": 2135,
       "Hard": 986
     },
-    "updated_at": "2026-10-26T01:56:45+00:00"
+    "updated_at": "2026-10-26T08:10:55+00:00"
   },
   "languages": {
     "bytes": {
       "TypeScript": 2759367,
-      "Java": 6453081,
+      "Java": 6479835,
       "JavaScript": 214790,
       "HTML": 239406,
       "PLpgSQL": 81153,
       "CSS": 45561,
       "Dockerfile": 3568,
       "Lua": 1174,
-      "Python": 110819,
+      "Python": 108373,
       "Kotlin": 580208,
-      "Shell": 2027
+      "Shell": 1876
     },
     "repositories": {
       "fptu-se-su26/swp391-su26-ai-audit-project-swp391_se20a11_group-02": {
@@ -1935,14 +1935,14 @@
         "Java": 172675
       },
       "ThanhMiLa/reallive": {
-        "Java": 1493859,
+        "Java": 1520613,
         "TypeScript": 237859,
-        "Python": 77551,
+        "Python": 75105,
         "JavaScript": 47946,
         "HTML": 5643,
         "Kotlin": 5309,
-        "Shell": 1580,
         "CSS": 1462,
+        "Shell": 1429,
         "PLpgSQL": 1046,
         "Dockerfile": 250
       },
@@ -1967,6 +1967,6 @@
     "included_forks": [
       "fudn-traltb-su26/course-project-hsf302_se20a11_quang_tan_thanh"
     ],
-    "updated_at": "2026-10-26T01:56:45+00:00"
+    "updated_at": "2026-10-26T08:10:55+00:00"
   }
 }
