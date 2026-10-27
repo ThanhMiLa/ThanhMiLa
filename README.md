@@ -17,7 +17,7 @@
 
 ### GitHub Contributions
 
-<a href="https://github.com/ThanhMiLa?tab=overview"><img src="https://raw.githubusercontent.com/ThanhMiLa/ThanhMiLa/main/assets/github-summary.svg?v=1878485f" width="100%" alt="GitHub contribution calendar, contributions, current streak and longest streak in the displayed year. The image includes its last successful update date." /></a>
+<a href="https://github.com/ThanhMiLa?tab=overview"><img src="https://raw.githubusercontent.com/ThanhMiLa/ThanhMiLa/main/assets/github-summary.svg?v=a172a67c" width="100%" alt="GitHub contribution calendar, contributions, current streak and longest streak in the displayed year. The image includes its last successful update date." /></a>
 
 ### LeetCode Stats
 
