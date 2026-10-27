@@ -21,11 +21,11 @@
 
 ### LeetCode Stats
 
-<a href="https://leetcode.com/u/Thanh_MiLa/"><img src="https://raw.githubusercontent.com/ThanhMiLa/ThanhMiLa/main/assets/leetcode-summary.svg?v=2774e442" width="100%" alt="Thanh_MiLa on LeetCode — problems solved, global rank and Easy, Medium, Hard breakdown. The image includes its last successful update date." /></a>
+<a href="https://leetcode.com/u/Thanh_MiLa/"><img src="https://raw.githubusercontent.com/ThanhMiLa/ThanhMiLa/main/assets/leetcode-summary.svg?v=3fc6211e" width="100%" alt="Thanh_MiLa on LeetCode — problems solved, global rank and Easy, Medium, Hard breakdown. The image includes its last successful update date." /></a>
 
 ### Top 6 Languages
 
-<a href="https://github.com/ThanhMiLa?tab=repositories"><img src="https://raw.githubusercontent.com/ThanhMiLa/ThanhMiLa/main/assets/languages-summary.svg?v=d541c5f6" width="100%" alt="Top 6 most used languages across ThanhMiLa's personal public repositories and explicitly selected additional public/private repositories, excluding unselected forks, displayed as percentages." /></a>
+<a href="https://github.com/ThanhMiLa?tab=repositories"><img src="https://raw.githubusercontent.com/ThanhMiLa/ThanhMiLa/main/assets/languages-summary.svg?v=d105e32e" width="100%" alt="Top 6 most used languages across ThanhMiLa's personal public repositories and explicitly selected additional public/private repositories, excluding unselected forks, displayed as percentages." /></a>
 
 ### Contact Me
 
