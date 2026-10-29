@@ -21,7 +21,7 @@
 
 ### LeetCode Stats
 
-<a href="https://leetcode.com/u/Thanh_MiLa/"><img src="https://raw.githubusercontent.com/ThanhMiLa/ThanhMiLa/main/assets/leetcode-summary.svg?v=b0381bd5" width="100%" alt="Thanh_MiLa on LeetCode — problems solved, global rank and Easy, Medium, Hard breakdown. The image includes its last successful update date." /></a>
+<a href="https://leetcode.com/u/Thanh_MiLa/"><img src="https://raw.githubusercontent.com/ThanhMiLa/ThanhMiLa/main/assets/leetcode-summary.svg?v=7258fe12" width="100%" alt="Thanh_MiLa on LeetCode — problems solved, global rank and Easy, Medium, Hard breakdown. The image includes its last successful update date." /></a>
 
 ### Top 6 Languages
 
