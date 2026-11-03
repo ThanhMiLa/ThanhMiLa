@@ -17,15 +17,15 @@
 
 ### GitHub Contributions
 
-<a href="https://github.com/ThanhMiLa?tab=overview"><img src="https://raw.githubusercontent.com/ThanhMiLa/ThanhMiLa/main/assets/github-summary.svg?v=df8be644" width="100%" alt="GitHub contribution calendar, contributions, current streak and longest streak in the displayed year. The image includes its last successful update date." /></a>
+<a href="https://github.com/ThanhMiLa?tab=overview"><img src="https://raw.githubusercontent.com/ThanhMiLa/ThanhMiLa/main/assets/github-summary.svg?v=89d0a296" width="100%" alt="GitHub contribution calendar, contributions, current streak and longest streak in the displayed year. The image includes its last successful update date." /></a>
 
 ### LeetCode Stats
 
-<a href="https://leetcode.com/u/Thanh_MiLa/"><img src="https://raw.githubusercontent.com/ThanhMiLa/ThanhMiLa/main/assets/leetcode-summary.svg?v=92f74202" width="100%" alt="Thanh_MiLa on LeetCode — problems solved, global rank and Easy, Medium, Hard breakdown. The image includes its last successful update date." /></a>
+<a href="https://leetcode.com/u/Thanh_MiLa/"><img src="https://raw.githubusercontent.com/ThanhMiLa/ThanhMiLa/main/assets/leetcode-summary.svg?v=fcdd67f0" width="100%" alt="Thanh_MiLa on LeetCode — problems solved, global rank and Easy, Medium, Hard breakdown. The image includes its last successful update date." /></a>
 
 ### Top 6 Languages
 
-<a href="https://github.com/ThanhMiLa?tab=repositories"><img src="https://raw.githubusercontent.com/ThanhMiLa/ThanhMiLa/main/assets/languages-summary.svg?v=599b4d1e" width="100%" alt="Top 6 most used languages across ThanhMiLa's personal public repositories and explicitly selected additional public/private repositories, excluding unselected forks, displayed as percentages." /></a>
+<a href="https://github.com/ThanhMiLa?tab=repositories"><img src="https://raw.githubusercontent.com/ThanhMiLa/ThanhMiLa/main/assets/languages-summary.svg?v=4809dd8b" width="100%" alt="Top 6 most used languages across ThanhMiLa's personal public repositories and explicitly selected additional public/private repositories, excluding unselected forks, displayed as percentages." /></a>
 
 ### Contact Me
 
