@@ -8,7 +8,7 @@
     },
     "reallive": {
       "description": "RealLive - Live streaming platform built with an event-driven microservices architecture across Web and Android.",
-      "stargazers_count": 1,
+      "stargazers_count": 2,
       "forks_count": 0,
       "html_url": "https://github.com/ThanhMiLa/reallive"
     },
@@ -18,7 +18,7 @@
       "forks_count": 0,
       "html_url": "https://github.com/ThanhMiLa/springlens"
     },
-    "updated_at": "2026-11-04T18:56:00+00:00"
+    "updated_at": "2026-11-05T01:07:19+00:00"
   },
   "github": {
     "days": [
@@ -1861,9 +1861,14 @@
         "date": "2026-11-04",
         "level": 1,
         "count": 2
+      },
+      {
+        "date": "2026-11-05",
+        "level": 1,
+        "count": 9
       }
     ],
-    "updated_at": "2026-11-04T18:56:00+00:00"
+    "updated_at": "2026-11-05T01:07:19+00:00"
   },
   "leetcode": {
     "ranking": 2328976,
@@ -1879,7 +1884,7 @@
       "Medium": 2139,
       "Hard": 987
     },
-    "updated_at": "2026-11-04T18:56:00+00:00"
+    "updated_at": "2026-11-05T01:07:19+00:00"
   },
   "languages": {
     "bytes": {
@@ -1977,6 +1982,6 @@
     "included_forks": [
       "fudn-traltb-su26/course-project-hsf302_se20a11_quang_tan_thanh"
     ],
-    "updated_at": "2026-11-04T18:56:00+00:00"
+    "updated_at": "2026-11-05T01:07:19+00:00"
   }
 }

@@ -11,21 +11,21 @@
 
 <p>
   <a href="https://github.com/ThanhMiLa/codelearning"><img src="https://raw.githubusercontent.com/ThanhMiLa/ThanhMiLa/main/assets/project-codelearning.svg?v=d5c52b62" width="32%" alt="CodeLearning — E-learning &amp; Online Judge platform for learning programming and practicing data structures and algorithms (DSA)." /></a>
-  <a href="https://github.com/ThanhMiLa/reallive"><img src="https://raw.githubusercontent.com/ThanhMiLa/ThanhMiLa/main/assets/project-reallive.svg?v=7a68d27c" width="32%" alt="RealLive — RealLive - Live streaming platform built with an event-driven microservices architecture across Web and Android." /></a>
+  <a href="https://github.com/ThanhMiLa/reallive"><img src="https://raw.githubusercontent.com/ThanhMiLa/ThanhMiLa/main/assets/project-reallive.svg?v=9ba9bf7e" width="32%" alt="RealLive — RealLive - Live streaming platform built with an event-driven microservices architecture across Web and Android." /></a>
   <a href="https://github.com/ThanhMiLa/springlens"><img src="https://raw.githubusercontent.com/ThanhMiLa/ThanhMiLa/main/assets/project-springlens.svg?v=bdb5e2d5" width="32%" alt="SpringLens — SpringLens - Spring Boot RESTful API Tester for IntelliJ IDEA (IntelliJ Plugin)" /></a>
 </p>
 
 ### GitHub Contributions
 
-<a href="https://github.com/ThanhMiLa?tab=overview"><img src="https://raw.githubusercontent.com/ThanhMiLa/ThanhMiLa/main/assets/github-summary.svg?v=014da35f" width="100%" alt="GitHub contribution calendar, contributions, current streak and longest streak in the displayed year. The image includes its last successful update date." /></a>
+<a href="https://github.com/ThanhMiLa?tab=overview"><img src="https://raw.githubusercontent.com/ThanhMiLa/ThanhMiLa/main/assets/github-summary.svg?v=39d3e99e" width="100%" alt="GitHub contribution calendar, contributions, current streak and longest streak in the displayed year. The image includes its last successful update date." /></a>
 
 ### LeetCode Stats
 
-<a href="https://leetcode.com/u/Thanh_MiLa/"><img src="https://raw.githubusercontent.com/ThanhMiLa/ThanhMiLa/main/assets/leetcode-summary.svg?v=7b20517c" width="100%" alt="Thanh_MiLa on LeetCode — problems solved, global rank and Easy, Medium, Hard breakdown. The image includes its last successful update date." /></a>
+<a href="https://leetcode.com/u/Thanh_MiLa/"><img src="https://raw.githubusercontent.com/ThanhMiLa/ThanhMiLa/main/assets/leetcode-summary.svg?v=68bf102c" width="100%" alt="Thanh_MiLa on LeetCode — problems solved, global rank and Easy, Medium, Hard breakdown. The image includes its last successful update date." /></a>
 
 ### Top 6 Languages
 
-<a href="https://github.com/ThanhMiLa?tab=repositories"><img src="https://raw.githubusercontent.com/ThanhMiLa/ThanhMiLa/main/assets/languages-summary.svg?v=dd7e5096" width="100%" alt="Top 6 most used languages across ThanhMiLa's personal public repositories and explicitly selected additional public/private repositories, excluding unselected forks, displayed as percentages." /></a>
+<a href="https://github.com/ThanhMiLa?tab=repositories"><img src="https://raw.githubusercontent.com/ThanhMiLa/ThanhMiLa/main/assets/languages-summary.svg?v=516f1812" width="100%" alt="Top 6 most used languages across ThanhMiLa's personal public repositories and explicitly selected additional public/private repositories, excluding unselected forks, displayed as percentages." /></a>
 
 ### Contact Me
 
