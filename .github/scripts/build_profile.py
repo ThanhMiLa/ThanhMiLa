@@ -40,7 +40,7 @@ PROJECTS = [
     {"repo": "codelearning", "title": "CodeLearning", "color": FPT_BLUE, "logo": "LOGO_SINGLE.png",
      "category": "DSA - COMPETITIVE PROGRAMING",
      "tags": ["Spring Boot", "React", "Judge0"]},
-    {"repo": "reallive", "title": "RealLive", "color": FPT_ORANGE, "icon": "live",
+    {"repo": "reallive", "title": "RealLive", "color": FPT_ORANGE, "logo": "RealLive-favicon.svg",
      "category": "STREAMING - MICROSERVICES",
      "tags": ["Spring Boot", "MediaMTX", "Kafka"]},
     {"repo": "springlens", "title": "SpringLens", "color": FPT_GREEN, "logo": "Logo_SpringLens.svg",
