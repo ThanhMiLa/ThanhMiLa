@@ -10,8 +10,8 @@
 </h3>
 
 <p>
-  <a href="https://github.com/ThanhMiLa/codelearning"><img src="https://raw.githubusercontent.com/ThanhMiLa/ThanhMiLa/main/assets/project-codelearning.svg?v=6dd4b88b" width="32%" alt="CodeLearning — E-learning &amp; Online Judge platform for learning programming and practicing data structures and algorithms (DSA)." /></a>
-  <a href="https://github.com/ThanhMiLa/reallive"><img src="https://raw.githubusercontent.com/ThanhMiLa/ThanhMiLa/main/assets/project-reallive.svg?v=5bd89ec0" width="32%" alt="RealLive — RealLive - Live streaming platform built with an event-driven microservices architecture across Web and Android." /></a>
+  <a href="https://github.com/ThanhMiLa/codelearning"><img src="https://raw.githubusercontent.com/ThanhMiLa/ThanhMiLa/main/assets/project-codelearning.svg?v=5b4e2646" width="32%" alt="CodeLearning — E-learning &amp; Online Judge platform for learning programming and practicing data structures and algorithms (DSA)." /></a>
+  <a href="https://github.com/ThanhMiLa/reallive"><img src="https://raw.githubusercontent.com/ThanhMiLa/ThanhMiLa/main/assets/project-reallive.svg?v=df6aa08f" width="32%" alt="RealLive — RealLive - Live streaming platform built with an event-driven microservices architecture across Web and Android." /></a>
   <a href="https://github.com/ThanhMiLa/springlens"><img src="https://raw.githubusercontent.com/ThanhMiLa/ThanhMiLa/main/assets/project-springlens.svg?v=bee5749a" width="32%" alt="SpringLens — SpringLens - Spring Boot RESTful API Tester for IntelliJ IDEA (IntelliJ Plugin)" /></a>
 </p>
 

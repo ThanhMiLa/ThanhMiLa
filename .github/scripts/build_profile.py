@@ -38,10 +38,10 @@ FPT_BLUE, FPT_GREEN, FPT_ORANGE = "#0066b3", "#0db14b", "#f37021"
 FPT_COLORS = (FPT_BLUE, FPT_GREEN, FPT_ORANGE)
 PROJECTS = [
     {"repo": "codelearning", "title": "CodeLearning", "color": FPT_BLUE, "logo": "LOGO_SINGLE.png", "logo_size": 38,
-     "category": "DSA - COMPETITIVE PROGRAMING",
+     "category": "E - LEARNING",
      "tags": ["Spring Boot", "React", "Judge0"]},
     {"repo": "reallive", "title": "RealLive", "color": FPT_ORANGE, "logo": "RealLive-favicon.svg", "logo_size": 40,
-     "category": "STREAMING - MICROSERVICES",
+     "category": "STREAMING PLATFORM",
      "tags": ["Spring Boot", "MediaMTX", "Kafka"]},
     {"repo": "springlens", "title": "SpringLens", "color": FPT_GREEN, "logo": "Logo_SpringLens.svg", "logo_size": 34,
      "category": "DEVELOPER TOOLS",
