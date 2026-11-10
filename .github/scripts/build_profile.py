@@ -37,13 +37,13 @@ FG, MUTED, GREEN = "#f0f6fc", "#919ba8", "#3fb950"
 FPT_BLUE, FPT_GREEN, FPT_ORANGE = "#0066b3", "#0db14b", "#f37021"
 FPT_COLORS = (FPT_BLUE, FPT_GREEN, FPT_ORANGE)
 PROJECTS = [
-    {"repo": "codelearning", "title": "CodeLearning", "color": FPT_BLUE, "logo": "LOGO_SINGLE.png",
+    {"repo": "codelearning", "title": "CodeLearning", "color": FPT_BLUE, "logo": "LOGO_SINGLE.png", "logo_size": 38,
      "category": "DSA - COMPETITIVE PROGRAMING",
      "tags": ["Spring Boot", "React", "Judge0"]},
-    {"repo": "reallive", "title": "RealLive", "color": FPT_ORANGE, "logo": "RealLive-favicon.svg",
+    {"repo": "reallive", "title": "RealLive", "color": FPT_ORANGE, "logo": "RealLive-favicon.svg", "logo_size": 40,
      "category": "STREAMING - MICROSERVICES",
      "tags": ["Spring Boot", "MediaMTX", "Kafka"]},
-    {"repo": "springlens", "title": "SpringLens", "color": FPT_GREEN, "logo": "Logo_SpringLens.svg",
+    {"repo": "springlens", "title": "SpringLens", "color": FPT_GREEN, "logo": "Logo_SpringLens.svg", "logo_size": 34,
      "category": "DEVELOPER TOOLS",
      "tags": ["Java", "IntelliJ SDK", "REST API"]},
 ]
@@ -316,15 +316,20 @@ def projects(snapshot):
         content += rect(1, 20, 3, 32, color, 1)
         if project.get("logo"):
             logo_path = ASSETS / "icons" / project["logo"]
+            # Optical sizing: sparse marks need more room than solid icon tiles.
+            # Keep every logo centered at (40, 39), independent of its size.
+            logo_size = project.get("logo_size", 36)
+            logo_x, logo_y = 40 - logo_size / 2, 39 - logo_size / 2
             if logo_path.suffix.lower() == ".svg":
                 logo = ET.fromstring(logo_path.read_text())
-                for name, value in {"x": "22", "y": "21", "width": "36", "height": "36",
+                for name, value in {"x": f"{logo_x:g}", "y": f"{logo_y:g}",
+                                    "width": str(logo_size), "height": str(logo_size),
                                     "preserveAspectRatio": "xMidYMid meet"}.items():
                     logo.set(name, value)
                 content += "\n".join(line.rstrip() for line in ET.tostring(logo, encoding="unicode").splitlines())
             else:
                 logo = base64.b64encode(logo_path.read_bytes()).decode("ascii")
-                content += f'<image x="22" y="21" width="36" height="36" preserveAspectRatio="xMidYMid meet" href="data:image/png;base64,{logo}"/>'
+                content += f'<image x="{logo_x:g}" y="{logo_y:g}" width="{logo_size}" height="{logo_size}" preserveAspectRatio="xMidYMid meet" href="data:image/png;base64,{logo}"/>'
         else:
             content += icon(project["icon"], color, 22, 23)
         content += text(68, 47, project["title"], 23, FG, 650)
