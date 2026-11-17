@@ -32,7 +32,7 @@ ADDITIONAL_LANGUAGE_REPOSITORIES = (
     "fptu-se-su26/swp391-su26-ai-audit-project-swp391_se20a11_group-02",
     "fudn-traltb-su26/course-project-hsf302_se20a11_quang_tan_thanh",
 )
-BG, SURFACE, BORDER = "#0d1117", "#161b22", "#30363d"
+BG = "#0d1117"
 FG, MUTED, GREEN = "#f0f6fc", "#919ba8", "#3fb950"
 FPT_BLUE, FPT_GREEN, FPT_ORANGE = "#0066b3", "#0db14b", "#f37021"
 FPT_COLORS = (FPT_BLUE, FPT_GREEN, FPT_ORANGE)
@@ -200,7 +200,7 @@ def text(x, y, value, size=16, color=FG, weight=400, extra=""):
     return f'<text x="{x}" y="{y}" fill="{color}" font-size="{size}"{w_attr}{e_attr}>{escape(str(value))}</text>'
 
 
-def rect(x, y, w, h, fill=SURFACE, radius=10, stroke="none"):
+def rect(x, y, w, h, fill=BG, radius=10, stroke="none"):
     r_attr = f' rx="{radius}"' if radius else ""
     s_attr = f' stroke="{stroke}"' if stroke != "none" else ""
     return f'<rect x="{x}" y="{y}" width="{w}" height="{h}"{r_attr} fill="{fill}"{s_attr}/>'
@@ -299,57 +299,58 @@ def technology():
 
 
 def projects(snapshot):
-    write("project-repositories-link.svg", 200, 24,
-          text(200, 18, "View all repositories →", 12.32, "#79c0ff", 400, 'text-anchor="end"'),
-          "View all repositories →")
+    """Render the three borderless featured project SVG tiles."""
     descriptions = {p["repo"]: snapshot["projects"][p["repo"]]["description"] or "" for p in PROJECTS}
     lines = {repo: textwrap.wrap(description, width=41, break_long_words=False, break_on_hyphens=False)
              for repo, description in descriptions.items()}
     tags_y = max(180, 110 + (max(len(value) for value in lines.values()) - 1) * 22 + 26)
-    card_height = tags_y + 76
+    card_height = tags_y + 70
     readme_path = ROOT / "README.md"
     readme = readme_path.read_text()
-    slots = ((400, 0), (400, 6), (400, 12))
+    slots = ((400, 0), (400, 16), (400, 32))
+    ET.register_namespace("", "http://www.w3.org/2000/svg")
     for project, (slot_width, offset_x) in zip(PROJECTS, slots):
         data = snapshot["projects"][project["repo"]]
         color = project["color"]
-        content = rect(.5, .5, 387, card_height - 1, SURFACE, 12, BORDER)
-        content += rect(1, 20, 3, 32, color, 1)
+        parts = [rect(0, 0, slot_width, card_height, BG, 0)]
+        inner = []
         if project.get("logo"):
             logo_path = ASSETS / "icons" / project["logo"]
-            # Optical sizing: sparse marks need more room than solid icon tiles.
-            # Keep every logo centered at (40, 39), independent of its size.
+            # Keep every logo centered at (20, 39), independent of its optical size.
             logo_size = project.get("logo_size", 36)
-            logo_x, logo_y = 40 - logo_size / 2, 39 - logo_size / 2
+            logo_x, logo_y = 20 - logo_size / 2, 39 - logo_size / 2
             if logo_path.suffix.lower() == ".svg":
                 logo = ET.fromstring(logo_path.read_text())
                 for name, value in {"x": f"{logo_x:g}", "y": f"{logo_y:g}",
                                     "width": str(logo_size), "height": str(logo_size),
                                     "preserveAspectRatio": "xMidYMid meet"}.items():
                     logo.set(name, value)
-                content += "\n".join(line.rstrip() for line in ET.tostring(logo, encoding="unicode").splitlines())
+                logo_code = re.sub(r'\s*xmlns="http://www\.w3\.org/2000/svg"', "", ET.tostring(logo, encoding="unicode"))
+                inner.append("\n".join(line.rstrip() for line in logo_code.splitlines()))
             else:
                 logo = base64.b64encode(logo_path.read_bytes()).decode("ascii")
-                content += f'<image x="{logo_x:g}" y="{logo_y:g}" width="{logo_size}" height="{logo_size}" preserveAspectRatio="xMidYMid meet" href="data:image/png;base64,{logo}"/>'
+                inner.append(f'<image x="{logo_x:g}" y="{logo_y:g}" width="{logo_size}" height="{logo_size}" preserveAspectRatio="xMidYMid meet" href="data:image/png;base64,{logo}"/>')
         else:
-            content += icon(project["icon"], color, 22, 23)
-        content += text(68, 47, project["title"], 23, FG, 650)
-        content += '<path d="M355 29h12v12m-1-11-15 15m11 1v6h-17V35h6" fill="none" stroke="#919ba8" stroke-width="1.7"/>'
-        content += text(23, 81, project["category"], 13, color, 600, 'letter-spacing="1.2" class="mono"')
+            inner.append(icon(project["icon"], color, 2, 23))
+        inner.append(text(48, 47, project["title"], 23, FG, 650))
+        inner.append('<path d="M356 29h12v12m-1-11-15 15m11 1v6h-17V35h6" fill="none" stroke="#919ba8" stroke-width="1.7"/>')
+        inner.append(text(0, 81, project["category"], 13, color, 600, 'letter-spacing="1.2" class="mono"'))
         for i, line in enumerate(lines[project["repo"]]):
-            content += text(23, 110 + i * 22, line, 16, "#b7c0cc")
-        x = 23
+            inner.append(text(0, 110 + i * 22, line, 16, "#b7c0cc"))
+        x = 0
         for tag in project["tags"]:
             w = len(tag) * 7 + 20
-            content += rect(x, tags_y, w, 27, "#212b36", 6)
-            content += text(x + 10, tags_y + 18, tag, 12, color, 600)
+            inner.append(rect(x, tags_y, w, 27, "#212b36", 6))
+            inner.append(text(x + 10, tags_y + 18, tag, 12, color, 600))
             x += w + 7
-        content += text(23, tags_y + 57, f'☆  {data["stargazers_count"]}    ⑂  {data["forks_count"]}', 15, MUTED)
-        content += text(365, tags_y + 57, "Explore repository →", 12, color, 500, 'text-anchor="end"')
+        inner.append(text(0, tags_y + 55, f'☆  {data["stargazers_count"]}    ⑂  {data["forks_count"]}', 15, MUTED))
+        inner.append(text(368, tags_y + 55, "Explore repository →", 12, color, 500, 'text-anchor="end"'))
+        body = "".join(inner)
         if offset_x:
-            content = f'<g transform="translate({offset_x} 0)">{content}</g>'
+            body = f'<g transform="translate({offset_x} 0)">{body}</g>'
+        parts.append(body)
         title = f'{project["title"]} — {descriptions[project["repo"]]}'
-        write(f'project-{project["repo"]}.svg', slot_width, card_height, content, title)
+        write(f'project-{project["repo"]}.svg', slot_width, card_height, "".join(parts), title)
         pattern = rf'(<img\b[^>]*\bsrc="(?:\.|https://raw\.githubusercontent\.com/{re.escape(USER)}/{re.escape(USER)}/main)/assets/project-{re.escape(project["repo"])}\.svg(?:\?[^"]*)?"[^>]*\balt=")[^"]*(")'
         readme = re.sub(pattern, lambda match: match[1] + escape(title) + match[2], readme)
     readme_path.write_text(readme)
@@ -376,15 +377,17 @@ def github_section(snapshot, origin_y_offset=0):
         day -= timedelta(days=1)
     total = sum(d["count"] for d in days)
     parts = []
-    for x, value, label, color in ((28, f"{total:,}", "Contributions", FPT_BLUE), (182, current, "Current Streak", FPT_GREEN), (336, longest, "Longest Streak", FPT_ORANGE)):
+    for x, value, label, color in ((0, f"{total:,}", "Contributions", FPT_BLUE), (160, current, "Current Streak", FPT_GREEN), (320, longest, "Longest Streak", FPT_ORANGE)):
         parts.append(text(x, 56, label, 14, MUTED))
         parts.append(text(x, 102, value, 36, color, 700))
-    parts.append(text(28, 138, f'{start:%b %d, %Y} – {end:%b %d, %Y}', 12, MUTED))
-    parts.append(text(28, 158, "Public profile contribution calendar", 11, MUTED))
-    cell, gap, origin_x, origin_y = 9, 3, 535, 60
+    parts.append(text(0, 138, f'{start:%b %d, %Y} – {end:%b %d, %Y}', 12, MUTED))
+    parts.append(text(0, 158, "Public profile contribution calendar", 11, MUTED))
+    cell, gap, origin_y = 9, 3, 60
+    sunday = start - timedelta(days=(start.weekday() + 1) % 7)
+    max_col = max((date.fromisoformat(entry["date"]) - sunday).days // 7 for entry in days)
+    origin_x = 1200 - (max_col * (cell + gap) + cell)
     colors = ["#212b26", "#0e4429", "#006d32", "#26a641", "#39d353"]
     parts.append(f'<defs><rect id="c" width="{cell}" height="{cell}" rx="2"/></defs>')
-    sunday = start - timedelta(days=(start.weekday() + 1) % 7)
     month_labels, month = [], None
     groups = [[] for _ in colors]
     for entry in days:
@@ -398,11 +401,11 @@ def github_section(snapshot, origin_y_offset=0):
     for color, rects in zip(colors, groups):
         if rects:
             parts.append(f'<g fill="{color}">{"".join(rects)}</g>')
-    parts.append(f'<g fill="{MUTED}" font-size="9"><text x="516" y="{origin_y + 1 * 12 + 8}">M</text><text x="516" y="{origin_y + 3 * 12 + 8}">W</text><text x="516" y="{origin_y + 5 * 12 + 8}">F</text></g>')
-    parts.append(text(1038, 166, "Less", 10, MUTED))
+    parts.append(f'<g fill="{MUTED}" font-size="9"><text x="{origin_x - 19}" y="{origin_y + 1 * 12 + 8}">M</text><text x="{origin_x - 19}" y="{origin_y + 3 * 12 + 8}">W</text><text x="{origin_x - 19}" y="{origin_y + 5 * 12 + 8}">F</text></g>')
+    parts.append(text(1070, 166, "Less", 10, MUTED))
     for i, color in enumerate(colors):
-        parts.append(rect(1070 + i * 13, 157, 9, 9, color, 2))
-    parts.append(text(1168, 166, "More", 10, MUTED, 400, 'text-anchor="end"'))
+        parts.append(rect(1102 + i * 13, 157, 9, 9, color, 2))
+    parts.append(text(1200, 166, "More", 10, MUTED, 400, 'text-anchor="end"'))
     fragment = f'<g transform="translate(0 {origin_y_offset})">{"".join(parts)}</g>' if origin_y_offset else "".join(parts)
     desc = f"GitHub: {total} contributions, current streak {current} days, longest streak {longest} days ({section['updated_at'][:10]})."
     return fragment, desc
@@ -412,42 +415,42 @@ def leetcode_section(snapshot, origin_y_offset):
     """Render the LeetCode statistics fragment."""
     stats = snapshot["leetcode"]
     solved, questions = stats["solved"], stats["questions"]
-    # Adapt the dark part of the Devicon logo for the dark card background.
+    # Adapt the dark part of the Devicon logo for the dark background.
     ET.register_namespace("", "http://www.w3.org/2000/svg")
     logo = ET.fromstring((ASSETS / "icons" / "leetcode.svg").read_text())
-    logo.set("x", "28"); logo.set("y", "13")
+    logo.set("x", "0"); logo.set("y", "13")
     logo.set("width", "32"); logo.set("height", "32")
     for path in logo:
         if path.get("fill") == "#070706":
             path.set("fill", "#f0f6fc")
     parts = [re.sub(r'\s*xmlns="http://www\.w3\.org/2000/svg"', "", ET.tostring(logo, encoding="unicode"))]
-    parts.append(text(70, 38, "LeetCode", 24, FG, 650))
+    parts.append(text(42, 38, "LeetCode", 24, FG, 650))
     colors = ("#00b8a3", "#ffc01e", "#ff375f")
     # Three muted arcs and colored progress, with a gap at the bottom.
     circumference = 2 * math.pi * 78
     segment = circumference * .72 / 3
     for i, (difficulty, color) in enumerate(zip(("Easy", "Medium", "Hard"), colors)):
         offset = -i * segment
-        common = f'cx="174" cy="151" r="78" fill="none" stroke-width="7" stroke-linecap="round" transform="rotate(140 174 151)"'
+        common = f'cx="152" cy="151" r="78" fill="none" stroke-width="7" stroke-linecap="round" transform="rotate(140 152 151)"'
         parts.append(f'<circle {common} stroke="{color}" opacity=".25" stroke-dasharray="{segment - 5:.2f} {circumference:.2f}" stroke-dashoffset="{offset:.2f}"/>')
         progress = (segment - 5) * min(1, solved[difficulty] / max(1, questions[difficulty]))
         if progress:
             parts.append(f'<circle {common} stroke="{color}" stroke-dasharray="{progress:.2f} {circumference:.2f}" stroke-dashoffset="{offset:.2f}"/>')
         y = 57 + i * 61
-        parts.append(rect(398, y, 155, 52, "#30363d", 7))
-        parts.append(text(475, y + 21, "Med." if difficulty == "Medium" else difficulty, 18, color, 650, 'text-anchor="middle"'))
-        parts.append(text(475, y + 43, f'{solved[difficulty]:,}/{questions[difficulty]:,}', 19, FG, 650, 'text-anchor="middle"'))
-    parts.append(text(169, 153, f'{solved["All"]:,}', 36, FG, 700, 'text-anchor="end"'))
-    parts.append(text(173, 153, f'/ {questions["All"]:,}', 16, MUTED, 500))
-    parts.append(text(174, 180, "✓ Solved", 17, GREEN, 600, 'text-anchor="middle"'))
-    parts.append(text(174, 234, LEETCODE, 14, MUTED, 500, 'text-anchor="middle"'))
+        parts.append(rect(278, y, 155, 52, "#21262d", 7))
+        parts.append(text(355, y + 21, "Med." if difficulty == "Medium" else difficulty, 18, color, 650, 'text-anchor="middle"'))
+        parts.append(text(355, y + 43, f'{solved[difficulty]:,}/{questions[difficulty]:,}', 19, FG, 650, 'text-anchor="middle"'))
+    parts.append(text(147, 153, f'{solved["All"]:,}', 36, FG, 700, 'text-anchor="end"'))
+    parts.append(text(151, 153, f'/ {questions["All"]:,}', 16, MUTED, 500))
+    parts.append(text(152, 180, "✓ Solved", 17, GREEN, 600, 'text-anchor="middle"'))
+    parts.append(text(152, 234, LEETCODE, 14, MUTED, 500, 'text-anchor="middle"'))
     fragment = f'<g transform="translate(0 {origin_y_offset})">{"".join(parts)}</g>'
     desc = f'LeetCode ({LEETCODE}): {solved["All"]}/{questions["All"]} solved (Easy {solved["Easy"]}, Medium {solved["Medium"]}, Hard {solved["Hard"]}; {stats["updated_at"][:10]}).'
     return fragment, desc
 
 
 def languages_section(snapshot, origin_y_offset):
-    """Render the top 6 languages fragment."""
+    """Render the languages pie chart and top 6 languages fragment."""
     stats = snapshot["languages"]
     counts = stats["bytes"]
     total = sum(counts.values())
@@ -457,56 +460,78 @@ def languages_section(snapshot, origin_y_offset):
               "C#": "#178600", "C++": "#f34b7d", "Kotlin": "#a97bff",
               "Shell": "#89e051", "Dart": "#00b4ab", "Swift": "#f05138"}
     parts = []
+    cx, cy, r = 636, 151, 81
+    parts.append(f'<circle cx="{cx}" cy="{cy}" r="{r}" fill="#30363d" opacity=".45"/>')
+    if top_six and total:
+        angle_start = -math.pi / 2
+        for language, byte_count in top_six:
+            fraction = byte_count / total
+            if fraction <= 0:
+                continue
+            color = colors.get(language, "#79c0ff")
+            if fraction >= 0.9999:
+                parts.append(f'<circle cx="{cx}" cy="{cy}" r="{r}" fill="{color}"/>')
+                break
+            sweep = 2 * math.pi * fraction
+            angle_end = angle_start + sweep
+            x1, y1 = cx + r * math.cos(angle_start), cy + r * math.sin(angle_start)
+            x2, y2 = cx + r * math.cos(angle_end), cy + r * math.sin(angle_end)
+            large_arc = 1 if sweep > math.pi else 0
+            parts.append(
+                f'<path d="M {cx} {cy} L {x1:.2f} {y1:.2f} A {r} {r} 0 {large_arc} 1 {x2:.2f} {y2:.2f} Z" '
+                f'fill="{color}" stroke="{BG}" stroke-width="1.5" stroke-linejoin="round"/>'
+            )
+            angle_start = angle_end
     for index, (language, byte_count) in enumerate(top_six):
-        x, y = 631 + (index % 2) * 285, 75 + (index // 2) * 61
+        x, y = 768 + (index % 2) * 234, 75 + (index // 2) * 61
+        bar_w = 198
         color = colors.get(language, "#79c0ff")
         percent = 100 * byte_count / max(1, total)
         parts.append(f'<circle cx="{x + 4}" cy="{y - 5}" r="4" fill="{color}"/>')
-        parts.append(text(x + 17, y, language, 16, FG, 600))
-        parts.append(text(x + 252, y, f'{percent:.1f}%', 20, color, 650, 'text-anchor="end"'))
-        parts.append(rect(x, y + 17, 252, 7, "#30363d", 3))
+        parts.append(text(x + 15, y, language, 14, FG, 600))
+        parts.append(text(x + bar_w, y, f'{percent:.1f}%', 17, color, 650, 'text-anchor="end"'))
+        parts.append(rect(x, y + 15, bar_w, 6, "#30363d", 3))
         if percent:
-            parts.append(rect(x, y + 17, round(252 * percent / 100, 3), 7, color, 3))
+            parts.append(rect(x, y + 15, round(bar_w * percent / 100, 3), 6, color, 3))
     if not top_six:
-        parts.append(text(631, 106, "No language data available.", 16, MUTED))
+        parts.append(text(768, 106, "No language data available.", 15, MUTED))
     summary_text = "; ".join(f'{name} {100 * count / max(1, total):.1f}%' for name, count in top_six)
     fragment = f'<g transform="translate(0 {origin_y_offset})">{"".join(parts)}</g>'
     desc = f'Top languages ({stats["updated_at"][:10]}): {summary_text or "No language data available."}.'
     return fragment, desc
 
 
-def contacts_section(origin_y_offset):
-    """Render the contact details row fragment."""
-    columns = (28, 378, 729, 1068)
-    parts = []
-    for col_x, item in zip(columns, CONTACTS):
-        color = item["color"]
-        parts.append(icon(item["icon"], color, col_x - 4, 0))
-        parts.append(text(col_x + 37, 24, item["title"], 21, FG, 650))
-        parts.append(text(col_x, 54, item["category"], 10, color, 600, 'letter-spacing="1.2" class="mono"'))
-        parts.append(text(col_x, 79, item["value"], 15, "#c9d1d9", 500))
-    fragment = f'<g transform="translate(0 {origin_y_offset})">{"".join(parts)}</g>'
-    desc = "Contact: " + "; ".join(f'{item["title"]} {item["value"]}' for item in CONTACTS) + "."
-    return fragment, desc
-
-
-def summary(snapshot):
-    """Render the unified GitHub, LeetCode, languages, and contact summary SVG."""
-    height = 574
-    gh_svg, gh_desc = github_section(snapshot, -8)
-    lc_svg, lc_desc = leetcode_section(snapshot, 187)
-    lang_svg, lang_desc = languages_section(snapshot, 187)
-    contact_svg, contact_desc = contacts_section(465)
-    content = rect(.5, .5, 1199, height - 1, SURFACE, 12, BORDER)
-    content += gh_svg + lc_svg + lang_svg + contact_svg
+def stats(snapshot):
+    """Render the borderless GitHub, LeetCode, and top languages summary SVG."""
+    gh_offset = -14
+    lc_offset = 178
+    height = 428
+    gh_svg, gh_desc = github_section(snapshot, gh_offset)
+    lc_svg, lc_desc = leetcode_section(snapshot, lc_offset)
+    lang_svg, lang_desc = languages_section(snapshot, lc_offset)
+    content = rect(0, 0, 1200, height, BG, 0) + gh_svg + lc_svg + lang_svg
     write(
-        "profile-summary.svg",
+        "profile-stats.svg",
         1200,
         height,
         content,
-        "GitHub, LeetCode, top languages, and contact summary",
-        f"{gh_desc} {lc_desc} {lang_desc} {contact_desc}",
+        "GitHub, LeetCode, and top languages summary",
+        f"{gh_desc} {lc_desc} {lang_desc}",
     )
+
+
+def contacts():
+    """Render the four clickable borderless contact SVG tiles."""
+    offsets = (0, 70, 141, 200)
+    for x_offset, item in zip(offsets, CONTACTS):
+        color = item["color"]
+        content = rect(0, 0, 300, 114, BG, 0)
+        content += icon(item["icon"], color, x_offset - 4, 20)
+        content += text(x_offset + 37, 44, item["title"], 21, FG, 650)
+        content += text(x_offset, 74, item["category"], 10, color, 600, 'letter-spacing="1.2" class="mono"')
+        content += text(x_offset, 99, item["value"], 15, "#c9d1d9", 500)
+        title = f'{item["title"]} — {item["value"]}'
+        write(f'contact-{item["slug"]}.svg', 300, 114, content, title)
 
 
 def main():
@@ -517,7 +542,7 @@ def main():
     errors = refresh(snapshot) if args.refresh else []
     if not snapshot:
         parser.error("No saved data; run with --refresh first")
-    hero(); technology(); projects(snapshot); summary(snapshot)
+    hero(); technology(); projects(snapshot); stats(snapshot); contacts()
     print("Built profile assets from saved, timestamped data.")
     if errors:
         print("Retained previous data for: " + ", ".join(errors))

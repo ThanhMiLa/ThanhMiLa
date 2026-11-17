@@ -9,11 +9,14 @@ RAW_BASE = "https://raw.githubusercontent.com/ThanhMiLa/ThanhMiLa/main"
 CARDS = [
     "assets/profile-header.svg",
     "assets/tech-stack.svg",
-    "assets/project-repositories-link.svg",
     "assets/project-codelearning.svg",
     "assets/project-reallive.svg",
     "assets/project-springlens.svg",
-    "assets/profile-summary.svg",
+    "assets/profile-stats.svg",
+    "assets/contact-email.svg",
+    "assets/contact-linkedin.svg",
+    "assets/contact-facebook.svg",
+    "assets/contact-phone.svg",
 ]
 
 

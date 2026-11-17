@@ -40,7 +40,7 @@ jobs:
         run: |
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git config user.name "github-actions[bot]"
-          git add assets/profile-*.svg assets/tech-stack.svg assets/project-*.svg assets/profile-data.json README.md
+          git add assets/profile-*.svg assets/tech-stack.svg assets/project-*.svg assets/contact-*.svg assets/profile-data.json README.md
           if ! git diff --staged --quiet assets/*.svg README.md; then
             git commit -m "chore(profile): refresh projects and coding stats [skip ci]"
             git push
