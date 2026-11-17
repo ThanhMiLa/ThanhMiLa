@@ -20,7 +20,7 @@
 <a href="https://github.com/ThanhMiLa?tab=overview"><img src="https://raw.githubusercontent.com/ThanhMiLa/ThanhMiLa/main/assets/github-summary.svg?v=066d1700" width="100%" alt="GitHub contribution calendar, contributions, current streak and longest streak in the displayed year. The image includes its last successful update date." /></a>
 
 <p>
-  <a href="https://leetcode.com/u/Thanh_MiLa/"><img src="https://raw.githubusercontent.com/ThanhMiLa/ThanhMiLa/main/assets/leetcode-summary.svg?v=6e279435" width="49%" alt="LeetCode Stats — Thanh_MiLa: problems solved and Easy, Medium, Hard breakdown. The image includes its last successful update date." /></a>
+  <a href="https://leetcode.com/u/Thanh_MiLa/"><img src="https://raw.githubusercontent.com/ThanhMiLa/ThanhMiLa/main/assets/leetcode-summary.svg?v=b90a91dc" width="49%" alt="LeetCode Stats — Thanh_MiLa: problems solved and Easy, Medium, Hard breakdown. The image includes its last successful update date." /></a>
   <a href="https://github.com/ThanhMiLa?tab=repositories"><img src="https://raw.githubusercontent.com/ThanhMiLa/ThanhMiLa/main/assets/languages-summary.svg?v=9f5a925b" width="49%" alt="Top 6 most used languages across ThanhMiLa's personal public repositories and explicitly selected additional public/private repositories, excluding unselected forks, displayed as percentages." /></a>
 </p>
 
