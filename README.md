@@ -22,7 +22,7 @@
 ### Coding Stats
 
 <p>
-  <a href="https://leetcode.com/u/Thanh_MiLa/"><img src="https://raw.githubusercontent.com/ThanhMiLa/ThanhMiLa/main/assets/leetcode-summary.svg?v=fb870a52" width="50%" alt="LeetCode Stats — Thanh_MiLa: problems solved and Easy, Medium, Hard breakdown. The image includes its last successful update date." /></a><a href="https://github.com/ThanhMiLa?tab=repositories"><img src="https://raw.githubusercontent.com/ThanhMiLa/ThanhMiLa/main/assets/languages-summary.svg?v=17eb9b64" width="50%" alt="Top 6 most used languages across ThanhMiLa's personal public repositories and explicitly selected additional public/private repositories, excluding unselected forks, displayed as percentages." /></a>
+  <a href="https://leetcode.com/u/Thanh_MiLa/"><img src="https://raw.githubusercontent.com/ThanhMiLa/ThanhMiLa/main/assets/leetcode-summary.svg?v=5bf952d5" width="50%" alt="LeetCode Stats — Thanh_MiLa: problems solved and Easy, Medium, Hard breakdown. The image includes its last successful update date." /></a><a href="https://github.com/ThanhMiLa?tab=repositories"><img src="https://raw.githubusercontent.com/ThanhMiLa/ThanhMiLa/main/assets/languages-summary.svg?v=64a52b3b" width="50%" alt="Top 6 most used languages across ThanhMiLa's personal public repositories and explicitly selected additional public/private repositories, excluding unselected forks, displayed as percentages." /></a>
 </p>
 
 ### Contact Me
