@@ -229,12 +229,11 @@ def icon(name, color, x, y):
 
 
 def hero():
-    content = rect(0, 0, 1200, 162, BG, 0)
+    content = rect(0, 0, 1200, 152, BG, 0)
     content += text(0, 30, "ThanhMiLa", 28.6, GREEN, 600, 'letter-spacing="3" class="mono"')
     content += text(0, 92, "Vo Ngoc Thanh", 48.6, FG, 750, 'letter-spacing="-1.5"')
     content += text(2, 133, "Software Engineer · Student at FPT University", 25, "#c9d1d9", 500)
-    content += '<line x1="0" y1="161" x2="1200" y2="161" stroke="#30363d"/>'
-    write("profile-header.svg", 1200, 162, content, "Vo Ngoc Thanh (ThanhMiLa) — Software Engineer · Student at FPT University")
+    write("profile-header.svg", 1200, 152, content, "Vo Ngoc Thanh (ThanhMiLa) — Software Engineer · Student at FPT University")
 
 
 def technology():
@@ -293,7 +292,6 @@ def technology():
     content += '<rect id="to" x="-56" y="-26" width="112" height="52" rx="6" fill="#0d1117" fill-opacity=".17"/></defs>'
     content += '<style>' + ''.join(styles) + '@media(prefers-reduced-motion:reduce){.badge{animation:none!important}}</style>'
     content += rect(0, 0, 1200, 156, BG, 0)
-    content += rect(left, top, width, height, "none", 0, "#252d38")
     content += ''.join(badges)
     write("tech-stack.svg", 1200, 156, content, "Tech stack — clockwise rectangular animation", ", ".join(t[0] for t in TECH))
 
