@@ -448,41 +448,37 @@ def leetcode_section(snapshot, origin_y_offset):
 
 
 def languages_section(snapshot, origin_y_offset):
-    """Render the languages pie chart and top 6 languages fragment."""
+    """Render a stacked language bar and top 8 languages fragment."""
     stats = snapshot["languages"]
     counts = stats["bytes"]
     total = sum(counts.values())
-    top_six = sorted(counts.items(), key=lambda item: (-item[1], item[0]))[:6]
+    ranked = sorted(counts.items(), key=lambda item: (-item[1], item[0]))
+    top_eight = ranked[:8]
     colors = {"Java": "#b07219", "Python": "#3572a5", "TypeScript": "#3178c6",
               "JavaScript": "#f1e05a", "HTML": "#e34c26", "CSS": "#a78bfa",
               "C#": "#178600", "C++": "#f34b7d", "Kotlin": "#a97bff",
-              "Shell": "#89e051", "Dart": "#00b4ab", "Swift": "#f05138"}
-    parts = []
-    cx, cy, r = 636, 151, 81
-    parts.append(f'<circle cx="{cx}" cy="{cy}" r="{r}" fill="#30363d" opacity=".45"/>')
-    if top_six and total:
-        angle_start = -math.pi / 2
-        for language, byte_count in top_six:
-            fraction = byte_count / total
-            if fraction <= 0:
+              "Shell": "#89e051", "Dart": "#00b4ab", "Swift": "#f05138",
+              "PLpgSQL": "#336790", "Dockerfile": "#384d54", "Lua": "#000080"}
+    chart_x, chart_y, chart_w, chart_h = 555, 30, 645, 8
+    parts = [
+        f'<defs><clipPath id="language-bar-clip">{rect(chart_x, chart_y, chart_w, chart_h, radius=4)}</clipPath></defs>',
+        rect(chart_x, chart_y, chart_w, chart_h, "#30363d", 4),
+    ]
+    if total:
+        parts.append('<g clip-path="url(#language-bar-clip)">')
+        cumulative = 0
+        for language, byte_count in ranked:
+            if byte_count <= 0:
                 continue
+            start_x = chart_x + chart_w * cumulative / total
+            cumulative += byte_count
+            end_x = chart_x + chart_w * cumulative / total
             color = colors.get(language, "#79c0ff")
-            if fraction >= 0.9999:
-                parts.append(f'<circle cx="{cx}" cy="{cy}" r="{r}" fill="{color}"/>')
-                break
-            sweep = 2 * math.pi * fraction
-            angle_end = angle_start + sweep
-            x1, y1 = cx + r * math.cos(angle_start), cy + r * math.sin(angle_start)
-            x2, y2 = cx + r * math.cos(angle_end), cy + r * math.sin(angle_end)
-            large_arc = 1 if sweep > math.pi else 0
-            parts.append(
-                f'<path d="M {cx} {cy} L {x1:.2f} {y1:.2f} A {r} {r} 0 {large_arc} 1 {x2:.2f} {y2:.2f} Z" '
-                f'fill="{color}" stroke="{BG}" stroke-width="1.5" stroke-linejoin="round"/>'
-            )
-            angle_start = angle_end
-    for index, (language, byte_count) in enumerate(top_six):
-        x, y = 768 + (index % 2) * 234, 75 + (index // 2) * 61
-        bar_w = 198
+            parts.append(rect(round(start_x, 3), chart_y, round(end_x - start_x, 3), chart_h, color, 0))
+        parts.append('</g>')
+    for index, (language, byte_count) in enumerate(top_eight):
+        x, y = chart_x + (index % 2) * 340, 77 + (index // 2) * 48
+        bar_w = 305
         color = colors.get(language, "#79c0ff")
         percent = 100 * byte_count / max(1, total)
         parts.append(f'<circle cx="{x + 4}" cy="{y - 5}" r="4" fill="{color}"/>')
@@ -491,9 +487,9 @@ def languages_section(snapshot, origin_y_offset):
         parts.append(rect(x, y + 15, bar_w, 6, "#30363d", 3))
         if percent:
             parts.append(rect(x, y + 15, round(bar_w * percent / 100, 3), 6, color, 3))
-    if not top_six:
-        parts.append(text(768, 106, "No language data available.", 15, MUTED))
-    summary_text = "; ".join(f'{name} {100 * count / max(1, total):.1f}%' for name, count in top_six)
+    if not top_eight:
+        parts.append(text(chart_x, 106, "No language data available.", 15, MUTED))
+    summary_text = "; ".join(f'{name} {100 * count / max(1, total):.1f}%' for name, count in top_eight)
     fragment = f'<g transform="translate(0 {origin_y_offset})">{"".join(parts)}</g>'
     desc = f'Top languages ({stats["updated_at"][:10]}): {summary_text or "No language data available."}.'
     return fragment, desc
