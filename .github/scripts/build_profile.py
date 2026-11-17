@@ -408,32 +408,31 @@ def github(snapshot):
 def leetcode(snapshot):
     stats = snapshot["leetcode"]
     solved, questions = stats["solved"], stats["questions"]
-    content = rect(.5, .5, 1199, 159, SURFACE, 12, BORDER)
-    content += text(1174, 23, f'Updated {stats["updated_at"][:10]} UTC', 12, MUTED, 400, 'text-anchor="end"')
-    content += '<circle cx="92" cy="90" r="53" fill="none" stroke="#30363d" stroke-width="8"/>'
-    colors = FPT_COLORS
-    circumference, offset = 2 * math.pi * 53, 0
-    for difficulty, color in zip(("Easy", "Medium", "Hard"), colors):
-        length = circumference * solved[difficulty] / max(1, solved["All"])
-        content += f'<circle cx="92" cy="90" r="53" fill="none" stroke="{color}" stroke-width="8" stroke-dasharray="{length:.2f} {circumference-length:.2f}" stroke-dashoffset="{-offset:.2f}" transform="rotate(-90 92 90)"/>'
-        offset += length
-    content += text(92, 96, solved["All"], 34, FG, 700, 'text-anchor="middle"')
-    content += text(92, 117, "SOLVED", 10, MUTED, 600, 'text-anchor="middle" letter-spacing="1"')
-    content += text(175, 69, LEETCODE, 24, FG, 650)
-    content += text(175, 99, f'Global rank  #{stats["ranking"]:,}', 17, "#ffa657", 500)
-    content += text(175, 130, "Practice. Understand. Improve.", 14, MUTED)
-    content += '<path d="M495 42v102" stroke="#30363d"/>'
+    content = rect(.5, .5, 599, 269, SURFACE, 12, BORDER)
+    # LeetCode logo from Simple Icons (CC0).
+    content += '<svg x="20" y="17" width="24" height="24" viewBox="0 0 24 24" fill="#ffa116"><path d="M13.483 0a1.374 1.374 0 0 0-.961.438L7.116 6.226l-3.854 4.126a5.266 5.266 0 0 0-1.209 2.104 5.35 5.35 0 0 0-.125.513 5.527 5.527 0 0 0 .062 2.362 5.83 5.83 0 0 0 .349 1.017 5.938 5.938 0 0 0 1.271 1.818l4.277 4.193.039.038c2.248 2.165 5.852 2.133 8.063-.074l2.396-2.392c.54-.54.54-1.414.003-1.955a1.378 1.378 0 0 0-1.951-.003l-2.396 2.392a3.021 3.021 0 0 1-4.205.038l-.02-.019-4.276-4.193c-.652-.64-.972-1.469-.948-2.263a2.68 2.68 0 0 1 .066-.523 2.545 2.545 0 0 1 .619-1.164L9.13 8.114c1.058-1.134 3.204-1.27 4.43-.278l3.501 2.831c.593.48 1.461.387 1.94-.207a1.384 1.384 0 0 0-.207-1.943l-3.5-2.831c-.8-.647-1.766-1.045-2.774-1.202l2.015-2.158A1.384 1.384 0 0 0 13.483 0zm-2.866 12.815a1.38 1.38 0 0 0-1.38 1.382 1.38 1.38 0 0 0 1.38 1.382H20.79a1.38 1.38 0 0 0 1.38-1.382 1.38 1.38 0 0 0-1.38-1.382z"/></svg>'
+    content += text(53, 35, "LeetCode", 18, FG, 650)
+    content += text(580, 30, f'Updated {stats["updated_at"][:10]} UTC', 11, MUTED, 400, 'text-anchor="end"')
+    colors = ("#00b8a3", "#ffc01e", "#ff375f")
+    # Three muted arcs and colored progress, with a gap at the bottom.
+    circumference = 2 * math.pi * 78
+    segment = circumference * .72 / 3
     for i, (difficulty, color) in enumerate(zip(("Easy", "Medium", "Hard"), colors)):
-        x, y = 527 + i * 220, 60
-        content += text(x, y, difficulty, 15, color, 600)
-        content += text(x, y + 39, solved[difficulty], 29, FG, 650)
-        content += text(x + 55, y + 39, f'/ {questions[difficulty]:,}', 14, MUTED)
-        content += rect(x, y + 57, 187, 6, "#30363d", 3)
-        bar = 187 * solved[difficulty] / max(1, questions[difficulty])
-        if bar:
-            content += rect(x, y + 57, round(bar, 2), 6, color, 3)
-        content += text(x, y + 85, f'{100*solved[difficulty]/max(1,questions[difficulty]):.1f}% completed', 12, MUTED)
-    write("leetcode-summary.svg", 1200, 160, content, "LeetCode statistics", f'{LEETCODE}: {solved["All"]} problems solved. Easy {solved["Easy"]}, Medium {solved["Medium"]}, Hard {solved["Hard"]}. Updated {stats["updated_at"][:10]}.')
+        offset = -i * segment
+        common = f'cx="170" cy="151" r="78" fill="none" stroke-width="7" stroke-linecap="round" transform="rotate(140 170 151)"'
+        content += f'<circle {common} stroke="{color}" opacity=".25" stroke-dasharray="{segment - 5:.2f} {circumference:.2f}" stroke-dashoffset="{offset:.2f}"/>'
+        progress = (segment - 5) * min(1, solved[difficulty] / max(1, questions[difficulty]))
+        if progress:
+            content += f'<circle {common} stroke="{color}" stroke-dasharray="{progress:.2f} {circumference:.2f}" stroke-dashoffset="{offset:.2f}"/>'
+        y = 57 + i * 61
+        content += rect(397, y, 155, 52, "#30363d", 7)
+        content += text(474, y + 20, "Med." if difficulty == "Medium" else difficulty, 15, color, 650, 'text-anchor="middle"')
+        content += text(474, y + 41, f'{solved[difficulty]:,}/{questions[difficulty]:,}', 16, FG, 650, 'text-anchor="middle"')
+    content += text(165, 153, f'{solved["All"]:,}', 36, FG, 700, 'text-anchor="end"')
+    content += text(169, 153, f'/ {questions["All"]:,}', 16, MUTED, 500)
+    content += text(170, 180, "✓ Solved", 17, GREEN, 600, 'text-anchor="middle"')
+    content += text(170, 234, LEETCODE, 14, MUTED, 500, 'text-anchor="middle"')
+    write("leetcode-summary.svg", 600, 270, content, "LeetCode statistics", f'{LEETCODE}: {solved["All"]} of {questions["All"]} problems solved. Easy {solved["Easy"]}, Medium {solved["Medium"]}, Hard {solved["Hard"]}. Updated {stats["updated_at"][:10]}.')
 
 
 def languages(snapshot):
@@ -445,22 +444,22 @@ def languages(snapshot):
               "JavaScript": "#f1e05a", "HTML": "#e34c26", "CSS": "#a78bfa",
               "C#": "#178600", "C++": "#f34b7d", "Kotlin": "#a97bff",
               "Shell": "#89e051", "Dart": "#00b4ab", "Swift": "#f05138"}
-    content = rect(.5, .5, 1199, 205, SURFACE, 12, BORDER)
-    content += text(1174, 26, f'Updated {stats["updated_at"][:10]} UTC', 12, MUTED, 400, 'text-anchor="end"')
+    content = rect(.5, .5, 599, 269, SURFACE, 12, BORDER)
+    content += text(580, 26, f'Updated {stats["updated_at"][:10]} UTC', 11, MUTED, 400, 'text-anchor="end"')
     for index, (language, byte_count) in enumerate(top_six):
-        x, y = 27 + (index % 3) * 400, 68 + (index // 3) * 72
+        x, y = 22 + (index % 2) * 290, 68 + (index // 2) * 66
         color = colors.get(language, "#79c0ff")
         percent = 100 * byte_count / max(1, total)
         content += f'<circle cx="{x + 4}" cy="{y - 5}" r="4" fill="{color}"/>'
         content += text(x + 17, y, language, 16, FG, 600)
-        content += text(x + 346, y, f'{percent:.1f}%', 22, color, 650, 'text-anchor="end"')
-        content += rect(x, y + 17, 346, 7, "#30363d", 3)
+        content += text(x + 255, y, f'{percent:.1f}%', 20, color, 650, 'text-anchor="end"')
+        content += rect(x, y + 17, 255, 7, "#30363d", 3)
         if percent:
-            content += rect(x, y + 17, round(346 * percent / 100, 3), 7, color, 3)
+            content += rect(x, y + 17, round(255 * percent / 100, 3), 7, color, 3)
     if not top_six:
         content += text(27, 106, "No language data available.", 16, MUTED)
     summary = "; ".join(f'{name} {100 * count / max(1, total):.1f}%' for name, count in top_six)
-    write("languages-summary.svg", 1200, 206, content, "Top 6 most used languages", summary or "No language data available.")
+    write("languages-summary.svg", 600, 270, content, "Top 6 most used languages", summary or "No language data available.")
 
 
 def contacts():
