@@ -448,7 +448,7 @@ def leetcode_section(snapshot, origin_y_offset):
 
 
 def languages_section(snapshot, origin_y_offset):
-    """Render a stacked language bar and top 8 languages fragment."""
+    """Render the top 8 languages with individual progress bars."""
     stats = snapshot["languages"]
     counts = stats["bytes"]
     total = sum(counts.values())
@@ -459,25 +459,10 @@ def languages_section(snapshot, origin_y_offset):
               "C#": "#178600", "C++": "#f34b7d", "Kotlin": "#a97bff",
               "Shell": "#89e051", "Dart": "#00b4ab", "Swift": "#f05138",
               "PLpgSQL": "#336790", "Dockerfile": "#384d54", "Lua": "#000080"}
-    chart_x, chart_y, chart_w, chart_h = 555, 30, 645, 8
-    parts = [
-        f'<defs><clipPath id="language-bar-clip">{rect(chart_x, chart_y, chart_w, chart_h, radius=4)}</clipPath></defs>',
-        rect(chart_x, chart_y, chart_w, chart_h, "#30363d", 4),
-    ]
-    if total:
-        parts.append('<g clip-path="url(#language-bar-clip)">')
-        cumulative = 0
-        for language, byte_count in ranked:
-            if byte_count <= 0:
-                continue
-            start_x = chart_x + chart_w * cumulative / total
-            cumulative += byte_count
-            end_x = chart_x + chart_w * cumulative / total
-            color = colors.get(language, "#79c0ff")
-            parts.append(rect(round(start_x, 3), chart_y, round(end_x - start_x, 3), chart_h, color, 0))
-        parts.append('</g>')
+    origin_x = 555
+    parts = []
     for index, (language, byte_count) in enumerate(top_eight):
-        x, y = chart_x + (index % 2) * 340, 77 + (index // 2) * 48
+        x, y = origin_x + (index % 2) * 340, 77 + (index // 2) * 48
         bar_w = 305
         color = colors.get(language, "#79c0ff")
         percent = 100 * byte_count / max(1, total)
@@ -488,7 +473,7 @@ def languages_section(snapshot, origin_y_offset):
         if percent:
             parts.append(rect(x, y + 15, round(bar_w * percent / 100, 3), 6, color, 3))
     if not top_eight:
-        parts.append(text(chart_x, 106, "No language data available.", 15, MUTED))
+        parts.append(text(origin_x, 106, "No language data available.", 15, MUTED))
     summary_text = "; ".join(f'{name} {100 * count / max(1, total):.1f}%' for name, count in top_eight)
     fragment = f'<g transform="translate(0 {origin_y_offset})">{"".join(parts)}</g>'
     desc = f'Top languages ({stats["updated_at"][:10]}): {summary_text or "No language data available."}.'
