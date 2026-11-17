@@ -10,9 +10,9 @@
 </h3>
 
 <p>
-  <a href="https://github.com/ThanhMiLa/codelearning"><img src="https://raw.githubusercontent.com/ThanhMiLa/ThanhMiLa/main/assets/project-codelearning.svg?v=70283ef7" width="33%" alt="CodeLearning — E-learning &amp; Online Judge platform for learning programming and practicing data structures and algorithms (DSA)." /></a><a
-  href="https://github.com/ThanhMiLa/reallive"><img src="https://raw.githubusercontent.com/ThanhMiLa/ThanhMiLa/main/assets/project-reallive.svg?v=ae8dcc2d" width="34%" alt="RealLive — RealLive - Live streaming platform built with an event-driven microservices architecture across Web and Android." /></a><a
-  href="https://github.com/ThanhMiLa/springlens"><img src="https://raw.githubusercontent.com/ThanhMiLa/ThanhMiLa/main/assets/project-springlens.svg?v=23ed8f50" width="33%" alt="SpringLens — SpringLens - Spring Boot RESTful API Tester for IntelliJ IDEA (IntelliJ Plugin)" /></a>
+  <a href="https://github.com/ThanhMiLa/codelearning"><img src="https://raw.githubusercontent.com/ThanhMiLa/ThanhMiLa/main/assets/project-codelearning.svg?v=6ef66fd9" width="33.33%" alt="CodeLearning — E-learning &amp; Online Judge platform for learning programming and practicing data structures and algorithms (DSA)." /></a><a
+  href="https://github.com/ThanhMiLa/reallive"><img src="https://raw.githubusercontent.com/ThanhMiLa/ThanhMiLa/main/assets/project-reallive.svg?v=4f6fd4dc" width="33.33%" alt="RealLive — RealLive - Live streaming platform built with an event-driven microservices architecture across Web and Android." /></a><a
+  href="https://github.com/ThanhMiLa/springlens"><img src="https://raw.githubusercontent.com/ThanhMiLa/ThanhMiLa/main/assets/project-springlens.svg?v=c38c0453" width="33.33%" alt="SpringLens — SpringLens - Spring Boot RESTful API Tester for IntelliJ IDEA (IntelliJ Plugin)" /></a>
 </p>
 
 <img src="https://raw.githubusercontent.com/ThanhMiLa/ThanhMiLa/main/assets/profile-summary.svg?v=62ee2245" width="100%" alt="GitHub contribution calendar and streaks, LeetCode stats (Thanh_MiLa), top 6 languages across selected repositories, and contact information (Email, LinkedIn, Facebook, Phone)." />

@@ -309,7 +309,7 @@ def projects(snapshot):
     card_height = tags_y + 76
     readme_path = ROOT / "README.md"
     readme = readme_path.read_text()
-    slots = ((396, 0), (408, 10), (396, 8))
+    slots = ((400, 0), (400, 6), (400, 12))
     for project, (slot_width, offset_x) in zip(PROJECTS, slots):
         data = snapshot["projects"][project["repo"]]
         color = project["color"]
