@@ -25,7 +25,7 @@
     <td width="50%"><strong>Top 6 Languages</strong></td>
   </tr>
   <tr>
-    <td width="50%"><a href="https://leetcode.com/u/Thanh_MiLa/"><img src="https://raw.githubusercontent.com/ThanhMiLa/ThanhMiLa/main/assets/leetcode-summary.svg?v=d24db63e" width="100%" alt="Thanh_MiLa on LeetCode — problems solved and Easy, Medium, Hard breakdown. The image includes its last successful update date." /></a></td>
+    <td width="50%"><a href="https://leetcode.com/u/Thanh_MiLa/"><img src="https://raw.githubusercontent.com/ThanhMiLa/ThanhMiLa/main/assets/leetcode-summary.svg?v=8ccbf2f5" width="100%" alt="Thanh_MiLa on LeetCode — problems solved and Easy, Medium, Hard breakdown. The image includes its last successful update date." /></a></td>
     <td width="50%"><a href="https://github.com/ThanhMiLa?tab=repositories"><img src="https://raw.githubusercontent.com/ThanhMiLa/ThanhMiLa/main/assets/languages-summary.svg?v=82628478" width="100%" alt="Top 6 most used languages across ThanhMiLa's personal public repositories and explicitly selected additional public/private repositories, excluding unselected forks, displayed as percentages." /></a></td>
   </tr>
 </table>

@@ -409,8 +409,14 @@ def leetcode(snapshot):
     stats = snapshot["leetcode"]
     solved, questions = stats["solved"], stats["questions"]
     content = rect(.5, .5, 599, 269, SURFACE, 12, BORDER)
-    # LeetCode logo from Simple Icons (CC0).
-    content += '<svg x="20" y="13" width="32" height="32" viewBox="0 0 24 24" fill="#ffa116"><path d="M13.483 0a1.374 1.374 0 0 0-.961.438L7.116 6.226l-3.854 4.126a5.266 5.266 0 0 0-1.209 2.104 5.35 5.35 0 0 0-.125.513 5.527 5.527 0 0 0 .062 2.362 5.83 5.83 0 0 0 .349 1.017 5.938 5.938 0 0 0 1.271 1.818l4.277 4.193.039.038c2.248 2.165 5.852 2.133 8.063-.074l2.396-2.392c.54-.54.54-1.414.003-1.955a1.378 1.378 0 0 0-1.951-.003l-2.396 2.392a3.021 3.021 0 0 1-4.205.038l-.02-.019-4.276-4.193c-.652-.64-.972-1.469-.948-2.263a2.68 2.68 0 0 1 .066-.523 2.545 2.545 0 0 1 .619-1.164L9.13 8.114c1.058-1.134 3.204-1.27 4.43-.278l3.501 2.831c.593.48 1.461.387 1.94-.207a1.384 1.384 0 0 0-.207-1.943l-3.5-2.831c-.8-.647-1.766-1.045-2.774-1.202l2.015-2.158A1.384 1.384 0 0 0 13.483 0zm-2.866 12.815a1.38 1.38 0 0 0-1.38 1.382 1.38 1.38 0 0 0 1.38 1.382H20.79a1.38 1.38 0 0 0 1.38-1.382 1.38 1.38 0 0 0-1.38-1.382z"/></svg>'
+    # Adapt the dark part of the Devicon logo for the dark card background.
+    logo = ET.fromstring((ASSETS / "icons" / "leetcode.svg").read_text())
+    logo.set("x", "20"); logo.set("y", "13")
+    logo.set("width", "32"); logo.set("height", "32")
+    for path in logo:
+        if path.get("fill") == "#070706":
+            path.set("fill", "#f0f6fc")
+    content += ET.tostring(logo, encoding="unicode")
     content += text(62, 38, "LeetCode", 24, FG, 650)
     content += text(580, 30, f'Updated {stats["updated_at"][:10]} UTC', 11, MUTED, 400, 'text-anchor="end"')
     colors = ("#00b8a3", "#ffc01e", "#ff375f")
@@ -426,8 +432,8 @@ def leetcode(snapshot):
             content += f'<circle {common} stroke="{color}" stroke-dasharray="{progress:.2f} {circumference:.2f}" stroke-dashoffset="{offset:.2f}"/>'
         y = 57 + i * 61
         content += rect(397, y, 155, 52, "#30363d", 7)
-        content += text(474, y + 20, "Med." if difficulty == "Medium" else difficulty, 15, color, 650, 'text-anchor="middle"')
-        content += text(474, y + 41, f'{solved[difficulty]:,}/{questions[difficulty]:,}', 16, FG, 650, 'text-anchor="middle"')
+        content += text(474, y + 21, "Med." if difficulty == "Medium" else difficulty, 18, color, 650, 'text-anchor="middle"')
+        content += text(474, y + 43, f'{solved[difficulty]:,}/{questions[difficulty]:,}', 19, FG, 650, 'text-anchor="middle"')
     content += text(165, 153, f'{solved["All"]:,}', 36, FG, 700, 'text-anchor="end"')
     content += text(169, 153, f'/ {questions["All"]:,}', 16, MUTED, 500)
     content += text(170, 180, "✓ Solved", 17, GREEN, 600, 'text-anchor="middle"')
