@@ -2,96 +2,26 @@
   "projects": {
     "codelearning": {
       "description": "E-learning & Online Judge platform for learning programming and practicing data structures and algorithms (DSA).",
-      "stargazers_count": 3,
+      "stargazers_count": 4,
       "forks_count": 0,
       "html_url": "https://github.com/ThanhMiLa/codelearning"
     },
     "reallive": {
       "description": "RealLive - Live streaming platform built with an event-driven microservices architecture across Web and Android.",
-      "stargazers_count": 2,
+      "stargazers_count": 4,
       "forks_count": 0,
       "html_url": "https://github.com/ThanhMiLa/reallive"
     },
     "springlens": {
       "description": "SpringLens - Spring Boot RESTful API Tester for IntelliJ IDEA (IntelliJ Plugin)",
-      "stargazers_count": 1,
+      "stargazers_count": 2,
       "forks_count": 0,
       "html_url": "https://github.com/ThanhMiLa/springlens"
     },
-    "updated_at": "2026-11-05T19:08:03+00:00"
+    "updated_at": "2026-11-17T07:32:14+00:00"
   },
   "github": {
     "days": [
-      {
-        "date": "2025-11-02",
-        "level": 1,
-        "count": 3
-      },
-      {
-        "date": "2025-11-03",
-        "level": 0,
-        "count": 0
-      },
-      {
-        "date": "2025-11-04",
-        "level": 1,
-        "count": 1
-      },
-      {
-        "date": "2025-11-05",
-        "level": 1,
-        "count": 1
-      },
-      {
-        "date": "2025-11-06",
-        "level": 0,
-        "count": 0
-      },
-      {
-        "date": "2025-11-07",
-        "level": 1,
-        "count": 1
-      },
-      {
-        "date": "2025-11-08",
-        "level": 1,
-        "count": 3
-      },
-      {
-        "date": "2025-11-09",
-        "level": 0,
-        "count": 0
-      },
-      {
-        "date": "2025-11-10",
-        "level": 0,
-        "count": 0
-      },
-      {
-        "date": "2025-11-11",
-        "level": 1,
-        "count": 3
-      },
-      {
-        "date": "2025-11-12",
-        "level": 1,
-        "count": 3
-      },
-      {
-        "date": "2025-11-13",
-        "level": 0,
-        "count": 0
-      },
-      {
-        "date": "2025-11-14",
-        "level": 0,
-        "count": 0
-      },
-      {
-        "date": "2025-11-15",
-        "level": 0,
-        "count": 0
-      },
       {
         "date": "2025-11-16",
         "level": 1,
@@ -1866,12 +1796,72 @@
         "date": "2026-11-05",
         "level": 3,
         "count": 29
+      },
+      {
+        "date": "2026-11-06",
+        "level": 2,
+        "count": 15
+      },
+      {
+        "date": "2026-11-07",
+        "level": 3,
+        "count": 28
+      },
+      {
+        "date": "2026-11-08",
+        "level": 1,
+        "count": 7
+      },
+      {
+        "date": "2026-11-09",
+        "level": 3,
+        "count": 34
+      },
+      {
+        "date": "2026-11-10",
+        "level": 1,
+        "count": 12
+      },
+      {
+        "date": "2026-11-11",
+        "level": 3,
+        "count": 25
+      },
+      {
+        "date": "2026-11-12",
+        "level": 1,
+        "count": 9
+      },
+      {
+        "date": "2026-11-13",
+        "level": 2,
+        "count": 13
+      },
+      {
+        "date": "2026-11-14",
+        "level": 3,
+        "count": 32
+      },
+      {
+        "date": "2026-11-15",
+        "level": 1,
+        "count": 1
+      },
+      {
+        "date": "2026-11-16",
+        "level": 1,
+        "count": 4
+      },
+      {
+        "date": "2026-11-17",
+        "level": 1,
+        "count": 10
       }
     ],
-    "updated_at": "2026-11-05T19:08:03+00:00"
+    "updated_at": "2026-11-17T07:32:14+00:00"
   },
   "leetcode": {
-    "ranking": 2330010,
+    "ranking": 2339198,
     "solved": {
       "All": 66,
       "Easy": 62,
@@ -1879,24 +1869,24 @@
       "Hard": 1
     },
     "questions": {
-      "All": 4101,
-      "Easy": 975,
-      "Medium": 2139,
-      "Hard": 987
+      "All": 4114,
+      "Easy": 976,
+      "Medium": 2148,
+      "Hard": 990
     },
-    "updated_at": "2026-11-05T19:08:03+00:00"
+    "updated_at": "2026-11-17T07:32:14+00:00"
   },
   "languages": {
     "bytes": {
-      "TypeScript": 2905656,
-      "Java": 6841255,
-      "JavaScript": 222978,
-      "HTML": 305200,
-      "PLpgSQL": 81153,
-      "CSS": 45561,
-      "Dockerfile": 4992,
-      "Lua": 1174,
-      "Python": 167731,
+      "TypeScript": 3311659,
+      "Java": 7181248,
+      "JavaScript": 229405,
+      "HTML": 304871,
+      "PLpgSQL": 91710,
+      "CSS": 96156,
+      "Dockerfile": 5053,
+      "Lua": 4412,
+      "Python": 198186,
       "Kotlin": 580208,
       "Shell": 1876
     },
@@ -1928,13 +1918,13 @@
         "CSS": 268
       },
       "ThanhMiLa/codelearning": {
-        "Java": 1037300,
-        "TypeScript": 677497,
+        "Java": 1051466,
+        "TypeScript": 658956,
         "PLpgSQL": 66181,
-        "CSS": 4942,
+        "CSS": 53716,
         "Dockerfile": 1129,
         "JavaScript": 591,
-        "HTML": 360
+        "HTML": 373
       },
       "ThanhMiLa/HSF302_VoNgocThanh_SE20A11": {
         "Java": 40147
@@ -1950,16 +1940,17 @@
         "Java": 172675
       },
       "ThanhMiLa/reallive": {
-        "Java": 1868716,
-        "TypeScript": 384148,
-        "Python": 134463,
-        "HTML": 71437,
-        "JavaScript": 56134,
+        "Java": 2194543,
+        "TypeScript": 808692,
+        "Python": 164918,
+        "HTML": 71095,
+        "JavaScript": 62561,
+        "PLpgSQL": 11603,
         "Kotlin": 5309,
-        "Dockerfile": 1674,
-        "CSS": 1462,
-        "Shell": 1429,
-        "PLpgSQL": 1046
+        "CSS": 3283,
+        "Lua": 3238,
+        "Dockerfile": 1735,
+        "Shell": 1429
       },
       "ThanhMiLa/source-hsf-pe": {
         "Java": 266483,
@@ -1978,10 +1969,10 @@
       }
     },
     "repository_count": 14,
-    "private_repository_count": 6,
+    "private_repository_count": 5,
     "included_forks": [
       "fudn-traltb-su26/course-project-hsf302_se20a11_quang_tan_thanh"
     ],
-    "updated_at": "2026-11-05T19:08:03+00:00"
+    "updated_at": "2026-11-17T07:32:14+00:00"
   }
 }

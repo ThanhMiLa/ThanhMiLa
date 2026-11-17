@@ -10,22 +10,22 @@
 </h3>
 
 <p>
-  <a href="https://github.com/ThanhMiLa/codelearning"><img src="https://raw.githubusercontent.com/ThanhMiLa/ThanhMiLa/main/assets/project-codelearning.svg?v=5b4e2646" width="32%" alt="CodeLearning — E-learning &amp; Online Judge platform for learning programming and practicing data structures and algorithms (DSA)." /></a>
-  <a href="https://github.com/ThanhMiLa/reallive"><img src="https://raw.githubusercontent.com/ThanhMiLa/ThanhMiLa/main/assets/project-reallive.svg?v=df6aa08f" width="32%" alt="RealLive — RealLive - Live streaming platform built with an event-driven microservices architecture across Web and Android." /></a>
-  <a href="https://github.com/ThanhMiLa/springlens"><img src="https://raw.githubusercontent.com/ThanhMiLa/ThanhMiLa/main/assets/project-springlens.svg?v=bee5749a" width="32%" alt="SpringLens — SpringLens - Spring Boot RESTful API Tester for IntelliJ IDEA (IntelliJ Plugin)" /></a>
+  <a href="https://github.com/ThanhMiLa/codelearning"><img src="https://raw.githubusercontent.com/ThanhMiLa/ThanhMiLa/main/assets/project-codelearning.svg?v=647c7955" width="32%" alt="CodeLearning — E-learning &amp; Online Judge platform for learning programming and practicing data structures and algorithms (DSA)." /></a>
+  <a href="https://github.com/ThanhMiLa/reallive"><img src="https://raw.githubusercontent.com/ThanhMiLa/ThanhMiLa/main/assets/project-reallive.svg?v=ccd196c6" width="32%" alt="RealLive — RealLive - Live streaming platform built with an event-driven microservices architecture across Web and Android." /></a>
+  <a href="https://github.com/ThanhMiLa/springlens"><img src="https://raw.githubusercontent.com/ThanhMiLa/ThanhMiLa/main/assets/project-springlens.svg?v=5b7ccccd" width="32%" alt="SpringLens — SpringLens - Spring Boot RESTful API Tester for IntelliJ IDEA (IntelliJ Plugin)" /></a>
 </p>
 
 ### GitHub Contributions
 
-<a href="https://github.com/ThanhMiLa?tab=overview"><img src="https://raw.githubusercontent.com/ThanhMiLa/ThanhMiLa/main/assets/github-summary.svg?v=b4aaedca" width="100%" alt="GitHub contribution calendar, contributions, current streak and longest streak in the displayed year. The image includes its last successful update date." /></a>
+<a href="https://github.com/ThanhMiLa?tab=overview"><img src="https://raw.githubusercontent.com/ThanhMiLa/ThanhMiLa/main/assets/github-summary.svg?v=f4e6007a" width="100%" alt="GitHub contribution calendar, contributions, current streak and longest streak in the displayed year. The image includes its last successful update date." /></a>
 
 ### LeetCode Stats
 
-<a href="https://leetcode.com/u/Thanh_MiLa/"><img src="https://raw.githubusercontent.com/ThanhMiLa/ThanhMiLa/main/assets/leetcode-summary.svg?v=9e1e68c1" width="100%" alt="Thanh_MiLa on LeetCode — problems solved, global rank and Easy, Medium, Hard breakdown. The image includes its last successful update date." /></a>
+<a href="https://leetcode.com/u/Thanh_MiLa/"><img src="https://raw.githubusercontent.com/ThanhMiLa/ThanhMiLa/main/assets/leetcode-summary.svg?v=78b6d5fc" width="100%" alt="Thanh_MiLa on LeetCode — problems solved, global rank and Easy, Medium, Hard breakdown. The image includes its last successful update date." /></a>
 
 ### Top 6 Languages
 
-<a href="https://github.com/ThanhMiLa?tab=repositories"><img src="https://raw.githubusercontent.com/ThanhMiLa/ThanhMiLa/main/assets/languages-summary.svg?v=a2c9b438" width="100%" alt="Top 6 most used languages across ThanhMiLa's personal public repositories and explicitly selected additional public/private repositories, excluding unselected forks, displayed as percentages." /></a>
+<a href="https://github.com/ThanhMiLa?tab=repositories"><img src="https://raw.githubusercontent.com/ThanhMiLa/ThanhMiLa/main/assets/languages-summary.svg?v=c9bb576c" width="100%" alt="Top 6 most used languages across ThanhMiLa's personal public repositories and explicitly selected additional public/private repositories, excluding unselected forks, displayed as percentages." /></a>
 
 ### Contact Me
 
