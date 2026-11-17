@@ -505,11 +505,11 @@ def stats(snapshot):
     lang_svg, lang_desc = languages_section(snapshot, lc_offset)
     content = rect(0, 0, 1200, height, BG, 0) + gh_svg + lc_svg + lang_svg
     write(
-        "profile-stats.svg",
+        "profile-summary.svg",
         1200,
         height,
         content,
-        "GitHub, LeetCode, and top languages summary",
+        "GitHub, LeetCode, and top 8 languages summary",
         f"{gh_desc} {lc_desc} {lang_desc}",
     )
 

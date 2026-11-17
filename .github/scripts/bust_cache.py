@@ -12,7 +12,7 @@ CARDS = [
     "assets/project-codelearning.svg",
     "assets/project-reallive.svg",
     "assets/project-springlens.svg",
-    "assets/profile-stats.svg",
+    "assets/profile-summary.svg",
     "assets/contact-email.svg",
     "assets/contact-linkedin.svg",
     "assets/contact-facebook.svg",
