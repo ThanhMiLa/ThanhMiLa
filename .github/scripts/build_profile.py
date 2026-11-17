@@ -309,7 +309,8 @@ def projects(snapshot):
     card_height = tags_y + 76
     readme_path = ROOT / "README.md"
     readme = readme_path.read_text()
-    for project in PROJECTS:
+    slots = ((396, 0), (408, 10), (396, 8))
+    for project, (slot_width, offset_x) in zip(PROJECTS, slots):
         data = snapshot["projects"][project["repo"]]
         color = project["color"]
         content = rect(.5, .5, 387, card_height - 1, SURFACE, 12, BORDER)
@@ -345,14 +346,17 @@ def projects(snapshot):
             x += w + 7
         content += text(23, tags_y + 57, f'☆  {data["stargazers_count"]}    ⑂  {data["forks_count"]}', 15, MUTED)
         content += text(365, tags_y + 57, "Explore repository →", 12, color, 500, 'text-anchor="end"')
+        if offset_x:
+            content = f'<g transform="translate({offset_x} 0)">{content}</g>'
         title = f'{project["title"]} — {descriptions[project["repo"]]}'
-        write(f'project-{project["repo"]}.svg', 388, card_height, content, title)
+        write(f'project-{project["repo"]}.svg', slot_width, card_height, content, title)
         pattern = rf'(<img\b[^>]*\bsrc="(?:\.|https://raw\.githubusercontent\.com/{re.escape(USER)}/{re.escape(USER)}/main)/assets/project-{re.escape(project["repo"])}\.svg(?:\?[^"]*)?"[^>]*\balt=")[^"]*(")'
         readme = re.sub(pattern, lambda match: match[1] + escape(title) + match[2], readme)
     readme_path.write_text(readme)
 
 
-def github(snapshot):
+def github_section(snapshot, origin_y_offset=0):
+    """Render the GitHub contributions summary and calendar fragment."""
     section = snapshot["github"]
     as_of = date.fromisoformat(section["updated_at"][:10])
     days = [d for d in section["days"] if d["date"] <= as_of.isoformat()]
@@ -371,20 +375,17 @@ def github(snapshot):
         current += 1
         day -= timedelta(days=1)
     total = sum(d["count"] for d in days)
-    content = rect(.5, .5, 1199, 185, SURFACE, 12, BORDER)
-    content += text(1174, 24, f'Updated {section["updated_at"][:10]} UTC', 12, MUTED, 400, 'text-anchor="end"')
-    for x, value, label, color in ((27, f"{total:,}", "Contributions", FPT_BLUE), (181, current, "Current Streak", FPT_GREEN), (335, longest, "Longest Streak", FPT_ORANGE)):
-        content += text(x, 66, label, 14, MUTED)
-        content += text(x, 112, value, 36, color, 700)
-    content += text(27, 148, f'{start:%b %d, %Y} – {end:%b %d, %Y}', 12, MUTED)
-    content += text(27, 168, "Public profile contribution calendar", 11, MUTED)
-    content += '<path d="M495 42v128" stroke="#30363d"/>'
+    parts = []
+    for x, value, label, color in ((28, f"{total:,}", "Contributions", FPT_BLUE), (182, current, "Current Streak", FPT_GREEN), (336, longest, "Longest Streak", FPT_ORANGE)):
+        parts.append(text(x, 56, label, 14, MUTED))
+        parts.append(text(x, 102, value, 36, color, 700))
+    parts.append(text(28, 138, f'{start:%b %d, %Y} – {end:%b %d, %Y}', 12, MUTED))
+    parts.append(text(28, 158, "Public profile contribution calendar", 11, MUTED))
     cell, gap, origin_x, origin_y = 9, 3, 535, 60
     colors = ["#212b26", "#0e4429", "#006d32", "#26a641", "#39d353"]
-    content += f'<defs><rect id="c" width="{cell}" height="{cell}" rx="2"/></defs>'
+    parts.append(f'<defs><rect id="c" width="{cell}" height="{cell}" rx="2"/></defs>')
     sunday = start - timedelta(days=(start.weekday() + 1) % 7)
-    month_labels = []
-    month = None
+    month_labels, month = [], None
     groups = [[] for _ in colors]
     for entry in days:
         d = date.fromisoformat(entry["date"])
@@ -393,55 +394,60 @@ def github(snapshot):
             month_labels.append(f'<text x="{origin_x + column * (cell + gap)}" y="48">{d.strftime("%b")}</text>')
             month = d.month
         groups[entry["level"]].append(f'<use href="#c" x="{origin_x + column * (cell + gap)}" y="{origin_y + row * (cell + gap)}"/>')
-    content += f'<g fill="{MUTED}" font-size="10">{"".join(month_labels)}</g>'
+    parts.append(f'<g fill="{MUTED}" font-size="10">{"".join(month_labels)}</g>')
     for color, rects in zip(colors, groups):
         if rects:
-            content += f'<g fill="{color}">{"".join(rects)}</g>'
-    content += f'<g fill="{MUTED}" font-size="9"><text x="516" y="{origin_y + 1 * 12 + 8}">M</text><text x="516" y="{origin_y + 3 * 12 + 8}">W</text><text x="516" y="{origin_y + 5 * 12 + 8}">F</text></g>'
-    content += text(1020, 166, "Less", 10, MUTED)
+            parts.append(f'<g fill="{color}">{"".join(rects)}</g>')
+    parts.append(f'<g fill="{MUTED}" font-size="9"><text x="516" y="{origin_y + 1 * 12 + 8}">M</text><text x="516" y="{origin_y + 3 * 12 + 8}">W</text><text x="516" y="{origin_y + 5 * 12 + 8}">F</text></g>')
+    parts.append(text(1038, 166, "Less", 10, MUTED))
     for i, color in enumerate(colors):
-        content += rect(1053 + i * 13, 157, 9, 9, color, 2)
-    content += text(1123, 166, "More", 10, MUTED)
-    write("github-summary.svg", 1200, 191, content, "GitHub contributions summary", f"{total} contributions; current streak {current} days; longest streak {longest} days in the displayed year. Updated {section['updated_at'][:10]}.")
+        parts.append(rect(1070 + i * 13, 157, 9, 9, color, 2))
+    parts.append(text(1168, 166, "More", 10, MUTED, 400, 'text-anchor="end"'))
+    fragment = f'<g transform="translate(0 {origin_y_offset})">{"".join(parts)}</g>' if origin_y_offset else "".join(parts)
+    desc = f"GitHub: {total} contributions, current streak {current} days, longest streak {longest} days ({section['updated_at'][:10]})."
+    return fragment, desc
 
 
-def leetcode(snapshot):
+def leetcode_section(snapshot, origin_y_offset):
+    """Render the LeetCode statistics fragment."""
     stats = snapshot["leetcode"]
     solved, questions = stats["solved"], stats["questions"]
-    content = rect(.5, .5, 593, 269, SURFACE, 12, BORDER)
     # Adapt the dark part of the Devicon logo for the dark card background.
+    ET.register_namespace("", "http://www.w3.org/2000/svg")
     logo = ET.fromstring((ASSETS / "icons" / "leetcode.svg").read_text())
-    logo.set("x", "20"); logo.set("y", "13")
+    logo.set("x", "28"); logo.set("y", "13")
     logo.set("width", "32"); logo.set("height", "32")
     for path in logo:
         if path.get("fill") == "#070706":
             path.set("fill", "#f0f6fc")
-    content += ET.tostring(logo, encoding="unicode")
-    content += text(62, 38, "LeetCode", 24, FG, 650)
-    content += text(574, 30, f'Updated {stats["updated_at"][:10]} UTC', 11, MUTED, 400, 'text-anchor="end"')
+    parts = [re.sub(r'\s*xmlns="http://www\.w3\.org/2000/svg"', "", ET.tostring(logo, encoding="unicode"))]
+    parts.append(text(70, 38, "LeetCode", 24, FG, 650))
     colors = ("#00b8a3", "#ffc01e", "#ff375f")
     # Three muted arcs and colored progress, with a gap at the bottom.
     circumference = 2 * math.pi * 78
     segment = circumference * .72 / 3
     for i, (difficulty, color) in enumerate(zip(("Easy", "Medium", "Hard"), colors)):
         offset = -i * segment
-        common = f'cx="167" cy="151" r="78" fill="none" stroke-width="7" stroke-linecap="round" transform="rotate(140 167 151)"'
-        content += f'<circle {common} stroke="{color}" opacity=".25" stroke-dasharray="{segment - 5:.2f} {circumference:.2f}" stroke-dashoffset="{offset:.2f}"/>'
+        common = f'cx="174" cy="151" r="78" fill="none" stroke-width="7" stroke-linecap="round" transform="rotate(140 174 151)"'
+        parts.append(f'<circle {common} stroke="{color}" opacity=".25" stroke-dasharray="{segment - 5:.2f} {circumference:.2f}" stroke-dashoffset="{offset:.2f}"/>')
         progress = (segment - 5) * min(1, solved[difficulty] / max(1, questions[difficulty]))
         if progress:
-            content += f'<circle {common} stroke="{color}" stroke-dasharray="{progress:.2f} {circumference:.2f}" stroke-dashoffset="{offset:.2f}"/>'
+            parts.append(f'<circle {common} stroke="{color}" stroke-dasharray="{progress:.2f} {circumference:.2f}" stroke-dashoffset="{offset:.2f}"/>')
         y = 57 + i * 61
-        content += rect(394, y, 155, 52, "#30363d", 7)
-        content += text(471, y + 21, "Med." if difficulty == "Medium" else difficulty, 18, color, 650, 'text-anchor="middle"')
-        content += text(471, y + 43, f'{solved[difficulty]:,}/{questions[difficulty]:,}', 19, FG, 650, 'text-anchor="middle"')
-    content += text(162, 153, f'{solved["All"]:,}', 36, FG, 700, 'text-anchor="end"')
-    content += text(166, 153, f'/ {questions["All"]:,}', 16, MUTED, 500)
-    content += text(167, 180, "✓ Solved", 17, GREEN, 600, 'text-anchor="middle"')
-    content += text(167, 234, LEETCODE, 14, MUTED, 500, 'text-anchor="middle"')
-    write("leetcode-summary.svg", 600, 275, content, "LeetCode statistics", f'{LEETCODE}: {solved["All"]} of {questions["All"]} problems solved. Easy {solved["Easy"]}, Medium {solved["Medium"]}, Hard {solved["Hard"]}. Updated {stats["updated_at"][:10]}.')
+        parts.append(rect(398, y, 155, 52, "#30363d", 7))
+        parts.append(text(475, y + 21, "Med." if difficulty == "Medium" else difficulty, 18, color, 650, 'text-anchor="middle"'))
+        parts.append(text(475, y + 43, f'{solved[difficulty]:,}/{questions[difficulty]:,}', 19, FG, 650, 'text-anchor="middle"'))
+    parts.append(text(169, 153, f'{solved["All"]:,}', 36, FG, 700, 'text-anchor="end"'))
+    parts.append(text(173, 153, f'/ {questions["All"]:,}', 16, MUTED, 500))
+    parts.append(text(174, 180, "✓ Solved", 17, GREEN, 600, 'text-anchor="middle"'))
+    parts.append(text(174, 234, LEETCODE, 14, MUTED, 500, 'text-anchor="middle"'))
+    fragment = f'<g transform="translate(0 {origin_y_offset})">{"".join(parts)}</g>'
+    desc = f'LeetCode ({LEETCODE}): {solved["All"]}/{questions["All"]} solved (Easy {solved["Easy"]}, Medium {solved["Medium"]}, Hard {solved["Hard"]}; {stats["updated_at"][:10]}).'
+    return fragment, desc
 
 
-def languages(snapshot):
+def languages_section(snapshot, origin_y_offset):
+    """Render the top 6 languages fragment."""
     stats = snapshot["languages"]
     counts = stats["bytes"]
     total = sum(counts.values())
@@ -450,39 +456,57 @@ def languages(snapshot):
               "JavaScript": "#f1e05a", "HTML": "#e34c26", "CSS": "#a78bfa",
               "C#": "#178600", "C++": "#f34b7d", "Kotlin": "#a97bff",
               "Shell": "#89e051", "Dart": "#00b4ab", "Swift": "#f05138"}
-    content = rect(.5, .5, 593, 269, SURFACE, 12, BORDER)
-    content += text(574, 30, f'Updated {stats["updated_at"][:10]} UTC', 11, MUTED, 400, 'text-anchor="end"')
+    parts = []
     for index, (language, byte_count) in enumerate(top_six):
-        x, y = 24 + (index % 2) * 285, 68 + (index // 2) * 66
+        x, y = 631 + (index % 2) * 285, 75 + (index // 2) * 61
         color = colors.get(language, "#79c0ff")
         percent = 100 * byte_count / max(1, total)
-        content += f'<circle cx="{x + 4}" cy="{y - 5}" r="4" fill="{color}"/>'
-        content += text(x + 17, y, language, 16, FG, 600)
-        content += text(x + 252, y, f'{percent:.1f}%', 20, color, 650, 'text-anchor="end"')
-        content += rect(x, y + 17, 252, 7, "#30363d", 3)
+        parts.append(f'<circle cx="{x + 4}" cy="{y - 5}" r="4" fill="{color}"/>')
+        parts.append(text(x + 17, y, language, 16, FG, 600))
+        parts.append(text(x + 252, y, f'{percent:.1f}%', 20, color, 650, 'text-anchor="end"'))
+        parts.append(rect(x, y + 17, 252, 7, "#30363d", 3))
         if percent:
-            content += rect(x, y + 17, round(252 * percent / 100, 3), 7, color, 3)
+            parts.append(rect(x, y + 17, round(252 * percent / 100, 3), 7, color, 3))
     if not top_six:
-        content += text(24, 106, "No language data available.", 16, MUTED)
-    summary = "; ".join(f'{name} {100 * count / max(1, total):.1f}%' for name, count in top_six)
-    content = f'<g transform="translate(6 0)">{content}</g>'
-    write("languages-summary.svg", 600, 275, content, "Top 6 most used languages", summary or "No language data available.")
+        parts.append(text(631, 106, "No language data available.", 16, MUTED))
+    summary_text = "; ".join(f'{name} {100 * count / max(1, total):.1f}%' for name, count in top_six)
+    fragment = f'<g transform="translate(0 {origin_y_offset})">{"".join(parts)}</g>'
+    desc = f'Top languages ({stats["updated_at"][:10]}): {summary_text or "No language data available."}.'
+    return fragment, desc
 
 
-def contacts():
-    for index, item in enumerate(CONTACTS):
+def contacts_section(origin_y_offset):
+    """Render the contact details row fragment."""
+    columns = (28, 378, 729, 1068)
+    parts = []
+    for col_x, item in zip(columns, CONTACTS):
         color = item["color"]
-        content = rect(.5, .5, 290, 121, SURFACE, 12, BORDER)
-        content += rect(1, 20, 3, 32, color, 1)
-        content += icon(item["icon"], color, 18, 20)
-        content += text(58, 44, item["title"], 21, FG, 650)
-        content += '<path d="M258 29h12v12m-1-11-15 15m11 1v6h-17V35h6" fill="none" stroke="#919ba8" stroke-width="1.7"/>'
-        content += text(21, 78, item["category"], 10, color, 600, 'letter-spacing="1.2" class="mono"')
-        content += text(21, 103, item["value"], 15, "#c9d1d9", 500)
-        if index:
-            content = f'<g transform="translate({index * 3} 0)">{content}</g>'
-        title = f'{item["title"]} — {item["value"]}'
-        write(f'contact-{item["slug"]}.svg', 300, 122, content, title)
+        parts.append(icon(item["icon"], color, col_x - 4, 0))
+        parts.append(text(col_x + 37, 24, item["title"], 21, FG, 650))
+        parts.append(text(col_x, 54, item["category"], 10, color, 600, 'letter-spacing="1.2" class="mono"'))
+        parts.append(text(col_x, 79, item["value"], 15, "#c9d1d9", 500))
+    fragment = f'<g transform="translate(0 {origin_y_offset})">{"".join(parts)}</g>'
+    desc = "Contact: " + "; ".join(f'{item["title"]} {item["value"]}' for item in CONTACTS) + "."
+    return fragment, desc
+
+
+def summary(snapshot):
+    """Render the unified GitHub, LeetCode, languages, and contact summary SVG."""
+    height = 574
+    gh_svg, gh_desc = github_section(snapshot, -8)
+    lc_svg, lc_desc = leetcode_section(snapshot, 187)
+    lang_svg, lang_desc = languages_section(snapshot, 187)
+    contact_svg, contact_desc = contacts_section(465)
+    content = rect(.5, .5, 1199, height - 1, SURFACE, 12, BORDER)
+    content += gh_svg + lc_svg + lang_svg + contact_svg
+    write(
+        "profile-summary.svg",
+        1200,
+        height,
+        content,
+        "GitHub, LeetCode, top languages, and contact summary",
+        f"{gh_desc} {lc_desc} {lang_desc} {contact_desc}",
+    )
 
 
 def main():
@@ -493,7 +517,7 @@ def main():
     errors = refresh(snapshot) if args.refresh else []
     if not snapshot:
         parser.error("No saved data; run with --refresh first")
-    hero(); technology(); projects(snapshot); github(snapshot); leetcode(snapshot); languages(snapshot); contacts()
+    hero(); technology(); projects(snapshot); summary(snapshot)
     print("Built profile assets from saved, timestamped data.")
     if errors:
         print("Retained previous data for: " + ", ".join(errors))

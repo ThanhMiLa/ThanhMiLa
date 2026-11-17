@@ -13,13 +13,7 @@ CARDS = [
     "assets/project-codelearning.svg",
     "assets/project-reallive.svg",
     "assets/project-springlens.svg",
-    "assets/github-summary.svg",
-    "assets/leetcode-summary.svg",
-    "assets/languages-summary.svg",
-    "assets/contact-email.svg",
-    "assets/contact-linkedin.svg",
-    "assets/contact-facebook.svg",
-    "assets/contact-phone.svg",
+    "assets/profile-summary.svg",
 ]
 
 
