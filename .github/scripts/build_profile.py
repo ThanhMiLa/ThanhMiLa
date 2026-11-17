@@ -438,7 +438,8 @@ def leetcode(snapshot):
     content += text(169, 153, f'/ {questions["All"]:,}', 16, MUTED, 500)
     content += text(170, 180, "✓ Solved", 17, GREEN, 600, 'text-anchor="middle"')
     content += text(170, 234, LEETCODE, 14, MUTED, 500, 'text-anchor="middle"')
-    write("leetcode-summary.svg", 600, 270, content, "LeetCode statistics", f'{LEETCODE}: {solved["All"]} of {questions["All"]} problems solved. Easy {solved["Easy"]}, Medium {solved["Medium"]}, Hard {solved["Hard"]}. Updated {stats["updated_at"][:10]}.')
+    content = text(0, 22, "LeetCode Stats", 21, FG, 650) + f'<g transform="translate(0 40)">{content}</g>'
+    write("leetcode-summary.svg", 600, 310, content, "LeetCode statistics", f'{LEETCODE}: {solved["All"]} of {questions["All"]} problems solved. Easy {solved["Easy"]}, Medium {solved["Medium"]}, Hard {solved["Hard"]}. Updated {stats["updated_at"][:10]}.')
 
 
 def languages(snapshot):
@@ -465,7 +466,8 @@ def languages(snapshot):
     if not top_six:
         content += text(27, 106, "No language data available.", 16, MUTED)
     summary = "; ".join(f'{name} {100 * count / max(1, total):.1f}%' for name, count in top_six)
-    write("languages-summary.svg", 600, 270, content, "Top 6 most used languages", summary or "No language data available.")
+    content = text(0, 22, "Top 6 Languages", 21, FG, 650) + f'<g transform="translate(0 40)">{content}</g>'
+    write("languages-summary.svg", 600, 310, content, "Top 6 most used languages", summary or "No language data available.")
 
 
 def contacts():
