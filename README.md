@@ -16,7 +16,7 @@
 </p>
 
 <p>
-  <a href="https://github.com/ThanhMiLa?tab=overview"><img src="https://raw.githubusercontent.com/ThanhMiLa/ThanhMiLa/main/assets/github-summary.svg?v=dc1971dc" width="100%" alt="GitHub contribution calendar, contributions, current streak and longest streak in the displayed year. The image includes its last successful update date." /></a><a
+  <a href="https://github.com/ThanhMiLa?tab=overview"><img src="https://raw.githubusercontent.com/ThanhMiLa/ThanhMiLa/main/assets/github-summary.svg?v=18768c00" width="100%" alt="GitHub contribution calendar, contributions, current streak and longest streak in the displayed year. The image includes its last successful update date." /></a><a
   href="https://leetcode.com/u/Thanh_MiLa/"><img src="https://raw.githubusercontent.com/ThanhMiLa/ThanhMiLa/main/assets/leetcode-summary.svg?v=43c6e62c" width="50%" alt="LeetCode Stats — Thanh_MiLa: problems solved and Easy, Medium, Hard breakdown. The image includes its last successful update date." /></a><a
   href="https://github.com/ThanhMiLa?tab=repositories"><img src="https://raw.githubusercontent.com/ThanhMiLa/ThanhMiLa/main/assets/languages-summary.svg?v=90f68dcd" width="50%" alt="Top 6 most used languages across ThanhMiLa's personal public repositories and explicitly selected additional public/private repositories, excluding unselected forks, displayed as percentages." /></a><a
   href="mailto:vntvlogs@gmail.com"><img src="https://raw.githubusercontent.com/ThanhMiLa/ThanhMiLa/main/assets/contact-email.svg?v=5b890c7c" width="25%" alt="Email — vntvlogs@gmail.com" /></a><a
