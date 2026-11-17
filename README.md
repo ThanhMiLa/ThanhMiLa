@@ -15,4 +15,6 @@
   href="https://github.com/ThanhMiLa/springlens"><img src="https://raw.githubusercontent.com/ThanhMiLa/ThanhMiLa/main/assets/project-springlens.svg?v=c38c0453" width="33.33%" alt="SpringLens — SpringLens - Spring Boot RESTful API Tester for IntelliJ IDEA (IntelliJ Plugin)" /></a>
 </p>
 
+### General Statistics
+
 <img src="https://raw.githubusercontent.com/ThanhMiLa/ThanhMiLa/main/assets/profile-summary.svg?v=cefaf0cb" width="100%" alt="GitHub contribution calendar and streaks, LeetCode stats (Thanh_MiLa), top 6 languages across selected repositories, and contact information (Email, LinkedIn, Facebook, Phone)." />
