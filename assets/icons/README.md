@@ -6,4 +6,6 @@ The SVGs are kept locally and embedded as vector geometry in `tech-stack.svg`, s
 
 `LOGO_SINGLE.png` is the CodeLearning project logo supplied by the repository owner, separate from the Devicon collection. It is embedded directly into the CodeLearning card.
 
+`RealLive-favicon.svg` is the RealLive project logo supplied by the repository owner, separate from the Devicon collection. Its vector geometry is embedded directly into the RealLive card.
+
 `Logo_SpringLens.svg` is the SpringLens project logo supplied by the repository owner, separate from the Devicon collection. Its vector geometry is embedded directly into the SpringLens card.

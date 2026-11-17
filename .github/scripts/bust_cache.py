@@ -3,7 +3,8 @@ import hashlib
 from pathlib import Path
 import re
 
-README_PATH = Path("README.md")
+ROOT = Path(__file__).resolve().parents[2]
+README_PATH = ROOT / "README.md"
 RAW_BASE = "https://raw.githubusercontent.com/ThanhMiLa/ThanhMiLa/main"
 
 CARDS = [
@@ -25,14 +26,14 @@ def bust_readme_cache():
 
     updated_hashes = {}
     for card in CARDS:
-        card_path = Path(card)
-        if not card_path.exists():
-            continue
+        card_path = ROOT / card
         digest = hashlib.sha256(card_path.read_bytes()).hexdigest()[:8]
         updated_hashes[card] = digest
         pattern = rf'src="(?:\.|{re.escape(RAW_BASE)})/{re.escape(card)}(?:\?[^"]*)?"'
         replacement = f'src="{RAW_BASE}/{card}?v={digest}"'
-        content = re.sub(pattern, replacement, content)
+        content, matches = re.subn(pattern, replacement, content)
+        if matches != 1:
+            raise ValueError(f"Expected exactly one README image for {card}; found {matches}")
 
     README_PATH.write_text(content, encoding="utf-8")
     print(f"Updated cache-busting hashes in {README_PATH}:")

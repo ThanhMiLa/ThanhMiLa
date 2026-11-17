@@ -7,26 +7,67 @@ on:
   push:
     branches: [main]
     paths:
-      - '.github/scripts/build_profile.py'
-      - '.github/scripts/bust_cache.py'
-      - '.github/workflows/update-activity.yml'
-      - 'assets/icons/**'
+      - '.github/scripts/**'
+      - '.github/tests/**'
+      - '.github/workflows/**'
+      - 'assets/**'
+      - 'README.md'
+  pull_request:
+    branches: [main]
+    paths:
+      - '.github/scripts/**'
+      - '.github/tests/**'
+      - '.github/workflows/**'
+      - 'assets/**'
+      - 'README.md'
 
 permissions:
-  contents: write
+  contents: read
+
+env:
+  PYTHONDONTWRITEBYTECODE: '1'
 
 concurrency:
-  group: profile-assets
+  group: profile-assets-${{ github.ref }}
   cancel-in-progress: false
 
 jobs:
-  refresh:
+  validate:
+    name: Validate profile
     runs-on: ubuntu-latest
+    timeout-minutes: 5
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7.1.0
         with:
           python-version: '3.11'
+      - name: Test renderer, assets, and cache keys without network
+        run: python -m unittest discover -s .github/tests -v
+
+  refresh:
+    needs: validate
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v7.0.1
+        with:
+          ref: main
+      - uses: actions/setup-python@v7.1.0
+        with:
+          python-version: '3.11'
+      - name: Check private repository access is configured
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
+        run: |
+          if [ -z "$GH_PAT" ]; then
+            echo "::error::Configure GH_PAT with read access to the selected private repositories."
+            exit 1
+          fi
       - name: Refresh GitHub, selected private repo languages, and LeetCode data
         id: build
         continue-on-error: true
@@ -36,14 +77,16 @@ jobs:
         run: python .github/scripts/build_profile.py --refresh
       - name: Update image cache keys
         run: python .github/scripts/bust_cache.py
+      - name: Validate refreshed assets
+        run: python -m unittest discover -s .github/tests -v
       - name: Commit refreshed assets
         run: |
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git config user.name "github-actions[bot]"
-          git add assets/profile-*.svg assets/tech-stack.svg assets/project-*.svg assets/contact-*.svg assets/profile-data.json README.md
-          if ! git diff --staged --quiet assets/*.svg README.md; then
+          git add -- 'assets/profile-*.svg' assets/tech-stack.svg 'assets/project-*.svg' 'assets/contact-*.svg' assets/profile-data.json README.md
+          if ! git diff --staged --quiet; then
             git commit -m "chore(profile): refresh projects and coding stats [skip ci]"
-            git push
+            git push origin HEAD:main
           fi
       - name: Report incomplete refresh
         if: steps.build.outcome == 'failure'

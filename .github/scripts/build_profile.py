@@ -35,7 +35,6 @@ ADDITIONAL_LANGUAGE_REPOSITORIES = (
 BG = "#0d1117"
 FG, MUTED, GREEN = "#f0f6fc", "#919ba8", "#3fb950"
 FPT_BLUE, FPT_GREEN, FPT_ORANGE = "#0066b3", "#0db14b", "#f37021"
-FPT_COLORS = (FPT_BLUE, FPT_GREEN, FPT_ORANGE)
 PROJECTS = [
     {"repo": "codelearning", "title": "CodeLearning", "color": FPT_BLUE, "logo": "LOGO_SINGLE.png", "logo_size": 38,
      "category": "E - LEARNING",
