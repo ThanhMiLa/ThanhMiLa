@@ -18,45 +18,10 @@
       "forks_count": 0,
       "html_url": "https://github.com/ThanhMiLa/springlens"
     },
-    "updated_at": "2026-11-21T20:41:41+00:00"
+    "updated_at": "2026-11-22T00:45:08+00:00"
   },
   "github": {
     "days": [
-      {
-        "date": "2025-11-16",
-        "level": 1,
-        "count": 3
-      },
-      {
-        "date": "2025-11-17",
-        "level": 0,
-        "count": 0
-      },
-      {
-        "date": "2025-11-18",
-        "level": 0,
-        "count": 0
-      },
-      {
-        "date": "2025-11-19",
-        "level": 1,
-        "count": 3
-      },
-      {
-        "date": "2025-11-20",
-        "level": 0,
-        "count": 0
-      },
-      {
-        "date": "2025-11-21",
-        "level": 1,
-        "count": 3
-      },
-      {
-        "date": "2025-11-22",
-        "level": 1,
-        "count": 1
-      },
       {
         "date": "2025-11-23",
         "level": 0,
@@ -1876,9 +1841,14 @@
         "date": "2026-11-21",
         "level": 1,
         "count": 10
+      },
+      {
+        "date": "2026-11-22",
+        "level": 1,
+        "count": 2
       }
     ],
-    "updated_at": "2026-11-21T20:41:41+00:00"
+    "updated_at": "2026-11-22T00:45:08+00:00"
   },
   "leetcode": {
     "ranking": 2251110,
@@ -1894,11 +1864,11 @@
       "Medium": 2150,
       "Hard": 992
     },
-    "updated_at": "2026-11-21T20:41:41+00:00"
+    "updated_at": "2026-11-22T00:45:08+00:00"
   },
   "languages": {
     "bytes": {
-      "TypeScript": 4443228,
+      "TypeScript": 4445434,
       "Java": 7282035,
       "JavaScript": 266000,
       "HTML": 305234,
@@ -1909,7 +1879,7 @@
       "Python": 207440,
       "Kotlin": 580208,
       "Shell": 7298,
-      "Rust": 503745,
+      "Rust": 521102,
       "PowerShell": 2607
     },
     "repositories": {
@@ -1985,8 +1955,8 @@
         "Java": 708819
       },
       "ThanhMiLa/swarm-agent": {
-        "TypeScript": 1040919,
-        "Rust": 503745,
+        "TypeScript": 1043125,
+        "Rust": 521102,
         "JavaScript": 36195,
         "Shell": 5422,
         "CSS": 5408,
@@ -2004,6 +1974,6 @@
     "included_forks": [
       "fudn-traltb-su26/course-project-hsf302_se20a11_quang_tan_thanh"
     ],
-    "updated_at": "2026-11-21T20:41:41+00:00"
+    "updated_at": "2026-11-22T00:45:08+00:00"
   }
 }
