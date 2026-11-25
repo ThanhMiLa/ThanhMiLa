@@ -18,7 +18,7 @@
       "forks_count": 0,
       "html_url": "https://github.com/ThanhMiLa/springlens"
     },
-    "updated_at": "2026-11-25T03:50:25+00:00"
+    "updated_at": "2026-11-25T16:17:10+00:00"
   },
   "github": {
     "days": [
@@ -1635,7 +1635,7 @@
       {
         "date": "2026-10-11",
         "level": 2,
-        "count": 18
+        "count": 16
       },
       {
         "date": "2026-10-12",
@@ -1680,12 +1680,12 @@
       {
         "date": "2026-10-20",
         "level": 1,
-        "count": 12
+        "count": 8
       },
       {
         "date": "2026-10-21",
         "level": 1,
-        "count": 7
+        "count": 6
       },
       {
         "date": "2026-10-22",
@@ -1710,7 +1710,7 @@
       {
         "date": "2026-10-26",
         "level": 3,
-        "count": 27
+        "count": 26
       },
       {
         "date": "2026-10-27",
@@ -1745,7 +1745,7 @@
       {
         "date": "2026-11-02",
         "level": 1,
-        "count": 5
+        "count": 4
       },
       {
         "date": "2026-11-03",
@@ -1780,7 +1780,7 @@
       {
         "date": "2026-11-09",
         "level": 3,
-        "count": 34
+        "count": 33
       },
       {
         "date": "2026-11-10",
@@ -1859,14 +1859,14 @@
       },
       {
         "date": "2026-11-25",
-        "level": 1,
-        "count": 1
+        "level": 2,
+        "count": 22
       }
     ],
-    "updated_at": "2026-11-25T03:50:25+00:00"
+    "updated_at": "2026-11-25T16:17:10+00:00"
   },
   "leetcode": {
-    "ranking": 2253510,
+    "ranking": 2254289,
     "solved": {
       "All": 70,
       "Easy": 65,
@@ -1879,13 +1879,13 @@
       "Medium": 2152,
       "Hard": 994
     },
-    "updated_at": "2026-11-25T03:50:25+00:00"
+    "updated_at": "2026-11-25T16:17:10+00:00"
   },
   "languages": {
     "bytes": {
-      "TypeScript": 4483461,
-      "Java": 7336059,
-      "JavaScript": 291213,
+      "TypeScript": 4546370,
+      "Java": 7397205,
+      "JavaScript": 309595,
       "HTML": 305234,
       "PLpgSQL": 91710,
       "CSS": 101819,
@@ -1894,7 +1894,7 @@
       "Python": 207396,
       "Kotlin": 580208,
       "Shell": 7298,
-      "Rust": 527507,
+      "Rust": 533625,
       "PowerShell": 2607
     },
     "repositories": {
@@ -1947,10 +1947,10 @@
         "Java": 172675
       },
       "ThanhMiLa/reallive": {
-        "Java": 2349354,
-        "TypeScript": 934797,
+        "Java": 2410500,
+        "TypeScript": 996724,
         "Python": 174128,
-        "JavaScript": 88174,
+        "JavaScript": 106556,
         "HTML": 71095,
         "PLpgSQL": 11603,
         "Kotlin": 5309,
@@ -1970,8 +1970,8 @@
         "Java": 708819
       },
       "ThanhMiLa/swarm-agent": {
-        "TypeScript": 1045697,
-        "Rust": 527507,
+        "TypeScript": 1046679,
+        "Rust": 533625,
         "JavaScript": 36195,
         "Shell": 5422,
         "CSS": 5408,
@@ -1989,6 +1989,6 @@
     "included_forks": [
       "fudn-traltb-su26/course-project-hsf302_se20a11_quang_tan_thanh"
     ],
-    "updated_at": "2026-11-25T03:50:25+00:00"
+    "updated_at": "2026-11-25T16:17:10+00:00"
   }
 }
