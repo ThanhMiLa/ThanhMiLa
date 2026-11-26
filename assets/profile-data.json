@@ -18,7 +18,7 @@
       "forks_count": 0,
       "html_url": "https://github.com/ThanhMiLa/springlens"
     },
-    "updated_at": "2026-11-26T11:36:11+00:00"
+    "updated_at": "2026-11-26T20:37:08+00:00"
   },
   "github": {
     "days": [
@@ -1865,10 +1865,10 @@
       {
         "date": "2026-11-26",
         "level": 1,
-        "count": 2
+        "count": 7
       }
     ],
-    "updated_at": "2026-11-26T11:36:11+00:00"
+    "updated_at": "2026-11-26T20:37:08+00:00"
   },
   "leetcode": {
     "ranking": 2255086,
@@ -1884,22 +1884,22 @@
       "Medium": 2152,
       "Hard": 994
     },
-    "updated_at": "2026-11-26T11:36:11+00:00"
+    "updated_at": "2026-11-26T20:37:08+00:00"
   },
   "languages": {
     "bytes": {
-      "TypeScript": 4546380,
-      "Java": 7397205,
+      "TypeScript": 4548022,
+      "Java": 7397529,
       "JavaScript": 309595,
       "HTML": 305234,
-      "PLpgSQL": 91710,
+      "PLpgSQL": 1062003,
       "CSS": 101819,
       "Dockerfile": 5170,
       "Lua": 4779,
       "Python": 207396,
       "Kotlin": 580208,
-      "Shell": 7298,
-      "Rust": 533625,
+      "Shell": 10753,
+      "Rust": 534785,
       "PowerShell": 2607
     },
     "repositories": {
@@ -1930,10 +1930,11 @@
         "CSS": 268
       },
       "ThanhMiLa/codelearning": {
-        "Java": 1051466,
-        "TypeScript": 658956,
-        "PLpgSQL": 66181,
+        "Java": 1051790,
+        "PLpgSQL": 1036474,
+        "TypeScript": 660598,
         "CSS": 53716,
+        "Shell": 3455,
         "Dockerfile": 1129,
         "JavaScript": 591,
         "HTML": 373
@@ -1976,7 +1977,7 @@
       },
       "ThanhMiLa/swarm-agent": {
         "TypeScript": 1046689,
-        "Rust": 533625,
+        "Rust": 534785,
         "JavaScript": 36195,
         "Shell": 5422,
         "CSS": 5408,
@@ -1994,6 +1995,6 @@
     "included_forks": [
       "fudn-traltb-su26/course-project-hsf302_se20a11_quang_tan_thanh"
     ],
-    "updated_at": "2026-11-26T11:36:11+00:00"
+    "updated_at": "2026-11-26T20:37:08+00:00"
   }
 }
